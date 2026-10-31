@@ -1,0 +1,6 @@
+# Preserve the exact bytes of the installed and generated snapshot.
+/node_modules/** -text
+/build/** -text
+/out/** -text
+# GitHub requires LFS for this file because it exceeds 100 MiB.
+/node_modules/.remotion/chrome-headless-shell/win64/chrome-headless-shell-win64/chrome-headless-shell.exe filter=lfs diff=lfs merge=lfs -text
