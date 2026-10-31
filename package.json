@@ -11,7 +11,9 @@
     "dev": "node scripts/dev.mjs",
     "test": "node --test tests/*.test.ts",
     "verify:legacy": "node scripts/verify-legacy.mjs",
-    "seed": "node scripts/seed-projects.ts"
+    "seed": "node scripts/seed-projects.ts",
+    "launcher:build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-launcher.ps1",
+    "launcher:verify": "node scripts/verify-launcher.mjs"
   },
   "devDependencies": {
     "@types/node": "24.10.1",

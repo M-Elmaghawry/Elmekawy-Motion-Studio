@@ -13,6 +13,12 @@ npm.cmd start
 
 This checkout is already installed, seeded and built. Normally only `npm.cmd start` is needed after stopping the running service. The seed command copies exact local media and the already-present Chrome runtime into the active workspace. It does not generate images, download a browser, or alter either original project. When cloning elsewhere, retrieve the existing V2 Git LFS browser payload before seeding.
 
+Alternatively, double-click `Elmekawy-Motion-Studio.exe` in the repository root. This small Windows/.NET Framework launcher uses the existing Node 24 installation and prepared checkout, starts the server hidden, waits for its health check, and opens the default browser. It also verifies the data-store lock before reusing a running service. Keep the EXE alongside the project and use a Windows shortcut for desktop access.
+
+When the launcher starts the server, its tray icon offers Open and Stop Studio (including any active render). Closing the browser keeps the server running. Stop uses a private stdin pipe and the server's graceful shutdown path, which persists render state and releases the store lock. A service started independently is reused and remains independently owned; the launcher does not stop it. Startup logs are local under `.studio/launcher/`.
+
+Rebuild with `npm.cmd run launcher:build`; validate with `npm.cmd run launcher:verify`. The checks run the actual EXE without browser/tray UI, using isolated stores to verify startup, reuse, graceful stop, external ownership, busy-port errors and control-pipe closure. No application dependency was added.
+
 For development, stop the production service and run `npm.cmd run dev`. The UI uses `http://127.0.0.1:5173` and proxies the local API at port 4310. Only one backend may write a given project store at a time. No hosting, provider API, account, or image-generation integration is used.
 
 ## What is working
