@@ -6,7 +6,9 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {bundle} from '@remotion/bundler';
 import {openBrowser,selectComposition,renderMedia} from '@remotion/renderer';
-import type {Descriptor,Project,RenderState} from '@elmekawy/shared';
+import type {RenderState} from '@elmekawy/shared';
+export type RenderInput={id:string;revision:number;template:{id:string;version:string};video:{width:number;height:number;fps:number;durationFrames:number;aspectRatio:string};output:{container:string;codec:string;pixelFormat:string;crf:number;presetId:string;fileNameLabel:string};assets:{id:string;state:string;sha256?:string;byteSize?:number}[];audio:{mode:string}};
+export type RenderDescriptorInput={compositionId:string;inputProps:{media:Record<string,string>}&Record<string,unknown>;warnings:string[]};
 const run=promisify(execFile);
 const hash=async(file:string)=>{const digest=createHash('sha256');for await(const chunk of createReadStream(file))digest.update(chunk);return digest.digest('hex');};
 export const browserPath=(root:string)=>path.join(root,'node_modules/.remotion/chrome-headless-shell/win64/chrome-headless-shell-win64/chrome-headless-shell.exe');
@@ -17,7 +19,7 @@ export async function sourceFingerprint(root:string){
   for(const file of files){const relative=path.relative(root,file).replaceAll('\\','/'),sha256=await hash(file);records.push({path:relative,sha256});digest.update(relative+'\0'+sha256+'\n');}
   return {sha256:digest.digest('hex'),files:records};
 }
-export async function renderProjectVideo(options:{root:string;stateRoot:string;folder:string;project:Project;descriptor:Descriptor;progress:(state:RenderState,progress:number)=>void}){
+export async function renderProjectVideo(options:{root:string;stateRoot:string;folder:string;project:RenderInput;descriptor:RenderDescriptorInput;progress:(state:RenderState,progress:number)=>void}){
   const {root,stateRoot,folder,project,descriptor,progress}=options;
   const executable=browserPath(root);await fs.access(executable);
   progress('bundling',0);const source=await sourceFingerprint(root),release=path.join(stateRoot,'releases',source.sha256);await fs.mkdir(release,{recursive:true});

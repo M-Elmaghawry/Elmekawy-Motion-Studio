@@ -95,6 +95,9 @@ test('manual image upload verifies bytes, persists a generated safe filename and
 });
 test('queued render can be cancelled and cannot download a partial output',async()=>{
   const created=await request('/api/projects/'+apiProject.id+'/renders','POST',{revision:apiProject.revision});assert.equal(created.status,202);const job=await created.json();const cancelled=await request('/api/renders/'+job.id+'/cancel','POST',{});assert.equal(cancelled.status,200);assert.equal((await cancelled.json()).state,'cancelled');assert.equal((await request('/api/renders/'+job.id+'/download')).status,409);
+  // Starting the worker must never replace the terminal cancellation state.
+  await pause(100);assert.equal((await(await request('/api/renders/'+job.id)).json()).state,'cancelled');
+  const persisted=JSON.parse(await fs.readFile(path.join(testRoot,'.studio/jobs',job.id+'.json'),'utf8'));assert.equal(persisted.state,'cancelled');
 });
 test('actual MP4 export freezes saved Unicode content while the next revision is edited',async()=>{
   const edit=editableOf(apiProject),key='hook.title1';edit.scenes[0].content[key]='تصدير محفوظ';

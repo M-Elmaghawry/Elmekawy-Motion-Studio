@@ -19,6 +19,26 @@ When the launcher starts the server, its tray icon offers Open and Stop Studio (
 
 Rebuild with `npm.cmd run launcher:build`; validate with `npm.cmd run launcher:verify`. The checks run the actual EXE without browser/tray UI, using isolated stores to verify startup, reuse, graceful stop, external ownership, busy-port errors and control-pipe closure. No application dependency was added.
 
+## Clean Windows setup and reliability checks
+
+On a new Windows x64 machine, use a full Git checkout with Git LFS payloads, Node 24+ and the Windows .NET Framework C# compiler. Run the setup commands above from the repository root, then `npm.cmd run launcher:build` and `npm.cmd run launcher:verify`. Keep the EXE in the repository root; its preflight checks dependencies, built UI, the shared catalog and the central browser. If an existing service owns a store, stop it through its owner before running a second writer.
+
+The historical V2 browser EXE must contain actual bytes, not a Git LFS pointer. If seeding fails because the payload is absent, complete `git lfs pull` before retrying. Do not reinstall inside V1/V2, overwrite a partial central runtime, or delete historical files to repair it. The [independent browser provisioning plan](BROWSER_PROVISIONING_PLAN.md) describes the future pinned installer; it is not implemented or certified as a fresh-install path in this iteration.
+
+```powershell
+npm.cmd run typecheck
+npm.cmd run lint
+npm.cmd run format:check
+npm.cmd run test:cli
+npm.cmd test
+npm.cmd run verify:render-smoke
+npm.cmd run verify:legacy
+```
+
+`lint` and `format` have an explicit incremental scope covering new tooling/documents; they do not reformat preserved templates or unrelated existing application code. `typecheck` checks the full active TypeScript workspace. `npm.cmd run format` formats only its listed files. The render smoke command starts its own hidden backend in a new store, compares representative/transition PNGs for both legacy template versions with the original bundle, and encodes/decodes short V1/V2 H.264 clips with their expected audio behavior. It requires the historical bundle and seeded media/browser, and does not require a production server or production render jobs.
+
+New launcher and render smoke reports are retained inside unique `.studio/test-runs/` directories. The old `.studio/qa/launcher-report.json` remains historical evidence. `npm.cmd run launcher:verify -- --help` is a read-only command that also works before the EXE/runtime is ready. Full EXE verification requires Windows x64 and reports an explicit failure elsewhere. A pass in an already hydrated checkout does not establish clean independent-browser installation. See [the current verification record](CURRENT_STATE_AND_GAPS.md) for actual results and the pre-existing legacy-inventory junction failure.
+
 For development, stop the production service and run `npm.cmd run dev`. The UI uses `http://127.0.0.1:5173` and proxies the local API at port 4310. Only one backend may write a given project store at a time. No hosting, provider API, account, or image-generation integration is used.
 
 ## What is working
@@ -71,6 +91,8 @@ Parity verification requires the local service and completed baseline renders. T
 
 ## Current scope
 
-The initial two templates keep their fixed portrait format, duration, FPS, safe margins and brand styling. The absent V2 comparison images still use the original labeled schematics until both images are manually uploaded. Arbitrary retiming, additional aspect ratios, custom fonts/colors/audio, full brand management, general video/audio upload, general template migration, and the rest of the broader roadmap remain future increments.
+The separate flexible engine and 20-second JSON sample are available through `npm.cmd run render:flexible -- --validate-only` and `npm.cmd run render:flexible`; outputs and reports use new `.studio/test-runs/flexible-<UUID>/` directories. Phase 3 adds a flexible-only project wizard/editor and persisted `api/flexible` routes. It supports the three brand profiles, scene content/order/timing, image frame and zoom/position/fit controls, save/reopen/duplicate, image approval, and local H.264 export. Run `npm.cmd run test:editor` for isolated API tests and `npm.cmd run verify:editor` for the Windows x64 headless-browser workflow; the latter needs the built UI and seeded local browser. See [PHASE_2_IMPLEMENTATION.md](PHASE_2_IMPLEMENTATION.md) and [PHASE_3_IMPLEMENTATION.md](PHASE_3_IMPLEMENTATION.md).
+
+The initial two templates keep their fixed portrait format, duration, FPS, safe margins and brand styling; the flexible editor does not migrate or change them. The absent V2 comparison images still use the original labeled schematics until both images are manually uploaded. Additional aspect ratios, custom font management, general video/audio upload and timelines, full project export/reimport, and the rest of the broader roadmap remain future increments.
 
 The original historical V1 MP4 is absent from this checkout; the current V1 export is a new verified render. The original V2 video/review files are retained as a clearly labeled legacy import and remain untouched in the original folder and backup.

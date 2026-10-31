@@ -1,0 +1,177 @@
+.flexible fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.flexible legend {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+.flexible select {
+  font: inherit;
+  max-width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  background: #09111e;
+}
+.flexible .check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 14px 0;
+  font-size: 12px;
+}
+.flexible .check input {
+  accent-color: var(--blue);
+}
+.flexible .color-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 14px;
+}
+.flexible input[type='color'] {
+  padding: 3px;
+  height: 42px;
+  cursor: pointer;
+}
+.flexible .wizard-steps {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0 0 22px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.flexible .wizard-steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+}
+.flexible .wizard-steps li[aria-current='step'] {
+  background: var(--selected);
+  border-color: var(--blue);
+  color: var(--text);
+}
+.flexible .wizard-steps span {
+  font:
+    500 12px InterUI,
+    sans-serif;
+}
+.flexible .wizard-actions {
+  margin-top: 24px;
+}
+.flexible .storyboard-choices {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.flexible .storyboard-choices select {
+  flex: 1;
+  min-width: 150px;
+}
+.flexible .wizard-image {
+  display: block;
+  max-width: 100%;
+  width: 280px;
+  max-height: 260px;
+  object-fit: contain;
+  margin: 14px 0;
+  border-radius: 12px;
+  background: #030d1b;
+}
+.flexible .review-summary {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+.flexible .review-summary dt {
+  color: var(--muted);
+}
+.flexible .review-summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.flexible .project-details,
+.flexible .scene-tools,
+.flexible .scene-properties,
+.flexible .render-panel {
+  margin-bottom: 20px;
+}
+.flexible summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.flexible details[open] > summary {
+  margin-bottom: 15px;
+}
+.flexible .image-controls {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+.flexible .range-field input {
+  padding: 0;
+  min-height: 32px;
+  accent-color: var(--blue);
+  border: 0;
+  background: transparent;
+}
+.flexible .range-field > span {
+  display: flex;
+  justify-content: space-between;
+}
+.flexible .range-field bdi {
+  font-family: InterUI, sans-serif;
+  color: var(--blue);
+}
+.flexible .step-edit .field {
+  flex: 1;
+}
+.flexible .scene-timeline {
+  display: flex;
+  gap: 4px;
+  margin-top: 18px;
+}
+.flexible .scene-timeline button {
+  min-width: 0;
+  padding: 8px 2px;
+  background: var(--selected);
+  color: var(--blue);
+}
+.flexible .viewer .message {
+  margin: 12px 0;
+  font-size: 11px;
+}
+.flexible .image-controls details {
+  margin-bottom: 15px;
+}
+.flexible .scene-tools > .actions {
+  margin-top: 15px;
+}
+.flexible .scene-properties .asset {
+  margin-top: 20px;
+}
+.flexible .scene-tools .inline-note {
+  margin-bottom: 16px;
+}
+@media (max-width: 600px) {
+  .flexible .wizard-steps li {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  .flexible .review-summary {
+    grid-template-columns: 75px 1fr;
+  }
+  .flexible .color-fields {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
