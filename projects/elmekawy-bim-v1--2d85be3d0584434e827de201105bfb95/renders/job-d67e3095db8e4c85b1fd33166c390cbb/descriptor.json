@@ -1,0 +1,72 @@
+{
+  "projectRevision": 1,
+  "template": {
+    "id": "bim-personal-intro",
+    "version": "1.0.0"
+  },
+  "compositionId": "ElmekawyBIMIntro",
+  "metadata": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 900,
+    "aspectRatio": "9:16"
+  },
+  "inputProps": {
+    "media": {
+      "fonts/Cairo.ttf": {
+        "id": "font-cairo",
+        "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+      },
+      "fonts/Inter.ttf": {
+        "id": "font-inter",
+        "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+      },
+      "assets/logos/ME-Logo.png": {
+        "id": "portrait",
+        "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe"
+      },
+      "assets/generated/bim-infrastructure.png": {
+        "id": "infrastructure",
+        "sha256": "15450128d51d710b9a954d72058f7569aa1a273fd21ccd3dba8aa620fa2688b7"
+      },
+      "assets/generated/structural-bim.png": {
+        "id": "structural",
+        "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+      },
+      "assets/generated/bim-technology.png": {
+        "id": "technology",
+        "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a"
+      },
+      "assets/audio/bim-reel.mp3": {
+        "id": "audio-track",
+        "sha256": "7e9e8e997a10bd5ac818fa391ee4a281c559f3ddf6f6b06866e38e4e0c0287de"
+      }
+    },
+    "assets": {
+      "font-cairo": true,
+      "font-inter": true,
+      "portrait": true,
+      "infrastructure": true,
+      "structural": true,
+      "technology": true,
+      "audio-track": true
+    },
+    "edits": {
+      "مش مجرد": "مش مجرد",
+      "One coordinated vision.": "One coordinated vision.",
+      "Precision.": "Precision.",
+      "At every stage.": "At every stage.",
+      "Build skills.": "Build skills.",
+      "Work with confidence.": "Work with confidence.",
+      "Mahmoud": "Mahmoud",
+      "Elmekawy.": "Elmekawy.",
+      "Learn": "Learn",
+      "Build": "Build",
+      "Coordinate": "Coordinate"
+    }
+  },
+  "warnings": [
+    "V1 يستخدم ملف الصوت الأصلي بمستوى 0.3، والشعار داخل خانة الصورة الشخصية."
+  ]
+}

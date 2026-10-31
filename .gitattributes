@@ -1,0 +1,15 @@
+# Preserve the bytes used by media hashes, release fingerprints and backup checks.
+/apps/** -text
+/packages/** -text
+/projects/** -text
+/shared-assets/** -text
+/archive/** -text
+/.studio/jobs/** -text
+/.studio/releases/** -text
+/.studio/qa/** -text
+/.studio/legacy-output-import.json -text
+/package.json -text
+/package-lock.json -text
+
+# The protected backup includes the same existing Chrome LFS object as V2.
+/archive/**/chrome-headless-shell.exe filter=lfs diff=lfs merge=lfs -text

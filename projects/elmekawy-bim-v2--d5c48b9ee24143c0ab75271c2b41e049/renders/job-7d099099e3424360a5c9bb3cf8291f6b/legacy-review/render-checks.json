@@ -1,0 +1,69 @@
+{
+  "compositions": [
+    {
+      "id": "ElmekawyBIMIntro",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 900
+    },
+    {
+      "id": "ElmekawyBIMIntroV2",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "durationInFrames": 360
+    }
+  ],
+  "detectedV2Assets": {
+    "structural": true,
+    "logo": true,
+    "before": false,
+    "after": false
+  },
+  "frames": [
+    0,
+    45,
+    59,
+    60,
+    110,
+    134,
+    135,
+    165,
+    200,
+    224,
+    225,
+    245,
+    285,
+    299,
+    300,
+    345,
+    359
+  ],
+  "seekChecks": [
+    200,
+    45,
+    345,
+    110
+  ],
+  "hashes": {
+    "0": "23dbb2490a3aa3fc2667f6f872d41547dcb27155796901716abe8d0a8740b313",
+    "45": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0",
+    "59": "353f002e691b71d8f4c1990fce207ca505d1155ce340e831fda877385459b85c",
+    "60": "ddad603113c0b8f59c6dfc9bed21a4d1f2c8f1c180050ddbc3194a16f71982a6",
+    "110": "4b373bb6065f123780be2399a6c08b5444bcc25e97f1f421b27b5946b33c02b2",
+    "134": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109",
+    "135": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa",
+    "165": "aa2148ff927a883fc69bab5978c3a6e1269ddf8d0ab6f8478adc4fa2c91e545d",
+    "200": "648b659d6237bd9af1f07b2a6d1ddecae076dc907688accd290e3d477c56eb73",
+    "224": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3",
+    "225": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65",
+    "245": "cf5183e1979362a79ec46c59f429da68b9fc77ead011353386fb784473c852f9",
+    "285": "ce8bff65769d46bc3f680b72d7973ed59f2d98e68a8e41fd747b4254666ea84d",
+    "299": "2e98350e32314f8e5ad97db0d0c04c67254036858d2c5411a501c553f3a29e88",
+    "300": "e59279418983de3952b1149a72f230d2052c507f15e02bbae2057c47f2af00df",
+    "345": "8f7157d8741b6b22349459fc6e7d4ce8446def2041ad27f99ab5338b025815d6",
+    "359": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1"
+  },
+  "result": "PASS: registration, 17 sampled frames, four nonsequential repeated PNG hashes, two missing-asset fallbacks, copied V1 still"
+}

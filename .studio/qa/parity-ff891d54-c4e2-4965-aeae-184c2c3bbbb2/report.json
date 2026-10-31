@@ -1,0 +1,288 @@
+{
+  "createdAt": "2026-10-31T11:55:59.778Z",
+  "checks": [
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 0,
+      "match": true,
+      "original": "139f4e2d863190686fed379b767687013faf0cc6bdfb14b1152e775f85c701a2",
+      "current": "139f4e2d863190686fed379b767687013faf0cc6bdfb14b1152e775f85c701a2"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 269,
+      "match": true,
+      "original": "8081642ac0e0b311dab037f8a704f29f2a02a170b6cba15d01a594283e9f35ad",
+      "current": "8081642ac0e0b311dab037f8a704f29f2a02a170b6cba15d01a594283e9f35ad"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 270,
+      "match": true,
+      "original": "d90702b8522b765c20074a90880b43328a502fbd9c1754ffac1e0f126ee31ab8",
+      "current": "d90702b8522b765c20074a90880b43328a502fbd9c1754ffac1e0f126ee31ab8"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 281,
+      "match": true,
+      "original": "a5aa07877e32c1c89c7fe447ea6a23afea49cc8946a6bdeb664c4af3d1ac3efd",
+      "current": "a5aa07877e32c1c89c7fe447ea6a23afea49cc8946a6bdeb664c4af3d1ac3efd"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 282,
+      "match": true,
+      "original": "047aab70381b5c035f4459d3201a4cd986bb33dc7641f40d56397f8e0ebc9714",
+      "current": "047aab70381b5c035f4459d3201a4cd986bb33dc7641f40d56397f8e0ebc9714"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 449,
+      "match": true,
+      "original": "b7a674cbb9a17712c5d9b6256ca37bd5dba3483cdf5fa5fa6b201af23fb4b629",
+      "current": "b7a674cbb9a17712c5d9b6256ca37bd5dba3483cdf5fa5fa6b201af23fb4b629"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 450,
+      "match": true,
+      "original": "64e89bc6d418223a3a727c4c2ff7d8fee220a86f046cd54aaeb56e4d797fc02f",
+      "current": "64e89bc6d418223a3a727c4c2ff7d8fee220a86f046cd54aaeb56e4d797fc02f"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 461,
+      "match": true,
+      "original": "22260ba89d49ed841b7fb733b709d00a15310b01287ae2775b8983ea587c2ac3",
+      "current": "22260ba89d49ed841b7fb733b709d00a15310b01287ae2775b8983ea587c2ac3"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 462,
+      "match": true,
+      "original": "c3ceffc7a5b6f48d406f9e89ada560356213f7796f3097b1855fea1fa691b90f",
+      "current": "c3ceffc7a5b6f48d406f9e89ada560356213f7796f3097b1855fea1fa691b90f"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 629,
+      "match": true,
+      "original": "74afa2b10202883c5c1f8f6e43c86037cfebb41f6fe3d13897a73209e2a74768",
+      "current": "74afa2b10202883c5c1f8f6e43c86037cfebb41f6fe3d13897a73209e2a74768"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 630,
+      "match": true,
+      "original": "ba6283acf63579a885711f9b0555c1270325046757426852dd5b27c93fbbc444",
+      "current": "ba6283acf63579a885711f9b0555c1270325046757426852dd5b27c93fbbc444"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 641,
+      "match": true,
+      "original": "2f9bfa9360ca3bde1bd14a5609b161ab936c0971ff59587a5a84b58623b7a2de",
+      "current": "2f9bfa9360ca3bde1bd14a5609b161ab936c0971ff59587a5a84b58623b7a2de"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 642,
+      "match": true,
+      "original": "d11eacc2409b25d1c6fae71e411f3e3d27af11060bd60956c3c7a1fe66c70d4b",
+      "current": "d11eacc2409b25d1c6fae71e411f3e3d27af11060bd60956c3c7a1fe66c70d4b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 779,
+      "match": true,
+      "original": "1f470d5dcaf79323d78616cb1905d50259bcf643463a8207f6c6dad9161f1f0f",
+      "current": "1f470d5dcaf79323d78616cb1905d50259bcf643463a8207f6c6dad9161f1f0f"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 780,
+      "match": true,
+      "original": "a8914ceb7189a1d8e7935cdddd6b9e6767047462bdb1a630b27600db726272b9",
+      "current": "a8914ceb7189a1d8e7935cdddd6b9e6767047462bdb1a630b27600db726272b9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 791,
+      "match": true,
+      "original": "707c96f92da1f6b31337154a5475e4969fb2f3a02c572816546561bc1820a3ab",
+      "current": "707c96f92da1f6b31337154a5475e4969fb2f3a02c572816546561bc1820a3ab"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 792,
+      "match": true,
+      "original": "43eba999843db201d6ce94000add97b4cfaffc6dcabe8aa3c5462a6b308886c2",
+      "current": "43eba999843db201d6ce94000add97b4cfaffc6dcabe8aa3c5462a6b308886c2"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 0,
+      "match": true,
+      "original": "23dbb2490a3aa3fc2667f6f872d41547dcb27155796901716abe8d0a8740b313",
+      "current": "23dbb2490a3aa3fc2667f6f872d41547dcb27155796901716abe8d0a8740b313"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 45,
+      "match": true,
+      "original": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0",
+      "current": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 59,
+      "match": true,
+      "original": "353f002e691b71d8f4c1990fce207ca505d1155ce340e831fda877385459b85c",
+      "current": "353f002e691b71d8f4c1990fce207ca505d1155ce340e831fda877385459b85c"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 60,
+      "match": true,
+      "original": "ddad603113c0b8f59c6dfc9bed21a4d1f2c8f1c180050ddbc3194a16f71982a6",
+      "current": "ddad603113c0b8f59c6dfc9bed21a4d1f2c8f1c180050ddbc3194a16f71982a6"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 110,
+      "match": true,
+      "original": "4b373bb6065f123780be2399a6c08b5444bcc25e97f1f421b27b5946b33c02b2",
+      "current": "4b373bb6065f123780be2399a6c08b5444bcc25e97f1f421b27b5946b33c02b2"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 134,
+      "match": true,
+      "original": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109",
+      "current": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 135,
+      "match": true,
+      "original": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa",
+      "current": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 165,
+      "match": true,
+      "original": "aa2148ff927a883fc69bab5978c3a6e1269ddf8d0ab6f8478adc4fa2c91e545d",
+      "current": "aa2148ff927a883fc69bab5978c3a6e1269ddf8d0ab6f8478adc4fa2c91e545d"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 200,
+      "match": true,
+      "original": "648b659d6237bd9af1f07b2a6d1ddecae076dc907688accd290e3d477c56eb73",
+      "current": "648b659d6237bd9af1f07b2a6d1ddecae076dc907688accd290e3d477c56eb73"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 224,
+      "match": true,
+      "original": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3",
+      "current": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 225,
+      "match": true,
+      "original": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65",
+      "current": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 245,
+      "match": false,
+      "original": "cf5183e1979362a79ec46c59f429da68b9fc77ead011353386fb784473c852f9",
+      "current": "5e4d94fabd60bf2c0e5c2660b3c0441df7d87102082b633eeb51e916a05f2e2a"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 285,
+      "match": true,
+      "original": "ce8bff65769d46bc3f680b72d7973ed59f2d98e68a8e41fd747b4254666ea84d",
+      "current": "ce8bff65769d46bc3f680b72d7973ed59f2d98e68a8e41fd747b4254666ea84d"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 299,
+      "match": true,
+      "original": "2e98350e32314f8e5ad97db0d0c04c67254036858d2c5411a501c553f3a29e88",
+      "current": "2e98350e32314f8e5ad97db0d0c04c67254036858d2c5411a501c553f3a29e88"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 300,
+      "match": true,
+      "original": "e59279418983de3952b1149a72f230d2052c507f15e02bbae2057c47f2af00df",
+      "current": "e59279418983de3952b1149a72f230d2052c507f15e02bbae2057c47f2af00df"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 345,
+      "match": true,
+      "original": "8f7157d8741b6b22349459fc6e7d4ce8446def2041ad27f99ab5338b025815d6",
+      "current": "8f7157d8741b6b22349459fc6e7d4ce8446def2041ad27f99ab5338b025815d6"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "frame": 359,
+      "match": true,
+      "original": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1",
+      "current": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1"
+    }
+  ],
+  "matched": 39,
+  "total": 40,
+  "qaDirectory": "D:\\zz-CODING\\Elmekawy-Motion-Studio\\.studio\\qa\\parity-ff891d54-c4e2-4965-aeae-184c2c3bbbb2"
+}

@@ -1,0 +1,12 @@
+Local render queued at 2026-10-31T11:26:22.940Z
+[console.error] Access to font at 'http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-inter/29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[console.error] Access to font at 'http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-inter/29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[console.error] Access to font at 'http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-cairo/667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-inter/29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031] Failed to load resource: net::ERR_FAILED
+[http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-cairo/667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964] Failed to load resource: net::ERR_FAILED
+[http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-inter/29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031] Failed to load resource: net::ERR_FAILED
+[console.error] Access to font at 'http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-cairo/667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[http://127.0.0.1:4311/media/projects/elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049/font-cairo/667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964] Failed to load resource: net::ERR_FAILED
+NetworkError: A network error occurred.
+    at cancelRenderInternal (http://localhost:3000/bundle.js:22699:21)
+    at cancelRender (http://localhost:3000/bundle.js:22713:10)

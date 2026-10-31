@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95",
+  "projectRevision": 2,
+  "template": {
+    "id": "bim-personal-intro",
+    "version": "1.1.0"
+  },
+  "compositionId": "ElmekawyBIMIntro",
+  "engineSourceSha256": "c068fa300762c048bd22f6037f57496357fcaa592edaaf447d025f158d8455ba",
+  "rootLockSha256": "48b1d4e7825e49bc18f9e6fdc141584d2fbdcc458c7ee59c1fc80a2b23b6f42b",
+  "resources": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576
+    },
+    {
+      "id": "portrait",
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238
+    },
+    {
+      "id": "infrastructure",
+      "sha256": "15450128d51d710b9a954d72058f7569aa1a273fd21ccd3dba8aa620fa2688b7",
+      "byteSize": 4736636
+    },
+    {
+      "id": "structural",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852
+    },
+    {
+      "id": "technology",
+      "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+      "byteSize": 4000537
+    },
+    {
+      "id": "audio-track",
+      "sha256": "7e9e8e997a10bd5ac818fa391ee4a281c559f3ddf6f6b06866e38e4e0c0287de",
+      "byteSize": 1204837
+    }
+  ],
+  "effectiveSettings": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 900,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "mp4-h264-v1",
+    "fileNameLabel": "video",
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "browser": "Google Chrome for Testing 157.0.8080.0",
+    "remotion": "4.0.539"
+  },
+  "warnings": [
+    "V1 يستخدم ملف الصوت الأصلي بمستوى 0.3، والشعار داخل خانة الصورة الشخصية."
+  ],
+  "output": {
+    "file": "output.mp4",
+    "sha256": "dc5c1561d52398d08b1dbe026a196414cd14a864496fc495e125858ebd04732a",
+    "bytes": 15896193,
+    "pixelFormat": "yuvj420p",
+    "videoDurationSeconds": 30,
+    "containerDurationSeconds": 30.016
+  },
+  "completedAt": "2026-10-31T11:58:39.039Z"
+}

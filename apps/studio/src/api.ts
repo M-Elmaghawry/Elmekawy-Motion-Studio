@@ -1,0 +1,3 @@
+let sessionToken='';
+export async function initializeSession(){const response=await fetch('/api/session');if(!response.ok)throw new Error('تعذر الاتصال بالخادم المحلي.');sessionToken=(await response.json()).token;}
+export async function api<T>(url:string,options:RequestInit={}):Promise<T>{const headers=new Headers(options.headers);if(options.body&&!(options.body instanceof FormData))headers.set('Content-Type','application/json');if(options.method&&!['GET','HEAD'].includes(options.method))headers.set('X-Studio-Token',sessionToken);const response=await fetch(url,{...options,headers});if(!response.ok){const body=await response.json().catch(()=>null);throw new Error(body?.error?.message??'تعذّر إكمال الطلب المحلي.');}return response.json() as Promise<T>;}

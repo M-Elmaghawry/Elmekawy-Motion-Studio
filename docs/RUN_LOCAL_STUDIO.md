@@ -1,0 +1,70 @@
+# Running the local Studio
+
+The owner approved implementation after reviewing Phase 1 and finding that the design preview did not use the original compositions. The working application now replaces that prototype at **http://127.0.0.1:4311/**.
+
+Use Node 24 on Windows. From the repository root:
+
+```powershell
+npm.cmd ci --ignore-scripts
+npm.cmd run seed
+npm.cmd run build
+npm.cmd start
+```
+
+This checkout is already installed, seeded and built. Normally only `npm.cmd start` is needed after stopping the running service. The seed command copies exact local media and the already-present Chrome runtime into the active workspace. It does not generate images, download a browser, or alter either original project. When cloning elsewhere, retrieve the existing V2 Git LFS browser payload before seeding.
+
+For development, stop the production service and run `npm.cmd run dev`. The UI uses `http://127.0.0.1:5173` and proxies the local API at port 4310. Only one backend may write a given project store at a time. No hosting, provider API, account, or image-generation integration is used.
+
+## What is working
+
+- React/Vite UI with the actual Remotion Player and original V1/V2 scenes, geometry, typography and animation logic.
+- Exact local Cairo/Inter variable fonts and original project images/logo. V1 retains its original MP3 at volume 0.3; V2 remains silent.
+- JSON-backed creation, editing, saving, reopening, and duplication of independent data/media projects.
+- Every rendered text fragment has its own labeled editing field in template 1.1.0: 51 fields in V1 and 60 in V2, including conditional fallback text. Changes drive both live preview and the saved revision used for rendering. Save writes `projects/<id>/project.json`; history records preserve earlier revisions.
+- Local PNG/JPEG/WebP upload, byte/type/decode validation, generated filenames, immutable replacement, and original paired comparison fallback behavior.
+- User-written/manual prompts, copy-to-clipboard and persisted prompt editing.
+- Real local H.264 MP4 jobs, progress, cancellation, saved input snapshots, manifests, FFprobe results and completed-file downloads.
+- One active npm workspace/root lockfile, with Remotion packages aligned at 4.0.539 and React at 19.2.3.
+
+The two original folders stay unchanged and outside the workspace globs. Their historical dependency trees are protected exceptions, not active per-project installations. The verified full backup is in `archive/2026-10-31T10-52-36-439Z-646266a9/`; all 20,244 original files were copied and hashed, including actual media and browser bytes. A restore sample was verified. Restore into a new directory rather than overwriting an original.
+
+## Using the editor
+
+Open either project, select a scene, and edit its exposed text fields. Preview updates immediately. **Save project** becomes enabled when there are changes. **Save and export MP4** saves those edits before starting a real render. A completed render has a **Download MP4** link in the Output tab.
+
+Each heading line, small heading, caption, service label, counter, workflow label, and link has an independent field with an Arabic label and its original value. Persistent V2 header fields appear in a separate group for every scene. Conditional image/logo fallback captions have their own group. Stable scene-scoped IDs keep repeated words such as `BIM` independent. Text embedded in an uploaded image is part of that image and changes through asset replacement.
+
+The two working projects were upgraded to template 1.1.0 at project revision 2, preserving saved text, media, timing and output settings. Their revision-1 JSON is retained in each project's `history/`. The original 1.0.0 templates and helpers remain available for old project data and render snapshots. New projects use 1.1.0. For another existing 1.0.0 project, stop the local server and run `node scripts/upgrade-text-editing.ts` before restarting it; the script preserves history and skips projects already upgraded.
+
+The initial selection shows an image-bearing scene: V2 at frame 110, or V1 at frame 200. Playback and frame seeking are provided by Remotion Player. Opening the project again reloads persisted data. Pending text edits remain separate from a render already in progress; that render retains its frozen saved revision.
+
+The old `docs/previews/elmekawy-studio-preview.html` and exported browser HTML are retained design references. They are not the live application. The old `node docs/previews/serve-preview.cjs` command now delegates to the working server. Refresh the actual local URL to leave a previously loaded prototype.
+
+## Verification completed on 2026-10-31
+
+- Production TypeScript/Vite build passed.
+- Twelve meaningful tests passed, including lossless legacy text upgrades, unique labeled inputs for every editable field, Unicode saves, stale/concurrent updates, Windows traversal/junction protection, independent duplication, MIME/HEAD/ranges, verified manual upload, cancellation, and a real MP4 retaining its queued revision while a newer edit was saved.
+- All 40 planned legacy boundary/representative PNG captures match the original bundle exactly: 23 V1 and 17 V2 frames.
+- Full V1 export: 1080 x 1920, 30 fps, 900 video frames, 30-second video stream, original audio retained. AAC padding makes the container duration 30.016 seconds.
+- Full V2 export: 1080 x 1920, 30 fps, 360 frames, 12 seconds, no audio. Output SHA-256 matches the original MP4 exactly: `cacd607c054cb02f81d1fa694c11cbdb161cce279c113a22a9073abe71241e6e`.
+- Both complete video streams decoded successfully. FFprobe reports yuvj420p full-range output; requested settings and actual probe facts are retained separately.
+- Template 1.1.0 pixel comparison report: `.studio/qa/parity-e43e9643-0646-4e65-894c-f0c619ae793b/report.json`. Both complete baseline exports also match their previously verified output hashes; V2 matches the historical original MP4.
+- All 111 text bindings changed their rendered output independently, and the cross-scene repeated-word check passed (112/112). Report: `.studio/qa/text-fields-58bb9344-d1ea-474f-bcaa-989b1c47eea6/report.json`. All 22 frozen 1.0.0 source files and all 20,244 protected original files remain byte-for-byte unchanged.
+- Automated interaction with the user's Firefox window stopped because the available Computer Use tool could not enforce browser URL policy for that Windows browser. No alternative UI-control path was used after that stop. Reload the page manually; API, render and frame-output verification continued independently.
+
+Commands:
+
+```powershell
+npm.cmd test
+npm.cmd run verify:legacy
+node scripts/verify-parity.mjs
+node scripts/verify-text-fields.mjs
+```
+
+Parity verification requires the local service and completed baseline renders. Text-field verification renders every field with an alternate value, checks a visible pixel change (including conditional fallbacks), and checks that a repeated word in another scene stays unchanged. Test data is isolated under `.studio/test-runs/` and is retained for diagnostics. The API never serves the archive, arbitrary repository files, or these test stores.
+
+## Current scope
+
+The initial two templates keep their fixed portrait format, duration, FPS, safe margins and brand styling. The absent V2 comparison images still use the original labeled schematics until both images are manually uploaded. Arbitrary retiming, additional aspect ratios, custom fonts/colors/audio, full brand management, general video/audio upload, general template migration, and the rest of the broader roadmap remain future increments.
+
+The original historical V1 MP4 is absent from this checkout; the current V1 export is a new verified render. The original V2 video/review files are retained as a clearly labeled legacy import and remain untouched in the original folder and backup.

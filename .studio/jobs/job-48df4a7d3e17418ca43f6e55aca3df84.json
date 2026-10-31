@@ -1,0 +1,11 @@
+{
+  "id": "job-48df4a7d3e17418ca43f6e55aca3df84",
+  "projectId": "elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049",
+  "projectRevision": 1,
+  "projectName": "Elmekawy BIM — V2",
+  "state": "failed",
+  "progress": 0,
+  "createdAt": "2026-10-31T11:26:22.940Z",
+  "updatedAt": "2026-10-31T11:26:27.198Z",
+  "error": "تعذر إكمال التصدير. تفاصيل التشخيص محفوظة في render.log."
+}

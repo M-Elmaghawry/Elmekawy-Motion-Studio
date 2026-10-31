@@ -1,0 +1,19 @@
+/node_modules/
+/apps/*/node_modules/
+/apps/studio/dist/
+/packages/*/node_modules/
+/.studio/*
+!/.studio/jobs/
+!/.studio/releases/
+!/.studio/qa/
+!/.studio/legacy-output-import.json
+/projects/.staging/
+
+# Machine-local credentials and editor/OS files are never project deliverables.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+Thumbs.db
+.DS_Store

@@ -1,0 +1,90 @@
+[
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/Composition.tsx",
+    "sha256": "aae5849da9dfedbf0e926166b2eee6b6f25d7857db292861f46fd88e733ef650"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scene-data.ts",
+    "sha256": "b65c2b8f10ce5f459913be6c5ed788e6bb5db10977b89ab1e22a93957da85149"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/CtaScene.tsx",
+    "sha256": "15b8c6c7ba40d7875318123287c2c8b48cadb31057649a4041f30fce05540506"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/HookScene.tsx",
+    "sha256": "05d67d16a0d4a805dcce66048f4dc4c5467c7845c94a10a5583eebaf2e1ebc2c"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/InfrastructureScene.tsx",
+    "sha256": "28676cb16bf4c1a55acb1c0748badfaf4a5b5240b9a5480a9bd8608fa2501010"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/PersonalBrandScene.tsx",
+    "sha256": "e8d9b8f21f0803b2f1c860d467a1947cfb41b57102f5511d2b3ce39855638fc2"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/ServicesScene.tsx",
+    "sha256": "e55b5008be2364fb0eb2dafb739779cbabed05443a971193ea2276be05eed968"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/TrainingScene.tsx",
+    "sha256": "1ab3a643cbd58e835151fb144b238eaad66097f8192a1b9fae54c2a9960e4070"
+  },
+  {
+    "path": "packages/templates/src/bim-personal-intro/1.0.0/template.json",
+    "sha256": "a27e9c1cfec9db972b020fca8076a763308c68888ca0fc4eb0b5f6f12d2523aa"
+  },
+  {
+    "path": "packages/templates/src/bim-motion-study/1.0.0/Composition.tsx",
+    "sha256": "e31a81906320ebe0a0bcacc74cf8f87712ae231770bebbb46a9814cd7985c01d"
+  },
+  {
+    "path": "packages/templates/src/bim-motion-study/1.0.0/data.ts",
+    "sha256": "cc00d20acd4ff656520dc897cf393cacf4bef9334fab61e755e128b7afd63083"
+  },
+  {
+    "path": "packages/templates/src/bim-motion-study/1.0.0/Scenes.tsx",
+    "sha256": "32f68528052a28c54a674725423555649269270d0fa11a1b2a0f740b3e00c581"
+  },
+  {
+    "path": "packages/templates/src/bim-motion-study/1.0.0/template.json",
+    "sha256": "dae268da9daa74831af958aeab959e47f0f1ed6778fd72647f6a0738606a59b3"
+  },
+  {
+    "path": "packages/templates/src/bim-motion-study/1.0.0/Visuals.tsx",
+    "sha256": "7cdbf2ddfff560154f8e9663af03aebc852a212f2f58bd6d97b9e4f9d5118696"
+  },
+  {
+    "path": "packages/motion-components/src/legacy-v1/Motion.tsx",
+    "sha256": "b83fd2f7d620c306a8ea9d59119bf937290d10ca92b8057eb30f196cb0c108db"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/ArabicWordReveal.tsx",
+    "sha256": "0803cc962a40285cebc49fe07f19f1bef1e019ab0f343cbcde851ab31fcd2a76"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/ComparisonReveal.tsx",
+    "sha256": "14b3cef9d9e9b18901ee6b31a9feef43b7040eb23fa37cefab72d33d9e1787fe"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/FocusDot.tsx",
+    "sha256": "1fb46d8701c1fc53372f5e7cda762271aed6606a4b88389513b9fd339896f28c"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/LayeredScene.tsx",
+    "sha256": "98ce5947a54fefcfae62d7dd8a7979fb95a50d0420adb03e373cfad2ee5ba3a5"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/presets.ts",
+    "sha256": "8f7946986c26cf25ec401e2f4f2d000400ba88c169a577f664005ec32f6d223f"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/ProgressNavigator.tsx",
+    "sha256": "076411cb825934cc5c7b11b7167fac27553a07532316be17a09e93133f2ab25a"
+  },
+  {
+    "path": "packages/motion-components/src/motion-study-v1/tokens.ts",
+    "sha256": "5d2b59b68aa4dbd57ecc70e4de9808e347926e70a508e809479d634f7dacb626"
+  }
+]

@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95",
+  "revision": 1,
+  "createdAt": "2026-10-31T11:18:35.055Z",
+  "updatedAt": "2026-10-31T11:18:35.055Z",
+  "name": "Elmekawy BIM — V1",
+  "status": "draft",
+  "brief": {
+    "client": "Elmekawy BIM",
+    "objective": "Preserved original composition",
+    "description": "",
+    "category": "engineering-brand",
+    "audience": "",
+    "platforms": [
+      "instagram-reels"
+    ]
+  },
+  "template": {
+    "id": "bim-personal-intro",
+    "version": "1.0.0"
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 900,
+    "aspectRatio": "9:16"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "preset": {
+      "id": "elmekawy-bim",
+      "version": "1.0.0"
+    },
+    "displayName": "Elmekawy BIM",
+    "colors": {
+      "navy": "#003060",
+      "blue": "#055C9D",
+      "cyan": "#0E86D4",
+      "light": "#68BBE3",
+      "ink": "#030D1B",
+      "white": "#F3F8FC",
+      "muted": "#9BB4C9"
+    },
+    "fonts": {
+      "arabic": {
+        "family": "Cairo",
+        "assetId": "font-cairo",
+        "weightMin": 100,
+        "weightMax": 900
+      },
+      "latin": {
+        "family": "Inter",
+        "assetId": "font-inter",
+        "weightMin": 100,
+        "weightMax": 900
+      }
+    },
+    "logoAssetId": "portrait",
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "script": {
+    "text": "",
+    "notes": ""
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "bim-personal-intro/hook",
+      "name": "BIM مش مجرد موديل 3D",
+      "description": "",
+      "startFrame": 0,
+      "durationFrames": 120,
+      "outgoingExtensionFrames": 12,
+      "content": {
+        "مش مجرد": "مش مجرد"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "infrastructure",
+      "type": "bim-personal-intro/infrastructure",
+      "name": "المنشآت والبنية التحتية",
+      "description": "",
+      "startFrame": 120,
+      "durationFrames": 150,
+      "outgoingExtensionFrames": 12,
+      "content": {
+        "One coordinated vision.": "One coordinated vision."
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "services",
+      "type": "bim-personal-intro/services",
+      "name": "خدمات BIM",
+      "description": "",
+      "startFrame": 270,
+      "durationFrames": 180,
+      "outgoingExtensionFrames": 12,
+      "content": {
+        "Precision.": "Precision.",
+        "At every stage.": "At every stage."
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "training",
+      "type": "bim-personal-intro/training",
+      "name": "Revit & BIM Training",
+      "description": "",
+      "startFrame": 450,
+      "durationFrames": 180,
+      "outgoingExtensionFrames": 12,
+      "content": {
+        "Build skills.": "Build skills.",
+        "Work with confidence.": "Work with confidence."
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "brand",
+      "type": "bim-personal-intro/brand",
+      "name": "Mahmoud Elmekawy",
+      "description": "",
+      "startFrame": 630,
+      "durationFrames": 150,
+      "outgoingExtensionFrames": 12,
+      "content": {
+        "Mahmoud": "Mahmoud",
+        "Elmekawy.": "Elmekawy."
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "cta",
+      "type": "bim-personal-intro/cta",
+      "name": "Learn · Build · Coordinate",
+      "description": "",
+      "startFrame": 780,
+      "durationFrames": 120,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "Learn": "Learn",
+        "Build": "Build",
+        "Coordinate": "Coordinate"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "role": "font-cairo",
+      "mediaKey": "fonts/Cairo.ttf",
+      "kind": "font",
+      "displayName": "Cairo.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "originalFilename": "Cairo.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "role": "font-inter",
+      "mediaKey": "fonts/Inter.ttf",
+      "kind": "font",
+      "displayName": "Inter.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "originalFilename": "Inter.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "portrait",
+      "role": "portrait",
+      "mediaKey": "assets/logos/ME-Logo.png",
+      "kind": "logo",
+      "displayName": "ME-Logo.png",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "brands/elmekawy-bim/1.0.0/ME-Logo.png"
+      },
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238,
+      "mimeType": "image/png",
+      "originalFilename": "ME-Logo.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "infrastructure",
+      "role": "infrastructure",
+      "mediaKey": "assets/generated/bim-infrastructure.png",
+      "kind": "image",
+      "displayName": "bim-infrastructure.png",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/infrastructure.png"
+      },
+      "sha256": "15450128d51d710b9a954d72058f7569aa1a273fd21ccd3dba8aa620fa2688b7",
+      "byteSize": 4736636,
+      "mimeType": "image/png",
+      "originalFilename": "bim-infrastructure.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "structural",
+      "role": "structural",
+      "mediaKey": "assets/generated/structural-bim.png",
+      "kind": "image",
+      "displayName": "structural-bim.png",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/structural.png"
+      },
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "originalFilename": "structural-bim.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "technology",
+      "role": "technology",
+      "mediaKey": "assets/generated/bim-technology.png",
+      "kind": "image",
+      "displayName": "bim-technology.png",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/technology.png"
+      },
+      "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+      "byteSize": 4000537,
+      "mimeType": "image/png",
+      "originalFilename": "bim-technology.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "audio-track",
+      "role": "audio-track",
+      "mediaKey": "assets/audio/bim-reel.mp3",
+      "kind": "audio",
+      "displayName": "bim-reel.mp3",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/audio/audio-track.mp3"
+      },
+      "sha256": "7e9e8e997a10bd5ac818fa391ee4a281c559f3ddf6f6b06866e38e4e0c0287de",
+      "byteSize": 1204837,
+      "mimeType": "audio/mpeg",
+      "originalFilename": "bim-reel.mp3",
+      "license": {
+        "status": "unknown"
+      }
+    }
+  ],
+  "prompts": [],
+  "references": [],
+  "audio": {
+    "mode": "track",
+    "assetId": "audio-track",
+    "volume": 0.3
+  },
+  "output": {
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "mp4-h264-v1",
+    "fileNameLabel": "video"
+  },
+  "provenance": {
+    "kind": "legacy-import",
+    "source": "legacy-v1"
+  }
+}

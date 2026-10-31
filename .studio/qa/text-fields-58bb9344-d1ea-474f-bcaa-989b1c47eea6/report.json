@@ -1,0 +1,680 @@
+{
+  "createdAt": "2026-10-31T12:01:16.088Z",
+  "checks": [
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.eyebrow",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.arabicPrefix",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.bim",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.middleLine",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.model",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.threeD",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "hook.tagline",
+      "frame": 80,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.eyebrow",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.title1",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.title2",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.title3",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.caption1",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.caption2",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "infrastructure.fallback.infrastructure.caption",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.eyebrow",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.title1",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.title2",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.1.label",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.2.label",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.3.label",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.4.label",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.number.1",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.number.2",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.number.3",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.items.number.4",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.fallback.structural.caption",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "services.fallback.technology.caption",
+      "frame": 420,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.eyebrow",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.title1",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.title2",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.credential1",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.credential2",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.framework",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.learning.1",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.learning.2",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.learning.3",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.caption1",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "training.caption2",
+      "frame": 560,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "brand.eyebrow",
+      "frame": 710,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "brand.name1",
+      "frame": 710,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "brand.name2",
+      "frame": 710,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "brand.subtitle",
+      "frame": 710,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "brand.fallback.portrait.mark",
+      "frame": 710,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "brand.fallback.portrait.caption",
+      "frame": 710,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.eyebrow",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.word1",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.word2",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.word3",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.name",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.linkCaption",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "cta.website",
+      "frame": 870,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-personal-intro",
+      "field": "repeated-word-isolation",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "global.brandName",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "global.brandSuffix",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "global.studyLabel",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.sectionNumber",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.eyebrow",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.title1",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.title2",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.title3",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.tagline",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "hook.note",
+      "frame": 55,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.sectionNumber",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.eyebrow",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.title1",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.title2",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.overlay",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.nodes.1",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.nodes.2",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.nodes.3",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.nodes.4",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.center",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.note",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "network.fallback.caption",
+      "frame": 125,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.sectionNumber",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.eyebrow",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.title1",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.title2",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.afterLabel",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.beforeLabel",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.note",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.fallback.before",
+      "frame": 140,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "comparison.fallback.after",
+      "frame": 200,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.sectionNumber",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.eyebrow",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.title1",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.1.number",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.1.label",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.1.arabic",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.1.arrow",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.2.number",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.2.label",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.2.arabic",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.2.arrow",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.3.number",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.3.label",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.3.arabic",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.3.arrow",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.4.number",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.4.label",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.4.arabic",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.steps.4.arrow",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "workflow.note",
+      "frame": 295,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.sectionNumber",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.eyebrow",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.brandName",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.brandSuffix",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.title1",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.title2",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.contact",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.website",
+      "frame": 350,
+      "changedPixels": true
+    },
+    {
+      "template": "bim-motion-study",
+      "field": "cta.fallback.mark",
+      "frame": 350,
+      "changedPixels": true
+    }
+  ],
+  "passed": 112,
+  "total": 112,
+  "failures": []
+}

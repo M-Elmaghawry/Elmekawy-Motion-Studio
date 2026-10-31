@@ -1,0 +1,294 @@
+<div id="elmekawy-studio-concept" dir="rtl" lang="ar" aria-label="معاينة تصميم Elmekawy Motion Studio">
+  <style>
+    #elmekawy-studio-concept{--ems-bg:light-dark(#f3f6fa,#09111e);--ems-panel:light-dark(#ffffff,#101c2d);--ems-soft:light-dark(#eaf0f6,#15263b);--ems-text:light-dark(#152b43,#e8f0f9);--ems-muted:light-dark(#536980,#a2b5cc);--ems-line:light-dark(#dbe3ed,#25374f);--ems-blue:light-dark(#055c9d,#68bbe3);--ems-selected:light-dark(#deedf8,#17354e);--ems-action:light-dark(#003060,#b8dcf1);--ems-action-text:light-dark(#ffffff,#09273d);--ems-warn:light-dark(#835318,#e5bd83);--ems-radius:14px;--ems-preview:290px;background:var(--ems-bg);color:var(--ems-text);font:400 14px/1.65 "Segoe UI",Tahoma,Arial,sans-serif;border:1px solid var(--ems-line);border-radius:18px;overflow:clip;position:relative;isolation:isolate;color-scheme:inherit}
+    #elmekawy-studio-concept *{box-sizing:border-box}
+    #elmekawy-studio-concept [hidden]{display:none!important}
+    #elmekawy-studio-concept button,#elmekawy-studio-concept input,#elmekawy-studio-concept textarea,#elmekawy-studio-concept select{font:inherit}
+    #elmekawy-studio-concept button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ems-line);border-radius:9px;padding:8px 13px;background:var(--ems-panel);color:var(--ems-text);min-height:38px}
+    #elmekawy-studio-concept button:hover{background:var(--ems-soft)}
+    #elmekawy-studio-concept button.ems-primary{background:var(--ems-action);color:var(--ems-action-text);border-color:var(--ems-action)}
+    #elmekawy-studio-concept button:disabled{opacity:.55;cursor:not-allowed}
+    #elmekawy-studio-concept button svg{width:16px;height:16px;flex-shrink:0}
+    #elmekawy-studio-concept input:not([type=range]):not([type=color]),#elmekawy-studio-concept textarea,#elmekawy-studio-concept select{width:100%;min-width:0;background:var(--ems-bg);border:1px solid var(--ems-line);border-radius:9px;padding:9px 11px;color:var(--ems-text)}
+    #elmekawy-studio-concept input[type=range]{width:100%;accent-color:var(--ems-blue);min-width:0}
+    #elmekawy-studio-concept input[type=color]{width:42px;height:35px;background:var(--ems-panel);border:1px solid var(--ems-line);border-radius:6px;padding:3px}
+    #elmekawy-studio-concept textarea{resize:vertical;min-height:96px}
+    #elmekawy-studio-concept p,#elmekawy-studio-concept h2,#elmekawy-studio-concept h3{margin:0}
+    #elmekawy-studio-concept h2{font-size:22px;font-weight:500;line-height:1.5}
+    #elmekawy-studio-concept h3{font-size:15px;font-weight:500}
+    #elmekawy-studio-concept small{font-size:12px}
+    #elmekawy-studio-concept b,#elmekawy-studio-concept strong{font-weight:500}
+    #elmekawy-studio-concept .ems-muted{color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-ltr{direction:ltr;unicode-bidi:isolate}
+    #elmekawy-studio-concept .ems-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    #elmekawy-studio-concept .ems-between{justify-content:space-between}
+    #elmekawy-studio-concept .ems-header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--ems-panel);padding:19px 22px 18px 110px;border-bottom:1px solid var(--ems-line)}
+    #elmekawy-studio-concept .ems-identity{display:flex;align-items:center;gap:12px}
+    #elmekawy-studio-concept .ems-mark{width:39px;height:39px;display:grid;place-items:center;background:var(--ems-action);color:var(--ems-action-text);border-radius:10px;font-size:24px;font-weight:500}
+    #elmekawy-studio-concept .ems-wordmark{font-size:15px;font-weight:500;letter-spacing:1.6px;direction:ltr}
+    #elmekawy-studio-concept .ems-subbrand{font-size:11px;letter-spacing:3px;color:var(--ems-muted);direction:ltr}
+    #elmekawy-studio-concept .ems-pill{display:inline-flex;align-items:center;gap:7px;border-radius:7px;padding:4px 8px;background:var(--ems-soft);color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-shell{display:grid;grid-template-columns:166px minmax(0,1fr);min-height:605px}
+    #elmekawy-studio-concept .ems-sidebar{background:var(--ems-panel);border-left:1px solid var(--ems-line);padding:23px 12px;display:flex;flex-direction:column;gap:7px}
+    #elmekawy-studio-concept .ems-sidebar>small{padding:0 10px 8px}
+    #elmekawy-studio-concept .ems-sidebar button{background:transparent;justify-content:flex-start;border-color:transparent;text-align:right}
+    #elmekawy-studio-concept .ems-sidebar button[aria-pressed=true]{background:var(--ems-selected);color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-sidebottom{margin-top:auto;padding:24px 10px 0;color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-sidebottom span{display:block}
+    #elmekawy-studio-concept .ems-main{padding:24px;min-width:0}
+    #elmekawy-studio-concept .ems-pagehead{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    #elmekawy-studio-concept .ems-pagehead p{margin-top:4px;color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-tabs{display:flex;gap:18px;border-bottom:1px solid var(--ems-line);margin-bottom:20px;flex-wrap:wrap}
+    #elmekawy-studio-concept .ems-tabs button{border:0;border-radius:0;background:transparent;padding:6px 0 11px;color:var(--ems-muted);border-bottom:2px solid transparent}
+    #elmekawy-studio-concept .ems-tabs button[aria-selected=true]{color:var(--ems-blue);border-bottom-color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-editorgrid{display:grid;grid-template-columns:minmax(0,1fr) var(--ems-preview);gap:22px;align-items:start}
+    #elmekawy-studio-concept .ems-sectionhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}
+    #elmekawy-studio-concept .ems-scenes{display:grid;gap:8px}
+    #elmekawy-studio-concept .ems-scenes button{width:100%;text-align:right;justify-content:flex-start;padding:12px;background:var(--ems-panel);border-radius:var(--ems-radius)}
+    #elmekawy-studio-concept .ems-scenes button[aria-pressed=true]{border-color:var(--ems-blue);background:var(--ems-selected)}
+    #elmekawy-studio-concept .ems-num{display:grid;place-items:center;border:1px solid var(--ems-line);background:var(--ems-bg);width:32px;height:36px;border-radius:7px;color:var(--ems-muted);flex-shrink:0;font-variant-numeric:tabular-nums}
+    #elmekawy-studio-concept .ems-scenes button[aria-pressed=true] .ems-num{color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-scenecontent{min-width:0;flex:1}
+    #elmekawy-studio-concept .ems-scenecontent small{display:block;color:var(--ems-muted);direction:ltr;text-align:right;font-variant-numeric:tabular-nums}
+    #elmekawy-studio-concept .ems-field{display:grid;gap:6px;margin-top:14px;min-width:0}
+    #elmekawy-studio-concept .ems-field>span{font-size:12px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-note{display:flex;gap:8px;align-items:flex-start;background:var(--ems-soft);border-radius:9px;padding:11px;margin-top:14px;font-size:12px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-note svg{flex-shrink:0;width:15px;height:15px;margin-top:3px}
+    #elmekawy-studio-concept .ems-viewer{background:var(--ems-panel);border:1px solid var(--ems-line);border-radius:var(--ems-radius);padding:14px}
+    #elmekawy-studio-concept .ems-stageholder{display:grid;place-items:center;background:var(--ems-bg);border-radius:8px;padding:14px;margin-top:12px}
+    #elmekawy-studio-concept .ems-stage{position:relative;width:min(100%,216px);aspect-ratio:9/16;overflow:hidden;background:radial-gradient(ellipse at 85% 45%,#003060 0%,#030d1b 72%);color:#f3f8fc;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;padding:26px 20px 28px;direction:ltr}
+    #elmekawy-studio-concept .ems-stage::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#68bbe312 1px,transparent 1px),linear-gradient(90deg,#68bbe312 1px,transparent 1px);background-size:27px 27px;mask-image:linear-gradient(transparent,#000,transparent);pointer-events:none}
+    #elmekawy-studio-concept .ems-stagebrand{font-size:9px;letter-spacing:1.4px;display:flex;justify-content:space-between;gap:8px;position:relative;color:#b7cee3}
+    #elmekawy-studio-concept .ems-stagemain{position:relative;direction:rtl;text-align:right;z-index:1}
+    #elmekawy-studio-concept .ems-stagekicker{font-size:9px;letter-spacing:1.2px;direction:ltr;color:#68bbe3;margin-bottom:20px}
+    #elmekawy-studio-concept .ems-stageline{font-size:28px;font-weight:500;line-height:1.6}
+    #elmekawy-studio-concept .ems-stagebim{font-size:54px;line-height:1.5;color:#68bbe3;font-weight:500;direction:ltr;text-align:right;letter-spacing:-1px}
+    #elmekawy-studio-concept .ems-stagefooter{position:relative;font-size:9px;color:#9bb4c9;text-align:right;direction:rtl}
+    #elmekawy-studio-concept .ems-stageprogress{height:2px;background:#68bbe325;margin-top:14px}
+    #elmekawy-studio-concept .ems-stageprogress span{display:block;height:2px;background:#68bbe3;width:0}
+    #elmekawy-studio-concept .ems-dot{position:absolute;left:82%;top:28%;width:5px;height:5px;background:#68bbe3;border-radius:50%;box-shadow:0 0 15px #68bbe3;z-index:2}
+    #elmekawy-studio-concept .ems-safe{position:absolute;inset:11.5% 16.7% 18.75% 9.25%;border:1px dashed #b8dcf178;pointer-events:none;z-index:3}
+    #elmekawy-studio-concept .ems-schematic{height:112px;position:relative;margin:12px 0 16px;display:grid;place-items:center}
+    #elmekawy-studio-concept .ems-plane{position:absolute;width:98px;height:60px;border:1px solid #68bbe3;transform:rotate(-26deg) skew(24deg);background:#00306055}
+    #elmekawy-studio-concept .ems-plane:nth-child(1){translate:0 -24px}
+    #elmekawy-studio-concept .ems-plane:nth-child(3){translate:0 24px}
+    #elmekawy-studio-concept .ems-workflow{display:grid;gap:14px;font-size:14px;color:#b8dcf1;direction:ltr;text-align:left}
+    #elmekawy-studio-concept .ems-playerbar{display:flex;align-items:center;gap:9px;margin-top:12px;direction:ltr}
+    #elmekawy-studio-concept .ems-playerbar button{padding:6px 9px;min-height:32px}
+    #elmekawy-studio-concept .ems-time{font-size:11px;white-space:nowrap;color:var(--ems-muted);font-variant-numeric:tabular-nums}
+    #elmekawy-studio-concept .ems-viewerfoot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:11px;font-size:11px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-viewerfoot label{display:flex;align-items:center;gap:5px}
+    #elmekawy-studio-concept .ems-projectgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    #elmekawy-studio-concept .ems-project{border:1px solid var(--ems-line);background:var(--ems-panel);border-radius:var(--ems-radius);overflow:hidden;min-width:0}
+    #elmekawy-studio-concept .ems-thumb{height:180px;background:radial-gradient(at 50% 100%,#003060,#030d1b);color:#f3f8fc;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    #elmekawy-studio-concept .ems-thumbtext{font-size:23px;font-weight:500;line-height:1.7;position:relative;z-index:1}
+    #elmekawy-studio-concept .ems-thumbtext span{color:#68bbe3}
+    #elmekawy-studio-concept .ems-thumbart{width:92px;height:90px;position:relative;flex-shrink:0;opacity:.8;display:grid;place-items:center}
+    #elmekawy-studio-concept .ems-thumbart .ems-plane{width:65px;height:44px}
+    #elmekawy-studio-concept .ems-projectbody{padding:18px;display:grid;gap:12px}
+    #elmekawy-studio-concept .ems-projectmeta{display:flex;flex-wrap:wrap;gap:10px;color:var(--ems-muted);font-size:12px;direction:ltr;justify-content:flex-end}
+    #elmekawy-studio-concept .ems-asset{padding:13px 0;border-bottom:1px solid var(--ems-line);display:flex;align-items:center;gap:10px}
+    #elmekawy-studio-concept .ems-fileicon{display:grid;place-items:center;width:36px;height:40px;border-radius:7px;background:var(--ems-soft);color:var(--ems-blue);flex-shrink:0}
+    #elmekawy-studio-concept .ems-fileicon svg{width:18px;height:18px}
+    #elmekawy-studio-concept .ems-assettext{min-width:0;overflow-wrap:anywhere;flex:1}
+    #elmekawy-studio-concept .ems-assettext small{display:block;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-warning{color:var(--ems-warn)}
+    #elmekawy-studio-concept .ems-prompt{direction:ltr;text-align:left;min-height:186px;font-size:13px}
+    #elmekawy-studio-concept .ems-steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+    #elmekawy-studio-concept .ems-steps span{background:var(--ems-soft);padding:5px 9px;border-radius:7px;color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-steps span[data-active=true]{background:var(--ems-selected);color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+    #elmekawy-studio-concept .ems-formwide{grid-column:1/-1}
+    #elmekawy-studio-concept .ems-formactions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:18px;border-top:1px solid var(--ems-line)}
+    #elmekawy-studio-concept .ems-choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+    #elmekawy-studio-concept .ems-choice{display:block;text-align:right;border:1px solid var(--ems-line);border-radius:var(--ems-radius);padding:18px;background:var(--ems-panel)}
+    #elmekawy-studio-concept .ems-choice:has(input:checked){border-color:var(--ems-blue);background:var(--ems-selected)}
+    #elmekawy-studio-concept .ems-choice strong,#elmekawy-studio-concept .ems-choice small{display:block;margin-top:8px}
+    #elmekawy-studio-concept .ems-choice input{accent-color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;background:var(--ems-panel);padding:18px;border-radius:var(--ems-radius);border:1px solid var(--ems-line)}
+    #elmekawy-studio-concept .ems-summary small{display:block;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-colors{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    #elmekawy-studio-concept .ems-colors label{display:grid;justify-items:center;gap:5px;font-size:11px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-footer{border-top:1px solid var(--ems-line);padding:10px 22px;color:var(--ems-muted);font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--ems-panel)}
+    #elmekawy-studio-concept .ems-notice{margin-top:16px;padding:10px 13px;border-radius:9px;background:var(--ems-selected);color:var(--ems-blue);font-size:12px}
+    #elmekawy-studio-concept .ems-exportfacts{display:grid;gap:0;margin:14px 0}
+    #elmekawy-studio-concept .ems-exportfacts>div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--ems-line);padding:10px 0}
+    @media(max-width:850px){#elmekawy-studio-concept .ems-shell{grid-template-columns:132px minmax(0,1fr)}#elmekawy-studio-concept .ems-main{padding:18px}#elmekawy-studio-concept .ems-editorgrid{grid-template-columns:minmax(0,1fr) 240px;gap:14px}#elmekawy-studio-concept .ems-sidebar{padding-inline:7px}#elmekawy-studio-concept .ems-sidebar button{padding-inline:8px}#elmekawy-studio-concept .ems-thumbart{display:none}}
+    @media(max-width:700px){#elmekawy-studio-concept .ems-shell{display:block;min-height:0}#elmekawy-studio-concept .ems-sidebar{flex-direction:row;flex-wrap:wrap;padding:9px 12px;border-left:0;border-bottom:1px solid var(--ems-line)}#elmekawy-studio-concept .ems-sidebar>small,#elmekawy-studio-concept .ems-sidebottom{display:none}#elmekawy-studio-concept .ems-sidebar button{font-size:12px;min-height:36px}#elmekawy-studio-concept .ems-editorgrid{grid-template-columns:minmax(0,1fr) 250px}#elmekawy-studio-concept .ems-header{padding-right:18px;gap:12px}#elmekawy-studio-concept .ems-header>.ems-pill{display:none}}
+    @media(max-width:550px){#elmekawy-studio-concept .ems-editorgrid{grid-template-columns:1fr}#elmekawy-studio-concept .ems-viewer{grid-row:1}#elmekawy-studio-concept .ems-stage{width:195px}#elmekawy-studio-concept .ems-projectgrid,#elmekawy-studio-concept .ems-formgrid,#elmekawy-studio-concept .ems-choicegrid{grid-template-columns:1fr}#elmekawy-studio-concept .ems-pagehead{align-items:flex-start}#elmekawy-studio-concept .ems-main{padding:16px}#elmekawy-studio-concept .ems-tabs{gap:16px}#elmekawy-studio-concept .ems-header{padding:18px 16px 18px 96px}#elmekawy-studio-concept .ems-wordmark{font-size:12px;letter-spacing:1px}#elmekawy-studio-concept .ems-subbrand{font-size:9px;letter-spacing:2px}#elmekawy-studio-concept .ems-mark{width:31px;height:34px;font-size:20px}#elmekawy-studio-concept .ems-summary{grid-template-columns:1fr}#elmekawy-studio-concept .ems-formwide{grid-column:auto}}
+    @media(pointer:coarse){#elmekawy-studio-concept button{min-height:44px}#elmekawy-studio-concept input:not([type=range]):not([type=color]),#elmekawy-studio-concept textarea,#elmekawy-studio-concept select{font-size:16px}}
+  </style>
+  <header class="ems-header">
+    <div class="ems-identity"><div class="ems-mark" aria-hidden="true">M</div><div><div class="ems-wordmark">ELMEKAWY</div><div class="ems-subbrand">MOTION STUDIO</div></div></div>
+    <span class="ems-pill">نموذج تفاعلي للتصميم</span>
+  </header>
+  <div class="ems-shell">
+    <nav class="ems-sidebar" aria-label="التنقل الرئيسي">
+      <small class="ems-muted">مساحة العمل</small>
+      <button type="button" class="cursor-interaction" data-screen="projects" aria-pressed="false"><i data-lucide="folder-open" aria-hidden="true"></i>المشاريع</button>
+      <button type="button" class="cursor-interaction" data-screen="editor" aria-pressed="true"><i data-lucide="clapperboard" aria-hidden="true"></i>محرّر الفيديو</button>
+      <button type="button" class="cursor-interaction" data-screen="create" aria-pressed="false"><i data-lucide="plus" aria-hidden="true"></i>مشروع جديد</button>
+      <div class="ems-sidebottom"><span class="ems-ltr">LOCAL FIRST</span><span>من الفكرة إلى الفيديو.</span><span>على جهازك.</span></div>
+    </nav>
+    <main class="ems-main">
+      <section data-page="editor">
+        <div class="ems-pagehead"><div><h2 id="ems-project-title">Elmekawy BIM — V2</h2><p><bdi id="ems-template-label">bim-motion-study @ 1.0.0</bdi> · <span id="ems-save-state">بيانات توضيحية</span></p></div><div class="ems-row"><button type="button" class="cursor-interaction" id="ems-save"><i data-lucide="save" aria-hidden="true"></i>تجربة الحفظ</button><button type="button" class="ems-primary cursor-interaction" id="ems-export"><i data-lucide="film" aria-hidden="true"></i>التصدير</button></div></div>
+        <div class="ems-tabs" role="tablist" aria-label="أقسام المشروع">
+          <button type="button" role="tab" id="ems-tab-scenes" aria-selected="true" aria-controls="ems-panel-scenes" data-editor-tab="scenes" class="cursor-interaction">المشاهد</button>
+          <button type="button" role="tab" id="ems-tab-assets" aria-selected="false" aria-controls="ems-panel-assets" data-editor-tab="assets" class="cursor-interaction">الوسائط</button>
+          <button type="button" role="tab" id="ems-tab-prompts" aria-selected="false" aria-controls="ems-panel-prompts" data-editor-tab="prompts" class="cursor-interaction">الـ Prompts</button>
+          <button type="button" role="tab" id="ems-tab-brand" aria-selected="false" aria-controls="ems-panel-brand" data-editor-tab="brand" class="cursor-interaction">الهوية</button>
+          <button type="button" role="tab" id="ems-tab-output" aria-selected="false" aria-controls="ems-panel-output" data-editor-tab="output" class="cursor-interaction">الإخراج</button>
+        </div>
+        <div class="ems-editorgrid">
+          <div>
+            <section id="ems-panel-scenes" role="tabpanel" aria-labelledby="ems-tab-scenes">
+              <div class="ems-sectionhead"><h3>قصة من خمسة مشاهد</h3><small id="ems-scene-count" class="ems-muted">12 ثانية</small></div>
+              <div id="ems-scenes" class="ems-scenes"></div>
+              <label class="ems-field"><span>النص الرئيسي · تجربة التعديل</span><input id="ems-headline" value="الموديل" maxlength="40"></label>
+              <div class="ems-note"><i data-lucide="lock-keyhole" aria-hidden="true"></i><span>توقيت القالب ثابت. اختر مشهدًا لاستكشاف المعاينة.</span></div>
+            </section>
+            <section id="ems-panel-assets" role="tabpanel" aria-labelledby="ems-tab-assets" hidden>
+              <div class="ems-sectionhead"><h3>وسائط المشروع</h3><small class="ems-muted">ملفات محلية</small></div>
+              <div class="ems-asset"><span class="ems-fileicon"><i data-lucide="image" aria-hidden="true"></i></span><div class="ems-assettext"><bdi>structural-bim.png</bdi><small>الصورة الإنشائية · موجودة في الأصل</small></div></div>
+              <div class="ems-asset"><span class="ems-fileicon"><i data-lucide="stamp" aria-hidden="true"></i></span><div class="ems-assettext"><bdi>ME-Logo.png</bdi><small>شعار Elmekawy BIM · أصل مشترك</small></div></div>
+              <div class="ems-asset" data-project-media="v2"><span class="ems-fileicon"><i data-lucide="images" aria-hidden="true"></i></span><div class="ems-assettext">صور قبل / بعد<small class="ems-warning">صورتان غير متوفرتين في V2</small></div></div>
+              <div class="ems-asset" data-project-media="v1" hidden><span class="ems-fileicon"><i data-lucide="images" aria-hidden="true"></i></span><div class="ems-assettext">البنية التحتية والخلفية التقنية<small>صورتان مستخدمتان في مشاهد V1</small></div></div>
+              <div class="ems-asset" data-project-media="v1" hidden><span class="ems-fileicon"><i data-lucide="music" aria-hidden="true"></i></span><div class="ems-assettext"><bdi>bim-reel.mp3</bdi><small>الصوت الأصلي · حجم الصوت 0.3</small></div></div>
+              <label class="ems-field"><span>تجربة اختيار صورة · داخل المعاينة فقط</span><input id="ems-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
+              <div id="ems-file-note" class="ems-note">اختيار الملف هنا تجربة داخل النموذج فقط.</div>
+            </section>
+            <section id="ems-panel-prompts" role="tabpanel" aria-labelledby="ems-tab-prompts" hidden>
+              <div class="ems-sectionhead"><h3>Coordination — Before</h3><span class="ems-pill">توليد يدوي</span></div>
+              <label class="ems-field"><span>نص قابل للتحرير والنسخ</span><textarea id="ems-prompt" class="ems-prompt" rows="9">Create an original synthetic BIM coordination concept illustration. Orthographic isometric view of a structural bay with two service routes visibly crossing. Dark navy #003060, cyan #0E86D4, restrained lighting. Landscape 6:5. No text, logos, watermark, people or real project identifiers.</textarea></label>
+              <div class="ems-row" style="margin-top:12px"><button type="button" id="ems-copy" class="ems-primary cursor-interaction"><i data-lucide="copy" aria-hidden="true"></i>نسخ الـ Prompt</button><button type="button" id="ems-to-upload" class="cursor-interaction">اختيار صورة</button></div>
+              <div class="ems-note"><i data-lucide="clipboard" aria-hidden="true"></i><span>نسخ النص ← توليد وتنزيل يدوي ← إضافة الصورة إلى المشروع.</span></div>
+            </section>
+            <section id="ems-panel-brand" role="tabpanel" aria-labelledby="ems-tab-brand" hidden>
+              <h3>Elmekawy BIM</h3><p class="ems-muted">ألوان الهوية والخطوط المحلية</p>
+              <div class="ems-colors"><label><input type="color" value="#003060" id="ems-brand-navy" aria-label="اللون الكحلي">Navy</label><label><input type="color" value="#055c9d" id="ems-brand-blue" aria-label="اللون الأزرق">Blue</label><label><input type="color" value="#0e86d4" id="ems-brand-cyan" aria-label="اللون السماوي">Cyan</label><label><input type="color" value="#68bbe3" id="ems-brand-light" aria-label="اللون الفاتح">Light</label></div>
+              <div class="ems-summary"><div><small>العربي</small><span>Cairo · 100–900</span></div><div><small>الإنجليزي</small><span>Inter · 100–900</span></div></div>
+              <div class="ems-note">تغيير اللون في هذه المعاينة تجربة تصميم محلية.</div>
+            </section>
+            <section id="ems-panel-output" role="tabpanel" aria-labelledby="ems-tab-output" hidden>
+              <h3>إعدادات الإخراج</h3>
+              <div class="ems-exportfacts"><div><span class="ems-muted">الدقة</span><bdi>1080 × 1920</bdi></div><div><span class="ems-muted">الإطارات</span><bdi>30 FPS</bdi></div><div><span class="ems-muted">المدة</span><span id="ems-export-duration">12 ثانية · 360 إطار</span></div><div><span class="ems-muted">الصيغة</span><bdi>MP4 / H.264</bdi></div><div><span class="ems-muted">الصوت</span><span id="ems-audio-mode">V2 صامت</span></div></div>
+              <button type="button" class="ems-primary cursor-interaction" id="ems-simulate-export"><i data-lucide="film" aria-hidden="true"></i>محاكاة طلب التصدير</button>
+              <div class="ems-note">هذا نموذج للتصميم؛ إنشاء MP4 متاح بعد تنفيذ التطبيق.</div>
+            </section>
+          </div>
+          <section class="ems-viewer" aria-label="معاينة تخطيطية للفيديو">
+            <div class="ems-row ems-between"><h3>المعاينة</h3><span class="ems-pill">تخطيطية</span></div>
+            <div class="ems-stageholder"><div class="ems-stage" id="ems-stage"><div class="ems-stagebrand"><span>ELMEKAWY BIM</span><span>02</span></div><div class="ems-dot" id="ems-focus-dot"></div><div class="ems-safe" id="ems-safe" hidden></div><div class="ems-stagemain" id="ems-stage-content"></div><div class="ems-stagefooter"><span id="ems-stage-note">القيمة في الترابط، مش في الشكل بس.</span><div class="ems-stageprogress"><span id="ems-stage-progress"></span></div></div></div></div>
+            <div class="ems-playerbar"><button type="button" id="ems-play" class="cursor-interaction" aria-label="تشغيل المعاينة التخطيطية"><i data-lucide="play" aria-hidden="true"></i></button><input type="range" id="ems-seek" min="0" max="359" value="0" aria-label="إطار المعاينة"><span class="ems-time" id="ems-time">00:00 / 00:12</span></div>
+            <div class="ems-viewerfoot"><label><input type="checkbox" id="ems-safe-toggle">المنطقة الآمنة</label><bdi id="ems-frame">F 000 / 359</bdi></div>
+          </section>
+        </div>
+      </section>
+      <section data-page="projects" hidden>
+        <div class="ems-pagehead"><div><h2>مشاريعك، في مكان واحد.</h2><p>مشروعا V1 وV2 كما سيظهران بعد الاستيراد · بيانات توضيحية</p></div><button type="button" data-screen="create" class="ems-primary cursor-interaction"><i data-lucide="plus" aria-hidden="true"></i>مشروع جديد</button></div>
+        <div class="ems-projectgrid" id="ems-projects">
+          <article class="ems-project"><div class="ems-thumb"><div class="ems-thumbtext">مش مجرد<br><span>موديل 3D</span></div><div class="ems-thumbart" aria-hidden="true"><span class="ems-plane"></span><span class="ems-plane"></span><span class="ems-plane"></span></div></div><div class="ems-projectbody"><h3>Elmekawy BIM — V1</h3><div class="ems-projectmeta"><span>30s</span><span>1080 × 1920</span><span>30 FPS</span></div><small class="ems-muted">ستة مشاهد · يتضمن الصوت الأصلي</small><div class="ems-row ems-between"><span class="ems-pill">Template 1.0.0</span><button type="button" data-open-project="v1" class="cursor-interaction">فتح المشروع<i data-lucide="arrow-up-left" aria-hidden="true"></i></button></div></div></article>
+          <article class="ems-project"><div class="ems-thumb"><div class="ems-thumbtext">نربط التفاصيل<br><span>ونبني الصورة الكاملة</span></div></div><div class="ems-projectbody"><h3>Elmekawy BIM — V2</h3><div class="ems-projectmeta"><span>12s</span><span>1080 × 1920</span><span>30 FPS</span></div><small class="ems-warning">خمس مشاهد · بدائل لصور قبل / بعد</small><div class="ems-row ems-between"><span class="ems-pill">Template 1.0.0</span><button type="button" data-open-project="v2" class="cursor-interaction">فتح المشروع<i data-lucide="arrow-up-left" aria-hidden="true"></i></button></div></div></article>
+        </div>
+      </section>
+      <section data-page="create" hidden>
+        <div class="ems-pagehead"><div><h2>مشروع جديد</h2><p>جرّب بيانات المشروع واختيار القالب.</p></div><span class="ems-pill">تجربة بدون حفظ ملفات</span></div>
+        <div class="ems-steps" id="ems-steps"><span data-step-label="0" data-active="true">1 · الفكرة</span><span data-step-label="1">2 · القالب</span><span data-step-label="2">3 · المراجعة</span></div>
+        <section data-wizard-step="0"><div class="ems-formgrid"><label class="ems-field"><span>اسم المشروع</span><input id="ems-new-name" placeholder="مثال: مقدمة خدمات BIM" maxlength="120"></label><label class="ems-field"><span>العميل أو العلامة</span><input id="ems-new-client" value="Elmekawy BIM"></label><label class="ems-field ems-formwide"><span>الوصف والهدف</span><textarea id="ems-new-objective" placeholder="ما الرسالة التي تريد إيصالها؟"></textarea></label><label class="ems-field"><span>لغة القالب</span><input id="ems-new-language" value="العربية مع مصطلحات إنجليزية" readonly></label><label class="ems-field"><span>اتجاه المحتوى</span><input value="RTL مع عزل المصطلحات الإنجليزية" readonly></label></div></section>
+        <section data-wizard-step="1" hidden><h3>ابدأ بقالب محفوظ الإصدار</h3><div class="ems-choicegrid"><label class="ems-choice cursor-interaction"><input type="radio" name="ems-template" value="v2" checked><strong>Motion study · V2</strong><small class="ems-muted">12 ثانية · 5 مشاهد · صامت</small><small class="ems-ltr">bim-motion-study @ 1.0.0</small></label><label class="ems-choice cursor-interaction"><input type="radio" name="ems-template" value="v1"><strong>Personal intro · V1</strong><small class="ems-muted">30 ثانية · 6 مشاهد · صوت أصلي</small><small class="ems-ltr">bim-personal-intro @ 1.0.0</small></label></div><div class="ems-summary"><div><small>المقاس المثبّت بالقالب</small><bdi>1080 × 1920 · 9:16</bdi></div><div><small>معدل الإطارات</small><bdi>30 FPS</bdi></div></div><div class="ems-note"><i data-lucide="lock-keyhole" aria-hidden="true"></i><span>المقاس والتوقيت ثابتان للحفاظ على السلوك البصري الأصلي.</span></div></section>
+        <section data-wizard-step="2" hidden><h3>مراجعة المشروع</h3><div id="ems-review" class="ems-summary"></div><div class="ems-note">يمكنك إضافة الوسائط والنصوص والـ Prompts من محرّر المشروع.</div></section>
+        <div class="ems-formactions"><button type="button" class="cursor-interaction" id="ems-prev" disabled>السابق</button><button type="button" class="ems-primary cursor-interaction" id="ems-next">التالي<i data-lucide="arrow-left" aria-hidden="true"></i></button></div>
+      </section>
+      <div id="ems-notice" class="ems-notice" role="status" aria-live="polite" hidden></div>
+    </main>
+  </div>
+  <footer class="ems-footer"><span>معاينة التصميم · التفاعل داخل النموذج فقط</span><span class="ems-ltr">PROJECTS / TEMPLATES / LOCAL RENDER</span></footer>
+</div>
+<script>
+(() => {
+  const root = document.getElementById('elmekawy-studio-concept');
+  const q = selector => root.querySelector(selector);
+  const qa = selector => [...root.querySelectorAll(selector)];
+  const projectData = {
+    v2:{name:'Elmekawy BIM — V2',template:'bim-motion-study @ 1.0.0',frames:360,scenes:[
+      {name:'الموديل مش هو الـ BIM',from:0,duration:60,kicker:'BEYOND THE MODEL',lines:['الموديل','مش هو الـ','BIM'],note:'القيمة في الترابط، مش في الشكل بس.'},
+      {name:'شبكة تنسيق مترابطة',from:60,duration:75,kicker:'A CONNECTED SYSTEM',lines:['من موديل','لشبكة تنسيق'],art:true,note:'تصوّر توضيحي · ربط التخصصات والمعلومات'},
+      {name:'قبل / بعد · مثال توضيحي',from:135,duration:90,kicker:'MAKE THE CONFLICT VISIBLE',lines:['نشوف التعارض','ونراجع المسار'],art:true,note:'SCHEMATIC PLACEHOLDER · مثال توضيحي فقط'},
+      {name:'من النمذجة إلى التسليم',from:225,duration:75,kicker:'ONE CONTINUOUS WORKFLOW',lines:['كل خطوة متصلة'],workflow:true,note:'من الفكرة إلى التسليم.'},
+      {name:'Elmekawy BIM · تواصل',from:300,duration:60,kicker:'LET’S CONNECT',lines:['نربط التفاصيل','ونبني الصورة الكاملة'],note:'linkedin.com/in/mahmoud-elmekawy'}]},
+    v1:{name:'Elmekawy BIM — V1',template:'bim-personal-intro @ 1.0.0',frames:900,scenes:[
+      {name:'BIM مش مجرد موديل 3D',from:0,duration:120,kicker:'BEYOND THE MODEL / 01',lines:['الـ BIM','مش مجرد','موديل 3D'],note:'THINK SYSTEMS. BUILD BETTER.'},
+      {name:'المنشآت والبنية التحتية',from:120,duration:150,kicker:'CONNECTED BY DESIGN / 02',lines:['STRUCTURAL &','INFRASTRUCTURE','BIM'],art:true,note:'One coordinated vision.'},
+      {name:'خدمات BIM',from:270,duration:180,kicker:'FROM MODEL TO DELIVERY / 03',lines:['Precision.','At every stage.'],workflow:true,note:'Modeling · Coordination · QTO · Automation'},
+      {name:'Revit & BIM Training',from:450,duration:180,kicker:'KNOWLEDGE INTO PRACTICE / 04',lines:['REVIT &','BIM TRAINING'],art:true,note:'Autodesk Certified Instructor'},
+      {name:'Mahmoud Elmekawy',from:630,duration:150,kicker:'ENGINEER. EDUCATOR. / 05',lines:['Mahmoud','Elmekawy.'],note:'Senior BIM Engineer | BIM Coordinator'},
+      {name:'Learn · Build · Coordinate',from:780,duration:120,kicker:'YOUR NEXT CHAPTER / 06',lines:['Learn.','Build.','Coordinate.'],note:'linkedin.com/in/mahmoud-elmekawy/'}]}
+  };
+  const state={screen:'editor',tab:'scenes',project:'v2',scene:0,frame:0,headline:'الموديل',step:0,playing:false,safe:false,newName:'',client:'Elmekawy BIM',objective:''};
+  let raf=null,playStart=0,playBase=0,customName='';
+  const icons = () => {if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:16,height:16}});};
+  const persist = () => {
+    if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{screen:state.screen,tab:state.tab,template:state.project,scene:state.scene},privateContent:{frame:state.frame,safe:state.safe,headline:state.headline,newName:state.newName,client:state.client,objective:state.objective,step:state.step}}).catch(()=>{});
+  };
+  const notice = text => {q('#ems-notice').textContent=text;q('#ems-notice').hidden=false;};
+  const clearNotice=()=>{q('#ems-notice').hidden=true;};
+  function stop(){state.playing=false;if(raf!==null)cancelAnimationFrame(raf);raf=null;q('#ems-play').setAttribute('aria-label','تشغيل المعاينة التخطيطية');q('#ems-play').innerHTML='<i data-lucide="play" aria-hidden="true"></i>';icons();}
+  function setScreen(screen,remember=true){if(!['editor','projects','create'].includes(screen))return;stop();state.screen=screen;qa('[data-page]').forEach(el=>el.hidden=el.dataset.page!==screen);qa('.ems-sidebar [data-screen]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.screen===screen)));clearNotice();if(remember)persist();}
+  function setTab(tab,remember=true){if(!['scenes','assets','prompts','brand','output'].includes(tab))return;state.tab=tab;qa('[data-editor-tab]').forEach(el=>{const active=el.dataset.editorTab===tab;el.setAttribute('aria-selected',String(active));q('#ems-panel-'+el.dataset.editorTab).hidden=!active;});clearNotice();if(remember)persist();}
+  function renderScenes(){
+    const data=projectData[state.project];
+    q('#ems-project-title').textContent=customName||data.name;q('#ems-template-label').textContent=data.template;
+    q('#ems-scene-count').textContent=(data.frames/30)+' ثانية';
+    q('#ems-panel-scenes h3').textContent=state.project==='v2'?'قصة من خمسة مشاهد':'قصة من ستة مشاهد';
+    q('#ems-export-duration').textContent=(data.frames/30)+' ثانية · '+data.frames+' إطار';
+    q('#ems-audio-mode').textContent=state.project==='v2'?'V2 صامت':'V1 · مسار أصلي بحجم صوت 0.3';
+    qa('[data-project-media]').forEach(el=>el.hidden=el.dataset.projectMedia!==state.project);
+    q('#ems-seek').max=String(data.frames-1);q('#ems-scenes').replaceChildren();
+    data.scenes.forEach((scene,i)=>{const btn=document.createElement('button');btn.type='button';btn.className='cursor-interaction';btn.dataset.scene=String(i);btn.setAttribute('aria-pressed',String(i===state.scene));btn.innerHTML='<span class="ems-num">'+String(i+1).padStart(2,'0')+'</span><span class="ems-scenecontent"><span></span><small></small></span>';btn.querySelector('.ems-scenecontent>span').textContent=scene.name;btn.querySelector('small').textContent=(scene.from/30).toFixed(1)+'–'+((scene.from+scene.duration)/30).toFixed(1)+'s · '+scene.duration+'f';btn.addEventListener('click',()=>{stop();state.scene=i;state.frame=scene.from;state.headline=scene.lines[0];q('#ems-headline').value=state.headline;renderFrame();persist();});q('#ems-scenes').appendChild(btn);});
+  }
+  function renderFrame(){
+    const data=projectData[state.project];state.frame=Math.max(0,Math.min(data.frames-1,Math.round(state.frame)));
+    const nextIndex=data.scenes.findLastIndex(scene=>state.frame>=scene.from);
+    if(nextIndex!==state.scene){state.scene=nextIndex;state.headline=data.scenes[nextIndex].lines[0];q('#ems-headline').value=state.headline;}
+    const scene=data.scenes[state.scene];qa('[data-scene]').forEach(el=>el.setAttribute('aria-pressed',String(Number(el.dataset.scene)===state.scene)));
+    const stage=q('#ems-stage-content');stage.replaceChildren();const kicker=document.createElement('div');kicker.className='ems-stagekicker';kicker.textContent=scene.kicker;stage.appendChild(kicker);
+    scene.lines.forEach((line,i)=>{const el=document.createElement('div');el.className=line==='BIM'?'ems-stagebim':'ems-stageline';el.textContent=i===0?state.headline:line;if(/[A-Za-z]/.test(line)&&!/[\u0600-\u06ff]/.test(line)){el.style.direction='ltr';el.style.fontSize=line.length>13?'16px':'';}stage.appendChild(el);});
+    if(scene.art){const art=document.createElement('div');art.className='ems-schematic';art.setAttribute('aria-label','رسم تخطيطي توضيحي لمستويات نموذج BIM');art.innerHTML='<span class="ems-plane"></span><span class="ems-plane"></span><span class="ems-plane"></span>';stage.appendChild(art);}
+    if(scene.workflow){const workflow=document.createElement('div');workflow.className='ems-workflow';workflow.innerHTML='<span>01 &nbsp; MODEL</span><span>02 &nbsp; COORDINATE</span><span>03 &nbsp; CHECK</span><span>04 &nbsp; DELIVER</span>';workflow.style.marginTop='18px';stage.appendChild(workflow);}
+    q('#ems-stage-note').textContent=scene.note;q('#ems-stage-progress').style.width=state.frame/(data.frames-1)*100+'%';q('#ems-seek').value=String(state.frame);
+    q('#ems-time').textContent='00:'+String(Math.floor(state.frame/30)).padStart(2,'0')+' / 00:'+String(data.frames/30).padStart(2,'0');q('#ems-frame').textContent='F '+String(state.frame).padStart(3,'0')+' / '+(data.frames-1);
+    q('#ems-focus-dot').style.left=(82-state.scene*9)+'%';q('#ems-focus-dot').style.top=(28+state.scene*8)+'%';q('#ems-safe').hidden=!state.safe;q('#ems-safe-toggle').checked=state.safe;
+  }
+  function openProject(key,name=''){stop();state.project=key;customName=name;state.frame=0;state.scene=0;state.headline=projectData[key].scenes[0].lines[0];q('#ems-headline').value=state.headline;q('#ems-save-state').textContent='بيانات توضيحية';renderScenes();renderFrame();setTab('scenes',false);setScreen('editor');}
+  function renderWizard(){
+    qa('[data-wizard-step]').forEach(el=>el.hidden=Number(el.dataset.wizardStep)!==state.step);qa('[data-step-label]').forEach(el=>el.dataset.active=String(Number(el.dataset.stepLabel)===state.step));q('#ems-prev').disabled=state.step===0;q('#ems-next').textContent=state.step===2?'فتح المشروع التجريبي':'التالي';
+    if(state.step===2){const key=q('input[name="ems-template"]:checked').value;const values=[['المشروع',state.newName||'مشروع جديد'],['العميل',state.client||'—'],['القالب',projectData[key].template],['الإخراج',(projectData[key].frames/30)+' ثانية · 1080 × 1920 · 30 FPS']];q('#ems-review').replaceChildren();values.forEach(([label,value])=>{const box=document.createElement('div');const small=document.createElement('small');small.textContent=label;const text=document.createElement('span');text.textContent=value;box.append(small,text);q('#ems-review').appendChild(box);});}
+  }
+  qa('[data-screen]').forEach(el=>el.addEventListener('click',()=>setScreen(el.dataset.screen)));
+  qa('[data-editor-tab]').forEach(el=>el.addEventListener('click',()=>setTab(el.dataset.editorTab)));
+  qa('[data-open-project]').forEach(el=>el.addEventListener('click',()=>openProject(el.dataset.openProject)));
+  q('#ems-headline').addEventListener('input',event=>{state.headline=event.target.value;q('#ems-save-state').textContent='تعديل تجريبي غير محفوظ';renderFrame();persist();});
+  q('#ems-save').addEventListener('click',()=>{q('#ems-save-state').textContent='تم تحديث النموذج';notice('تم تحديث المعاينة فقط؛ لم تُحفظ ملفات مشروع.');persist();});
+  q('#ems-export').addEventListener('click',()=>setTab('output'));
+  q('#ems-simulate-export').addEventListener('click',()=>notice('محاكاة: سيُرسل الإصدار المحفوظ إلى قائمة التصيير المحلية بعد تنفيذ التطبيق. لم يتم إنشاء MP4.'));
+  q('#ems-seek').addEventListener('input',event=>{stop();state.frame=Number(event.target.value);renderFrame();});q('#ems-seek').addEventListener('change',persist);
+  q('#ems-play').addEventListener('click',()=>{if(state.playing){stop();persist();return;}if(state.frame>=projectData[state.project].frames-1)state.frame=0;state.playing=true;playStart=performance.now();playBase=state.frame;q('#ems-play').innerHTML='<i data-lucide="pause" aria-hidden="true"></i>';q('#ems-play').setAttribute('aria-label','إيقاف المعاينة');icons();const tick=now=>{state.frame=playBase+Math.floor((now-playStart)*30/1000);renderFrame();if(state.frame>=projectData[state.project].frames-1){stop();persist();return;}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);});
+  q('#ems-safe-toggle').addEventListener('change',event=>{state.safe=event.target.checked;q('#ems-safe').hidden=!state.safe;persist();});
+  q('#ems-copy').addEventListener('click',async()=>{const text=q('#ems-prompt');try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text.value);notice('تم نسخ الـ Prompt.');}catch{text.focus();text.select();notice('النص محدّد؛ انسخه يدويًا.');}});
+  q('#ems-to-upload').addEventListener('click',()=>setTab('assets'));
+  q('#ems-file').addEventListener('change',event=>{const file=event.target.files?.[0];q('#ems-file-note').textContent=file?'تم اختيار «'+file.name+'» داخل النموذج فقط؛ لم يُرفع أو يُحفظ على القرص.':'اختيار الملف هنا تجربة داخل النموذج فقط.';});
+  q('#ems-brand-navy').addEventListener('input',event=>{q('#ems-stage').style.background='radial-gradient(ellipse at 85% 45%,'+event.target.value+' 0%,#030d1b 72%)';});
+  q('#ems-brand-blue').addEventListener('input',event=>{q('#ems-stage').style.background='radial-gradient(ellipse at 85% 45%,'+q('#ems-brand-navy').value+' 0%,'+event.target.value+' 140%)';});
+  q('#ems-brand-cyan').addEventListener('input',event=>{q('#ems-focus-dot').style.boxShadow='0 0 15px '+event.target.value;});
+  q('#ems-brand-light').addEventListener('input',event=>{q('#ems-focus-dot').style.background=event.target.value;q('#ems-stage-progress').style.background=event.target.value;});
+  q('#ems-new-name').addEventListener('input',event=>{state.newName=event.target.value;});q('#ems-new-client').addEventListener('input',event=>{state.client=event.target.value;});q('#ems-new-objective').addEventListener('input',event=>{state.objective=event.target.value;});
+  q('#ems-next').addEventListener('click',()=>{if(state.step===0&&!state.newName.trim()){notice('اكتب اسم المشروع لتجربة الخطوة التالية.');q('#ems-new-name').focus();return;}clearNotice();if(state.step<2){state.step++;renderWizard();persist();}else{const key=q('input[name="ems-template"]:checked').value;openProject(key,state.newName);notice('تم فتح مشروع تجريبي داخل المعاينة فقط.');}});
+  q('#ems-prev').addEventListener('click',()=>{state.step=Math.max(0,state.step-1);renderWizard();clearNotice();persist();});
+  function restore(snapshot){if(!snapshot)return;stop();const m=snapshot.modelContent||{},p=snapshot.privateContent||{};if(projectData[m.template])state.project=m.template;if(['scenes','assets','prompts','brand','output'].includes(m.tab))state.tab=m.tab;if(['editor','projects','create'].includes(m.screen))state.screen=m.screen;if(Number.isFinite(p.frame))state.frame=Math.max(0,Math.min(projectData[state.project].frames-1,p.frame));state.scene=Math.max(0,projectData[state.project].scenes.findLastIndex(scene=>state.frame>=scene.from));state.headline=typeof p.headline==='string'?p.headline:projectData[state.project].scenes[state.scene].lines[0];state.safe=p.safe===true;for(const key of ['newName','client','objective'])if(typeof p[key]==='string')state[key]=p[key];state.step=[0,1,2].includes(p.step)?p.step:0;q('#ems-headline').value=state.headline;q('#ems-new-name').value=state.newName;q('#ems-new-client').value=state.client;q('#ems-new-objective').value=state.objective;renderScenes();renderFrame();renderWizard();setTab(state.tab,false);setScreen(state.screen,false);}
+  renderScenes();renderFrame();renderWizard();restore(window.openai?.widgetState);
+  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState)restore(event.detail.globals.widgetState);});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+  if(globalThis.Tweak){const design={radius:14,previewWidth:290};new Tweak({container:root,onChange:()=>{root.style.setProperty('--ems-radius',design.radius+'px');root.style.setProperty('--ems-preview',design.previewWidth+'px');}}).addSlider(design,'radius',{label:'استدارة البطاقات',min:4,max:24,unit:'px'});const previewTweak=new Tweak({container:q('.ems-viewer'),onChange:()=>root.style.setProperty('--ems-preview',design.previewWidth+'px')});previewTweak.addSlider(design,'previewWidth',{label:'مساحة المعاينة',min:250,max:330,step:10,unit:'px'});}
+})();
+</script>

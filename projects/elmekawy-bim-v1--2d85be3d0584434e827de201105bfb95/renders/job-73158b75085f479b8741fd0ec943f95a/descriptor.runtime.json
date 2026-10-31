@@ -1,0 +1,92 @@
+{
+  "projectRevision": 2,
+  "template": {
+    "id": "bim-personal-intro",
+    "version": "1.1.0"
+  },
+  "compositionId": "ElmekawyBIMIntro",
+  "metadata": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 900,
+    "aspectRatio": "9:16"
+  },
+  "inputProps": {
+    "media": {
+      "fonts/Cairo.ttf": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/font-cairo/667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "fonts/Inter.ttf": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/font-inter/29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "assets/logos/ME-Logo.png": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/portrait/c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "assets/generated/bim-infrastructure.png": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/infrastructure/15450128d51d710b9a954d72058f7569aa1a273fd21ccd3dba8aa620fa2688b7",
+      "assets/generated/structural-bim.png": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/structural/bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "assets/generated/bim-technology.png": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/technology/0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+      "assets/audio/bim-reel.mp3": "http://127.0.0.1:4311/media/projects/elmekawy-bim-v1--2d85be3d0584434e827de201105bfb95/audio-track/7e9e8e997a10bd5ac818fa391ee4a281c559f3ddf6f6b06866e38e4e0c0287de"
+    },
+    "assets": {
+      "font-cairo": true,
+      "font-inter": true,
+      "portrait": true,
+      "infrastructure": true,
+      "structural": true,
+      "technology": true,
+      "audio-track": true
+    },
+    "edits": {
+      "hook.eyebrow": "BEYOND THE MODEL / 01",
+      "hook.arabicPrefix": "الـ",
+      "hook.bim": "BIM",
+      "hook.middleLine": "مش مجرد",
+      "hook.model": "موديل",
+      "hook.threeD": "3D",
+      "hook.tagline": "THINK SYSTEMS. BUILD BETTER.",
+      "infrastructure.eyebrow": "CONNECTED BY DESIGN / 02",
+      "infrastructure.title1": "STRUCTURAL &",
+      "infrastructure.title2": "INFRASTRUCTURE",
+      "infrastructure.title3": "BIM",
+      "infrastructure.caption1": "Structure. Infrastructure.",
+      "infrastructure.caption2": "One coordinated vision.",
+      "infrastructure.fallback.infrastructure.caption": "BIM / CONCEPT VISUAL",
+      "services.eyebrow": "FROM MODEL TO DELIVERY / 03",
+      "services.title1": "Precision.",
+      "services.title2": "At every stage.",
+      "services.items.1.label": "BIM Modeling",
+      "services.items.2.label": "Coordination",
+      "services.items.3.label": "Quantity Takeoff",
+      "services.items.4.label": "Automation",
+      "services.items.number.1": "01",
+      "services.items.number.2": "02",
+      "services.items.number.3": "03",
+      "services.items.number.4": "04",
+      "services.fallback.structural.caption": "BIM / CONCEPT VISUAL",
+      "services.fallback.technology.caption": "BIM / CONCEPT VISUAL",
+      "training.eyebrow": "KNOWLEDGE INTO PRACTICE / 04",
+      "training.title1": "REVIT &",
+      "training.title2": "BIM TRAINING",
+      "training.credential1": "Autodesk Certified",
+      "training.credential2": "Instructor",
+      "training.framework": "THE LEARNING FRAMEWORK",
+      "training.learning.1": "UNDERSTAND",
+      "training.learning.2": "APPLY",
+      "training.learning.3": "DELIVER",
+      "training.caption1": "Build skills.",
+      "training.caption2": "Work with confidence.",
+      "brand.eyebrow": "ENGINEER. EDUCATOR. / 05",
+      "brand.name1": "Mahmoud",
+      "brand.name2": "Elmekawy.",
+      "brand.subtitle": "Senior BIM Engineer | BIM Coordinator | Autodesk Certified Instructor",
+      "brand.fallback.portrait.mark": "ME",
+      "brand.fallback.portrait.caption": "ELMEKAWY / BIM",
+      "cta.eyebrow": "YOUR NEXT CHAPTER / 06",
+      "cta.word1": "Learn",
+      "cta.word2": "Build",
+      "cta.word3": "Coordinate",
+      "cta.name": "Mahmoud Elmekawy",
+      "cta.linkCaption": "EXPLORE THE PORTFOLIO ↗",
+      "cta.website": "https://www.linkedin.com/in/mahmoud-elmekawy/"
+    },
+    "templateVersion": "1.1.0"
+  },
+  "warnings": [
+    "V1 يستخدم ملف الصوت الأصلي بمستوى 0.3، والشعار داخل خانة الصورة الشخصية."
+  ]
+}

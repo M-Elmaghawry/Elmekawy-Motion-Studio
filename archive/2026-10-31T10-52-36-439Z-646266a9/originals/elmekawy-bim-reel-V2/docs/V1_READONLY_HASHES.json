@@ -1,0 +1,114 @@
+﻿[
+    {
+        "path":  "src/Composition.tsx",
+        "sha256":  "D37080D01AC5746DE0A267218BDC112F3530780C259A082E716F8F623FE57505"
+    },
+    {
+        "path":  "src/index.ts",
+        "sha256":  "9ADD656193BC0A61896D26D3067000FCFF56EF7B69270AF1F8883B0E4CE65CC4"
+    },
+    {
+        "path":  "src/Root.tsx",
+        "sha256":  "CE5B547B7A5DC8A3FEABC559BB1B6CB641C68FB8A3D962646B86B243E8AC7587"
+    },
+    {
+        "path":  "src/scene-data.ts",
+        "sha256":  "B65C2B8F10CE5F459913BE6C5ED788E6BB5DB10977B89AB1E22A93957DA85149"
+    },
+    {
+        "path":  "src/brand/theme.ts",
+        "sha256":  "C7225D25C6048C6D7DA7F6A693D87486D758E39357ADCD3C06F715C63DB762EC"
+    },
+    {
+        "path":  "src/components/Fonts.tsx",
+        "sha256":  "6CC6B16A2F006C80E1D165A48997B8D3AC96C2A8100340053B1C5AAB23E0EA19"
+    },
+    {
+        "path":  "src/components/Motion.tsx",
+        "sha256":  "8E7D64DDD13036A0B0278CF49A8D354CE7AC2DC57632FC873FF077766733D697"
+    },
+    {
+        "path":  "src/scenes/CtaScene.tsx",
+        "sha256":  "55C4C252709B0080AC6C63DA02989CA20F05D1A18A261B23F35F208CE343E7BD"
+    },
+    {
+        "path":  "src/scenes/HookScene.tsx",
+        "sha256":  "73EBE31DC3D2BBB7CE54D7D548BB6A3CA836D1D16DBE606A9992C656247C31BD"
+    },
+    {
+        "path":  "src/scenes/InfrastructureScene.tsx",
+        "sha256":  "6B12E7A72071D6AC1DDE2F8C4E80D66F1B8F1A1D1CBB8CDD007DAE203EADA5E3"
+    },
+    {
+        "path":  "src/scenes/PersonalBrandScene.tsx",
+        "sha256":  "485DE030201AD1A8AC8F5C91A7C47EEBD220AF23688117C23CA1EAAF470CFD01"
+    },
+    {
+        "path":  "src/scenes/ServicesScene.tsx",
+        "sha256":  "49AC8251B348618DBA6DE4FDBC0920A67FB6E1B1747C2241466E68D9EAC90E81"
+    },
+    {
+        "path":  "src/scenes/TrainingScene.tsx",
+        "sha256":  "C4EFE38630D430E5966DEC4D59214E398CCEB048357FF04FB14E345D60D70E45"
+    },
+    {
+        "path":  "public/assets/audio/bim-reel.mp3",
+        "sha256":  "7E9E8E997A10BD5AC818FA391EE4A281C559F3DDF6F6B06866E38E4E0C0287DE"
+    },
+    {
+        "path":  "public/assets/generated/bim-infrastructure.png",
+        "sha256":  "15450128D51D710B9A954D72058F7569AA1A273FD21CCD3DBA8AA620FA2688B7"
+    },
+    {
+        "path":  "public/assets/generated/bim-technology.png",
+        "sha256":  "0FB9A0D4614787A259B57644B920469B5424ABAFB072117829A50ECA3EC7177A"
+    },
+    {
+        "path":  "public/assets/generated/structural-bim.png",
+        "sha256":  "BFC90C60A017881D6BA9DEA89FD0F704285F5B302C8A365652DDB5A039B40481"
+    },
+    {
+        "path":  "public/assets/logos/ME-Logo.png",
+        "sha256":  "C143F9D66409365194DED00B18530250FB5BE807D24FD18337167FFD0D64C1FE"
+    },
+    {
+        "path":  "public/fonts/Cairo-OFL.txt",
+        "sha256":  "A4554E1799D42E1405924B61EB0E0722AE1623B1F1F07F995348F96C496362A9"
+    },
+    {
+        "path":  "public/fonts/Cairo.ttf",
+        "sha256":  "667C987182391C91F4E57A2F455B1794FB5E3EE6CA4EF3383E86BB690FA9C964"
+    },
+    {
+        "path":  "public/fonts/Inter-OFL.txt",
+        "sha256":  "F14F2B95A38F4F20CAD4D27F7710593F37534C046641BE0348DA7C28365F4E39"
+    },
+    {
+        "path":  "public/fonts/Inter.ttf",
+        "sha256":  "29160A80FF49DDCAB2C97711247E08B1FAB27A484A329CE8B813D820DC559031"
+    },
+    {
+        "path":  "docs/production-log.md",
+        "sha256":  "651BEBB55513E03EB8E57485A8E1BC0E5923F34663322D74D03032842B21A3CD"
+    },
+    {
+        "path":  "package.json",
+        "sha256":  "E0E1D6F3192CB35D339F5B2909A7E027733E8FF6C67C2B479F01D8FF62E39006"
+    },
+    {
+        "path":  "package-lock.json",
+        "sha256":  "18BED84325415FCD6771141D30B5A0510C03FA6B0F50A30707F7C4C80916434F"
+    },
+    {
+        "path":  "remotion.config.ts",
+        "sha256":  "D9A9540EA4FD7F6A5C987F2E77B0EE2AFB82B4A2139D8072858B0B80CEC53A78"
+    },
+    {
+        "path":  "tsconfig.json",
+        "sha256":  "8EBFD92FDFB99C3D51CE6394D896F82C2AA1498FBFBC9762CE126266D05F0671"
+    },
+    {
+        "path":  "README.md",
+        "sha256":  "84EAFE8449714CD1912A8B892ED526DEFEE809F402C94A82DFECD641B71BF3B7"
+    }
+]

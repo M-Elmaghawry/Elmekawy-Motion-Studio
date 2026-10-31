@@ -1,0 +1,2928 @@
+<!doctype html>
+<html lang="ar" data-visualize-standalone><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;self&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>Elmekawy Motion Studio — Design Preview</title><style>:root{color-scheme:dark;background:#09111e}html,body{margin:0}body{box-sizing:border-box;padding:16px;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 32px);margin:0 auto;border:0}</style></head><body><iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Elmekawy Motion Studio — Design Preview" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;ar&quot; data-visualize-standalone&gt;
+&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &amp;#x27;none&amp;#x27;; script-src &amp;#x27;unsafe-inline&amp;#x27; &amp;#x27;unsafe-eval&amp;#x27; &amp;#x27;wasm-unsafe-eval&amp;#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &amp;#x27;unsafe-inline&amp;#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &amp;#x27;none&amp;#x27;; object-src &amp;#x27;none&amp;#x27;; base-uri &amp;#x27;none&amp;#x27;; form-action &amp;#x27;none&amp;#x27;&quot;&gt;&lt;title&gt;Elmekawy Motion Studio — Design Preview&lt;/title&gt;&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 16px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans:
+    -apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;,
+    Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;,
+    &quot;Segoe UI Symbol&quot;;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 8px);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-weight: var(--font-weight-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  font-weight: inherit;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+.table {
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-size: calc(var(--font-size-base) * 1.5);
+  line-height: 1.3333333333;
+}
+
+h2 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  line-height: 1.4;
+}
+h3 {
+  font-size: calc(var(--font-size-base) * 1.125);
+  line-height: 1.5555555556;
+}
+h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 600;
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+pre,
+pre code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(var(--font-size-base) * 0.875);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-family: var(--font-sans);
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.table :is(th, td):not(:last-child) {
+  padding-inline-end: calc(var(--font-size-base) * 1.5);
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead :is(th, td) {
+  border-bottom-color: var(--border-strong, var(--input));
+  padding-block: calc(var(--font-size-base) / 2);
+  line-height: var(--font-size-base);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+.table tbody :is(th, td) {
+  padding-block: calc(var(--font-size-base) * 0.625);
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 8px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+.widget {
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+#widget &gt; :not(.card, .widget, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  border: 1px solid var(--border);
+  corner-shape: var(--corner-shape);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-sans);
+  padding: 5px 12px;
+  border-color: color-mix(
+    in oklab,
+    light-dark(var(--primary-foreground), var(--foreground)) 5%,
+    transparent
+  );
+  border-radius: var(--radius-2xl);
+  color: light-dark(var(--primary-foreground), var(--foreground));
+  background: light-dark(var(--foreground), var(--popover));
+  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
+  letter-spacing: -0.15px;
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+}
+
+small,
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+/* Match inline alignment without overriding a containing flex or grid layout. */
+.btn,
+.nav-link,
+.form-control,
+.form-select,
+.form-range,
+.form-check {
+  vertical-align: middle;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: inherit;
+  font-family: var(--font-sans);
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  border-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.btn {
+  border-color: var(--border);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.btn-primary {
+  border-color: var(--border);
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: border-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: border-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--muted-foreground);
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+/* Shared preview chrome; product styles stay inside each variant. */
+.viz-dotted-background {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.viz-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+.viz-carousel:has(&gt; .viz-carousel-controls) {
+  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
+  padding-bottom: 60px;
+}
+
+.viz-carousel &gt; [data-variant][hidden] {
+  display: none !important;
+}
+
+.viz-carousel &gt; [data-variant] {
+  isolation: isolate;
+}
+
+.viz-carousel-controls {
+  --viz-carousel-hover: light-dark(
+    color-mix(in srgb, var(--foreground) 5.4%, transparent),
+    color-mix(in srgb, var(--foreground) 7.8%, transparent)
+  );
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  /* Leave room for the host&#x27;s design-controls launcher at the trailing edge. */
+  max-width: calc(100% - 96px);
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  /* Match the settings dropdown chrome independently of the content font size. */
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Keep authored mockup button styles out of the shared carousel chrome. */
+.viz-carousel-controls button,
+.viz-carousel-picker &gt; summary {
+  display: flex !important;
+  height: auto !important;
+  min-height: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 0 6px !important;
+  -webkit-app-region: no-drag;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: inherit !important;
+  background: transparent !important;
+  font: inherit !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-picker &gt; summary {
+  position: relative;
+  isolation: isolate;
+}
+
+.viz-carousel-controls &gt; button {
+  --icon-size: 16px;
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.viz-carousel-picker &gt; summary {
+  padding-inline: 12px !important;
+}
+
+.viz-carousel-controls .viz-carousel-caret {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin: 0;
+  color: inherit;
+  transform: rotate(180deg);
+}
+
+.viz-carousel-controls &gt; button &gt; svg,
+.viz-carousel-controls .viz-carousel-caret,
+.viz-carousel-count {
+  opacity: 0.5;
+}
+
+.viz-carousel-controls &gt; button::before,
+.viz-carousel-picker &gt; summary::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 12px;
+  content: &quot;&quot;;
+  pointer-events: none;
+}
+
+.viz-carousel-controls &gt; button:hover::before,
+.viz-carousel-picker &gt; summary:hover::before {
+  background: var(--viz-carousel-hover);
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-controls [data-lucide],
+.viz-carousel-controls .lucide {
+  flex-shrink: 0;
+}
+
+.viz-carousel-picker {
+  min-width: 0;
+}
+
+.viz-carousel-picker &gt; summary {
+  min-width: 0;
+  list-style: none;
+}
+
+.viz-carousel-picker &gt; summary::-webkit-details-marker {
+  display: none;
+}
+
+.viz-carousel-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.viz-carousel-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-carousel-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
+}
+
+.viz-carousel-options &gt; button {
+  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
+  width: 100% !important;
+  min-height: 28px;
+  justify-content: flex-start !important;
+  padding: 4px 8px !important;
+  font-size: var(--font-size-small) !important;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.viz-carousel-options &gt; [aria-current=&quot;true&quot;],
+.viz-carousel-options &gt; button:hover {
+  background: var(--viz-carousel-hover) !important;
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
+  border-color: var(--input);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--popover) 96%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4285714286;
+}
+.form-control:is(
+  [type=&quot;file&quot;],
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;],
+  [type=&quot;color&quot;]
+) {
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  line-height: 18px;
+}
+.form-control:is(
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;]
+) {
+  padding-inline: var(--control-spacing, 12px);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+  padding: 0;
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+  min-height: calc(10px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  margin-inline-end: var(--control-spacing, 12px);
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+  min-height: 96px;
+  padding: 8px 10px;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: none;
+}
+.form-control:disabled {
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  opacity: 1;
+}
+.form-control[aria-invalid=&quot;true&quot;] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  margin: 0;
+  /* The secondary icon role is 14px at compact density and 16px at web density. */
+  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
+  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
+  padding: 0 calc(16px + var(--icon-size)) 0 12px;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    );
+  background-position:
+    calc(100% - 12px - var(--icon-size) / 2) 50%,
+    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
+  cursor: var(--cursor-interaction, default);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.form-select :is(option, optgroup) {
+  color: var(--popover-foreground);
+  background-color: var(--popover);
+}
+
+.form-select :is(option, optgroup):disabled {
+  color: var(--muted-foreground);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.form-select:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.form-select:disabled {
+  opacity: 0.4;
+}
+
+.form-check {
+  display: flex;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  corner-shape: round;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  width: calc(10px + var(--control-spacing, 12px) / 2);
+  height: calc(10px + var(--control-spacing, 12px) / 2);
+  border-color: var(--border-strong, var(--input));
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:is(:checked, :indeterminate) {
+  border-color: var(--border-strong, var(--input));
+  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+  background-color: var(--foreground);
+}
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:indeterminate::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 65%;
+  height: 6.65%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--foreground);
+  mask: none;
+  content: &quot;&quot;;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  border-radius: var(--radius-full);
+  width: 16px;
+  height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--input);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--primary-foreground) 0 3px,
+    var(--foreground) 3px
+  );
+  box-shadow: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:focus-visible {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;radio&quot;]:disabled,
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;radio&quot;]:disabled
+  + .form-check-label {
+  opacity: 0.5;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+  border-color: #fff;
+  background: #fff;
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--blue);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+  outline: none;
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--primary);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  outline: none;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: transparent;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-top: -9px;
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline the native track and thumb, preserving the larger input hit area. */
+.form-range:focus-visible::-webkit-slider-runnable-track {
+  outline: 2px auto Highlight;
+  outline-color: -webkit-focus-ring-color;
+}
+
+.form-range::-moz-range-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+.form-range:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--blue);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.viz-carousel-controls :is(button, summary):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Web recipes are the default, including on renderers without inline style queries. */
+@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
+  /* Match the host&#x27;s proportional text-sm scale at every text preference. */
+  .tooltip,
+  .viz-badge,
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    font-size: if(
+      style(--corner-shape: round): round(
+          nearest,
+          calc(var(--font-size-base) * 14 / 16),
+          1px
+        );
+        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
+    );
+  }
+
+  .btn,
+  .nav-link,
+  .form-select {
+    border-radius: if(
+      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
+    );
+  }
+
+  .form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+    border-radius: if(
+      style(--corner-shape: round): calc(var(--radius-sm) / 2);
+        else: calc(var(--radius-lg) * 0.4)
+    );
+  }
+
+  .tooltip {
+    font-weight: if(
+      style(--corner-shape: round): 600; else: var(--font-weight-normal)
+    );
+  }
+}
+
+@media (pointer: coarse) {
+  .viz-carousel:has(&gt; .viz-carousel-controls) {
+    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
+    padding-bottom: 76px;
+  }
+
+  .btn,
+  .nav-link,
+  .viz-carousel-controls button,
+  .viz-carousel-picker &gt; summary,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+  .form-control:is(
+    [type=&quot;file&quot;],
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;week&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;color&quot;]
+  ) {
+    height: 44px;
+    min-height: 44px;
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;&lt;/head&gt;
+&lt;body&gt;&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const hasOwn = Object.hasOwn;
+  const parentWindow = globalThis.parent;
+  const stringify = JSON.stringify;
+  const parse = JSON.parse;
+  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
+  const initialStateElement = document.getElementById(
+    &quot;codex-visualization-widget-state&quot;,
+  );
+  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
+  initialStateElement?.remove();
+  /** @type {Record&lt;string, unknown&gt; | null} */
+  let state = initialGlobals.widgetState ?? null;
+  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
+  let nextStateRequestId = 0;
+  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
+  const pendingStateWrites = new Map();
+  const persistenceError = () =&gt;
+    Object.assign(
+      new Error(&quot;The host could not persist the widget state update&quot;),
+      {
+        code: -32000,
+        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
+      },
+    );
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  /**
+   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
+   * @returns {Promise&lt;void&gt;}
+   */
+  const setWidgetState = async (next) =&gt; {
+    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
+    if (
+      nextState == null ||
+      typeof nextState !== &quot;object&quot; ||
+      isArray(nextState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const inputState = stringify(
+      nextState,
+      (_key, /** @type {unknown} */ value) =&gt; {
+        if (
+          typeof value === &quot;undefined&quot; ||
+          typeof value === &quot;function&quot; ||
+          typeof value === &quot;symbol&quot; ||
+          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
+        ) {
+          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+        }
+        return value;
+      },
+    );
+    const parsedState = parse(inputState);
+    if (
+      parsedState == null ||
+      typeof parsedState !== &quot;object&quot; ||
+      isArray(parsedState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const storedState = {
+      modelContent: null,
+      privateContent: null,
+      ...parsedState,
+    };
+    const serializedState = stringify(storedState);
+    if (encode(serializedState).length &gt; 16 * 1024) {
+      throw new TypeError(
+        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
+      );
+    }
+    if (
+      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
+      (!isArray(storedState.imageIds) ||
+        storedState.imageIds.some(
+          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
+        ))
+    ) {
+      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
+    }
+    if (storedState.imageIds?.length &gt; 0) {
+      throw Object.assign(
+        new TypeError(&quot;Visualization state does not support image attachments&quot;),
+        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
+      );
+    }
+    state = storedState;
+    globalThis.openai.widgetState = state;
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: { widgetState: state } },
+      }),
+    );
+    if (statePersistence === &quot;none&quot;) {
+      throw persistenceError();
+    }
+    const id = ++nextStateRequestId;
+    return new Promise((resolve, reject) =&gt; {
+      const timeout = globalThis.setTimeout(() =&gt; {
+        pendingStateWrites.delete(id);
+        reject(persistenceError());
+      }, 30_000);
+      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
+      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+    });
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      setWidgetState,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+      widgetState: state,
+      statePersistence,
+      stateModelContext: &quot;none&quot;,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        hostPort != null ||
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            } else if (
+              typeof data === &quot;object&quot; &amp;&amp;
+              data?.type === &quot;widget-state-result&quot;
+            ) {
+              /** @type {unknown} */
+              const id = data.id;
+              if (typeof id !== &quot;number&quot;) {
+                return;
+              }
+              const pending = pendingStateWrites.get(id);
+              if (pending != null) {
+                pendingStateWrites.delete(id);
+                globalThis.clearTimeout(pending.timeout);
+                if (data.ok === true) {
+                  pending.resolve();
+                } else {
+                  pending.reject(persistenceError());
+                }
+              }
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      for (const [id, { serializedState }] of pendingStateWrites) {
+        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+      }
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
+      return;
+    }
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
+    }
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
+    }
+    event.preventDefault();
+    openExternal({ href });
+  });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
+})();
+&lt;/script&gt;&lt;div id=&quot;elmekawy-studio-concept&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot; aria-label=&quot;معاينة تصميم Elmekawy Motion Studio&quot;&gt;
+  &lt;style&gt;
+    #elmekawy-studio-concept{--ems-bg:light-dark(#f3f6fa,#09111e);--ems-panel:light-dark(#ffffff,#101c2d);--ems-soft:light-dark(#eaf0f6,#15263b);--ems-text:light-dark(#152b43,#e8f0f9);--ems-muted:light-dark(#536980,#a2b5cc);--ems-line:light-dark(#dbe3ed,#25374f);--ems-blue:light-dark(#055c9d,#68bbe3);--ems-selected:light-dark(#deedf8,#17354e);--ems-action:light-dark(#003060,#b8dcf1);--ems-action-text:light-dark(#ffffff,#09273d);--ems-warn:light-dark(#835318,#e5bd83);--ems-radius:14px;--ems-preview:290px;background:var(--ems-bg);color:var(--ems-text);font:400 14px/1.65 &quot;Segoe UI&quot;,Tahoma,Arial,sans-serif;border:1px solid var(--ems-line);border-radius:18px;overflow:clip;position:relative;isolation:isolate;color-scheme:inherit}
+    #elmekawy-studio-concept *{box-sizing:border-box}
+    #elmekawy-studio-concept [hidden]{display:none!important}
+    #elmekawy-studio-concept button,#elmekawy-studio-concept input,#elmekawy-studio-concept textarea,#elmekawy-studio-concept select{font:inherit}
+    #elmekawy-studio-concept button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ems-line);border-radius:9px;padding:8px 13px;background:var(--ems-panel);color:var(--ems-text);min-height:38px}
+    #elmekawy-studio-concept button:hover{background:var(--ems-soft)}
+    #elmekawy-studio-concept button.ems-primary{background:var(--ems-action);color:var(--ems-action-text);border-color:var(--ems-action)}
+    #elmekawy-studio-concept button:disabled{opacity:.55;cursor:not-allowed}
+    #elmekawy-studio-concept button svg{width:16px;height:16px;flex-shrink:0}
+    #elmekawy-studio-concept input:not([type=range]):not([type=color]),#elmekawy-studio-concept textarea,#elmekawy-studio-concept select{width:100%;min-width:0;background:var(--ems-bg);border:1px solid var(--ems-line);border-radius:9px;padding:9px 11px;color:var(--ems-text)}
+    #elmekawy-studio-concept input[type=range]{width:100%;accent-color:var(--ems-blue);min-width:0}
+    #elmekawy-studio-concept input[type=color]{width:42px;height:35px;background:var(--ems-panel);border:1px solid var(--ems-line);border-radius:6px;padding:3px}
+    #elmekawy-studio-concept textarea{resize:vertical;min-height:96px}
+    #elmekawy-studio-concept p,#elmekawy-studio-concept h2,#elmekawy-studio-concept h3{margin:0}
+    #elmekawy-studio-concept h2{font-size:22px;font-weight:500;line-height:1.5}
+    #elmekawy-studio-concept h3{font-size:15px;font-weight:500}
+    #elmekawy-studio-concept small{font-size:12px}
+    #elmekawy-studio-concept b,#elmekawy-studio-concept strong{font-weight:500}
+    #elmekawy-studio-concept .ems-muted{color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-ltr{direction:ltr;unicode-bidi:isolate}
+    #elmekawy-studio-concept .ems-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    #elmekawy-studio-concept .ems-between{justify-content:space-between}
+    #elmekawy-studio-concept .ems-header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--ems-panel);padding:19px 22px 18px 110px;border-bottom:1px solid var(--ems-line)}
+    #elmekawy-studio-concept .ems-identity{display:flex;align-items:center;gap:12px}
+    #elmekawy-studio-concept .ems-mark{width:39px;height:39px;display:grid;place-items:center;background:var(--ems-action);color:var(--ems-action-text);border-radius:10px;font-size:24px;font-weight:500}
+    #elmekawy-studio-concept .ems-wordmark{font-size:15px;font-weight:500;letter-spacing:1.6px;direction:ltr}
+    #elmekawy-studio-concept .ems-subbrand{font-size:11px;letter-spacing:3px;color:var(--ems-muted);direction:ltr}
+    #elmekawy-studio-concept .ems-pill{display:inline-flex;align-items:center;gap:7px;border-radius:7px;padding:4px 8px;background:var(--ems-soft);color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-shell{display:grid;grid-template-columns:166px minmax(0,1fr);min-height:605px}
+    #elmekawy-studio-concept .ems-sidebar{background:var(--ems-panel);border-left:1px solid var(--ems-line);padding:23px 12px;display:flex;flex-direction:column;gap:7px}
+    #elmekawy-studio-concept .ems-sidebar&gt;small{padding:0 10px 8px}
+    #elmekawy-studio-concept .ems-sidebar button{background:transparent;justify-content:flex-start;border-color:transparent;text-align:right}
+    #elmekawy-studio-concept .ems-sidebar button[aria-pressed=true]{background:var(--ems-selected);color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-sidebottom{margin-top:auto;padding:24px 10px 0;color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-sidebottom span{display:block}
+    #elmekawy-studio-concept .ems-main{padding:24px;min-width:0}
+    #elmekawy-studio-concept .ems-pagehead{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    #elmekawy-studio-concept .ems-pagehead p{margin-top:4px;color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-tabs{display:flex;gap:18px;border-bottom:1px solid var(--ems-line);margin-bottom:20px;flex-wrap:wrap}
+    #elmekawy-studio-concept .ems-tabs button{border:0;border-radius:0;background:transparent;padding:6px 0 11px;color:var(--ems-muted);border-bottom:2px solid transparent}
+    #elmekawy-studio-concept .ems-tabs button[aria-selected=true]{color:var(--ems-blue);border-bottom-color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-editorgrid{display:grid;grid-template-columns:minmax(0,1fr) var(--ems-preview);gap:22px;align-items:start}
+    #elmekawy-studio-concept .ems-sectionhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:10px}
+    #elmekawy-studio-concept .ems-scenes{display:grid;gap:8px}
+    #elmekawy-studio-concept .ems-scenes button{width:100%;text-align:right;justify-content:flex-start;padding:12px;background:var(--ems-panel);border-radius:var(--ems-radius)}
+    #elmekawy-studio-concept .ems-scenes button[aria-pressed=true]{border-color:var(--ems-blue);background:var(--ems-selected)}
+    #elmekawy-studio-concept .ems-num{display:grid;place-items:center;border:1px solid var(--ems-line);background:var(--ems-bg);width:32px;height:36px;border-radius:7px;color:var(--ems-muted);flex-shrink:0;font-variant-numeric:tabular-nums}
+    #elmekawy-studio-concept .ems-scenes button[aria-pressed=true] .ems-num{color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-scenecontent{min-width:0;flex:1}
+    #elmekawy-studio-concept .ems-scenecontent small{display:block;color:var(--ems-muted);direction:ltr;text-align:right;font-variant-numeric:tabular-nums}
+    #elmekawy-studio-concept .ems-field{display:grid;gap:6px;margin-top:14px;min-width:0}
+    #elmekawy-studio-concept .ems-field&gt;span{font-size:12px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-note{display:flex;gap:8px;align-items:flex-start;background:var(--ems-soft);border-radius:9px;padding:11px;margin-top:14px;font-size:12px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-note svg{flex-shrink:0;width:15px;height:15px;margin-top:3px}
+    #elmekawy-studio-concept .ems-viewer{background:var(--ems-panel);border:1px solid var(--ems-line);border-radius:var(--ems-radius);padding:14px}
+    #elmekawy-studio-concept .ems-stageholder{display:grid;place-items:center;background:var(--ems-bg);border-radius:8px;padding:14px;margin-top:12px}
+    #elmekawy-studio-concept .ems-stage{position:relative;width:min(100%,216px);aspect-ratio:9/16;overflow:hidden;background:radial-gradient(ellipse at 85% 45%,#003060 0%,#030d1b 72%);color:#f3f8fc;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;padding:26px 20px 28px;direction:ltr}
+    #elmekawy-studio-concept .ems-stage::before{content:&quot;&quot;;position:absolute;inset:0;background-image:linear-gradient(#68bbe312 1px,transparent 1px),linear-gradient(90deg,#68bbe312 1px,transparent 1px);background-size:27px 27px;mask-image:linear-gradient(transparent,#000,transparent);pointer-events:none}
+    #elmekawy-studio-concept .ems-stagebrand{font-size:9px;letter-spacing:1.4px;display:flex;justify-content:space-between;gap:8px;position:relative;color:#b7cee3}
+    #elmekawy-studio-concept .ems-stagemain{position:relative;direction:rtl;text-align:right;z-index:1}
+    #elmekawy-studio-concept .ems-stagekicker{font-size:9px;letter-spacing:1.2px;direction:ltr;color:#68bbe3;margin-bottom:20px}
+    #elmekawy-studio-concept .ems-stageline{font-size:28px;font-weight:500;line-height:1.6}
+    #elmekawy-studio-concept .ems-stagebim{font-size:54px;line-height:1.5;color:#68bbe3;font-weight:500;direction:ltr;text-align:right;letter-spacing:-1px}
+    #elmekawy-studio-concept .ems-stagefooter{position:relative;font-size:9px;color:#9bb4c9;text-align:right;direction:rtl}
+    #elmekawy-studio-concept .ems-stageprogress{height:2px;background:#68bbe325;margin-top:14px}
+    #elmekawy-studio-concept .ems-stageprogress span{display:block;height:2px;background:#68bbe3;width:0}
+    #elmekawy-studio-concept .ems-dot{position:absolute;left:82%;top:28%;width:5px;height:5px;background:#68bbe3;border-radius:50%;box-shadow:0 0 15px #68bbe3;z-index:2}
+    #elmekawy-studio-concept .ems-safe{position:absolute;inset:11.5% 16.7% 18.75% 9.25%;border:1px dashed #b8dcf178;pointer-events:none;z-index:3}
+    #elmekawy-studio-concept .ems-schematic{height:112px;position:relative;margin:12px 0 16px;display:grid;place-items:center}
+    #elmekawy-studio-concept .ems-plane{position:absolute;width:98px;height:60px;border:1px solid #68bbe3;transform:rotate(-26deg) skew(24deg);background:#00306055}
+    #elmekawy-studio-concept .ems-plane:nth-child(1){translate:0 -24px}
+    #elmekawy-studio-concept .ems-plane:nth-child(3){translate:0 24px}
+    #elmekawy-studio-concept .ems-workflow{display:grid;gap:14px;font-size:14px;color:#b8dcf1;direction:ltr;text-align:left}
+    #elmekawy-studio-concept .ems-playerbar{display:flex;align-items:center;gap:9px;margin-top:12px;direction:ltr}
+    #elmekawy-studio-concept .ems-playerbar button{padding:6px 9px;min-height:32px}
+    #elmekawy-studio-concept .ems-time{font-size:11px;white-space:nowrap;color:var(--ems-muted);font-variant-numeric:tabular-nums}
+    #elmekawy-studio-concept .ems-viewerfoot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:11px;font-size:11px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-viewerfoot label{display:flex;align-items:center;gap:5px}
+    #elmekawy-studio-concept .ems-projectgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    #elmekawy-studio-concept .ems-project{border:1px solid var(--ems-line);background:var(--ems-panel);border-radius:var(--ems-radius);overflow:hidden;min-width:0}
+    #elmekawy-studio-concept .ems-thumb{height:180px;background:radial-gradient(at 50% 100%,#003060,#030d1b);color:#f3f8fc;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    #elmekawy-studio-concept .ems-thumbtext{font-size:23px;font-weight:500;line-height:1.7;position:relative;z-index:1}
+    #elmekawy-studio-concept .ems-thumbtext span{color:#68bbe3}
+    #elmekawy-studio-concept .ems-thumbart{width:92px;height:90px;position:relative;flex-shrink:0;opacity:.8;display:grid;place-items:center}
+    #elmekawy-studio-concept .ems-thumbart .ems-plane{width:65px;height:44px}
+    #elmekawy-studio-concept .ems-projectbody{padding:18px;display:grid;gap:12px}
+    #elmekawy-studio-concept .ems-projectmeta{display:flex;flex-wrap:wrap;gap:10px;color:var(--ems-muted);font-size:12px;direction:ltr;justify-content:flex-end}
+    #elmekawy-studio-concept .ems-asset{padding:13px 0;border-bottom:1px solid var(--ems-line);display:flex;align-items:center;gap:10px}
+    #elmekawy-studio-concept .ems-fileicon{display:grid;place-items:center;width:36px;height:40px;border-radius:7px;background:var(--ems-soft);color:var(--ems-blue);flex-shrink:0}
+    #elmekawy-studio-concept .ems-fileicon svg{width:18px;height:18px}
+    #elmekawy-studio-concept .ems-assettext{min-width:0;overflow-wrap:anywhere;flex:1}
+    #elmekawy-studio-concept .ems-assettext small{display:block;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-warning{color:var(--ems-warn)}
+    #elmekawy-studio-concept .ems-prompt{direction:ltr;text-align:left;min-height:186px;font-size:13px}
+    #elmekawy-studio-concept .ems-steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+    #elmekawy-studio-concept .ems-steps span{background:var(--ems-soft);padding:5px 9px;border-radius:7px;color:var(--ems-muted);font-size:12px}
+    #elmekawy-studio-concept .ems-steps span[data-active=true]{background:var(--ems-selected);color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+    #elmekawy-studio-concept .ems-formwide{grid-column:1/-1}
+    #elmekawy-studio-concept .ems-formactions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:18px;border-top:1px solid var(--ems-line)}
+    #elmekawy-studio-concept .ems-choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+    #elmekawy-studio-concept .ems-choice{display:block;text-align:right;border:1px solid var(--ems-line);border-radius:var(--ems-radius);padding:18px;background:var(--ems-panel)}
+    #elmekawy-studio-concept .ems-choice:has(input:checked){border-color:var(--ems-blue);background:var(--ems-selected)}
+    #elmekawy-studio-concept .ems-choice strong,#elmekawy-studio-concept .ems-choice small{display:block;margin-top:8px}
+    #elmekawy-studio-concept .ems-choice input{accent-color:var(--ems-blue)}
+    #elmekawy-studio-concept .ems-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;background:var(--ems-panel);padding:18px;border-radius:var(--ems-radius);border:1px solid var(--ems-line)}
+    #elmekawy-studio-concept .ems-summary small{display:block;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-colors{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    #elmekawy-studio-concept .ems-colors label{display:grid;justify-items:center;gap:5px;font-size:11px;color:var(--ems-muted)}
+    #elmekawy-studio-concept .ems-footer{border-top:1px solid var(--ems-line);padding:10px 22px;color:var(--ems-muted);font-size:11px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--ems-panel)}
+    #elmekawy-studio-concept .ems-notice{margin-top:16px;padding:10px 13px;border-radius:9px;background:var(--ems-selected);color:var(--ems-blue);font-size:12px}
+    #elmekawy-studio-concept .ems-exportfacts{display:grid;gap:0;margin:14px 0}
+    #elmekawy-studio-concept .ems-exportfacts&gt;div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--ems-line);padding:10px 0}
+    @media(max-width:850px){#elmekawy-studio-concept .ems-shell{grid-template-columns:132px minmax(0,1fr)}#elmekawy-studio-concept .ems-main{padding:18px}#elmekawy-studio-concept .ems-editorgrid{grid-template-columns:minmax(0,1fr) 240px;gap:14px}#elmekawy-studio-concept .ems-sidebar{padding-inline:7px}#elmekawy-studio-concept .ems-sidebar button{padding-inline:8px}#elmekawy-studio-concept .ems-thumbart{display:none}}
+    @media(max-width:700px){#elmekawy-studio-concept .ems-shell{display:block;min-height:0}#elmekawy-studio-concept .ems-sidebar{flex-direction:row;flex-wrap:wrap;padding:9px 12px;border-left:0;border-bottom:1px solid var(--ems-line)}#elmekawy-studio-concept .ems-sidebar&gt;small,#elmekawy-studio-concept .ems-sidebottom{display:none}#elmekawy-studio-concept .ems-sidebar button{font-size:12px;min-height:36px}#elmekawy-studio-concept .ems-editorgrid{grid-template-columns:minmax(0,1fr) 250px}#elmekawy-studio-concept .ems-header{padding-right:18px;gap:12px}#elmekawy-studio-concept .ems-header&gt;.ems-pill{display:none}}
+    @media(max-width:550px){#elmekawy-studio-concept .ems-editorgrid{grid-template-columns:1fr}#elmekawy-studio-concept .ems-viewer{grid-row:1}#elmekawy-studio-concept .ems-stage{width:195px}#elmekawy-studio-concept .ems-projectgrid,#elmekawy-studio-concept .ems-formgrid,#elmekawy-studio-concept .ems-choicegrid{grid-template-columns:1fr}#elmekawy-studio-concept .ems-pagehead{align-items:flex-start}#elmekawy-studio-concept .ems-main{padding:16px}#elmekawy-studio-concept .ems-tabs{gap:16px}#elmekawy-studio-concept .ems-header{padding:18px 16px 18px 96px}#elmekawy-studio-concept .ems-wordmark{font-size:12px;letter-spacing:1px}#elmekawy-studio-concept .ems-subbrand{font-size:9px;letter-spacing:2px}#elmekawy-studio-concept .ems-mark{width:31px;height:34px;font-size:20px}#elmekawy-studio-concept .ems-summary{grid-template-columns:1fr}#elmekawy-studio-concept .ems-formwide{grid-column:auto}}
+    @media(pointer:coarse){#elmekawy-studio-concept button{min-height:44px}#elmekawy-studio-concept input:not([type=range]):not([type=color]),#elmekawy-studio-concept textarea,#elmekawy-studio-concept select{font-size:16px}}
+  &lt;/style&gt;
+  &lt;header class=&quot;ems-header&quot;&gt;
+    &lt;div class=&quot;ems-identity&quot;&gt;&lt;div class=&quot;ems-mark&quot; aria-hidden=&quot;true&quot;&gt;M&lt;/div&gt;&lt;div&gt;&lt;div class=&quot;ems-wordmark&quot;&gt;ELMEKAWY&lt;/div&gt;&lt;div class=&quot;ems-subbrand&quot;&gt;MOTION STUDIO&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;span class=&quot;ems-pill&quot;&gt;نموذج تفاعلي للتصميم&lt;/span&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;ems-shell&quot;&gt;
+    &lt;nav class=&quot;ems-sidebar&quot; aria-label=&quot;التنقل الرئيسي&quot;&gt;
+      &lt;small class=&quot;ems-muted&quot;&gt;مساحة العمل&lt;/small&gt;
+      &lt;button type=&quot;button&quot; class=&quot;cursor-interaction&quot; data-screen=&quot;projects&quot; aria-pressed=&quot;false&quot;&gt;&lt;i data-lucide=&quot;folder-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;المشاريع&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;cursor-interaction&quot; data-screen=&quot;editor&quot; aria-pressed=&quot;true&quot;&gt;&lt;i data-lucide=&quot;clapperboard&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;محرّر الفيديو&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;cursor-interaction&quot; data-screen=&quot;create&quot; aria-pressed=&quot;false&quot;&gt;&lt;i data-lucide=&quot;plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;مشروع جديد&lt;/button&gt;
+      &lt;div class=&quot;ems-sidebottom&quot;&gt;&lt;span class=&quot;ems-ltr&quot;&gt;LOCAL FIRST&lt;/span&gt;&lt;span&gt;من الفكرة إلى الفيديو.&lt;/span&gt;&lt;span&gt;على جهازك.&lt;/span&gt;&lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;main class=&quot;ems-main&quot;&gt;
+      &lt;section data-page=&quot;editor&quot;&gt;
+        &lt;div class=&quot;ems-pagehead&quot;&gt;&lt;div&gt;&lt;h2 id=&quot;ems-project-title&quot;&gt;Elmekawy BIM — V2&lt;/h2&gt;&lt;p&gt;&lt;bdi id=&quot;ems-template-label&quot;&gt;bim-motion-study @ 1.0.0&lt;/bdi&gt; · &lt;span id=&quot;ems-save-state&quot;&gt;بيانات توضيحية&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;ems-row&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;cursor-interaction&quot; id=&quot;ems-save&quot;&gt;&lt;i data-lucide=&quot;save&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;تجربة الحفظ&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;ems-primary cursor-interaction&quot; id=&quot;ems-export&quot;&gt;&lt;i data-lucide=&quot;film&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;التصدير&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;ems-tabs&quot; role=&quot;tablist&quot; aria-label=&quot;أقسام المشروع&quot;&gt;
+          &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;ems-tab-scenes&quot; aria-selected=&quot;true&quot; aria-controls=&quot;ems-panel-scenes&quot; data-editor-tab=&quot;scenes&quot; class=&quot;cursor-interaction&quot;&gt;المشاهد&lt;/button&gt;
+          &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;ems-tab-assets&quot; aria-selected=&quot;false&quot; aria-controls=&quot;ems-panel-assets&quot; data-editor-tab=&quot;assets&quot; class=&quot;cursor-interaction&quot;&gt;الوسائط&lt;/button&gt;
+          &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;ems-tab-prompts&quot; aria-selected=&quot;false&quot; aria-controls=&quot;ems-panel-prompts&quot; data-editor-tab=&quot;prompts&quot; class=&quot;cursor-interaction&quot;&gt;الـ Prompts&lt;/button&gt;
+          &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;ems-tab-brand&quot; aria-selected=&quot;false&quot; aria-controls=&quot;ems-panel-brand&quot; data-editor-tab=&quot;brand&quot; class=&quot;cursor-interaction&quot;&gt;الهوية&lt;/button&gt;
+          &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;ems-tab-output&quot; aria-selected=&quot;false&quot; aria-controls=&quot;ems-panel-output&quot; data-editor-tab=&quot;output&quot; class=&quot;cursor-interaction&quot;&gt;الإخراج&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;ems-editorgrid&quot;&gt;
+          &lt;div&gt;
+            &lt;section id=&quot;ems-panel-scenes&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;ems-tab-scenes&quot;&gt;
+              &lt;div class=&quot;ems-sectionhead&quot;&gt;&lt;h3&gt;قصة من خمسة مشاهد&lt;/h3&gt;&lt;small id=&quot;ems-scene-count&quot; class=&quot;ems-muted&quot;&gt;12 ثانية&lt;/small&gt;&lt;/div&gt;
+              &lt;div id=&quot;ems-scenes&quot; class=&quot;ems-scenes&quot;&gt;&lt;/div&gt;
+              &lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;النص الرئيسي · تجربة التعديل&lt;/span&gt;&lt;input id=&quot;ems-headline&quot; value=&quot;الموديل&quot; maxlength=&quot;40&quot;&gt;&lt;/label&gt;
+              &lt;div class=&quot;ems-note&quot;&gt;&lt;i data-lucide=&quot;lock-keyhole&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;توقيت القالب ثابت. اختر مشهدًا لاستكشاف المعاينة.&lt;/span&gt;&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;ems-panel-assets&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;ems-tab-assets&quot; hidden&gt;
+              &lt;div class=&quot;ems-sectionhead&quot;&gt;&lt;h3&gt;وسائط المشروع&lt;/h3&gt;&lt;small class=&quot;ems-muted&quot;&gt;ملفات محلية&lt;/small&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-asset&quot;&gt;&lt;span class=&quot;ems-fileicon&quot;&gt;&lt;i data-lucide=&quot;image&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div class=&quot;ems-assettext&quot;&gt;&lt;bdi&gt;structural-bim.png&lt;/bdi&gt;&lt;small&gt;الصورة الإنشائية · موجودة في الأصل&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-asset&quot;&gt;&lt;span class=&quot;ems-fileicon&quot;&gt;&lt;i data-lucide=&quot;stamp&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div class=&quot;ems-assettext&quot;&gt;&lt;bdi&gt;ME-Logo.png&lt;/bdi&gt;&lt;small&gt;شعار Elmekawy BIM · أصل مشترك&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-asset&quot; data-project-media=&quot;v2&quot;&gt;&lt;span class=&quot;ems-fileicon&quot;&gt;&lt;i data-lucide=&quot;images&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div class=&quot;ems-assettext&quot;&gt;صور قبل / بعد&lt;small class=&quot;ems-warning&quot;&gt;صورتان غير متوفرتين في V2&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-asset&quot; data-project-media=&quot;v1&quot; hidden&gt;&lt;span class=&quot;ems-fileicon&quot;&gt;&lt;i data-lucide=&quot;images&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div class=&quot;ems-assettext&quot;&gt;البنية التحتية والخلفية التقنية&lt;small&gt;صورتان مستخدمتان في مشاهد V1&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-asset&quot; data-project-media=&quot;v1&quot; hidden&gt;&lt;span class=&quot;ems-fileicon&quot;&gt;&lt;i data-lucide=&quot;music&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div class=&quot;ems-assettext&quot;&gt;&lt;bdi&gt;bim-reel.mp3&lt;/bdi&gt;&lt;small&gt;الصوت الأصلي · حجم الصوت 0.3&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;تجربة اختيار صورة · داخل المعاينة فقط&lt;/span&gt;&lt;input id=&quot;ems-file&quot; type=&quot;file&quot; accept=&quot;image/png,image/jpeg,image/webp&quot;&gt;&lt;/label&gt;
+              &lt;div id=&quot;ems-file-note&quot; class=&quot;ems-note&quot;&gt;اختيار الملف هنا تجربة داخل النموذج فقط.&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;ems-panel-prompts&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;ems-tab-prompts&quot; hidden&gt;
+              &lt;div class=&quot;ems-sectionhead&quot;&gt;&lt;h3&gt;Coordination — Before&lt;/h3&gt;&lt;span class=&quot;ems-pill&quot;&gt;توليد يدوي&lt;/span&gt;&lt;/div&gt;
+              &lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;نص قابل للتحرير والنسخ&lt;/span&gt;&lt;textarea id=&quot;ems-prompt&quot; class=&quot;ems-prompt&quot; rows=&quot;9&quot;&gt;Create an original synthetic BIM coordination concept illustration. Orthographic isometric view of a structural bay with two service routes visibly crossing. Dark navy #003060, cyan #0E86D4, restrained lighting. Landscape 6:5. No text, logos, watermark, people or real project identifiers.&lt;/textarea&gt;&lt;/label&gt;
+              &lt;div class=&quot;ems-row&quot; style=&quot;margin-top:12px&quot;&gt;&lt;button type=&quot;button&quot; id=&quot;ems-copy&quot; class=&quot;ems-primary cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;copy&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;نسخ الـ Prompt&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;ems-to-upload&quot; class=&quot;cursor-interaction&quot;&gt;اختيار صورة&lt;/button&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-note&quot;&gt;&lt;i data-lucide=&quot;clipboard&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;نسخ النص ← توليد وتنزيل يدوي ← إضافة الصورة إلى المشروع.&lt;/span&gt;&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;ems-panel-brand&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;ems-tab-brand&quot; hidden&gt;
+              &lt;h3&gt;Elmekawy BIM&lt;/h3&gt;&lt;p class=&quot;ems-muted&quot;&gt;ألوان الهوية والخطوط المحلية&lt;/p&gt;
+              &lt;div class=&quot;ems-colors&quot;&gt;&lt;label&gt;&lt;input type=&quot;color&quot; value=&quot;#003060&quot; id=&quot;ems-brand-navy&quot; aria-label=&quot;اللون الكحلي&quot;&gt;Navy&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;color&quot; value=&quot;#055c9d&quot; id=&quot;ems-brand-blue&quot; aria-label=&quot;اللون الأزرق&quot;&gt;Blue&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;color&quot; value=&quot;#0e86d4&quot; id=&quot;ems-brand-cyan&quot; aria-label=&quot;اللون السماوي&quot;&gt;Cyan&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;color&quot; value=&quot;#68bbe3&quot; id=&quot;ems-brand-light&quot; aria-label=&quot;اللون الفاتح&quot;&gt;Light&lt;/label&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-summary&quot;&gt;&lt;div&gt;&lt;small&gt;العربي&lt;/small&gt;&lt;span&gt;Cairo · 100–900&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;small&gt;الإنجليزي&lt;/small&gt;&lt;span&gt;Inter · 100–900&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;ems-note&quot;&gt;تغيير اللون في هذه المعاينة تجربة تصميم محلية.&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section id=&quot;ems-panel-output&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;ems-tab-output&quot; hidden&gt;
+              &lt;h3&gt;إعدادات الإخراج&lt;/h3&gt;
+              &lt;div class=&quot;ems-exportfacts&quot;&gt;&lt;div&gt;&lt;span class=&quot;ems-muted&quot;&gt;الدقة&lt;/span&gt;&lt;bdi&gt;1080 × 1920&lt;/bdi&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ems-muted&quot;&gt;الإطارات&lt;/span&gt;&lt;bdi&gt;30 FPS&lt;/bdi&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ems-muted&quot;&gt;المدة&lt;/span&gt;&lt;span id=&quot;ems-export-duration&quot;&gt;12 ثانية · 360 إطار&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ems-muted&quot;&gt;الصيغة&lt;/span&gt;&lt;bdi&gt;MP4 / H.264&lt;/bdi&gt;&lt;/div&gt;&lt;div&gt;&lt;span class=&quot;ems-muted&quot;&gt;الصوت&lt;/span&gt;&lt;span id=&quot;ems-audio-mode&quot;&gt;V2 صامت&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+              &lt;button type=&quot;button&quot; class=&quot;ems-primary cursor-interaction&quot; id=&quot;ems-simulate-export&quot;&gt;&lt;i data-lucide=&quot;film&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;محاكاة طلب التصدير&lt;/button&gt;
+              &lt;div class=&quot;ems-note&quot;&gt;هذا نموذج للتصميم؛ إنشاء MP4 متاح بعد تنفيذ التطبيق.&lt;/div&gt;
+            &lt;/section&gt;
+          &lt;/div&gt;
+          &lt;section class=&quot;ems-viewer&quot; aria-label=&quot;معاينة تخطيطية للفيديو&quot;&gt;
+            &lt;div class=&quot;ems-row ems-between&quot;&gt;&lt;h3&gt;المعاينة&lt;/h3&gt;&lt;span class=&quot;ems-pill&quot;&gt;تخطيطية&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;ems-stageholder&quot;&gt;&lt;div class=&quot;ems-stage&quot; id=&quot;ems-stage&quot;&gt;&lt;div class=&quot;ems-stagebrand&quot;&gt;&lt;span&gt;ELMEKAWY BIM&lt;/span&gt;&lt;span&gt;02&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ems-dot&quot; id=&quot;ems-focus-dot&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ems-safe&quot; id=&quot;ems-safe&quot; hidden&gt;&lt;/div&gt;&lt;div class=&quot;ems-stagemain&quot; id=&quot;ems-stage-content&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ems-stagefooter&quot;&gt;&lt;span id=&quot;ems-stage-note&quot;&gt;القيمة في الترابط، مش في الشكل بس.&lt;/span&gt;&lt;div class=&quot;ems-stageprogress&quot;&gt;&lt;span id=&quot;ems-stage-progress&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;div class=&quot;ems-playerbar&quot;&gt;&lt;button type=&quot;button&quot; id=&quot;ems-play&quot; class=&quot;cursor-interaction&quot; aria-label=&quot;تشغيل المعاينة التخطيطية&quot;&gt;&lt;i data-lucide=&quot;play&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;input type=&quot;range&quot; id=&quot;ems-seek&quot; min=&quot;0&quot; max=&quot;359&quot; value=&quot;0&quot; aria-label=&quot;إطار المعاينة&quot;&gt;&lt;span class=&quot;ems-time&quot; id=&quot;ems-time&quot;&gt;00:00 / 00:12&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;ems-viewerfoot&quot;&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;ems-safe-toggle&quot;&gt;المنطقة الآمنة&lt;/label&gt;&lt;bdi id=&quot;ems-frame&quot;&gt;F 000 / 359&lt;/bdi&gt;&lt;/div&gt;
+          &lt;/section&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section data-page=&quot;projects&quot; hidden&gt;
+        &lt;div class=&quot;ems-pagehead&quot;&gt;&lt;div&gt;&lt;h2&gt;مشاريعك، في مكان واحد.&lt;/h2&gt;&lt;p&gt;مشروعا V1 وV2 كما سيظهران بعد الاستيراد · بيانات توضيحية&lt;/p&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; data-screen=&quot;create&quot; class=&quot;ems-primary cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;مشروع جديد&lt;/button&gt;&lt;/div&gt;
+        &lt;div class=&quot;ems-projectgrid&quot; id=&quot;ems-projects&quot;&gt;
+          &lt;article class=&quot;ems-project&quot;&gt;&lt;div class=&quot;ems-thumb&quot;&gt;&lt;div class=&quot;ems-thumbtext&quot;&gt;مش مجرد&lt;br&gt;&lt;span&gt;موديل 3D&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;ems-thumbart&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;ems-plane&quot;&gt;&lt;/span&gt;&lt;span class=&quot;ems-plane&quot;&gt;&lt;/span&gt;&lt;span class=&quot;ems-plane&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;ems-projectbody&quot;&gt;&lt;h3&gt;Elmekawy BIM — V1&lt;/h3&gt;&lt;div class=&quot;ems-projectmeta&quot;&gt;&lt;span&gt;30s&lt;/span&gt;&lt;span&gt;1080 × 1920&lt;/span&gt;&lt;span&gt;30 FPS&lt;/span&gt;&lt;/div&gt;&lt;small class=&quot;ems-muted&quot;&gt;ستة مشاهد · يتضمن الصوت الأصلي&lt;/small&gt;&lt;div class=&quot;ems-row ems-between&quot;&gt;&lt;span class=&quot;ems-pill&quot;&gt;Template 1.0.0&lt;/span&gt;&lt;button type=&quot;button&quot; data-open-project=&quot;v1&quot; class=&quot;cursor-interaction&quot;&gt;فتح المشروع&lt;i data-lucide=&quot;arrow-up-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;
+          &lt;article class=&quot;ems-project&quot;&gt;&lt;div class=&quot;ems-thumb&quot;&gt;&lt;div class=&quot;ems-thumbtext&quot;&gt;نربط التفاصيل&lt;br&gt;&lt;span&gt;ونبني الصورة الكاملة&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;ems-projectbody&quot;&gt;&lt;h3&gt;Elmekawy BIM — V2&lt;/h3&gt;&lt;div class=&quot;ems-projectmeta&quot;&gt;&lt;span&gt;12s&lt;/span&gt;&lt;span&gt;1080 × 1920&lt;/span&gt;&lt;span&gt;30 FPS&lt;/span&gt;&lt;/div&gt;&lt;small class=&quot;ems-warning&quot;&gt;خمس مشاهد · بدائل لصور قبل / بعد&lt;/small&gt;&lt;div class=&quot;ems-row ems-between&quot;&gt;&lt;span class=&quot;ems-pill&quot;&gt;Template 1.0.0&lt;/span&gt;&lt;button type=&quot;button&quot; data-open-project=&quot;v2&quot; class=&quot;cursor-interaction&quot;&gt;فتح المشروع&lt;i data-lucide=&quot;arrow-up-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section data-page=&quot;create&quot; hidden&gt;
+        &lt;div class=&quot;ems-pagehead&quot;&gt;&lt;div&gt;&lt;h2&gt;مشروع جديد&lt;/h2&gt;&lt;p&gt;جرّب بيانات المشروع واختيار القالب.&lt;/p&gt;&lt;/div&gt;&lt;span class=&quot;ems-pill&quot;&gt;تجربة بدون حفظ ملفات&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;ems-steps&quot; id=&quot;ems-steps&quot;&gt;&lt;span data-step-label=&quot;0&quot; data-active=&quot;true&quot;&gt;1 · الفكرة&lt;/span&gt;&lt;span data-step-label=&quot;1&quot;&gt;2 · القالب&lt;/span&gt;&lt;span data-step-label=&quot;2&quot;&gt;3 · المراجعة&lt;/span&gt;&lt;/div&gt;
+        &lt;section data-wizard-step=&quot;0&quot;&gt;&lt;div class=&quot;ems-formgrid&quot;&gt;&lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;اسم المشروع&lt;/span&gt;&lt;input id=&quot;ems-new-name&quot; placeholder=&quot;مثال: مقدمة خدمات BIM&quot; maxlength=&quot;120&quot;&gt;&lt;/label&gt;&lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;العميل أو العلامة&lt;/span&gt;&lt;input id=&quot;ems-new-client&quot; value=&quot;Elmekawy BIM&quot;&gt;&lt;/label&gt;&lt;label class=&quot;ems-field ems-formwide&quot;&gt;&lt;span&gt;الوصف والهدف&lt;/span&gt;&lt;textarea id=&quot;ems-new-objective&quot; placeholder=&quot;ما الرسالة التي تريد إيصالها؟&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;لغة القالب&lt;/span&gt;&lt;input id=&quot;ems-new-language&quot; value=&quot;العربية مع مصطلحات إنجليزية&quot; readonly&gt;&lt;/label&gt;&lt;label class=&quot;ems-field&quot;&gt;&lt;span&gt;اتجاه المحتوى&lt;/span&gt;&lt;input value=&quot;RTL مع عزل المصطلحات الإنجليزية&quot; readonly&gt;&lt;/label&gt;&lt;/div&gt;&lt;/section&gt;
+        &lt;section data-wizard-step=&quot;1&quot; hidden&gt;&lt;h3&gt;ابدأ بقالب محفوظ الإصدار&lt;/h3&gt;&lt;div class=&quot;ems-choicegrid&quot;&gt;&lt;label class=&quot;ems-choice cursor-interaction&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;ems-template&quot; value=&quot;v2&quot; checked&gt;&lt;strong&gt;Motion study · V2&lt;/strong&gt;&lt;small class=&quot;ems-muted&quot;&gt;12 ثانية · 5 مشاهد · صامت&lt;/small&gt;&lt;small class=&quot;ems-ltr&quot;&gt;bim-motion-study @ 1.0.0&lt;/small&gt;&lt;/label&gt;&lt;label class=&quot;ems-choice cursor-interaction&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;ems-template&quot; value=&quot;v1&quot;&gt;&lt;strong&gt;Personal intro · V1&lt;/strong&gt;&lt;small class=&quot;ems-muted&quot;&gt;30 ثانية · 6 مشاهد · صوت أصلي&lt;/small&gt;&lt;small class=&quot;ems-ltr&quot;&gt;bim-personal-intro @ 1.0.0&lt;/small&gt;&lt;/label&gt;&lt;/div&gt;&lt;div class=&quot;ems-summary&quot;&gt;&lt;div&gt;&lt;small&gt;المقاس المثبّت بالقالب&lt;/small&gt;&lt;bdi&gt;1080 × 1920 · 9:16&lt;/bdi&gt;&lt;/div&gt;&lt;div&gt;&lt;small&gt;معدل الإطارات&lt;/small&gt;&lt;bdi&gt;30 FPS&lt;/bdi&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;ems-note&quot;&gt;&lt;i data-lucide=&quot;lock-keyhole&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;المقاس والتوقيت ثابتان للحفاظ على السلوك البصري الأصلي.&lt;/span&gt;&lt;/div&gt;&lt;/section&gt;
+        &lt;section data-wizard-step=&quot;2&quot; hidden&gt;&lt;h3&gt;مراجعة المشروع&lt;/h3&gt;&lt;div id=&quot;ems-review&quot; class=&quot;ems-summary&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ems-note&quot;&gt;يمكنك إضافة الوسائط والنصوص والـ Prompts من محرّر المشروع.&lt;/div&gt;&lt;/section&gt;
+        &lt;div class=&quot;ems-formactions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;cursor-interaction&quot; id=&quot;ems-prev&quot; disabled&gt;السابق&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;ems-primary cursor-interaction&quot; id=&quot;ems-next&quot;&gt;التالي&lt;i data-lucide=&quot;arrow-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
+      &lt;/section&gt;
+      &lt;div id=&quot;ems-notice&quot; class=&quot;ems-notice&quot; role=&quot;status&quot; aria-live=&quot;polite&quot; hidden&gt;&lt;/div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+  &lt;footer class=&quot;ems-footer&quot;&gt;&lt;span&gt;معاينة التصميم · التفاعل داخل النموذج فقط&lt;/span&gt;&lt;span class=&quot;ems-ltr&quot;&gt;PROJECTS / TEMPLATES / LOCAL RENDER&lt;/span&gt;&lt;/footer&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;elmekawy-studio-concept&#x27;);
+  const q = selector =&gt; root.querySelector(selector);
+  const qa = selector =&gt; [...root.querySelectorAll(selector)];
+  const projectData = {
+    v2:{name:&#x27;Elmekawy BIM — V2&#x27;,template:&#x27;bim-motion-study @ 1.0.0&#x27;,frames:360,scenes:[
+      {name:&#x27;الموديل مش هو الـ BIM&#x27;,from:0,duration:60,kicker:&#x27;BEYOND THE MODEL&#x27;,lines:[&#x27;الموديل&#x27;,&#x27;مش هو الـ&#x27;,&#x27;BIM&#x27;],note:&#x27;القيمة في الترابط، مش في الشكل بس.&#x27;},
+      {name:&#x27;شبكة تنسيق مترابطة&#x27;,from:60,duration:75,kicker:&#x27;A CONNECTED SYSTEM&#x27;,lines:[&#x27;من موديل&#x27;,&#x27;لشبكة تنسيق&#x27;],art:true,note:&#x27;تصوّر توضيحي · ربط التخصصات والمعلومات&#x27;},
+      {name:&#x27;قبل / بعد · مثال توضيحي&#x27;,from:135,duration:90,kicker:&#x27;MAKE THE CONFLICT VISIBLE&#x27;,lines:[&#x27;نشوف التعارض&#x27;,&#x27;ونراجع المسار&#x27;],art:true,note:&#x27;SCHEMATIC PLACEHOLDER · مثال توضيحي فقط&#x27;},
+      {name:&#x27;من النمذجة إلى التسليم&#x27;,from:225,duration:75,kicker:&#x27;ONE CONTINUOUS WORKFLOW&#x27;,lines:[&#x27;كل خطوة متصلة&#x27;],workflow:true,note:&#x27;من الفكرة إلى التسليم.&#x27;},
+      {name:&#x27;Elmekawy BIM · تواصل&#x27;,from:300,duration:60,kicker:&#x27;LET’S CONNECT&#x27;,lines:[&#x27;نربط التفاصيل&#x27;,&#x27;ونبني الصورة الكاملة&#x27;],note:&#x27;linkedin.com/in/mahmoud-elmekawy&#x27;}]},
+    v1:{name:&#x27;Elmekawy BIM — V1&#x27;,template:&#x27;bim-personal-intro @ 1.0.0&#x27;,frames:900,scenes:[
+      {name:&#x27;BIM مش مجرد موديل 3D&#x27;,from:0,duration:120,kicker:&#x27;BEYOND THE MODEL / 01&#x27;,lines:[&#x27;الـ BIM&#x27;,&#x27;مش مجرد&#x27;,&#x27;موديل 3D&#x27;],note:&#x27;THINK SYSTEMS. BUILD BETTER.&#x27;},
+      {name:&#x27;المنشآت والبنية التحتية&#x27;,from:120,duration:150,kicker:&#x27;CONNECTED BY DESIGN / 02&#x27;,lines:[&#x27;STRUCTURAL &amp;&#x27;,&#x27;INFRASTRUCTURE&#x27;,&#x27;BIM&#x27;],art:true,note:&#x27;One coordinated vision.&#x27;},
+      {name:&#x27;خدمات BIM&#x27;,from:270,duration:180,kicker:&#x27;FROM MODEL TO DELIVERY / 03&#x27;,lines:[&#x27;Precision.&#x27;,&#x27;At every stage.&#x27;],workflow:true,note:&#x27;Modeling · Coordination · QTO · Automation&#x27;},
+      {name:&#x27;Revit &amp; BIM Training&#x27;,from:450,duration:180,kicker:&#x27;KNOWLEDGE INTO PRACTICE / 04&#x27;,lines:[&#x27;REVIT &amp;&#x27;,&#x27;BIM TRAINING&#x27;],art:true,note:&#x27;Autodesk Certified Instructor&#x27;},
+      {name:&#x27;Mahmoud Elmekawy&#x27;,from:630,duration:150,kicker:&#x27;ENGINEER. EDUCATOR. / 05&#x27;,lines:[&#x27;Mahmoud&#x27;,&#x27;Elmekawy.&#x27;],note:&#x27;Senior BIM Engineer | BIM Coordinator&#x27;},
+      {name:&#x27;Learn · Build · Coordinate&#x27;,from:780,duration:120,kicker:&#x27;YOUR NEXT CHAPTER / 06&#x27;,lines:[&#x27;Learn.&#x27;,&#x27;Build.&#x27;,&#x27;Coordinate.&#x27;],note:&#x27;linkedin.com/in/mahmoud-elmekawy/&#x27;}]}
+  };
+  const state={screen:&#x27;editor&#x27;,tab:&#x27;scenes&#x27;,project:&#x27;v2&#x27;,scene:0,frame:0,headline:&#x27;الموديل&#x27;,step:0,playing:false,safe:false,newName:&#x27;&#x27;,client:&#x27;Elmekawy BIM&#x27;,objective:&#x27;&#x27;};
+  let raf=null,playStart=0,playBase=0,customName=&#x27;&#x27;;
+  const icons = () =&gt; {if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:16,height:16}});};
+  const persist = () =&gt; {
+    if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{screen:state.screen,tab:state.tab,template:state.project,scene:state.scene},privateContent:{frame:state.frame,safe:state.safe,headline:state.headline,newName:state.newName,client:state.client,objective:state.objective,step:state.step}}).catch(()=&gt;{});
+  };
+  const notice = text =&gt; {q(&#x27;#ems-notice&#x27;).textContent=text;q(&#x27;#ems-notice&#x27;).hidden=false;};
+  const clearNotice=()=&gt;{q(&#x27;#ems-notice&#x27;).hidden=true;};
+  function stop(){state.playing=false;if(raf!==null)cancelAnimationFrame(raf);raf=null;q(&#x27;#ems-play&#x27;).setAttribute(&#x27;aria-label&#x27;,&#x27;تشغيل المعاينة التخطيطية&#x27;);q(&#x27;#ems-play&#x27;).innerHTML=&#x27;&lt;i data-lucide=&quot;play&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&#x27;;icons();}
+  function setScreen(screen,remember=true){if(![&#x27;editor&#x27;,&#x27;projects&#x27;,&#x27;create&#x27;].includes(screen))return;stop();state.screen=screen;qa(&#x27;[data-page]&#x27;).forEach(el=&gt;el.hidden=el.dataset.page!==screen);qa(&#x27;.ems-sidebar [data-screen]&#x27;).forEach(el=&gt;el.setAttribute(&#x27;aria-pressed&#x27;,String(el.dataset.screen===screen)));clearNotice();if(remember)persist();}
+  function setTab(tab,remember=true){if(![&#x27;scenes&#x27;,&#x27;assets&#x27;,&#x27;prompts&#x27;,&#x27;brand&#x27;,&#x27;output&#x27;].includes(tab))return;state.tab=tab;qa(&#x27;[data-editor-tab]&#x27;).forEach(el=&gt;{const active=el.dataset.editorTab===tab;el.setAttribute(&#x27;aria-selected&#x27;,String(active));q(&#x27;#ems-panel-&#x27;+el.dataset.editorTab).hidden=!active;});clearNotice();if(remember)persist();}
+  function renderScenes(){
+    const data=projectData[state.project];
+    q(&#x27;#ems-project-title&#x27;).textContent=customName||data.name;q(&#x27;#ems-template-label&#x27;).textContent=data.template;
+    q(&#x27;#ems-scene-count&#x27;).textContent=(data.frames/30)+&#x27; ثانية&#x27;;
+    q(&#x27;#ems-panel-scenes h3&#x27;).textContent=state.project===&#x27;v2&#x27;?&#x27;قصة من خمسة مشاهد&#x27;:&#x27;قصة من ستة مشاهد&#x27;;
+    q(&#x27;#ems-export-duration&#x27;).textContent=(data.frames/30)+&#x27; ثانية · &#x27;+data.frames+&#x27; إطار&#x27;;
+    q(&#x27;#ems-audio-mode&#x27;).textContent=state.project===&#x27;v2&#x27;?&#x27;V2 صامت&#x27;:&#x27;V1 · مسار أصلي بحجم صوت 0.3&#x27;;
+    qa(&#x27;[data-project-media]&#x27;).forEach(el=&gt;el.hidden=el.dataset.projectMedia!==state.project);
+    q(&#x27;#ems-seek&#x27;).max=String(data.frames-1);q(&#x27;#ems-scenes&#x27;).replaceChildren();
+    data.scenes.forEach((scene,i)=&gt;{const btn=document.createElement(&#x27;button&#x27;);btn.type=&#x27;button&#x27;;btn.className=&#x27;cursor-interaction&#x27;;btn.dataset.scene=String(i);btn.setAttribute(&#x27;aria-pressed&#x27;,String(i===state.scene));btn.innerHTML=&#x27;&lt;span class=&quot;ems-num&quot;&gt;&#x27;+String(i+1).padStart(2,&#x27;0&#x27;)+&#x27;&lt;/span&gt;&lt;span class=&quot;ems-scenecontent&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;small&gt;&lt;/small&gt;&lt;/span&gt;&#x27;;btn.querySelector(&#x27;.ems-scenecontent&gt;span&#x27;).textContent=scene.name;btn.querySelector(&#x27;small&#x27;).textContent=(scene.from/30).toFixed(1)+&#x27;–&#x27;+((scene.from+scene.duration)/30).toFixed(1)+&#x27;s · &#x27;+scene.duration+&#x27;f&#x27;;btn.addEventListener(&#x27;click&#x27;,()=&gt;{stop();state.scene=i;state.frame=scene.from;state.headline=scene.lines[0];q(&#x27;#ems-headline&#x27;).value=state.headline;renderFrame();persist();});q(&#x27;#ems-scenes&#x27;).appendChild(btn);});
+  }
+  function renderFrame(){
+    const data=projectData[state.project];state.frame=Math.max(0,Math.min(data.frames-1,Math.round(state.frame)));
+    const nextIndex=data.scenes.findLastIndex(scene=&gt;state.frame&gt;=scene.from);
+    if(nextIndex!==state.scene){state.scene=nextIndex;state.headline=data.scenes[nextIndex].lines[0];q(&#x27;#ems-headline&#x27;).value=state.headline;}
+    const scene=data.scenes[state.scene];qa(&#x27;[data-scene]&#x27;).forEach(el=&gt;el.setAttribute(&#x27;aria-pressed&#x27;,String(Number(el.dataset.scene)===state.scene)));
+    const stage=q(&#x27;#ems-stage-content&#x27;);stage.replaceChildren();const kicker=document.createElement(&#x27;div&#x27;);kicker.className=&#x27;ems-stagekicker&#x27;;kicker.textContent=scene.kicker;stage.appendChild(kicker);
+    scene.lines.forEach((line,i)=&gt;{const el=document.createElement(&#x27;div&#x27;);el.className=line===&#x27;BIM&#x27;?&#x27;ems-stagebim&#x27;:&#x27;ems-stageline&#x27;;el.textContent=i===0?state.headline:line;if(/[A-Za-z]/.test(line)&amp;&amp;!/[\u0600-\u06ff]/.test(line)){el.style.direction=&#x27;ltr&#x27;;el.style.fontSize=line.length&gt;13?&#x27;16px&#x27;:&#x27;&#x27;;}stage.appendChild(el);});
+    if(scene.art){const art=document.createElement(&#x27;div&#x27;);art.className=&#x27;ems-schematic&#x27;;art.setAttribute(&#x27;aria-label&#x27;,&#x27;رسم تخطيطي توضيحي لمستويات نموذج BIM&#x27;);art.innerHTML=&#x27;&lt;span class=&quot;ems-plane&quot;&gt;&lt;/span&gt;&lt;span class=&quot;ems-plane&quot;&gt;&lt;/span&gt;&lt;span class=&quot;ems-plane&quot;&gt;&lt;/span&gt;&#x27;;stage.appendChild(art);}
+    if(scene.workflow){const workflow=document.createElement(&#x27;div&#x27;);workflow.className=&#x27;ems-workflow&#x27;;workflow.innerHTML=&#x27;&lt;span&gt;01 &amp;nbsp; MODEL&lt;/span&gt;&lt;span&gt;02 &amp;nbsp; COORDINATE&lt;/span&gt;&lt;span&gt;03 &amp;nbsp; CHECK&lt;/span&gt;&lt;span&gt;04 &amp;nbsp; DELIVER&lt;/span&gt;&#x27;;workflow.style.marginTop=&#x27;18px&#x27;;stage.appendChild(workflow);}
+    q(&#x27;#ems-stage-note&#x27;).textContent=scene.note;q(&#x27;#ems-stage-progress&#x27;).style.width=state.frame/(data.frames-1)*100+&#x27;%&#x27;;q(&#x27;#ems-seek&#x27;).value=String(state.frame);
+    q(&#x27;#ems-time&#x27;).textContent=&#x27;00:&#x27;+String(Math.floor(state.frame/30)).padStart(2,&#x27;0&#x27;)+&#x27; / 00:&#x27;+String(data.frames/30).padStart(2,&#x27;0&#x27;);q(&#x27;#ems-frame&#x27;).textContent=&#x27;F &#x27;+String(state.frame).padStart(3,&#x27;0&#x27;)+&#x27; / &#x27;+(data.frames-1);
+    q(&#x27;#ems-focus-dot&#x27;).style.left=(82-state.scene*9)+&#x27;%&#x27;;q(&#x27;#ems-focus-dot&#x27;).style.top=(28+state.scene*8)+&#x27;%&#x27;;q(&#x27;#ems-safe&#x27;).hidden=!state.safe;q(&#x27;#ems-safe-toggle&#x27;).checked=state.safe;
+  }
+  function openProject(key,name=&#x27;&#x27;){stop();state.project=key;customName=name;state.frame=0;state.scene=0;state.headline=projectData[key].scenes[0].lines[0];q(&#x27;#ems-headline&#x27;).value=state.headline;q(&#x27;#ems-save-state&#x27;).textContent=&#x27;بيانات توضيحية&#x27;;renderScenes();renderFrame();setTab(&#x27;scenes&#x27;,false);setScreen(&#x27;editor&#x27;);}
+  function renderWizard(){
+    qa(&#x27;[data-wizard-step]&#x27;).forEach(el=&gt;el.hidden=Number(el.dataset.wizardStep)!==state.step);qa(&#x27;[data-step-label]&#x27;).forEach(el=&gt;el.dataset.active=String(Number(el.dataset.stepLabel)===state.step));q(&#x27;#ems-prev&#x27;).disabled=state.step===0;q(&#x27;#ems-next&#x27;).textContent=state.step===2?&#x27;فتح المشروع التجريبي&#x27;:&#x27;التالي&#x27;;
+    if(state.step===2){const key=q(&#x27;input[name=&quot;ems-template&quot;]:checked&#x27;).value;const values=[[&#x27;المشروع&#x27;,state.newName||&#x27;مشروع جديد&#x27;],[&#x27;العميل&#x27;,state.client||&#x27;—&#x27;],[&#x27;القالب&#x27;,projectData[key].template],[&#x27;الإخراج&#x27;,(projectData[key].frames/30)+&#x27; ثانية · 1080 × 1920 · 30 FPS&#x27;]];q(&#x27;#ems-review&#x27;).replaceChildren();values.forEach(([label,value])=&gt;{const box=document.createElement(&#x27;div&#x27;);const small=document.createElement(&#x27;small&#x27;);small.textContent=label;const text=document.createElement(&#x27;span&#x27;);text.textContent=value;box.append(small,text);q(&#x27;#ems-review&#x27;).appendChild(box);});}
+  }
+  qa(&#x27;[data-screen]&#x27;).forEach(el=&gt;el.addEventListener(&#x27;click&#x27;,()=&gt;setScreen(el.dataset.screen)));
+  qa(&#x27;[data-editor-tab]&#x27;).forEach(el=&gt;el.addEventListener(&#x27;click&#x27;,()=&gt;setTab(el.dataset.editorTab)));
+  qa(&#x27;[data-open-project]&#x27;).forEach(el=&gt;el.addEventListener(&#x27;click&#x27;,()=&gt;openProject(el.dataset.openProject)));
+  q(&#x27;#ems-headline&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{state.headline=event.target.value;q(&#x27;#ems-save-state&#x27;).textContent=&#x27;تعديل تجريبي غير محفوظ&#x27;;renderFrame();persist();});
+  q(&#x27;#ems-save&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{q(&#x27;#ems-save-state&#x27;).textContent=&#x27;تم تحديث النموذج&#x27;;notice(&#x27;تم تحديث المعاينة فقط؛ لم تُحفظ ملفات مشروع.&#x27;);persist();});
+  q(&#x27;#ems-export&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;setTab(&#x27;output&#x27;));
+  q(&#x27;#ems-simulate-export&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;notice(&#x27;محاكاة: سيُرسل الإصدار المحفوظ إلى قائمة التصيير المحلية بعد تنفيذ التطبيق. لم يتم إنشاء MP4.&#x27;));
+  q(&#x27;#ems-seek&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{stop();state.frame=Number(event.target.value);renderFrame();});q(&#x27;#ems-seek&#x27;).addEventListener(&#x27;change&#x27;,persist);
+  q(&#x27;#ems-play&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{if(state.playing){stop();persist();return;}if(state.frame&gt;=projectData[state.project].frames-1)state.frame=0;state.playing=true;playStart=performance.now();playBase=state.frame;q(&#x27;#ems-play&#x27;).innerHTML=&#x27;&lt;i data-lucide=&quot;pause&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&#x27;;q(&#x27;#ems-play&#x27;).setAttribute(&#x27;aria-label&#x27;,&#x27;إيقاف المعاينة&#x27;);icons();const tick=now=&gt;{state.frame=playBase+Math.floor((now-playStart)*30/1000);renderFrame();if(state.frame&gt;=projectData[state.project].frames-1){stop();persist();return;}raf=requestAnimationFrame(tick);};raf=requestAnimationFrame(tick);});
+  q(&#x27;#ems-safe-toggle&#x27;).addEventListener(&#x27;change&#x27;,event=&gt;{state.safe=event.target.checked;q(&#x27;#ems-safe&#x27;).hidden=!state.safe;persist();});
+  q(&#x27;#ems-copy&#x27;).addEventListener(&#x27;click&#x27;,async()=&gt;{const text=q(&#x27;#ems-prompt&#x27;);try{if(!navigator.clipboard?.writeText)throw new Error(&#x27;Clipboard unavailable&#x27;);await navigator.clipboard.writeText(text.value);notice(&#x27;تم نسخ الـ Prompt.&#x27;);}catch{text.focus();text.select();notice(&#x27;النص محدّد؛ انسخه يدويًا.&#x27;);}});
+  q(&#x27;#ems-to-upload&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;setTab(&#x27;assets&#x27;));
+  q(&#x27;#ems-file&#x27;).addEventListener(&#x27;change&#x27;,event=&gt;{const file=event.target.files?.[0];q(&#x27;#ems-file-note&#x27;).textContent=file?&#x27;تم اختيار «&#x27;+file.name+&#x27;» داخل النموذج فقط؛ لم يُرفع أو يُحفظ على القرص.&#x27;:&#x27;اختيار الملف هنا تجربة داخل النموذج فقط.&#x27;;});
+  q(&#x27;#ems-brand-navy&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{q(&#x27;#ems-stage&#x27;).style.background=&#x27;radial-gradient(ellipse at 85% 45%,&#x27;+event.target.value+&#x27; 0%,#030d1b 72%)&#x27;;});
+  q(&#x27;#ems-brand-blue&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{q(&#x27;#ems-stage&#x27;).style.background=&#x27;radial-gradient(ellipse at 85% 45%,&#x27;+q(&#x27;#ems-brand-navy&#x27;).value+&#x27; 0%,&#x27;+event.target.value+&#x27; 140%)&#x27;;});
+  q(&#x27;#ems-brand-cyan&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{q(&#x27;#ems-focus-dot&#x27;).style.boxShadow=&#x27;0 0 15px &#x27;+event.target.value;});
+  q(&#x27;#ems-brand-light&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{q(&#x27;#ems-focus-dot&#x27;).style.background=event.target.value;q(&#x27;#ems-stage-progress&#x27;).style.background=event.target.value;});
+  q(&#x27;#ems-new-name&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{state.newName=event.target.value;});q(&#x27;#ems-new-client&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{state.client=event.target.value;});q(&#x27;#ems-new-objective&#x27;).addEventListener(&#x27;input&#x27;,event=&gt;{state.objective=event.target.value;});
+  q(&#x27;#ems-next&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{if(state.step===0&amp;&amp;!state.newName.trim()){notice(&#x27;اكتب اسم المشروع لتجربة الخطوة التالية.&#x27;);q(&#x27;#ems-new-name&#x27;).focus();return;}clearNotice();if(state.step&lt;2){state.step++;renderWizard();persist();}else{const key=q(&#x27;input[name=&quot;ems-template&quot;]:checked&#x27;).value;openProject(key,state.newName);notice(&#x27;تم فتح مشروع تجريبي داخل المعاينة فقط.&#x27;);}});
+  q(&#x27;#ems-prev&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{state.step=Math.max(0,state.step-1);renderWizard();clearNotice();persist();});
+  function restore(snapshot){if(!snapshot)return;stop();const m=snapshot.modelContent||{},p=snapshot.privateContent||{};if(projectData[m.template])state.project=m.template;if([&#x27;scenes&#x27;,&#x27;assets&#x27;,&#x27;prompts&#x27;,&#x27;brand&#x27;,&#x27;output&#x27;].includes(m.tab))state.tab=m.tab;if([&#x27;editor&#x27;,&#x27;projects&#x27;,&#x27;create&#x27;].includes(m.screen))state.screen=m.screen;if(Number.isFinite(p.frame))state.frame=Math.max(0,Math.min(projectData[state.project].frames-1,p.frame));state.scene=Math.max(0,projectData[state.project].scenes.findLastIndex(scene=&gt;state.frame&gt;=scene.from));state.headline=typeof p.headline===&#x27;string&#x27;?p.headline:projectData[state.project].scenes[state.scene].lines[0];state.safe=p.safe===true;for(const key of [&#x27;newName&#x27;,&#x27;client&#x27;,&#x27;objective&#x27;])if(typeof p[key]===&#x27;string&#x27;)state[key]=p[key];state.step=[0,1,2].includes(p.step)?p.step:0;q(&#x27;#ems-headline&#x27;).value=state.headline;q(&#x27;#ems-new-name&#x27;).value=state.newName;q(&#x27;#ems-new-client&#x27;).value=state.client;q(&#x27;#ems-new-objective&#x27;).value=state.objective;renderScenes();renderFrame();renderWizard();setTab(state.tab,false);setScreen(state.screen,false);}
+  renderScenes();renderFrame();renderWizard();restore(window.openai?.widgetState);
+  window.addEventListener(&#x27;openai:set_globals&#x27;,event=&gt;{if(event.detail?.globals?.widgetState)restore(event.detail.globals.widgetState);});
+  document.addEventListener(&#x27;visibilitychange&#x27;,()=&gt;{if(document.hidden)stop();});
+  if(globalThis.Tweak){const design={radius:14,previewWidth:290};new Tweak({container:root,onChange:()=&gt;{root.style.setProperty(&#x27;--ems-radius&#x27;,design.radius+&#x27;px&#x27;);root.style.setProperty(&#x27;--ems-preview&#x27;,design.previewWidth+&#x27;px&#x27;);}}).addSlider(design,&#x27;radius&#x27;,{label:&#x27;استدارة البطاقات&#x27;,min:4,max:24,unit:&#x27;px&#x27;});const previewTweak=new Tweak({container:q(&#x27;.ems-viewer&#x27;),onChange:()=&gt;root.style.setProperty(&#x27;--ems-preview&#x27;,design.previewWidth+&#x27;px&#x27;)});previewTweak.addSlider(design,&#x27;previewWidth&#x27;,{label:&#x27;مساحة المعاينة&#x27;,min:250,max:330,step:10,unit:&#x27;px&#x27;});}
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (event) =&gt; {
+    for (const target of event.composedPath()) {
+      if (target?.nodeType === Node.ELEMENT_NODE) {
+        const trigger = target.closest(&quot;[data-tooltip]&quot;);
+        if (trigger) return trigger;
+      }
+    }
+    return null;
+  };
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handlers = {
+    pointerover: handlePointerOpen,
+    pointerdown: handlePointer,
+    pointercancel: handlePointer,
+    click: handleTouchClick,
+    pointerout: handleLeave,
+    focusin: handleFocusIn,
+    focusout: handleLeave,
+    keydown: handleKeyDown,
+    contextmenu: handleContextMenu,
+  };
+  const roots = new Map();
+  const handledEvents = new WeakSet();
+  const handleEvent = (event) =&gt; {
+    if (handledEvents.has(event)) return;
+    handledEvents.add(event);
+    handlers[event.type](event);
+  };
+  const discoverRoots = (node) =&gt; {
+    if (node.shadowRoot) listen(node.shadowRoot);
+    for (const element of node.querySelectorAll(&quot;*&quot;)) {
+      if (element.shadowRoot) listen(element.shadowRoot);
+    }
+  };
+  const listen = (root) =&gt; {
+    if (roots.has(root)) return;
+    for (const type of Object.keys(handlers)) root.addEventListener(type, handleEvent);
+    const observer = new window.MutationObserver((records) =&gt; {
+      for (const { addedNodes } of records) {
+        for (const node of addedNodes) {
+          if (node.nodeType === Node.ELEMENT_NODE) discoverRoots(node);
+        }
+      }
+      for (const [root, cleanup] of roots) {
+        if (root.host &amp;&amp; !root.host.isConnected) {
+          cleanup();
+          roots.delete(root);
+        }
+      }
+      if (activeTrigger &amp;&amp; !activeTrigger.isConnected) closeTooltip(false);
+    });
+    observer.observe(root, { childList: true, subtree: true });
+    roots.set(root, () =&gt; {
+      observer.disconnect();
+      for (const type of Object.keys(handlers)) root.removeEventListener(type, handleEvent);
+    });
+    discoverRoots(root);
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    for (const cleanup of roots.values()) cleanup();
+    roots.clear();
+    tooltip = null;
+  };
+
+  // Events between children of one shadow root never reach the document.
+  listen(document);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-carousel&quot;&gt;
+  (() =&gt; {
+    for (const root of document.querySelectorAll(&quot;.viz-carousel&quot;)) {
+      const panels = Array.from(
+        root.querySelectorAll(&quot;:scope &gt; [data-variant]&quot;),
+      );
+      if (panels.length === 0) {
+        continue;
+      }
+      root.setAttribute(&quot;role&quot;, &quot;group&quot;);
+      panels.forEach((panel, index) =&gt; {
+        panel.hidden = index !== 0;
+        panel.setAttribute(&quot;role&quot;, &quot;group&quot;);
+        if (!panel.hasAttribute(&quot;aria-label&quot;)) {
+          panel.setAttribute(&quot;aria-label&quot;, panel.dataset.variant);
+        }
+      });
+      root.dataset.activeVariant = panels[0].dataset.variant;
+      if (panels.length === 1) {
+        continue;
+      }
+
+      const controls = document.createElement(&quot;div&quot;);
+      controls.className = &quot;viz-carousel-controls&quot;;
+      // Portable copy of the settings dropdown&#x27;s legacy glyph; no 14px icon-package preset matches it.
+      // https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg
+      controls.innerHTML = `
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-previous cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;details class=&quot;viz-carousel-picker&quot;&gt;
+        &lt;summary class=&quot;cursor-interaction&quot;&gt;
+          &lt;span class=&quot;viz-carousel-count tabular-nums&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;viz-carousel-name&quot;&gt;&lt;/span&gt;
+          &lt;svg class=&quot;viz-carousel-caret&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 20 21&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+            &lt;path d=&quot;M15.2793 7.71101C15.539 7.45131 15.961 7.45131 16.2207 7.71101C16.4804 7.97071 16.4804 8.39272 16.2207 8.65242L10.4707 14.4024C10.211 14.6621 9.78902 14.6621 9.52932 14.4024L3.77932 8.65242L3.69436 8.54792C3.52385 8.28979 3.55205 7.93828 3.77932 7.71101C4.00659 7.48374 4.3581 7.45554 4.61623 7.62605L4.72073 7.71101L10 12.9903L15.2793 7.71101Z&quot; fill=&quot;currentColor&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;0.6&quot; /&gt;
+          &lt;/svg&gt;
+        &lt;/summary&gt;
+        &lt;div class=&quot;viz-carousel-options&quot;&gt;&lt;/div&gt;
+      &lt;/details&gt;
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-next cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;`;
+      const previous = controls.querySelector(&quot;.viz-carousel-previous&quot;);
+      const next = controls.querySelector(&quot;.viz-carousel-next&quot;);
+      const picker = controls.querySelector(&quot;.viz-carousel-picker&quot;);
+      const summary = picker.querySelector(&quot;summary&quot;);
+      const count = controls.querySelector(&quot;.viz-carousel-count&quot;);
+      const name = controls.querySelector(&quot;.viz-carousel-name&quot;);
+      const options = controls.querySelector(&quot;.viz-carousel-options&quot;);
+      const status = document.createElement(&quot;span&quot;);
+      status.className = &quot;sr-only&quot;;
+      status.setAttribute(&quot;role&quot;, &quot;status&quot;);
+      status.setAttribute(&quot;aria-live&quot;, &quot;polite&quot;);
+      status.setAttribute(&quot;aria-atomic&quot;, &quot;true&quot;);
+      previous.setAttribute(
+        &quot;aria-label&quot;,
+        root.dataset.previousLabel ?? &quot;Previous variant&quot;,
+      );
+      next.setAttribute(&quot;aria-label&quot;, root.dataset.nextLabel ?? &quot;Next variant&quot;);
+
+      let active = 0;
+      let mousePointerId = null;
+      let summaryPointerHandled = false;
+      summary.addEventListener(&quot;pointerdown&quot;, (event) =&gt; {
+        summaryPointerHandled =
+          event.pointerType === &quot;mouse&quot; &amp;&amp; event.button === 0 &amp;&amp; !event.ctrlKey;
+        if (!summaryPointerHandled) {
+          return;
+        }
+        event.preventDefault();
+        summary.focus({ preventScroll: true });
+        picker.open = !picker.open;
+        mousePointerId = picker.open ? event.pointerId : null;
+      });
+      summary.addEventListener(&quot;click&quot;, (event) =&gt; {
+        if (summaryPointerHandled &amp;&amp; event.detail &gt; 0) {
+          event.preventDefault();
+        }
+      });
+      const choices = panels.map((panel, index) =&gt; {
+        const choice = document.createElement(&quot;button&quot;);
+        choice.type = &quot;button&quot;;
+        choice.className = &quot;cursor-interaction&quot;;
+        choice.textContent = panel.dataset.variant;
+        choice.addEventListener(&quot;click&quot;, () =&gt; {
+          select(index);
+          summary.focus();
+        });
+        choice.addEventListener(&quot;pointerup&quot;, (event) =&gt; {
+          if (
+            picker.open &amp;&amp;
+            event.pointerType === &quot;mouse&quot; &amp;&amp;
+            event.button === 0 &amp;&amp;
+            event.pointerId === mousePointerId
+          ) {
+            choice.click();
+          }
+        });
+        options.appendChild(choice);
+        return choice;
+      });
+      const select = (index) =&gt; {
+        const changed = active !== index;
+        active = index;
+        panels.forEach((panel, position) =&gt; {
+          panel.hidden = position !== active;
+          choices[position].setAttribute(
+            &quot;aria-current&quot;,
+            String(position === active),
+          );
+        });
+        root.dataset.activeVariant = panels[active].dataset.variant;
+        count.textContent = `${active + 1} / ${panels.length}`;
+        name.textContent = panels[active].dataset.variant;
+        picker.open = false;
+        mousePointerId = null;
+        if (changed) {
+          status.textContent = `${count.textContent}: ${name.textContent}`;
+        }
+      };
+      previous.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + panels.length - 1) % panels.length),
+      );
+      next.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + 1) % panels.length),
+      );
+      picker.addEventListener(&quot;keydown&quot;, (event) =&gt; {
+        if (event.key === &quot;Escape&quot; &amp;&amp; picker.open) {
+          event.preventDefault();
+          picker.open = false;
+          mousePointerId = null;
+          summary.focus();
+          return;
+        }
+        if (event.altKey || event.ctrlKey || event.metaKey) {
+          return;
+        }
+        const index = choices.indexOf(document.activeElement);
+        let nextIndex;
+        if (event.key === &quot;ArrowDown&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + 1) % choices.length;
+        } else if (event.key === &quot;ArrowUp&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + choices.length - 1) % choices.length;
+        } else if (picker.open &amp;&amp; event.key === &quot;Home&quot;) {
+          nextIndex = 0;
+        } else if (picker.open &amp;&amp; event.key === &quot;End&quot;) {
+          nextIndex = choices.length - 1;
+        } else {
+          return;
+        }
+        event.preventDefault();
+        picker.open = true;
+        choices[nextIndex].focus();
+      });
+      picker.addEventListener(&quot;focusout&quot;, (event) =&gt; {
+        if (!picker.contains(event.relatedTarget)) {
+          picker.open = false;
+          mousePointerId = null;
+        }
+      });
+      const dismiss = (event) =&gt; {
+        if (!summary.contains(event.target)) {
+          mousePointerId = null;
+        }
+        if (!picker.contains(event.target)) {
+          picker.open = false;
+        }
+      };
+      const endPointerSelection = () =&gt; {
+        mousePointerId = null;
+      };
+      const sizePicker = () =&gt; {
+        root.style.setProperty(
+          &quot;--viz-carousel-picker-height&quot;,
+          `${picker.open ? options.offsetHeight : 0}px`,
+        );
+      };
+      picker.addEventListener(&quot;toggle&quot;, sizePicker);
+      window.addEventListener(&quot;resize&quot;, sizePicker);
+      document.addEventListener(&quot;pointerdown&quot;, dismiss);
+      document.addEventListener(&quot;pointerup&quot;, endPointerSelection);
+      document.addEventListener(&quot;pointercancel&quot;, endPointerSelection);
+      window.addEventListener(&quot;blur&quot;, endPointerSelection);
+      window.addEventListener(
+        &quot;pagehide&quot;,
+        () =&gt; {
+          document.removeEventListener(&quot;pointerdown&quot;, dismiss);
+          document.removeEventListener(&quot;pointerup&quot;, endPointerSelection);
+          document.removeEventListener(&quot;pointercancel&quot;, endPointerSelection);
+          window.removeEventListener(&quot;blur&quot;, endPointerSelection);
+          window.removeEventListener(&quot;resize&quot;, sizePicker);
+        },
+        { once: true },
+      );
+      root.append(controls, status);
+      select(0);
+    }
+  })();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe><script>(() => {
+  const frame = document.getElementById("codex-visualization");
+  if (!(frame instanceof HTMLIFrameElement)) {
+    return;
+  }
+  const isShare = document.documentElement.classList.contains(
+    "visualization-share-root",
+  );
+  let viewportHeight = globalThis.innerHeight;
+  let sizeFingerprint = null;
+  let sizeWriteTimeout;
+  let lastSize = null;
+  let pendingSize = null;
+  const storageKey = `codex:visualization-widget-state-v2:${JSON.stringify([
+    globalThis.location.pathname,
+    globalThis.location.search,
+  ])}`;
+  const sizeStorageKey = `${storageKey}:share-size-v1`;
+  const parseState = (serializedState) => {
+    if (
+      typeof serializedState !== "string" ||
+      new TextEncoder().encode(serializedState).length > 16 * 1024
+    ) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    /** @type {unknown} */
+    const state = JSON.parse(serializedState);
+    if (
+      state == null ||
+      typeof state !== "object" ||
+      Array.isArray(state) ||
+      ("imageIds" in state &&
+        (!Array.isArray(state.imageIds) || state.imageIds.length > 0))
+    ) {
+      throw new TypeError("Widget state must be a JSON object");
+    }
+    const storedState = { modelContent: null, privateContent: null, ...state };
+    const canonicalState = JSON.stringify(
+      storedState,
+      (_key, /** @type {unknown} */ value) => {
+        if (typeof value === "number" && !Number.isFinite(value)) {
+          throw new TypeError("Widget state must contain finite numbers");
+        }
+        return value;
+      },
+    );
+    if (new TextEncoder().encode(canonicalState).length > 16 * 1024) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    return storedState;
+  };
+  let storage = null;
+  let state = null;
+  try {
+    const localStorage = globalThis.localStorage;
+    const probeKey = `${storageKey}:probe`;
+    localStorage.setItem(probeKey, "1");
+    localStorage.removeItem(probeKey);
+    storage = localStorage;
+    const savedState = storage.getItem(storageKey);
+    if (savedState != null) {
+      try {
+        state = parseState(savedState);
+      } catch {
+        // Invalid saved state does not disable future writes.
+      }
+    }
+  } catch {
+    storage = null;
+  }
+  const persistSize = () => {
+    globalThis.clearTimeout(sizeWriteTimeout);
+    if (pendingSize == null) {
+      return;
+    }
+    try {
+      storage?.setItem(sizeStorageKey, pendingSize);
+    } catch {
+      // A denied or full cache must not affect the visualization.
+    }
+    pendingSize = null;
+  };
+  if (isShare) {
+    globalThis.addEventListener("pagehide", persistSize);
+  }
+  const initialGlobals = {
+    widgetState: state,
+    statePersistence: storage == null ? "none" : "local",
+  };
+
+  const channel = new MessageChannel();
+  channel.port1.addEventListener("message", (event) => {
+    const data = event.data;
+    if (typeof data !== "object" || data == null) {
+      return;
+    }
+    if (data.type === "widget-state-write") {
+      if (!Number.isSafeInteger(data.id) || data.id <= 0) {
+        return;
+      }
+      let ok = false;
+      try {
+        if (storage != null) {
+          const state = parseState(data.state);
+          storage.setItem(storageKey, JSON.stringify(state));
+          ok = true;
+        }
+      } catch {
+        // Storage denial, quota limits, and invalid state return a failed receipt.
+      }
+      channel.port1.postMessage({
+        type: "widget-state-result",
+        id: data.id,
+        ok,
+      });
+      return;
+    }
+    if (data.type === "height") {
+      const height = data.height;
+      if (
+        typeof height !== "number" ||
+        !Number.isFinite(height) ||
+        height < 0
+      ) {
+        return;
+      }
+      if (height <= 10_000) {
+        const width = isShare && storage != null ? frame.clientWidth : null;
+        frame.style.height = Math.ceil(height) + "px";
+        if (isShare && storage != null) {
+          const size = JSON.stringify({
+            fingerprint: sizeFingerprint,
+            width,
+            viewportHeight: globalThis.innerHeight,
+            dark: globalThis.matchMedia("(prefers-color-scheme: dark)").matches,
+            scale: globalThis.devicePixelRatio,
+            height: Math.ceil(height),
+          });
+          if (size !== lastSize) {
+            lastSize = size;
+            pendingSize = size;
+            globalThis.clearTimeout(sizeWriteTimeout);
+            sizeWriteTimeout = globalThis.setTimeout(persistSize, 100);
+          }
+        }
+      }
+      if (isShare) {
+        // Keep unusually tall content accessible without accepting an unbounded height.
+        if (height > 10_000 && Number.parseFloat(frame.style.height) === 0) {
+          frame.style.removeProperty("height");
+        }
+        frame.scrolling = height > 10_000 ? "auto" : "no";
+        document.documentElement.classList.add("visualization-share-ready");
+      }
+      return;
+    }
+    if (data.type === "scroll-to") {
+      const top = data.top;
+      if (
+        typeof top === "number" &&
+        Number.isFinite(top) &&
+        top >= 0 &&
+        globalThis.navigator.userActivation?.isActive === true
+      ) {
+        globalThis.scrollTo({
+          top: Math.ceil(
+            globalThis.scrollY + frame.getBoundingClientRect().top + top,
+          ),
+        });
+      }
+      return;
+    }
+    if (data.type === "open-external") {
+      const rawHref = data.href;
+      if (typeof rawHref !== "string") {
+        return;
+      }
+      let href;
+      try {
+        const url = new URL(rawHref, document.baseURI);
+        if (url.protocol !== "https:") {
+          return;
+        }
+        href = url.href;
+      } catch {
+        return;
+      }
+      if (globalThis.navigator.userActivation?.isActive === true) {
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.rel = "noopener noreferrer";
+        anchor.target = "_blank";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }
+      return;
+    }
+    if (data.type === "follow-up") {
+      const prompt = data.prompt;
+      if (
+        typeof prompt !== "string" ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      const title = data.title;
+      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
+    }
+  });
+  channel.port1.start();
+  const srcdoc = frame.dataset.srcdoc;
+  if (srcdoc == null) {
+    return;
+  }
+  globalThis.addEventListener("resize", () => {
+    const height = Number.parseFloat(frame.style.height);
+    if (!isShare && (!Number.isFinite(height) || height <= viewportHeight)) {
+      frame.style.removeProperty("height");
+    }
+    viewportHeight = globalThis.innerHeight;
+    channel.port1.postMessage({ type: "measure" });
+  });
+  frame.addEventListener(
+    "load",
+    () => {
+      frame.contentWindow?.postMessage(
+        { type: "codex-visualization-initialize" },
+        "*",
+        [channel.port2],
+      );
+    },
+    { once: true },
+  );
+  // Match the trusted bootstrap element, not the same text in an authored title.
+  const frameHtml = srcdoc.replace(
+    '<script type="application/json" id="codex-visualization-widget-state">__CODEX_VISUALIZATION_WIDGET_STATE__<\/script>',
+    () =>
+      '<script type="application/json" id="codex-visualization-widget-state">' +
+      JSON.stringify(initialGlobals).replaceAll("<", "\\u003c") +
+      "<\/script>",
+  );
+  if (isShare && storage != null) {
+    // Fingerprint the rendered document, including restored widget state, without
+    // storing its content. This is a layout cache, not a security identity.
+    let hash = 5381;
+    for (let index = 0; index < frameHtml.length; index += 1) {
+      hash = (hash * 33 + frameHtml.charCodeAt(index)) % 4_294_967_296;
+    }
+    sizeFingerprint = hash.toString(36);
+    try {
+      const size = JSON.parse(storage.getItem(sizeStorageKey) ?? "null");
+      if (
+        size?.fingerprint === sizeFingerprint &&
+        size.width === frame.clientWidth &&
+        size.viewportHeight === globalThis.innerHeight &&
+        size.dark ===
+          globalThis.matchMedia("(prefers-color-scheme: dark)").matches &&
+        size.scale === globalThis.devicePixelRatio &&
+        typeof size.height === "number" &&
+        Number.isFinite(size.height) &&
+        size.height >= 0 &&
+        size.height <= 10_000
+      ) {
+        frame.style.height = size.height + "px";
+      }
+    } catch {
+      // Ignore missing or invalid cache entries and measure the live frame.
+    }
+  }
+  frame.srcdoc = frameHtml;
+  delete frame.dataset.srcdoc;
+})();
+</script></body></html>
