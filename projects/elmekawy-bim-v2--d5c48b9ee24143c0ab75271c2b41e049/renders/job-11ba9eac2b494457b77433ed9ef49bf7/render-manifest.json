@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049",
+  "projectRevision": 2,
+  "template": {
+    "id": "bim-motion-study",
+    "version": "1.1.0"
+  },
+  "compositionId": "ElmekawyBIMIntroV2",
+  "engineSourceSha256": "7f46023d061b59f8df9bc1c72e5d708919c333a0d46679627fcb24e564ee02c6",
+  "rootLockSha256": "6500e70c58229e684984c3114beaf92e210d450d0fcf590afa06d5c4f63aa9d6",
+  "resources": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576
+    },
+    {
+      "id": "logo",
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238
+    },
+    {
+      "id": "structural",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852
+    }
+  ],
+  "effectiveSettings": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "mp4-h264-v1",
+    "fileNameLabel": "video",
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "browser": "Google Chrome for Testing 157.0.8080.0",
+    "remotion": "4.0.539"
+  },
+  "warnings": [
+    "صور قبل / بعد غير مكتملة؛ سيُستخدم البديل التخطيطي الأصلي للجانبين."
+  ],
+  "output": {
+    "file": "output.mp4",
+    "sha256": "5dd5367c498b11cb51e3e89b5531ae9c0677657fcc68809781bf95090e034054",
+    "bytes": 2467784,
+    "pixelFormat": "yuvj420p",
+    "videoDurationSeconds": 12,
+    "containerDurationSeconds": 12
+  },
+  "completedAt": "2026-10-31T20:51:38.086Z"
+}

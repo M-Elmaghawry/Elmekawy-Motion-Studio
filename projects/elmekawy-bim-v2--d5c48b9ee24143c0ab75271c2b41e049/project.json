@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
   "id": "elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049",
-  "revision": 2,
+  "revision": 3,
   "createdAt": "2026-10-31T11:18:35.069Z",
-  "updatedAt": "2026-10-31T11:52:42.190Z",
+  "updatedAt": "2026-10-31T20:53:52.580Z",
   "name": "Elmekawy BIM — V2",
   "status": "draft",
   "brief": {
@@ -190,8 +190,8 @@
       "content": {
         "cta.sectionNumber": "05",
         "cta.eyebrow": "LET’S CONNECT",
-        "cta.brandName": "ELMEKAWY",
-        "cta.brandSuffix": "BIM",
+        "cta.brandName": "",
+        "cta.brandSuffix": "",
         "cta.title1": "نربط التفاصيل",
         "cta.title2": "ونبني الصورة الكاملة",
         "cta.contact": "خلّينا نتواصل",

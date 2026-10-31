@@ -1,0 +1,13 @@
+{
+  "id": "job-11ba9eac2b494457b77433ed9ef49bf7",
+  "projectId": "elmekawy-bim-v2--d5c48b9ee24143c0ab75271c2b41e049",
+  "projectRevision": 2,
+  "projectName": "Elmekawy BIM — V2",
+  "state": "completed",
+  "progress": 1,
+  "createdAt": "2026-10-31T20:50:21.156Z",
+  "updatedAt": "2026-10-31T20:51:38.419Z",
+  "outputBytes": 2467784,
+  "outputSha256": "5dd5367c498b11cb51e3e89b5531ae9c0677657fcc68809781bf95090e034054",
+  "downloadUrl": "/api/renders/job-11ba9eac2b494457b77433ed9ef49bf7/download"
+}
