@@ -1,0 +1,316 @@
+{
+  "schemaVersion": "2.1.0",
+  "id": "revit-course-30s--213fc19a3463403ebc455d5be4d5d9d3",
+  "revision": 8,
+  "createdAt": "2026-11-01T05:58:34.302Z",
+  "updatedAt": "2026-11-01T05:58:40.687Z",
+  "name": "Revit course 30s",
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.1.0"
+  },
+  "brief": {
+    "client": "Course client",
+    "objective": "فيديو دورة Revit"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "profileId": "custom-client",
+    "version": "1.0.0",
+    "displayName": "REVIT COURSE",
+    "colors": {
+      "background": "#17152A",
+      "surface": "#282343",
+      "foreground": "#F5F1FF",
+      "accent": "#C7B6FF",
+      "muted": "#B8AFD0"
+    },
+    "fonts": {
+      "arabicAssetId": "font-cairo",
+      "latinAssetId": "font-inter"
+    },
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "outputProfile": {
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 24
+  },
+  "targetDurationFrames": 900,
+  "scenes": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-1",
+      "durationFrames": 310,
+      "direction": "rtl",
+      "motion": {
+        "id": "word-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "kinetic-title",
+      "content": {
+        "headline": "فكرتك تبدأ هنا",
+        "subtitle": "خطوة واضحة نحو هدفك"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-2",
+      "durationFrames": 310,
+      "direction": "rtl",
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "image",
+          "assetId": "video-c59d5826a99d4c4baa519c6b047b4914",
+          "assetSha256": "44f05309bd5ae28e062987f4cd7a2faa7f67dede16e525895beb4ff26f141453",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          "trimStartFrame": 0
+        }
+      ],
+      "type": "media-showcase",
+      "content": {
+        "headline": "شاهد التفاصيل",
+        "caption": "صورة توضيحية · راجع الأصل قبل الاعتماد"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-3",
+      "durationFrames": 310,
+      "direction": "rtl",
+      "motion": {
+        "id": "cta-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "cut",
+        "durationFrames": 0
+      },
+      "mediaBindings": [],
+      "type": "offer-cta",
+      "content": {
+        "headline": "ابدأ خطوتك القادمة",
+        "action": "تواصل معنا",
+        "contact": "example.com",
+        "offer": ""
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "kind": "font",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "project",
+        "path": "assets/archive/667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "kind": "font",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "project",
+        "path": "assets/archive/29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "image-initial",
+      "kind": "image",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "storage": {
+        "scope": "project",
+        "path": "assets/archive/bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481.png"
+      },
+      "approval": "approved",
+      "sourceNote": "صورة توضيحية من المكتبة المحلية؛ ليست نتيجة مشروع عميل.",
+      "license": {
+        "status": "unknown",
+        "note": "حقوق الاستخدام التجاري غير متحققة."
+      }
+    },
+    {
+      "id": "video-c59d5826a99d4c4baa519c6b047b4914",
+      "kind": "video",
+      "mimeType": "video/mp4",
+      "metadata": {
+        "durationSeconds": 30,
+        "width": 320,
+        "height": 568,
+        "hasAudio": true,
+        "codec": "h264"
+      },
+      "sha256": "44f05309bd5ae28e062987f4cd7a2faa7f67dede16e525895beb4ff26f141453",
+      "byteSize": 2261147,
+      "storage": {
+        "scope": "project",
+        "path": "assets/archive/44f05309bd5ae28e062987f4cd7a2faa7f67dede16e525895beb4ff26f141453.mp4"
+      },
+      "approval": "approved",
+      "sourceNote": "ملف فيديو محلي راجعته.",
+      "license": {
+        "status": "unknown",
+        "note": "راجع المصدر وحقوق الاستخدام."
+      }
+    },
+    {
+      "id": "audio-afad859ef32f47698c1d17e2909aefdd",
+      "kind": "audio",
+      "mimeType": "audio/wav",
+      "metadata": {
+        "durationSeconds": 30,
+        "width": 0,
+        "height": 0,
+        "hasAudio": true,
+        "codec": "pcm_s16le"
+      },
+      "sha256": "e4a9ee451f8f0e23f3dbb0dcd9d2b2290789f51a6ced2830994e70ed743a73f6",
+      "byteSize": 5292114,
+      "storage": {
+        "scope": "project",
+        "path": "assets/archive/e4a9ee451f8f0e23f3dbb0dcd9d2b2290789f51a6ced2830994e70ed743a73f6.wav"
+      },
+      "approval": "approved",
+      "sourceNote": "تعليق صوتي محلي.",
+      "license": {
+        "status": "unknown",
+        "note": "راجع المصدر وحقوق الاستخدام."
+      }
+    },
+    {
+      "id": "image-ec67791a36234af7be33a70270b345a4",
+      "kind": "image",
+      "mimeType": "image/png",
+      "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+      "byteSize": 4000537,
+      "storage": {
+        "scope": "project",
+        "path": "assets/archive/0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a.png"
+      },
+      "approval": "approved",
+      "sourceNote": "اعتماد نتيجة توليد يدوي.",
+      "license": {
+        "status": "unknown",
+        "note": "راجع المصدر وحقوق الاستخدام."
+      }
+    }
+  ],
+  "audio": {
+    "mode": "timeline",
+    "tracks": [
+      {
+        "id": "voice-track",
+        "assetId": "audio-afad859ef32f47698c1d17e2909aefdd",
+        "assetSha256": "e4a9ee451f8f0e23f3dbb0dcd9d2b2290789f51a6ced2830994e70ed743a73f6",
+        "role": "voiceover",
+        "startFrame": 0,
+        "trimStartFrame": 0,
+        "durationFrames": 870,
+        "volume": 0.8,
+        "fadeInFrames": 15,
+        "fadeOutFrames": 15
+      }
+    ],
+    "beats": [
+      0,
+      60,
+      120
+    ],
+    "pauses": [
+      {
+        "id": "closing-pause",
+        "startFrame": 870,
+        "durationFrames": 30,
+        "label": "وقفة النهاية"
+      }
+    ]
+  },
+  "prompts": [
+    {
+      "id": "prompt-review",
+      "sceneId": "scene-2",
+      "text": "وصف يدوي للصورة",
+      "negativeConstraints": "بدون كتابة",
+      "source": "موقع خارجي استخدمته يدويًا",
+      "status": "approved",
+      "assetId": "image-ec67791a36234af7be33a70270b345a4"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "ui-bim-20s--54c7fa53d2754b0c9272d9ea6c3b7b4d",
+  "projectRevision": 2,
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.1.0"
+  },
+  "compositionId": "FlexibleReel",
+  "engineSourceSha256": "333d464357f01d163f04b27c496149230d38f4c3403ac16014d1b98bf7c720f0",
+  "rootLockSha256": "b8b96131ea7db80f54c25b481142d152d958e41de1fca117f74be815dfb7b1fa",
+  "resources": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576
+    },
+    {
+      "id": "image-initial",
+      "sha256": "15450128d51d710b9a954d72058f7569aa1a273fd21ccd3dba8aa620fa2688b7",
+      "byteSize": 4736636
+    }
+  ],
+  "effectiveSettings": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 600,
+    "aspectRatio": "9:16",
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "portrait-1080p30-h264-v1",
+    "fileNameLabel": "video",
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "browser": "Google Chrome for Testing 157.0.8080.0",
+    "remotion": "4.0.539"
+  },
+  "warnings": [
+    "حقوق استخدام بعض الصور غير موثّقة؛ راجع المصدر قبل الاستخدام التجاري."
+  ],
+  "output": {
+    "file": "output.mp4",
+    "sha256": "d66482fa24cfe937b195dccaf343b7d9992189ac62e0b8fcc451df24e282d439",
+    "bytes": 806918,
+    "pixelFormat": "yuvj420p",
+    "videoDurationSeconds": 20,
+    "containerDurationSeconds": 20
+  },
+  "completedAt": "2026-11-01T05:38:28.162Z"
+}

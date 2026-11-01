@@ -1,0 +1,321 @@
+{
+  "createdAt": "2026-11-01T05:45:50.932Z",
+  "passed": true,
+  "checks": [
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "smokeFrames": 30,
+      "audio": true,
+      "passed": true
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    },
+    {
+      "kind": "scene-local-image-transform",
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "passed": true
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.0.0",
+      "frame": 45,
+      "match": true,
+      "original": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0",
+      "current": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.0.0",
+      "frame": 134,
+      "match": true,
+      "original": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109",
+      "current": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.0.0",
+      "frame": 135,
+      "match": true,
+      "original": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa",
+      "current": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.0.0",
+      "frame": 224,
+      "match": true,
+      "original": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3",
+      "current": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.0.0",
+      "frame": 225,
+      "match": true,
+      "original": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65",
+      "current": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.0.0",
+      "frame": 359,
+      "match": true,
+      "original": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1",
+      "current": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "frame": 45,
+      "match": true,
+      "original": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0",
+      "current": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "frame": 134,
+      "match": true,
+      "original": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109",
+      "current": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "frame": 135,
+      "match": true,
+      "original": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa",
+      "current": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "frame": 224,
+      "match": true,
+      "original": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3",
+      "current": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "frame": 225,
+      "match": true,
+      "original": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65",
+      "current": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "frame": 359,
+      "match": true,
+      "original": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1",
+      "current": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.1.0",
+      "smokeFrames": 30,
+      "audio": false,
+      "passed": true
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "frame": 45,
+      "match": true,
+      "original": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0",
+      "current": "f5b52382eb433e96b0808957a62427c832c69c0378ade6866e752e3296c196e0"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "frame": 134,
+      "match": true,
+      "original": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109",
+      "current": "fb876d9e488aaa083d18f71b95593fbba6896eb80e74a5d949d09b4bac7ce109"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "frame": 135,
+      "match": true,
+      "original": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa",
+      "current": "78f273660427622ef08c5a1b23056118cb484723ee08877546f51f39430de1aa"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "frame": 224,
+      "match": true,
+      "original": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3",
+      "current": "a39be8b55c0efab0d084c0cf865e91ddefda3d4800bebaa5f518a1bc5958f9e3"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "frame": 225,
+      "match": true,
+      "original": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65",
+      "current": "ca1de36c8c03343ca7f2245be407d22b2b2dfad3172daaec5f8210c0a1802c65"
+    },
+    {
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "frame": 359,
+      "match": true,
+      "original": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1",
+      "current": "6a3c73b3b686eb56e234f998d8a73e7233cc0b4113e954dd9292f3100dbddac1"
+    },
+    {
+      "kind": "scene-local-image-transform",
+      "composition": "ElmekawyBIMIntroV2",
+      "version": "1.2.0",
+      "passed": true
+    }
+  ],
+  "serverLog": "Elmekawy Motion Studio: http://127.0.0.1:54462\n"
+}

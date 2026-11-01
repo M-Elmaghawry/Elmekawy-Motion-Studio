@@ -1,0 +1,44 @@
+{
+  "createdAt": "2026-11-01T05:57:34.712Z",
+  "passed": true,
+  "checks": [
+    {
+      "name": "boundary-frames-and-repeat-seeks",
+      "passed": true,
+      "frames": [
+        0,
+        155,
+        294,
+        295,
+        309,
+        310,
+        450,
+        589,
+        590,
+        604,
+        605,
+        745,
+        899
+      ],
+      "hashes": {
+        "0": "da3213011f09efdc9df322f913ac2fbbaa340b746b014b7b97b1366a42df91e3",
+        "155": "9676bbf56690960f22352c82272b2cdd037b892aedc447f7c2edd399375c94d6",
+        "294": "9676bbf56690960f22352c82272b2cdd037b892aedc447f7c2edd399375c94d6",
+        "295": "5c2cb5d769c4d08fabb49fd5481cf7a46436363eafe2c25df923dba925d9f783",
+        "309": "51315dec7a081f3838333a88bc006b2796a583d8c2b6f6fc921b680c8dcba40d",
+        "310": "037b5e7834f0fa54142c704241571fc663402a9871bcbaed25d942cd284a3b33",
+        "450": "8d805d1e100be8823e119bc45df4772d023e169727e2cca41dc3a1d63d0bc536",
+        "589": "94da00c31bee990aa3bd76cb52b4869d851eae9fd2414709e3453f95bb27d2d6",
+        "590": "aaa7e4118aa736b054e2cd7de67785fd8e0b0aefc9f4b232c5e60d34a08e2cf0",
+        "604": "31e3ac9e711339479d812b996cb032aa2adcda35b69588c6824e671de722dd95",
+        "605": "366c332ee860f4ac9a18ae5d05ae9441c3ab961abd019dc00d7d63628efc1c5a",
+        "745": "7f9e397269c760fa9d92e1a72a43bed2190e548cecfcae61832fa915871055e4",
+        "899": "be1f75423ceaa2615361c0939b21c9de7041ac8184300eab9281895cc0753678"
+      }
+    },
+    {
+      "name": "encoded-stream-metadata-and-full-decode",
+      "passed": true
+    }
+  ]
+}

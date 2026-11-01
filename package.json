@@ -32,7 +32,8 @@
     "test:phase4": "node --test tests/phase4.test.ts",
     "verify:phase4-ui": "node scripts/verify-phase4-ui.ts",
     "verify:scenes": "node scripts/verify-flexible-scenes.ts",
-    "schemas:phase4": "node scripts/write-phase4-schemas.ts"
+    "schemas:phase4": "node scripts/write-phase4-schemas.ts",
+    "github:sync": "node scripts/sync-github.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

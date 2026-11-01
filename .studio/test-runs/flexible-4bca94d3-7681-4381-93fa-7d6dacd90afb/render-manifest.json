@@ -1,0 +1,397 @@
+{
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.0.0"
+  },
+  "schemaVersion": "2.0.0",
+  "projectId": "flexible-20s--00000000000000000000000000000001",
+  "revision": 1,
+  "commit": "93ec38411ab85d816cece3c6575f981edb014d2d",
+  "workingTreeFingerprint": "3c89f90c2b9087903d42c199c3088043b3cf98a428cf31dc7112ef965692b28c",
+  "sourceFiles": [
+    {
+      "path": "packages/motion-components/package.json",
+      "sha256": "e7069996abdda25d79892fcc79f328d731ed760ba8916a45b5904978a531283d"
+    },
+    {
+      "path": "packages/motion-components/src/common/Fonts.tsx",
+      "sha256": "0afb1a0dae557a1253aed9d077f0741add7efcff864094add957b541a729404d"
+    },
+    {
+      "path": "packages/motion-components/src/common/LegacyImageLayout.tsx",
+      "sha256": "4ef3cb7c59c1c7b80a26e588d95b3b909bd52dae5a020ab049e60863666c82a0"
+    },
+    {
+      "path": "packages/motion-components/src/common/Runtime.tsx",
+      "sha256": "f51474f7c16c1c17ce07ebc5f8f94c65c6261a82dbd70476745898fab26e5685"
+    },
+    {
+      "path": "packages/motion-components/src/legacy-v1/Motion.tsx",
+      "sha256": "b83fd2f7d620c306a8ea9d59119bf937290d10ca92b8057eb30f196cb0c108db"
+    },
+    {
+      "path": "packages/motion-components/src/legacy-v1.1/Motion.tsx",
+      "sha256": "67a9237cddbd90596dc6f709836dddaab87c51617702c85847c78c3deab3c381"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/ArabicWordReveal.tsx",
+      "sha256": "0803cc962a40285cebc49fe07f19f1bef1e019ab0f343cbcde851ab31fcd2a76"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/ComparisonReveal.tsx",
+      "sha256": "14b3cef9d9e9b18901ee6b31a9feef43b7040eb23fa37cefab72d33d9e1787fe"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/FocusDot.tsx",
+      "sha256": "1fb46d8701c1fc53372f5e7cda762271aed6606a4b88389513b9fd339896f28c"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/LayeredScene.tsx",
+      "sha256": "98ce5947a54fefcfae62d7dd8a7979fb95a50d0420adb03e373cfad2ee5ba3a5"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/presets.ts",
+      "sha256": "8f7946986c26cf25ec401e2f4f2d000400ba88c169a577f664005ec32f6d223f"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/ProgressNavigator.tsx",
+      "sha256": "076411cb825934cc5c7b11b7167fac27553a07532316be17a09e93133f2ab25a"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1/tokens.ts",
+      "sha256": "5d2b59b68aa4dbd57ecc70e4de9808e347926e70a508e809479d634f7dacb626"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/ArabicWordReveal.tsx",
+      "sha256": "1ab521a7c9727f0077dc0fb4b90bfdab0d4aa563e8e7017e21c265354fc57a24"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/ComparisonReveal.tsx",
+      "sha256": "04014639a6319d68f03391d042223751322137108f953263039bebd1cba82c29"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/FocusDot.tsx",
+      "sha256": "1fb46d8701c1fc53372f5e7cda762271aed6606a4b88389513b9fd339896f28c"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/LayeredScene.tsx",
+      "sha256": "98ce5947a54fefcfae62d7dd8a7979fb95a50d0420adb03e373cfad2ee5ba3a5"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/presets.ts",
+      "sha256": "8f7946986c26cf25ec401e2f4f2d000400ba88c169a577f664005ec32f6d223f"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/ProgressNavigator.tsx",
+      "sha256": "960c2e798962de998291908e5b7312be27b1cb7c206f1d934940756d1676ff8a"
+    },
+    {
+      "path": "packages/motion-components/src/motion-study-v1.1/tokens.ts",
+      "sha256": "5d2b59b68aa4dbd57ecc70e4de9808e347926e70a508e809479d634f7dacb626"
+    },
+    {
+      "path": "packages/motion-engine/package.json",
+      "sha256": "0cff5427ba0204bde4be1f8fbe3a2cf3ad9fbc8e6b6eda56a4ad8038159e7df0"
+    },
+    {
+      "path": "packages/motion-engine/remotion.config.ts",
+      "sha256": "f5ecb9572be53b2a8ed971ce033a2966385d252fe3569d125c281a6fb1f4ca48"
+    },
+    {
+      "path": "packages/motion-engine/src/client.tsx",
+      "sha256": "86938c3835f1f6b713dff3e11fd9d4ded5086e20270cf9ff85c983097d4167b8"
+    },
+    {
+      "path": "packages/motion-engine/src/flexible.tsx",
+      "sha256": "140a07c1d99d55d98beb7fe503478810d9c2e7fb857727b4a11dbc0a8064175e"
+    },
+    {
+      "path": "packages/motion-engine/src/index.ts",
+      "sha256": "f9bc4e836a064aca9c58a681e1dc779b62a4d82894450e8e15d5cdd05840e36e"
+    },
+    {
+      "path": "packages/motion-engine/src/Root.tsx",
+      "sha256": "d38d042ec241c065df102382fafa2f8836d1e5be3087ec390504d5e6d35b15ba"
+    },
+    {
+      "path": "packages/motion-engine/src/server.ts",
+      "sha256": "312911b8b8620beeed889f20ff3f2f07b18769c586dbdbc88d4e851cf0b00d08"
+    },
+    {
+      "path": "packages/shared/package.json",
+      "sha256": "6e1344ea47290c53e7c1b1a1d99c5bf518b9f0e4afb806cbb1c5a2c3eb71141e"
+    },
+    {
+      "path": "packages/shared/schemas/v1/editable-project.schema.json",
+      "sha256": "7859abe47f94f996acb47f294acddf4a16a36669271b849d2b5098d14096a2d3"
+    },
+    {
+      "path": "packages/shared/schemas/v1/project.schema.json",
+      "sha256": "b508eb1a6bda61ce0ceb84fa36509caee1983c806d1535e25535e380b918d1c0"
+    },
+    {
+      "path": "packages/shared/schemas/v1.2/project.schema.json",
+      "sha256": "15dd097a21f6d6b8cd0e71f70890bcd000841a80df2a52afedd719da2df9e337"
+    },
+    {
+      "path": "packages/shared/schemas/v2.1/flexible-project.schema.json",
+      "sha256": "c3bd19831cc2de5914346114de4e029fff0b78b69e00b7c4877a672fcb8b9ab6"
+    },
+    {
+      "path": "packages/shared/src/flexible/editor.ts",
+      "sha256": "eaf6afdb42a531521993d6f4cf4e116cabb88d5abfa59ceef99870aa643f6420"
+    },
+    {
+      "path": "packages/shared/src/flexible/index.ts",
+      "sha256": "c79cfbd453a2e38e6c99275a8782663064e8c97b7fa90c4bce27f8090995d423"
+    },
+    {
+      "path": "packages/shared/src/flexible/manifest-v2.ts",
+      "sha256": "1e06f794320a1b49b9397fead036751c953bfcc5ebd92989367131ce64375b68"
+    },
+    {
+      "path": "packages/shared/src/flexible/manifest.ts",
+      "sha256": "a1fca9ab8ee6b768c4cd2ea2ceeaaa3f05f41be72b5c288822068bd001682d38"
+    },
+    {
+      "path": "packages/shared/src/flexible/schema-v2.ts",
+      "sha256": "a2123b0cf90b0e31264f76b399d30f4fb59a721de3cbd7d672a6c1ddc5905669"
+    },
+    {
+      "path": "packages/shared/src/flexible/schema.ts",
+      "sha256": "2a75012e8caecc397b07394f1e3269e697f56ed6c25e9ab072530ce0a292026f"
+    },
+    {
+      "path": "packages/shared/src/flexible/timeline.ts",
+      "sha256": "09b44a108105632c2613567f3e5eb2b19e4a972fa067c18ca937ffb3c8ddeeb7"
+    },
+    {
+      "path": "packages/shared/src/flexible/types.ts",
+      "sha256": "8dbdaff471cd64185197343c6399b7125df6069b332df28070a2c60572615c29"
+    },
+    {
+      "path": "packages/shared/src/image-layout.ts",
+      "sha256": "67324a176e15dbce75f5bd79674b2b65a4a2cd0b30f4329971d5e3402fc5e06b"
+    },
+    {
+      "path": "packages/shared/src/index.ts",
+      "sha256": "c0ff743c816ef13b5514792fbd0d1bc79ff46f3d61f01e5e17aeb8bf1686039d"
+    },
+    {
+      "path": "packages/shared/src/text-fields.ts",
+      "sha256": "0f334718b3121300c2214fc94896d6e8c494b469b9287ec65d8654fc4ed32bbc"
+    },
+    {
+      "path": "packages/shared/src/themes/brand.ts",
+      "sha256": "c7225d25c6048c6d7da7f6a693d87486d758e39357adcd3c06f715c63db762ec"
+    },
+    {
+      "path": "packages/templates/package.json",
+      "sha256": "9b43c75789bc87df85c403e870e923726c2af8eaa0b62798be7bf6049ac71552"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.0.0/Composition.tsx",
+      "sha256": "e31a81906320ebe0a0bcacc74cf8f87712ae231770bebbb46a9814cd7985c01d"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.0.0/data.ts",
+      "sha256": "cc00d20acd4ff656520dc897cf393cacf4bef9334fab61e755e128b7afd63083"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.0.0/Scenes.tsx",
+      "sha256": "32f68528052a28c54a674725423555649269270d0fa11a1b2a0f740b3e00c581"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.0.0/template.json",
+      "sha256": "dae268da9daa74831af958aeab959e47f0f1ed6778fd72647f6a0738606a59b3"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.0.0/Visuals.tsx",
+      "sha256": "7cdbf2ddfff560154f8e9663af03aebc852a212f2f58bd6d97b9e4f9d5118696"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.1.0/Composition.tsx",
+      "sha256": "3210b10c9820696bb29bc40f2a35071d05d4e19544032ce1f1dd4cf219748a2e"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.1.0/data.ts",
+      "sha256": "cc00d20acd4ff656520dc897cf393cacf4bef9334fab61e755e128b7afd63083"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.1.0/Scenes.tsx",
+      "sha256": "3f759aa0dbc944e0b4f62e6d75af8a0e7958fe9f3f7d8b8d27b752ec59776b0d"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.1.0/template.json",
+      "sha256": "846ff60d2a76cadbca5464c3842e97ce8a874cd0559b00adafddab3b5ece6b50"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.1.0/Visuals.tsx",
+      "sha256": "19798dcdbf6e2ede414f8e414ad3695f94fced50a39d9975f4136118b7f544eb"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.2.0/Composition.tsx",
+      "sha256": "8001de4c2770e71ac0e5b24207cecc06a740e4ded92fc6623fd1b82f928feea7"
+    },
+    {
+      "path": "packages/templates/src/bim-motion-study/1.2.0/template.json",
+      "sha256": "ead5a571f1d5ee291d398fc205c19e4f8cf1da433e4077952c8d729c469837e6"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/Composition.tsx",
+      "sha256": "aae5849da9dfedbf0e926166b2eee6b6f25d7857db292861f46fd88e733ef650"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scene-data.ts",
+      "sha256": "b65c2b8f10ce5f459913be6c5ed788e6bb5db10977b89ab1e22a93957da85149"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/CtaScene.tsx",
+      "sha256": "15b8c6c7ba40d7875318123287c2c8b48cadb31057649a4041f30fce05540506"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/HookScene.tsx",
+      "sha256": "05d67d16a0d4a805dcce66048f4dc4c5467c7845c94a10a5583eebaf2e1ebc2c"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/InfrastructureScene.tsx",
+      "sha256": "28676cb16bf4c1a55acb1c0748badfaf4a5b5240b9a5480a9bd8608fa2501010"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/PersonalBrandScene.tsx",
+      "sha256": "e8d9b8f21f0803b2f1c860d467a1947cfb41b57102f5511d2b3ce39855638fc2"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/ServicesScene.tsx",
+      "sha256": "e55b5008be2364fb0eb2dafb739779cbabed05443a971193ea2276be05eed968"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/scenes/TrainingScene.tsx",
+      "sha256": "1ab3a643cbd58e835151fb144b238eaad66097f8192a1b9fae54c2a9960e4070"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.0.0/template.json",
+      "sha256": "a27e9c1cfec9db972b020fca8076a763308c68888ca0fc4eb0b5f6f12d2523aa"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/Composition.tsx",
+      "sha256": "ef8f6ab02f92c85bb0a74e15973257fce7c5aa4c2bfe87c86eda491602cad8ff"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scene-data.ts",
+      "sha256": "b65c2b8f10ce5f459913be6c5ed788e6bb5db10977b89ab1e22a93957da85149"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scenes/CtaScene.tsx",
+      "sha256": "ead9328129da4850d610f574acb0fe3587f39767e4fd949dc88a03a07f3dca99"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scenes/HookScene.tsx",
+      "sha256": "386177e11064ce7b54446cd6ebb5a3131665da89f0d9fc9078a548f97816a642"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scenes/InfrastructureScene.tsx",
+      "sha256": "b721999801cdfae0d69151f15d692786d1b5fffe7212a05d0f2182c2919d4a65"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scenes/PersonalBrandScene.tsx",
+      "sha256": "af2c11f9986a3f430c4ecea44a45676329760b8038d27a918a28600af0f5e279"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scenes/ServicesScene.tsx",
+      "sha256": "587b18202538f65affd95baef0aba1fd1cbb766068c1e9cff80aeeeb93f043db"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/scenes/TrainingScene.tsx",
+      "sha256": "75cdeb5b21768123eb2526382f1ed57071c4cd7f29800e3ea813a75179471b92"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.1.0/template.json",
+      "sha256": "7ed07607d5c3420f0f481c517a14c185b6fecf3af153ab75286c40e073e1d3c5"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.2.0/Composition.tsx",
+      "sha256": "1c8ee1f95c6911ce1a3c941c5854da31450bcd962be40f1e563bbcebb758238d"
+    },
+    {
+      "path": "packages/templates/src/bim-personal-intro/1.2.0/template.json",
+      "sha256": "d06c9a2cfee3ee45302b9291d1ab68f2337540b1bce27ac53562912ad353cd54"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.0.0/Composition.tsx",
+      "sha256": "8fced68738dff757cac6988871034ea26daf190f8a2ee78f5d2e1f9f47c07d75"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.0.0/RenderGuards.tsx",
+      "sha256": "a46f4068286a2112c154207456b1109ff65696a56f401ec4e8d7fcc817178d10"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.0.0/sample.json",
+      "sha256": "9a32fb4e8ad9f79a7058dbcc5b665dabb98ca30666a3720a63624d13a3a42575"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.0.0/Scenes.tsx",
+      "sha256": "5f3e01e6ece5f52732b324e6f75fe6c54f990a3f64e663092848d6421d1795e7"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.1.0/Composition.tsx",
+      "sha256": "ae5cef3440f5d060440192cca4872028a440a3d9d5ac99c96689898ac65a7a91"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.1.0/Scenes.tsx",
+      "sha256": "6828ee8381cb1a6a1cdc6c741ee955aa43dca74fac886d5943bf3e67cec91023"
+    },
+    {
+      "path": "packages/templates/src/flexible-reel/1.1.0/template.json",
+      "sha256": "c0cb9d2ace1ee4aa1653bdda996faf579e81b4d180a40f1b21b733b360a00153"
+    },
+    {
+      "path": "packages/templates/src/index.ts",
+      "sha256": "9d59fad9c2368ed7e36856e8711b2f5f5cc01c8cb6ab5e645b0fe7616e97889e"
+    },
+    {
+      "path": "package.json",
+      "sha256": "27a6d4866b8bfd67e27b5081bf5c3360eab64782b246eb268de14b0656084d6a"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "b8b96131ea7db80f54c25b481142d152d958e41de1fca117f74be815dfb7b1fa"
+    }
+  ],
+  "node": "v24.19.0",
+  "remotion": "4.0.539",
+  "browser": "Google Chrome for Testing 157.0.8080.0",
+  "browserSha256": "c4d6a64a7af8db5081de3d66bd6957b8999b08064ce8254bb4f99d33d9170e3c",
+  "inputSha256": "18c177088948d0dd1a332399e1301cf78bc09bb55b2ad0b42a7c1261241d994e",
+  "assetHashes": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "id": "showcase-image",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+    }
+  ],
+  "outputProfile": {
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18
+  },
+  "outputSha256": "72e47b81aceabc1642b8ab634b5ba12bb38d843f3b05333b55ae0cffcd1e081b",
+  "settings": {
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  }
+}

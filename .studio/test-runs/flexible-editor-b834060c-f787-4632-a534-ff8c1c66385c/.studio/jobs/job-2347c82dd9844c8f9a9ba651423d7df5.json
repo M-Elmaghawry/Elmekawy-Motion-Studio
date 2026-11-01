@@ -1,0 +1,14 @@
+{
+  "id": "job-2347c82dd9844c8f9a9ba651423d7df5",
+  "projectId": "0--636429a21e514c72911836f32a10da15",
+  "projectRevision": 5,
+  "projectName": "مشروع واجهة 0",
+  "projectFormat": "flexible",
+  "state": "completed",
+  "progress": 1,
+  "createdAt": "2026-11-01T04:42:29.235Z",
+  "updatedAt": "2026-11-01T04:42:55.262Z",
+  "outputBytes": 1481594,
+  "outputSha256": "bbdd8fb279d7cbc6ffafece1f83df70e2c9cb50f56f09ca20a2a3bedc404aa57",
+  "downloadUrl": "/api/renders/job-2347c82dd9844c8f9a9ba651423d7df5/download"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "job-c78cc2dd9908436ea823f1ea1b37551f",
+  "projectId": "ui-bim-20s--315527b6dccd4977a52550d99e91af9c",
+  "projectRevision": 2,
+  "projectName": "UI BIM 20s",
+  "projectFormat": "flexible",
+  "state": "completed",
+  "progress": 1,
+  "createdAt": "2026-11-01T04:43:33.440Z",
+  "updatedAt": "2026-11-01T04:43:58.035Z",
+  "outputBytes": 2106714,
+  "outputSha256": "4b0026ea41e9a4133de2f1360d017bef4b0b681c58c952834fa8ecf902382462",
+  "downloadUrl": "/api/renders/job-c78cc2dd9908436ea823f1ea1b37551f/download"
+}

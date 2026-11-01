@@ -10,6 +10,10 @@
 /.studio/legacy-output-import.json -text
 /package.json -text
 /package-lock.json -text
-
+# Complete-workspace uploads preserve dependency/cache/project bytes too.
+/node_modules/** -text
+/.studio/** -text
+/flexible-projects/** -text
 # The protected backup includes the same existing Chrome LFS object as V2.
 /archive/**/chrome-headless-shell.exe filter=lfs diff=lfs merge=lfs -text
+node_modules/.remotion/chrome-headless-shell/win64/chrome-headless-shell-win64/chrome-headless-shell.exe filter=lfs diff=lfs merge=lfs -text

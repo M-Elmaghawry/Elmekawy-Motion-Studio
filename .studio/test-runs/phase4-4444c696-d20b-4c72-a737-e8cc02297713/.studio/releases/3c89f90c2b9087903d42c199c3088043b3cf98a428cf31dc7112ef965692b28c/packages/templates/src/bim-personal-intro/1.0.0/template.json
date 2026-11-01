@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "bim-personal-intro",
+  "version": "1.0.0",
+  "name": "BIM Personal Intro · V1",
+  "compositionId": "ElmekawyBIMIntro",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationFrames": 900,
+  "scenes": [
+    {
+      "id": "hook",
+      "name": "BIM مش مجرد موديل 3D",
+      "from": 0,
+      "duration": 120,
+      "fields": [
+        "مش مجرد"
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "name": "المنشآت والبنية التحتية",
+      "from": 120,
+      "duration": 150,
+      "fields": [
+        "One coordinated vision."
+      ]
+    },
+    {
+      "id": "services",
+      "name": "خدمات BIM",
+      "from": 270,
+      "duration": 180,
+      "fields": [
+        "Precision.",
+        "At every stage."
+      ]
+    },
+    {
+      "id": "training",
+      "name": "Revit & BIM Training",
+      "from": 450,
+      "duration": 180,
+      "fields": [
+        "Build skills.",
+        "Work with confidence."
+      ]
+    },
+    {
+      "id": "brand",
+      "name": "Mahmoud Elmekawy",
+      "from": 630,
+      "duration": 150,
+      "fields": [
+        "Mahmoud",
+        "Elmekawy."
+      ]
+    },
+    {
+      "id": "cta",
+      "name": "Learn · Build · Coordinate",
+      "from": 780,
+      "duration": 120,
+      "fields": [
+        "Learn",
+        "Build",
+        "Coordinate"
+      ]
+    }
+  ],
+  "capabilities": {
+    "fixedTiming": true,
+    "aspectRatios": [
+      "9:16"
+    ],
+    "fps": [
+      30
+    ],
+    "resolutions": [
+      {
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "audio": "original-track"
+  }
+}

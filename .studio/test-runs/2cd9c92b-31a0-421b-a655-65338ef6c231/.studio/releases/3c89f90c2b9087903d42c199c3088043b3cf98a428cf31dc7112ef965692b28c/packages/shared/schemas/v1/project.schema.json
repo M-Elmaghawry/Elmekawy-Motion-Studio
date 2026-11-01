@@ -1,0 +1,683 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:elmekawy:project:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "revision",
+    "createdAt",
+    "updatedAt",
+    "name",
+    "status",
+    "brief",
+    "template",
+    "video",
+    "locale",
+    "brand",
+    "script",
+    "scenes",
+    "assets",
+    "prompts",
+    "references",
+    "audio",
+    "output",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 82,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*--[a-f0-9]{32}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "updatedAt": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "ready"
+      ]
+    },
+    "brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "client",
+        "description",
+        "objective",
+        "category",
+        "audience",
+        "platforms"
+      ],
+      "properties": {
+        "client": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "objective": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "audience": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "platforms": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "maxLength": 64
+          }
+        }
+      }
+    },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "bim-personal-intro",
+            "bim-motion-study"
+          ]
+        },
+        "version": {
+          "enum": [
+            "1.0.0",
+            "1.1.0"
+          ]
+        }
+      }
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "durationFrames",
+        "aspectRatio"
+      ],
+      "properties": {
+        "width": {
+          "const": 1080
+        },
+        "height": {
+          "const": 1920
+        },
+        "fps": {
+          "const": 30
+        },
+        "durationFrames": {
+          "enum": [
+            360,
+            900
+          ]
+        },
+        "aspectRatio": {
+          "const": "9:16"
+        }
+      }
+    },
+    "locale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language",
+        "direction"
+      ],
+      "properties": {
+        "language": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "direction": {
+          "enum": [
+            "rtl",
+            "ltr"
+          ]
+        }
+      }
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preset",
+        "displayName",
+        "colors",
+        "fonts",
+        "logoAssetId",
+        "safeArea"
+      ],
+      "properties": {
+        "preset": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "version"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "maxLength": 64
+                },
+                "version": {
+                  "type": "string",
+                  "maxLength": 32
+                }
+              }
+            }
+          ]
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "colors": {
+          "type": "object",
+          "minProperties": 7,
+          "maxProperties": 7,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          }
+        },
+        "fonts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "arabic",
+            "latin"
+          ],
+          "properties": {
+            "arabic": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "family",
+                "assetId",
+                "weightMin",
+                "weightMax"
+              ],
+              "properties": {
+                "family": {
+                  "type": "string",
+                  "maxLength": 64
+                },
+                "assetId": {
+                  "type": "string",
+                  "maxLength": 64
+                },
+                "weightMin": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000
+                },
+                "weightMax": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000
+                }
+              }
+            },
+            "latin": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "family",
+                "assetId",
+                "weightMin",
+                "weightMax"
+              ],
+              "properties": {
+                "family": {
+                  "type": "string",
+                  "maxLength": 64
+                },
+                "assetId": {
+                  "type": "string",
+                  "maxLength": 64
+                },
+                "weightMin": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000
+                },
+                "weightMax": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000
+                }
+              }
+            }
+          }
+        },
+        "logoAssetId": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "safeArea": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "left",
+            "right",
+            "top",
+            "bottom"
+          ],
+          "properties": {
+            "left": {
+              "const": 100
+            },
+            "right": {
+              "const": 180
+            },
+            "top": {
+              "const": 220
+            },
+            "bottom": {
+              "const": 360
+            }
+          }
+        }
+      }
+    },
+    "script": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "notes"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "maxLength": 50000
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "name",
+          "description",
+          "startFrame",
+          "durationFrames",
+          "outgoingExtensionFrames",
+          "content",
+          "assetBindings",
+          "promptIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "type": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 5000
+          },
+          "startFrame": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "durationFrames": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "outgoingExtensionFrames": {
+            "enum": [
+              0,
+              12
+            ]
+          },
+          "content": {
+            "type": "object",
+            "maxProperties": 100,
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "propertyNames": {
+              "maxLength": 200
+            }
+          },
+          "assetBindings": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 64
+            }
+          },
+          "promptIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            }
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "role",
+          "mediaKey",
+          "displayName",
+          "state",
+          "license"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$"
+          },
+          "kind": {
+            "enum": [
+              "image",
+              "logo",
+              "audio",
+              "font"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "mediaKey": {
+            "type": "string",
+            "maxLength": 250
+          },
+          "displayName": {
+            "type": "string",
+            "maxLength": 250
+          },
+          "state": {
+            "enum": [
+              "ready",
+              "missing",
+              "retired"
+            ]
+          },
+          "storage": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "scope",
+              "path"
+            ],
+            "properties": {
+              "scope": {
+                "enum": [
+                  "project",
+                  "shared"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "maxLength": 250
+              }
+            }
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "byteSize": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "mimeType": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "originalFilename": {
+            "type": "string",
+            "maxLength": 250
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "license": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "unknown",
+                  "documented"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "maxLength": 1000
+              }
+            }
+          }
+        }
+      }
+    },
+    "prompts": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "text",
+          "negativeConstraints",
+          "sceneIds",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]{0,63}$"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 20000
+          },
+          "negativeConstraints": {
+            "type": "string",
+            "maxLength": 5000
+          },
+          "sceneIds": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            }
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "ready-to-copy",
+              "uploaded",
+              "approved"
+            ]
+          }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "string",
+        "maxLength": 2000
+      }
+    },
+    "audio": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode"
+          ],
+          "properties": {
+            "mode": {
+              "const": "none"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "assetId",
+            "volume"
+          ],
+          "properties": {
+            "mode": {
+              "const": "track"
+            },
+            "assetId": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "volume": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      ]
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "container",
+        "codec",
+        "pixelFormat",
+        "crf",
+        "presetId",
+        "fileNameLabel"
+      ],
+      "properties": {
+        "container": {
+          "const": "mp4"
+        },
+        "codec": {
+          "const": "h264"
+        },
+        "pixelFormat": {
+          "const": "yuv420p"
+        },
+        "crf": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        },
+        "presetId": {
+          "const": "mp4-h264-v1"
+        },
+        "fileNameLabel": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "legacy-import",
+            "created",
+            "duplicate"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 250
+        }
+      }
+    }
+  }
+}

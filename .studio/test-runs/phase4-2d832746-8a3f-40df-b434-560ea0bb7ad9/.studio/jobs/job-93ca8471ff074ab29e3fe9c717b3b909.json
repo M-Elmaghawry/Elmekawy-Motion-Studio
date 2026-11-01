@@ -1,0 +1,14 @@
+{
+  "id": "job-93ca8471ff074ab29e3fe9c717b3b909",
+  "projectId": "revit-course-30s--ab323b4043384a7d894fb3ec020b4bde",
+  "projectRevision": 8,
+  "projectName": "Revit course 30s",
+  "projectFormat": "flexible",
+  "state": "completed",
+  "progress": 1,
+  "createdAt": "2026-11-01T05:35:24.277Z",
+  "updatedAt": "2026-11-01T05:36:04.375Z",
+  "outputBytes": 1912714,
+  "outputSha256": "b9a709ca54ed4c0d7876655969ef60dc4e30f790a89a017ed15cb4a301df05fa",
+  "downloadUrl": "/api/renders/job-93ca8471ff074ab29e3fe9c717b3b909/download"
+}

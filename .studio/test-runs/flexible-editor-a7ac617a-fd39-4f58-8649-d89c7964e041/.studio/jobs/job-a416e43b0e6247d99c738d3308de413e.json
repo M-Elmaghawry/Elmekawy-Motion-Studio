@@ -1,0 +1,12 @@
+{
+  "id": "job-a416e43b0e6247d99c738d3308de413e",
+  "projectId": "0--28a5d09c99ac43a59ff86fc7213770c9",
+  "projectRevision": 5,
+  "projectName": "مشروع واجهة 0",
+  "projectFormat": "flexible",
+  "state": "failed",
+  "progress": 0,
+  "createdAt": "2026-11-01T05:30:02.100Z",
+  "updatedAt": "2026-11-01T05:30:04.465Z",
+  "error": "تعذر إكمال التصدير. تفاصيل التشخيص محفوظة في render.log."
+}

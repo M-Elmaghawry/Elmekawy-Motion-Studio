@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "0--636429a21e514c72911836f32a10da15",
+  "projectRevision": 5,
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.0.0"
+  },
+  "compositionId": "FlexibleReel",
+  "engineSourceSha256": "d64951ff8a654f733e802a5a5c685cef20b6458279ef20a7501d0537026ff8ec",
+  "rootLockSha256": "5565271b264ad897a1430b2d532769e5556465e165a505a4cd9aff8e9160f364",
+  "resources": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576
+    },
+    {
+      "id": "image-initial",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852
+    },
+    {
+      "id": "image-5fb855b4906944e1a772d36a2fca8961",
+      "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+      "byteSize": 4000537
+    }
+  ],
+  "effectiveSettings": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 600,
+    "aspectRatio": "9:16",
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "portrait-1080p30-h264-v1",
+    "fileNameLabel": "video",
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "browser": "Google Chrome for Testing 157.0.8080.0",
+    "remotion": "4.0.539"
+  },
+  "warnings": [
+    "حقوق استخدام بعض الصور غير موثّقة؛ راجع المصدر قبل الاستخدام التجاري."
+  ],
+  "output": {
+    "file": "output.mp4",
+    "sha256": "bbdd8fb279d7cbc6ffafece1f83df70e2c9cb50f56f09ca20a2a3bedc404aa57",
+    "bytes": 1481594,
+    "pixelFormat": "yuvj420p",
+    "videoDurationSeconds": 20,
+    "containerDurationSeconds": 20
+  },
+  "completedAt": "2026-11-01T04:42:55.188Z"
+}

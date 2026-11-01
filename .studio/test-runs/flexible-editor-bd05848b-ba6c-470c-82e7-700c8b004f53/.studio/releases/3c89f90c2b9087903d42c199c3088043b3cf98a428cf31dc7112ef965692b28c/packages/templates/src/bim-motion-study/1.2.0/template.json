@@ -1,0 +1,509 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "bim-motion-study",
+  "version": "1.2.0",
+  "name": "BIM Motion Study · V2",
+  "compositionId": "ElmekawyBIMIntroV2",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationFrames": 360,
+  "scenes": [
+    {
+      "id": "hook",
+      "name": "الموديل مش هو الـ BIM",
+      "from": 0,
+      "duration": 60,
+      "fields": [
+        "global.brandName",
+        "global.brandSuffix",
+        "global.studyLabel",
+        "hook.sectionNumber",
+        "hook.eyebrow",
+        "hook.title1",
+        "hook.title2",
+        "hook.title3",
+        "hook.tagline",
+        "hook.note"
+      ],
+      "textFields": [
+        {
+          "id": "global.brandName",
+          "label": "اسم العلامة أعلى الفيديو",
+          "defaultValue": "ELMEKAWY",
+          "group": "global"
+        },
+        {
+          "id": "global.brandSuffix",
+          "label": "تكملة العلامة أعلى الفيديو",
+          "defaultValue": "BIM",
+          "group": "global"
+        },
+        {
+          "id": "global.studyLabel",
+          "label": "التسمية أعلى الفيديو",
+          "defaultValue": "MOTION STUDY / 02",
+          "group": "global"
+        },
+        {
+          "id": "hook.sectionNumber",
+          "label": "رقم المشهد",
+          "defaultValue": "01",
+          "group": "scene"
+        },
+        {
+          "id": "hook.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "BEYOND THE MODEL",
+          "group": "scene"
+        },
+        {
+          "id": "hook.title1",
+          "label": "العنوان — السطر الأول",
+          "defaultValue": "الموديل",
+          "group": "scene",
+          "legacySource": "الموديل"
+        },
+        {
+          "id": "hook.title2",
+          "label": "العنوان — السطر الثاني",
+          "defaultValue": "مش هو الـ",
+          "group": "scene",
+          "legacySource": "مش هو الـ"
+        },
+        {
+          "id": "hook.title3",
+          "label": "العنوان — السطر الثالث",
+          "defaultValue": "BIM",
+          "group": "scene",
+          "legacySource": "BIM"
+        },
+        {
+          "id": "hook.tagline",
+          "label": "الشعار النصي السفلي",
+          "defaultValue": "THINK IN CONNECTIONS.",
+          "group": "scene"
+        },
+        {
+          "id": "hook.note",
+          "label": "الملاحظة السفلية",
+          "defaultValue": "القيمة في الترابط، مش في الشكل بس.",
+          "group": "scene"
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "شبكة تنسيق مترابطة",
+      "from": 60,
+      "duration": 75,
+      "fields": [
+        "network.sectionNumber",
+        "network.eyebrow",
+        "network.title1",
+        "network.title2",
+        "network.overlay",
+        "network.nodes.1",
+        "network.nodes.2",
+        "network.nodes.3",
+        "network.nodes.4",
+        "network.center",
+        "network.note",
+        "network.fallback.caption"
+      ],
+      "textFields": [
+        {
+          "id": "network.sectionNumber",
+          "label": "رقم المشهد",
+          "defaultValue": "02",
+          "group": "scene"
+        },
+        {
+          "id": "network.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "A CONNECTED SYSTEM",
+          "group": "scene"
+        },
+        {
+          "id": "network.title1",
+          "label": "العنوان — السطر الأول",
+          "defaultValue": "من موديل",
+          "group": "scene",
+          "legacySource": "من موديل"
+        },
+        {
+          "id": "network.title2",
+          "label": "العنوان — السطر الثاني",
+          "defaultValue": "لشبكة تنسيق",
+          "group": "scene",
+          "legacySource": "لشبكة تنسيق"
+        },
+        {
+          "id": "network.overlay",
+          "label": "عنوان الرسم",
+          "defaultValue": "MODEL → COORDINATION",
+          "group": "scene"
+        },
+        {
+          "id": "network.nodes.1",
+          "label": "رقم عقدة الشبكة 1",
+          "defaultValue": "01",
+          "group": "scene"
+        },
+        {
+          "id": "network.nodes.2",
+          "label": "رقم عقدة الشبكة 2",
+          "defaultValue": "02",
+          "group": "scene"
+        },
+        {
+          "id": "network.nodes.3",
+          "label": "رقم عقدة الشبكة 3",
+          "defaultValue": "03",
+          "group": "scene"
+        },
+        {
+          "id": "network.nodes.4",
+          "label": "رقم عقدة الشبكة 4",
+          "defaultValue": "04",
+          "group": "scene"
+        },
+        {
+          "id": "network.center",
+          "label": "تسمية مركز الشبكة",
+          "defaultValue": "BIM",
+          "group": "scene"
+        },
+        {
+          "id": "network.note",
+          "label": "الملاحظة السفلية",
+          "defaultValue": "تصوّر توضيحي · ربط التخصصات والمعلومات",
+          "group": "scene"
+        },
+        {
+          "id": "network.fallback.caption",
+          "label": "تسمية البديل عند غياب الصورة",
+          "defaultValue": "STRUCTURAL / PLACEHOLDER",
+          "group": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "name": "قبل / بعد · مثال توضيحي",
+      "from": 135,
+      "duration": 90,
+      "fields": [
+        "comparison.sectionNumber",
+        "comparison.eyebrow",
+        "comparison.title1",
+        "comparison.title2",
+        "comparison.afterLabel",
+        "comparison.beforeLabel",
+        "comparison.note",
+        "comparison.fallback.before",
+        "comparison.fallback.after"
+      ],
+      "textFields": [
+        {
+          "id": "comparison.sectionNumber",
+          "label": "رقم المشهد",
+          "defaultValue": "03",
+          "group": "scene"
+        },
+        {
+          "id": "comparison.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "MAKE THE CONFLICT VISIBLE",
+          "group": "scene"
+        },
+        {
+          "id": "comparison.title1",
+          "label": "العنوان — السطر الأول",
+          "defaultValue": "نشوف التعارض",
+          "group": "scene",
+          "legacySource": "نشوف التعارض"
+        },
+        {
+          "id": "comparison.title2",
+          "label": "العنوان — السطر الثاني",
+          "defaultValue": "ونراجع المسار",
+          "group": "scene",
+          "legacySource": "ونراجع المسار"
+        },
+        {
+          "id": "comparison.afterLabel",
+          "label": "عنوان جانب بعد",
+          "defaultValue": "AFTER / بعد",
+          "group": "scene"
+        },
+        {
+          "id": "comparison.beforeLabel",
+          "label": "عنوان جانب قبل",
+          "defaultValue": "BEFORE / قبل",
+          "group": "scene"
+        },
+        {
+          "id": "comparison.note",
+          "label": "الملاحظة السفلية",
+          "defaultValue": "مثال توضيحي فقط · ليس نتيجة مشروع أو تحقق هندسي",
+          "group": "scene"
+        },
+        {
+          "id": "comparison.fallback.before",
+          "label": "تسمية بديل صورة قبل",
+          "defaultValue": "SCHEMATIC PLACEHOLDER",
+          "group": "fallback"
+        },
+        {
+          "id": "comparison.fallback.after",
+          "label": "تسمية بديل صورة بعد",
+          "defaultValue": "SCHEMATIC PLACEHOLDER",
+          "group": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "name": "من النمذجة إلى التسليم",
+      "from": 225,
+      "duration": 75,
+      "fields": [
+        "workflow.sectionNumber",
+        "workflow.eyebrow",
+        "workflow.title1",
+        "workflow.steps.1.number",
+        "workflow.steps.1.label",
+        "workflow.steps.1.arabic",
+        "workflow.steps.1.arrow",
+        "workflow.steps.2.number",
+        "workflow.steps.2.label",
+        "workflow.steps.2.arabic",
+        "workflow.steps.2.arrow",
+        "workflow.steps.3.number",
+        "workflow.steps.3.label",
+        "workflow.steps.3.arabic",
+        "workflow.steps.3.arrow",
+        "workflow.steps.4.number",
+        "workflow.steps.4.label",
+        "workflow.steps.4.arabic",
+        "workflow.steps.4.arrow",
+        "workflow.note"
+      ],
+      "textFields": [
+        {
+          "id": "workflow.sectionNumber",
+          "label": "رقم المشهد",
+          "defaultValue": "04",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "ONE CONTINUOUS WORKFLOW",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.title1",
+          "label": "العنوان الرئيسي",
+          "defaultValue": "كل خطوة متصلة",
+          "group": "scene",
+          "legacySource": "كل خطوة متصلة"
+        },
+        {
+          "id": "workflow.steps.1.number",
+          "label": "رقم الخطوة 1",
+          "defaultValue": "01",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.1.label",
+          "label": "الخطوة 1 — إنجليزي",
+          "defaultValue": "MODEL",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.1.arabic",
+          "label": "الخطوة 1 — عربي",
+          "defaultValue": "نمذجة",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.1.arrow",
+          "label": "رمز الخطوة 1",
+          "defaultValue": "→",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.2.number",
+          "label": "رقم الخطوة 2",
+          "defaultValue": "02",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.2.label",
+          "label": "الخطوة 2 — إنجليزي",
+          "defaultValue": "COORDINATE",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.2.arabic",
+          "label": "الخطوة 2 — عربي",
+          "defaultValue": "تنسيق",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.2.arrow",
+          "label": "رمز الخطوة 2",
+          "defaultValue": "→",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.3.number",
+          "label": "رقم الخطوة 3",
+          "defaultValue": "03",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.3.label",
+          "label": "الخطوة 3 — إنجليزي",
+          "defaultValue": "CHECK",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.3.arabic",
+          "label": "الخطوة 3 — عربي",
+          "defaultValue": "مراجعة",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.3.arrow",
+          "label": "رمز الخطوة 3",
+          "defaultValue": "→",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.4.number",
+          "label": "رقم الخطوة 4",
+          "defaultValue": "04",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.4.label",
+          "label": "الخطوة 4 — إنجليزي",
+          "defaultValue": "DELIVER",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.4.arabic",
+          "label": "الخطوة 4 — عربي",
+          "defaultValue": "تسليم",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.steps.4.arrow",
+          "label": "رمز الخطوة 4",
+          "defaultValue": "→",
+          "group": "scene"
+        },
+        {
+          "id": "workflow.note",
+          "label": "الملاحظة السفلية",
+          "defaultValue": "من الفكرة إلى التسليم.",
+          "group": "scene"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "name": "Elmekawy BIM · تواصل",
+      "from": 300,
+      "duration": 60,
+      "fields": [
+        "cta.sectionNumber",
+        "cta.eyebrow",
+        "cta.brandName",
+        "cta.brandSuffix",
+        "cta.title1",
+        "cta.title2",
+        "cta.contact",
+        "cta.website",
+        "cta.fallback.mark"
+      ],
+      "textFields": [
+        {
+          "id": "cta.sectionNumber",
+          "label": "رقم المشهد",
+          "defaultValue": "05",
+          "group": "scene"
+        },
+        {
+          "id": "cta.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "LET’S CONNECT",
+          "group": "scene"
+        },
+        {
+          "id": "cta.brandName",
+          "label": "اسم العلامة في الخاتمة",
+          "defaultValue": "ELMEKAWY",
+          "group": "scene"
+        },
+        {
+          "id": "cta.brandSuffix",
+          "label": "تكملة العلامة في الخاتمة",
+          "defaultValue": "BIM",
+          "group": "scene"
+        },
+        {
+          "id": "cta.title1",
+          "label": "العبارة العربية — السطر الأول",
+          "defaultValue": "نربط التفاصيل",
+          "group": "scene",
+          "legacySource": "نربط التفاصيل"
+        },
+        {
+          "id": "cta.title2",
+          "label": "العبارة العربية — السطر الثاني",
+          "defaultValue": "ونبني الصورة الكاملة",
+          "group": "scene",
+          "legacySource": "ونبني الصورة الكاملة"
+        },
+        {
+          "id": "cta.contact",
+          "label": "دعوة التواصل",
+          "defaultValue": "خلّينا نتواصل",
+          "group": "scene"
+        },
+        {
+          "id": "cta.website",
+          "label": "رابط التواصل",
+          "defaultValue": "linkedin.com/in/mahmoud-elmekawy ↗",
+          "group": "scene"
+        },
+        {
+          "id": "cta.fallback.mark",
+          "label": "حروف البديل عند غياب الشعار",
+          "defaultValue": "ME",
+          "group": "fallback"
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "fixedTiming": true,
+    "aspectRatios": ["9:16"],
+    "fps": [30],
+    "resolutions": [
+      {
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "audio": "none"
+  },
+  "imageControls": {
+    "sceneLocal": true,
+    "identityDefaults": true
+  }
+}

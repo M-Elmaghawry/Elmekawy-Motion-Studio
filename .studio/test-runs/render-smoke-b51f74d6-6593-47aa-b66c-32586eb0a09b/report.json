@@ -1,0 +1,159 @@
+{
+  "createdAt": "2026-11-01T05:42:29.772Z",
+  "passed": false,
+  "checks": [
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.0.0",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.1.0",
+      "smokeFrames": 30,
+      "audio": true,
+      "passed": true
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 45,
+      "match": true,
+      "original": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9",
+      "current": "274edba26871fac93d87ccbe701e5fb82d4083aa31ac438ed529c8d5ed3135c9"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 119,
+      "match": true,
+      "original": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4",
+      "current": "c859387f96346c2a3448c836c74de33111dcc6b67fe6d367c39e68313a5a43e4"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 120,
+      "match": true,
+      "original": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b",
+      "current": "0d51ac1397a40fde9e1cc528892092501953888f4f74e782412a6a91fb38f65b"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 131,
+      "match": true,
+      "original": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15",
+      "current": "148b6180bd1839584e86d01587765b370d433899798d26b5242909b24e1b6f15"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 132,
+      "match": true,
+      "original": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5",
+      "current": "4613c7f3ccc73f22580f28180b25f6e532d4f7fd8938baef84892da79a52f6e5"
+    },
+    {
+      "composition": "ElmekawyBIMIntro",
+      "version": "1.2.0",
+      "frame": 899,
+      "match": true,
+      "original": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209",
+      "current": "6ad15da44094ba5dee46b187da8c5f87cd7980f6ae3deedd382e82c3cbc9b209"
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Image transform must change its scene pixels\n    at file:///D:/zz-CODING/Elmekawy-Motion-Studio/scripts/verify-render-smoke.mjs:176:16\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "serverLog": "Elmekawy Motion Studio: http://127.0.0.1:56478\n"
+}

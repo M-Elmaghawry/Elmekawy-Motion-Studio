@@ -1,0 +1,296 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "project--12e34d3c8fe34ba6b52f5e1446a9e6bc",
+  "revision": 1,
+  "createdAt": "2026-10-31T11:30:48.595Z",
+  "updatedAt": "2026-10-31T11:30:48.595Z",
+  "name": "مشروع اختبار",
+  "status": "draft",
+  "brief": {
+    "client": "Elmekawy BIM",
+    "objective": "اختبار الحفظ الحقيقي",
+    "description": "",
+    "category": "engineering-brand",
+    "audience": "",
+    "platforms": [
+      "instagram-reels"
+    ]
+  },
+  "template": {
+    "id": "bim-motion-study",
+    "version": "1.0.0"
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360,
+    "aspectRatio": "9:16"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "preset": {
+      "id": "elmekawy-bim",
+      "version": "1.0.0"
+    },
+    "displayName": "Elmekawy BIM",
+    "colors": {
+      "navy": "#003060",
+      "blue": "#055C9D",
+      "cyan": "#0E86D4",
+      "light": "#68BBE3",
+      "ink": "#030D1B",
+      "white": "#F3F8FC",
+      "muted": "#9BB4C9"
+    },
+    "fonts": {
+      "arabic": {
+        "family": "Cairo",
+        "assetId": "font-cairo",
+        "weightMin": 100,
+        "weightMax": 900
+      },
+      "latin": {
+        "family": "Inter",
+        "assetId": "font-inter",
+        "weightMin": 100,
+        "weightMax": 900
+      }
+    },
+    "logoAssetId": "logo",
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "script": {
+    "text": "",
+    "notes": ""
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "bim-motion-study/hook",
+      "name": "الموديل مش هو الـ BIM",
+      "description": "",
+      "startFrame": 0,
+      "durationFrames": 60,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "الموديل": "الموديل",
+        "مش هو الـ": "مش هو الـ",
+        "BIM": "BIM"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "network",
+      "type": "bim-motion-study/network",
+      "name": "شبكة تنسيق مترابطة",
+      "description": "",
+      "startFrame": 60,
+      "durationFrames": 75,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "من موديل": "من موديل",
+        "لشبكة تنسيق": "لشبكة تنسيق"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "comparison",
+      "type": "bim-motion-study/comparison",
+      "name": "قبل / بعد · مثال توضيحي",
+      "description": "",
+      "startFrame": 135,
+      "durationFrames": 90,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "نشوف التعارض": "نشوف التعارض",
+        "ونراجع المسار": "ونراجع المسار"
+      },
+      "assetBindings": {},
+      "promptIds": [
+        "prompt-before",
+        "prompt-after"
+      ]
+    },
+    {
+      "id": "workflow",
+      "type": "bim-motion-study/workflow",
+      "name": "من النمذجة إلى التسليم",
+      "description": "",
+      "startFrame": 225,
+      "durationFrames": 75,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "كل خطوة متصلة": "كل خطوة متصلة"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "cta",
+      "type": "bim-motion-study/cta",
+      "name": "Elmekawy BIM · تواصل",
+      "description": "",
+      "startFrame": 300,
+      "durationFrames": 60,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "نربط التفاصيل": "نربط التفاصيل",
+        "ونبني الصورة الكاملة": "ونبني الصورة الكاملة"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "role": "font-cairo",
+      "mediaKey": "fonts/Cairo.ttf",
+      "kind": "font",
+      "displayName": "Cairo.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "originalFilename": "Cairo.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "role": "font-inter",
+      "mediaKey": "fonts/Inter.ttf",
+      "kind": "font",
+      "displayName": "Inter.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "originalFilename": "Inter.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "logo",
+      "role": "logo",
+      "mediaKey": "assets/logos/ME-Logo.png",
+      "kind": "logo",
+      "displayName": "ME-Logo.png",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "brands/elmekawy-bim/1.0.0/ME-Logo.png"
+      },
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238,
+      "mimeType": "image/png",
+      "originalFilename": "ME-Logo.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "structural",
+      "role": "structural",
+      "mediaKey": "assets/generated/structural-bim.png",
+      "kind": "image",
+      "displayName": "structural-bim.png",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/structural.png"
+      },
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "originalFilename": "structural-bim.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "comparison-before",
+      "role": "before",
+      "kind": "image",
+      "mediaKey": "assets/v2/coordination-before.png",
+      "displayName": "coordination-before.png",
+      "state": "missing",
+      "reason": "Not present in the protected V2 project; original schematic fallback is preserved.",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "comparison-after",
+      "role": "after",
+      "kind": "image",
+      "mediaKey": "assets/v2/coordination-after.png",
+      "displayName": "coordination-after.png",
+      "state": "missing",
+      "reason": "Not present in the protected V2 project; original schematic fallback is preserved.",
+      "license": {
+        "status": "unknown"
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "id": "prompt-before",
+      "title": "Coordination before",
+      "text": "Create an original synthetic BIM coordination concept illustration, not a real\nengineering project. Orthographic isometric view of one simple structural bay,\nthree translucent concrete beams, one pale blue horizontal service route and one\nwarm amber service route visibly crossing at the center. Clean simplified CAD\ngeometry, premium dark navy background #003060 fading to #030D1B, cyan #0E86D4\nand light blue #68BBE3 accents, restrained illumination. Center the geometry in\nthe middle 70 percent, generous clear space at top and bottom for labels added\nlater. Landscape 6:5. No text. Keep the camera, framing and structure suitable\nfor a matched before and after concept pair.",
+      "negativeConstraints": "No text, logos, watermark, real project identifiers or engineering verification claims.",
+      "sceneIds": [
+        "comparison"
+      ],
+      "status": "ready-to-copy"
+    },
+    {
+      "id": "prompt-after",
+      "title": "Coordination after",
+      "text": "Using my supplied synthetic BEFORE coordination concept as a reference, preserve\nthe exact orthographic isometric camera, crop, structural bay, beams, materials,\nlighting and navy background. Change only the warm amber service route into a\ncyan illustrative offset route around the central intersection, with visibly\nseparated routes. This is conceptual visualization only, not engineering\nvalidation. Premium restrained dark tech illustration, simple clear geometry,\nsame empty top and bottom margins, landscape 6:5. No text or annotations.",
+      "negativeConstraints": "No text, logos, watermark, real project identifiers or engineering verification claims.",
+      "sceneIds": [
+        "comparison"
+      ],
+      "status": "ready-to-copy"
+    }
+  ],
+  "references": [],
+  "audio": {
+    "mode": "none"
+  },
+  "output": {
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "mp4-h264-v1",
+    "fileNameLabel": "video"
+  },
+  "provenance": {
+    "kind": "created"
+  }
+}

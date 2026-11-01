@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "recover--06bc344353ad46419cfa9fbacf9ecc92",
+  "revision": 4,
+  "createdAt": "2026-11-01T00:00:00.000Z",
+  "updatedAt": "2026-11-01T05:56:11.541Z",
+  "name": "Elmekawy BIM — flexible 20s fixture",
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.0.0"
+  },
+  "brief": {
+    "client": "Elmekawy BIM",
+    "objective": "JSON-only five-scene 20-second local acceptance fixture."
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "profileId": "elmekawy-bim",
+    "version": "1.0.0",
+    "displayName": "ELMEKAWY BIM",
+    "colors": {
+      "background": "#030D1B",
+      "surface": "#003060",
+      "foreground": "#F3F8FC",
+      "accent": "#68BBE3",
+      "muted": "#9BB4C9"
+    },
+    "fonts": {
+      "arabicAssetId": "font-cairo",
+      "latinAssetId": "font-inter"
+    },
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "outputProfile": {
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18
+  },
+  "targetDurationFrames": 600,
+  "scenes": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "hook",
+      "type": "kinetic-title",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "content": {
+        "headline": "من الفكرة للتنسيق",
+        "subtitle": "BIM / Revit"
+      },
+      "motion": {
+        "id": "word-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": []
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "proof",
+      "type": "stat-proof",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "content": {
+        "label": "مراحل في المثال",
+        "value": 3,
+        "prefix": "",
+        "suffix": "",
+        "sourceNote": "مثال توضيحي للعملية، وليس ادعاءً بنتائج عميل."
+      },
+      "motion": {
+        "id": "count-up",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": []
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "media",
+      "type": "media-showcase",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "content": {
+        "headline": "رؤية واضحة",
+        "caption": "تصوّر هندسي توضيحي · أصل محلي محفوظ"
+      },
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "image",
+          "assetId": "showcase-image",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "steps",
+      "type": "process-flow",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "content": {
+        "headline": "كل خطوة متصلة",
+        "steps": [
+          {
+            "id": "model",
+            "label": "نمذجة / Model"
+          },
+          {
+            "id": "coordinate",
+            "label": "تنسيق / Coordinate"
+          },
+          {
+            "id": "deliver",
+            "label": "تسليم / Deliver"
+          }
+        ]
+      },
+      "motion": {
+        "id": "step-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": []
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "cta",
+      "type": "offer-cta",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "content": {
+        "headline": "ابدأ مشروعك",
+        "action": "تواصل معنا",
+        "contact": "example.com",
+        "offer": "Learn · Build · Coordinate"
+      },
+      "motion": {
+        "id": "cta-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "cut",
+        "durationFrames": 0
+      },
+      "mediaBindings": []
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "kind": "font",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "Existing local Cairo font fixture.",
+      "license": {
+        "status": "documented",
+        "note": "OFL license retained beside the exact font bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "kind": "font",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "Existing local Inter font fixture.",
+      "license": {
+        "status": "documented",
+        "note": "OFL license retained beside the exact font bytes."
+      }
+    },
+    {
+      "id": "showcase-image",
+      "kind": "image",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "storage": {
+        "scope": "shared",
+        "path": "defaults/1.0.0/structural-bim.png"
+      },
+      "approval": "approved",
+      "sourceNote": "Existing synthetic structural illustration, approved only as a local engineering illustration fixture; no client project claim.",
+      "license": {
+        "status": "unknown",
+        "note": "Fixture use records existing source; commercial rights have not been verified."
+      }
+    }
+  ],
+  "audio": {
+    "mode": "none"
+  }
+}

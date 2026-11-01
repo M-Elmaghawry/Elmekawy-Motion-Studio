@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "legacy image tab creates independent 1.2.0 copy; live size/position/zoom save",
+    "30s course created via wizard; real video uploaded/reviewed; audible track added via UI",
+    "scene-linked manual prompt saved via UI",
+    "portrait/square/landscape change, preview and save",
+    "UI exported and fully decoded 30s MP4 with video and audio",
+    "ZIP import through UI opens independent project with media, prompts, audio and history",
+    "history restore through UI creates a new revision"
+  ],
+  "serverLog": "Elmekawy Motion Studio: http://127.0.0.1:60810\n"
+}

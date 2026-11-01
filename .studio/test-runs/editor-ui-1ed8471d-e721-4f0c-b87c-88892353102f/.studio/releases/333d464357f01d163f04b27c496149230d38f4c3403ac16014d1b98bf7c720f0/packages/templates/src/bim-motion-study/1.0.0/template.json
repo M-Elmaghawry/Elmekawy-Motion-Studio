@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "bim-motion-study",
+  "version": "1.0.0",
+  "name": "BIM Motion Study · V2",
+  "compositionId": "ElmekawyBIMIntroV2",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationFrames": 360,
+  "scenes": [
+    {
+      "id": "hook",
+      "name": "الموديل مش هو الـ BIM",
+      "from": 0,
+      "duration": 60,
+      "fields": [
+        "الموديل",
+        "مش هو الـ",
+        "BIM"
+      ]
+    },
+    {
+      "id": "network",
+      "name": "شبكة تنسيق مترابطة",
+      "from": 60,
+      "duration": 75,
+      "fields": [
+        "من موديل",
+        "لشبكة تنسيق"
+      ]
+    },
+    {
+      "id": "comparison",
+      "name": "قبل / بعد · مثال توضيحي",
+      "from": 135,
+      "duration": 90,
+      "fields": [
+        "نشوف التعارض",
+        "ونراجع المسار"
+      ]
+    },
+    {
+      "id": "workflow",
+      "name": "من النمذجة إلى التسليم",
+      "from": 225,
+      "duration": 75,
+      "fields": [
+        "كل خطوة متصلة"
+      ]
+    },
+    {
+      "id": "cta",
+      "name": "Elmekawy BIM · تواصل",
+      "from": 300,
+      "duration": 60,
+      "fields": [
+        "نربط التفاصيل",
+        "ونبني الصورة الكاملة"
+      ]
+    }
+  ],
+  "capabilities": {
+    "fixedTiming": true,
+    "aspectRatios": [
+      "9:16"
+    ],
+    "fps": [
+      30
+    ],
+    "resolutions": [
+      {
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "audio": "none"
+  }
+}

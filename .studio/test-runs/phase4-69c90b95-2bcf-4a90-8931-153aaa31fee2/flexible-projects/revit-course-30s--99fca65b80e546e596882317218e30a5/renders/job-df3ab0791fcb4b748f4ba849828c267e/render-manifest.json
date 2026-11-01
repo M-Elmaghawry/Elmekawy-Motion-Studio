@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "revit-course-30s--99fca65b80e546e596882317218e30a5",
+  "projectRevision": 8,
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.1.0"
+  },
+  "compositionId": "FlexibleReel",
+  "engineSourceSha256": "3c89f90c2b9087903d42c199c3088043b3cf98a428cf31dc7112ef965692b28c",
+  "rootLockSha256": "b8b96131ea7db80f54c25b481142d152d958e41de1fca117f74be815dfb7b1fa",
+  "resources": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576
+    },
+    {
+      "id": "image-initial",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852
+    },
+    {
+      "id": "video-4653ac3f05e04f52ad6d85b77fa255b4",
+      "sha256": "44f05309bd5ae28e062987f4cd7a2faa7f67dede16e525895beb4ff26f141453",
+      "byteSize": 2261147
+    },
+    {
+      "id": "audio-c52bc55c8f024931bb3ef27951612680",
+      "sha256": "e4a9ee451f8f0e23f3dbb0dcd9d2b2290789f51a6ced2830994e70ed743a73f6",
+      "byteSize": 5292114
+    },
+    {
+      "id": "image-5481c8916e2d4ebabcc307a6e642e0f4",
+      "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+      "byteSize": 4000537
+    }
+  ],
+  "effectiveSettings": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 900,
+    "aspectRatio": "9:16",
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 24,
+    "presetId": "portrait-1080p30-h264-v1",
+    "fileNameLabel": "video",
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "browser": "Google Chrome for Testing 157.0.8080.0",
+    "remotion": "4.0.539"
+  },
+  "warnings": [
+    "حقوق استخدام بعض الصور غير موثّقة؛ راجع المصدر قبل الاستخدام التجاري."
+  ],
+  "output": {
+    "file": "output.mp4",
+    "sha256": "e6d209b278bf40ba232b534c655c2f99595853845dcb8c0fac56f754861c950b",
+    "bytes": 1919298,
+    "pixelFormat": "yuvj420p",
+    "videoDurationSeconds": 30,
+    "containerDurationSeconds": 30.016
+  },
+  "completedAt": "2026-11-01T05:53:51.913Z"
+}

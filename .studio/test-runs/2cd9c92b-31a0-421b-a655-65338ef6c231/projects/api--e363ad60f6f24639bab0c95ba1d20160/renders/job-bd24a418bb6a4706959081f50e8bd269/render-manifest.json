@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "api--e363ad60f6f24639bab0c95ba1d20160",
+  "projectRevision": 4,
+  "template": {
+    "id": "bim-motion-study",
+    "version": "1.1.0"
+  },
+  "compositionId": "ElmekawyBIMIntroV2",
+  "engineSourceSha256": "3c89f90c2b9087903d42c199c3088043b3cf98a428cf31dc7112ef965692b28c",
+  "rootLockSha256": "b8b96131ea7db80f54c25b481142d152d958e41de1fca117f74be815dfb7b1fa",
+  "resources": [
+    {
+      "id": "font-cairo",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548
+    },
+    {
+      "id": "font-inter",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576
+    },
+    {
+      "id": "logo",
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238
+    },
+    {
+      "id": "structural",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852
+    },
+    {
+      "id": "asset-2816f90ddc0946578d4b33c29eab1afa",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852
+    }
+  ],
+  "effectiveSettings": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "mp4-h264-v1",
+    "fileNameLabel": "video",
+    "imageFormat": "jpeg",
+    "concurrency": 2
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "browser": "Google Chrome for Testing 157.0.8080.0",
+    "remotion": "4.0.539"
+  },
+  "warnings": [
+    "صور قبل / بعد غير مكتملة؛ سيُستخدم البديل التخطيطي الأصلي للجانبين."
+  ],
+  "output": {
+    "file": "output.mp4",
+    "sha256": "590150e6cd49bea57303770961110b9a5decce690aaf0e04043bc2f8855936f1",
+    "bytes": 2488464,
+    "pixelFormat": "yuvj420p",
+    "videoDurationSeconds": 12,
+    "containerDurationSeconds": 12
+  },
+  "completedAt": "2026-11-01T05:53:16.781Z"
+}

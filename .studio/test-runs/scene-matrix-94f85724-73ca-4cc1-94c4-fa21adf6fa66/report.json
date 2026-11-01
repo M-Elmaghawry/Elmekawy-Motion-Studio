@@ -1,0 +1,168 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "ui-demo",
+      "file": "9-16-ui-demo.png",
+      "sha256": "fc1328118ac315fc8b59b4fd33c68f8e49e4c546c8fa86a6f3243febfb8475e3"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "product-hero",
+      "file": "9-16-product-hero.png",
+      "sha256": "89f3cab0b7f5848ba2f3d84d6c2ae8462f4aa8fa5874800837e3241170e2ac4d"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "before-after",
+      "file": "9-16-before-after.png",
+      "sha256": "729374f5b60db933cf42c62cf554560d232e52928a28a605ca4be63951ef2aed"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "data-explainer",
+      "file": "9-16-data-explainer.png",
+      "sha256": "14f4a80a318da7b9b1005034c0b461eae714f9e4360a8d89b8b00d186007449e"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "kinetic-title",
+      "file": "9-16-kinetic-title.png",
+      "sha256": "cf5bd1a721aa11479750517e011fb1c6a6166c5a511c3ddf9bb5ed426940a225"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "stat-proof",
+      "file": "9-16-stat-proof.png",
+      "sha256": "7cb3e0b8e18fbdba691ff3f5a2ccb83bf76773dfec60018c8ea7a2824fb0a6ae"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "process-flow",
+      "file": "9-16-process-flow.png",
+      "sha256": "1306185bf2cc7ccb67aee9907165103f7e9db9c91973a30f0bcdfb99ad5dbdd0"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "offer-cta",
+      "file": "9-16-offer-cta.png",
+      "sha256": "10fccf23508fb0c9c4d2acd1d0a0ffd0cddeb176732efd10678a911f2f036586"
+    },
+    {
+      "profile": "portrait-1080p30-h264-v1",
+      "scene": "media-showcase",
+      "file": "9-16-media-showcase.png",
+      "sha256": "f0258a42003e9f9313c278506d8f9e326942447f51f135fc3369929d152faa2d"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "ui-demo",
+      "file": "1-1-ui-demo.png",
+      "sha256": "f4f9d5aa67922ee37cb098e2653ee914564712b876d31d86d7e1d07ca78128ed"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "product-hero",
+      "file": "1-1-product-hero.png",
+      "sha256": "cec06df1bb85bf62740966168801a0140ba95d0463d29e398970982ababd6a47"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "before-after",
+      "file": "1-1-before-after.png",
+      "sha256": "6fe4900b462b87072060b1b649ddba3c3f64edc6117185711d8fa6b4db2197f2"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "data-explainer",
+      "file": "1-1-data-explainer.png",
+      "sha256": "6f83e6dabec7b348657e982c63636606492ac63fc7e814719ca43c780ac044dd"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "kinetic-title",
+      "file": "1-1-kinetic-title.png",
+      "sha256": "ca9d3f49f659266375e12a0486970afbdc04e783d0a7d6fc1aa1341711dd8825"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "stat-proof",
+      "file": "1-1-stat-proof.png",
+      "sha256": "aaa6e40708aac86fb6a470c7421a8f0a0e5e096b017dad3141759527eed89425"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "process-flow",
+      "file": "1-1-process-flow.png",
+      "sha256": "a1d7239471e1803066e168f466a0d62ab8494aecfa500afb32722cb967ebb7bc"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "offer-cta",
+      "file": "1-1-offer-cta.png",
+      "sha256": "a2cfc393effef78a1df9b517d9febeb7a05fc247d41d80e7e47edba844b9c1e1"
+    },
+    {
+      "profile": "square-1080p30-h264-v1",
+      "scene": "media-showcase",
+      "file": "1-1-media-showcase.png",
+      "sha256": "2a68d0c50394e101623ed1f86c090335766b4b77d77f4bbcdc61456adfc6e6e5"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "ui-demo",
+      "file": "16-9-ui-demo.png",
+      "sha256": "ea92de1273c7c719796bc1d5e50046965ecde105f8b42f50264e0cf2759bbfa1"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "product-hero",
+      "file": "16-9-product-hero.png",
+      "sha256": "00ae807b670d63d60c6429aac1a58305f3f5e859b0a47ac81526f1d479ecdec0"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "before-after",
+      "file": "16-9-before-after.png",
+      "sha256": "48c4a161443a450aedfd786ea0879788c8b9c5898445cd1544ddf23f4950503e"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "data-explainer",
+      "file": "16-9-data-explainer.png",
+      "sha256": "24cf66ab9a69a0af6a666c2aa7769930d40ea51793c7ffdedee97bd5237adae4"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "kinetic-title",
+      "file": "16-9-kinetic-title.png",
+      "sha256": "ef60381e01dee14db0650fb2a4fde5c03b62075e3a93eddf8ec52d42465a3479"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "stat-proof",
+      "file": "16-9-stat-proof.png",
+      "sha256": "0d6f47f57d0fbde56adb655628862f0805f765b0bf9802599e230b8bf57f375d"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "process-flow",
+      "file": "16-9-process-flow.png",
+      "sha256": "8c621392333bf6c6996c9acb35c0a9b3ac3003a3c09f0ac617d963d77e79341f"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "offer-cta",
+      "file": "16-9-offer-cta.png",
+      "sha256": "ce316808ec192a4e167fefbd2965e558f958f0d673c9f800c08746fd5221f6cb"
+    },
+    {
+      "profile": "landscape-1080p30-h264-v1",
+      "scene": "media-showcase",
+      "file": "16-9-media-showcase.png",
+      "sha256": "4284bdf0cac7cb2727d91da7d0853d3998018f94f95292a0ae73dcf7f945770c"
+    }
+  ],
+  "serverLog": "Elmekawy Motion Studio: http://127.0.0.1:58056\n"
+}

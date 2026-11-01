@@ -1,0 +1,14 @@
+{
+  "id": "job-3611a3258d34485c9d074e08a86eeeaa",
+  "projectId": "ui-revit-course-30s--25a79e7772a94ab484cbe817cfb80173",
+  "projectRevision": 8,
+  "projectName": "UI Revit course 30s",
+  "projectFormat": "flexible",
+  "state": "completed",
+  "progress": 1,
+  "createdAt": "2026-11-01T05:39:39.306Z",
+  "updatedAt": "2026-11-01T05:40:19.841Z",
+  "outputBytes": 2674482,
+  "outputSha256": "07a8e43129a150f39c24328dcd4c6447ffe2390c335e8b16fbd2baab49d99ec8",
+  "downloadUrl": "/api/renders/job-3611a3258d34485c9d074e08a86eeeaa/download"
+}

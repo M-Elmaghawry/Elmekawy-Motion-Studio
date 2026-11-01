@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "elmekawy-bim",
+  "version": "1.0.0",
+  "colors": {
+    "navy": "#003060",
+    "blue": "#055C9D",
+    "cyan": "#0E86D4",
+    "light": "#68BBE3",
+    "ink": "#030D1B",
+    "white": "#F3F8FC",
+    "muted": "#9BB4C9",
+    "english": "Inter",
+    "arabic": "Cairo",
+    "safe": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "resources": [
+    {
+      "id": "font-cairo",
+      "role": "font-cairo",
+      "mediaKey": "fonts/Cairo.ttf",
+      "kind": "font",
+      "displayName": "Cairo.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "originalFilename": "Cairo.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "role": "font-inter",
+      "mediaKey": "fonts/Inter.ttf",
+      "kind": "font",
+      "displayName": "Inter.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "originalFilename": "Inter.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "logo",
+      "role": "logo",
+      "mediaKey": "assets/logos/ME-Logo.png",
+      "kind": "logo",
+      "displayName": "ME-Logo.png",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "brands/elmekawy-bim/1.0.0/ME-Logo.png"
+      },
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238,
+      "mimeType": "image/png",
+      "originalFilename": "ME-Logo.png",
+      "license": {
+        "status": "unknown"
+      }
+    }
+  ]
+}

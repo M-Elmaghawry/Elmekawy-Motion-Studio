@@ -1,0 +1,5 @@
+Flexible render queued at 2026-11-01T05:30:02.100Z
+TypeError: Cannot read properties of undefined (reading 'width')
+    at renderProjectVideo (file:///D:/zz-CODING/Elmekawy-Motion-Studio/packages/motion-engine/src/server.ts:37:42)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///D:/zz-CODING/Elmekawy-Motion-Studio/apps/server/src/render-worker.ts:14:16

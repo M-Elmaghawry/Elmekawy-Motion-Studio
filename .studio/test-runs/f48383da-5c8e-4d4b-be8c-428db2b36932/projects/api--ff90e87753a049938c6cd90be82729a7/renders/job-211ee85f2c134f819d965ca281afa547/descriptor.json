@@ -1,0 +1,62 @@
+{
+  "projectRevision": 3,
+  "template": {
+    "id": "bim-motion-study",
+    "version": "1.0.0"
+  },
+  "compositionId": "ElmekawyBIMIntroV2",
+  "metadata": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360,
+    "aspectRatio": "9:16"
+  },
+  "inputProps": {
+    "media": {
+      "fonts/Cairo.ttf": {
+        "id": "font-cairo",
+        "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+      },
+      "fonts/Inter.ttf": {
+        "id": "font-inter",
+        "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+      },
+      "assets/logos/ME-Logo.png": {
+        "id": "logo",
+        "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe"
+      },
+      "assets/generated/structural-bim.png": {
+        "id": "structural",
+        "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+      },
+      "assets/v2/coordination-before.png": {
+        "id": "asset-b6adc9a360154855a38a652a6b6b5371",
+        "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+      }
+    },
+    "assets": {
+      "font-cairo": true,
+      "font-inter": true,
+      "logo": true,
+      "structural": true,
+      "after": false,
+      "before": true
+    },
+    "edits": {
+      "الموديل": "الموديل",
+      "مش هو الـ": "مش هو الـ",
+      "BIM": "BIM",
+      "من موديل": "من موديل",
+      "لشبكة تنسيق": "لشبكة تنسيق",
+      "نشوف التعارض": "نشوف التعارض",
+      "ونراجع المسار": "ونراجع المسار",
+      "كل خطوة متصلة": "كل خطوة متصلة",
+      "نربط التفاصيل": "نربط التفاصيل",
+      "ونبني الصورة الكاملة": "ونبني الصورة الكاملة"
+    }
+  },
+  "warnings": [
+    "صور قبل / بعد غير مكتملة؛ سيُستخدم البديل التخطيطي الأصلي للجانبين."
+  ]
+}

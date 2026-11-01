@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "2.1.0",
+  "id": "revit-course-30s--e52df19d4df7477aa12444b7f5a685ba",
+  "revision": 1,
+  "createdAt": "2026-11-01T05:58:34.391Z",
+  "updatedAt": "2026-11-01T05:58:34.391Z",
+  "name": "Revit course 30s",
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.1.0"
+  },
+  "brief": {
+    "client": "Course client",
+    "objective": "فيديو دورة Revit"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "profileId": "custom-client",
+    "version": "1.0.0",
+    "displayName": "REVIT COURSE",
+    "colors": {
+      "background": "#17152A",
+      "surface": "#282343",
+      "foreground": "#F5F1FF",
+      "accent": "#C7B6FF",
+      "muted": "#B8AFD0"
+    },
+    "fonts": {
+      "arabicAssetId": "font-cairo",
+      "latinAssetId": "font-inter"
+    },
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "outputProfile": {
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 24
+  },
+  "targetDurationFrames": 900,
+  "scenes": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-1",
+      "durationFrames": 310,
+      "direction": "rtl",
+      "motion": {
+        "id": "word-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "kinetic-title",
+      "content": {
+        "headline": "فكرتك تبدأ هنا",
+        "subtitle": "خطوة واضحة نحو هدفك"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-2",
+      "durationFrames": 310,
+      "direction": "rtl",
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "image",
+          "assetId": "image-initial",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        }
+      ],
+      "type": "media-showcase",
+      "content": {
+        "headline": "شاهد التفاصيل",
+        "caption": "صورة توضيحية · راجع الأصل قبل الاعتماد"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-3",
+      "durationFrames": 310,
+      "direction": "rtl",
+      "motion": {
+        "id": "cta-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "cut",
+        "durationFrames": 0
+      },
+      "mediaBindings": [],
+      "type": "offer-cta",
+      "content": {
+        "headline": "ابدأ خطوتك القادمة",
+        "action": "تواصل معنا",
+        "contact": "example.com",
+        "offer": ""
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "kind": "font",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "kind": "font",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "image-initial",
+      "kind": "image",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/image-initial.png"
+      },
+      "approval": "approved",
+      "sourceNote": "صورة توضيحية من المكتبة المحلية؛ ليست نتيجة مشروع عميل.",
+      "license": {
+        "status": "unknown",
+        "note": "حقوق الاستخدام التجاري غير متحققة."
+      }
+    }
+  ],
+  "audio": {
+    "mode": "none"
+  },
+  "prompts": []
+}

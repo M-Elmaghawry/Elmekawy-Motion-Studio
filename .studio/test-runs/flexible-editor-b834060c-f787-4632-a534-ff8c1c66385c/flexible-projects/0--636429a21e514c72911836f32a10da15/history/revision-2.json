@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "0--636429a21e514c72911836f32a10da15",
+  "revision": 2,
+  "createdAt": "2026-11-01T04:42:26.830Z",
+  "updatedAt": "2026-11-01T04:42:27.046Z",
+  "name": "مشروع واجهة 0",
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.0.0"
+  },
+  "brief": {
+    "client": "Elmekawy BIM",
+    "objective": "فيديو محلي من الواجهة"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "profileId": "elmekawy-bim",
+    "version": "1.0.0",
+    "displayName": "ELMEKAWY BIM",
+    "colors": {
+      "background": "#030D1B",
+      "surface": "#003060",
+      "foreground": "#F3F8FC",
+      "accent": "#68BBE3",
+      "muted": "#9BB4C9"
+    },
+    "fonts": {
+      "arabicAssetId": "font-cairo",
+      "latinAssetId": "font-inter"
+    },
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "outputProfile": {
+    "id": "portrait-1080p30-h264-v1",
+    "version": "1.0.0",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18
+  },
+  "targetDurationFrames": 600,
+  "scenes": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-1",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "motion": {
+        "id": "word-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "kinetic-title",
+      "content": {
+        "headline": "نص محفوظ من المحرر",
+        "subtitle": "Arabic / English"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-3",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "image",
+          "assetId": "image-initial",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "contain",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 0.75,
+            "height": 0.75
+          },
+          "transform": {
+            "scale": 1.25,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        }
+      ],
+      "type": "media-showcase",
+      "content": {
+        "headline": "شاهد التفاصيل",
+        "caption": "صورة توضيحية · راجع الأصل قبل الاعتماد"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-2",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "motion": {
+        "id": "count-up",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "stat-proof",
+      "content": {
+        "label": "خطوات في المثال",
+        "value": 3,
+        "prefix": "",
+        "suffix": "",
+        "sourceNote": "رقم توضيحي قابل للتعديل، وليس نتيجة عميل."
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-4",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "motion": {
+        "id": "step-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "process-flow",
+      "content": {
+        "headline": "كل خطوة متصلة",
+        "steps": [
+          {
+            "id": "step-1",
+            "label": "الفكرة"
+          },
+          {
+            "id": "step-2",
+            "label": "التنفيذ"
+          },
+          {
+            "id": "step-3",
+            "label": "النتيجة"
+          }
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-5",
+      "durationFrames": 132,
+      "direction": "rtl",
+      "motion": {
+        "id": "cta-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "cut",
+        "durationFrames": 0
+      },
+      "mediaBindings": [],
+      "type": "offer-cta",
+      "content": {
+        "headline": "ابدأ خطوتك القادمة",
+        "action": "تواصل معنا",
+        "contact": "example.com",
+        "offer": ""
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "kind": "font",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "kind": "font",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "image-initial",
+      "kind": "image",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/image-initial.png"
+      },
+      "approval": "pending",
+      "sourceNote": "صورة توضيحية من المكتبة المحلية؛ ليست نتيجة مشروع عميل.",
+      "license": {
+        "status": "unknown",
+        "note": "حقوق الاستخدام التجاري غير متحققة."
+      }
+    }
+  ],
+  "audio": {
+    "mode": "none"
+  }
+}

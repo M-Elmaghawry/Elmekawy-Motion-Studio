@@ -1,0 +1,444 @@
+{
+  "schemaVersion": "2.1.0",
+  "id": "scene-matrix-16-9--c2c9f732ee1448f0bb416e4a5bf806b6",
+  "revision": 1,
+  "createdAt": "2026-11-01T05:44:35.243Z",
+  "updatedAt": "2026-11-01T05:44:35.243Z",
+  "name": "Scene matrix 16:9",
+  "template": {
+    "id": "flexible-reel",
+    "version": "1.1.0"
+  },
+  "brief": {
+    "client": "Local QA",
+    "objective": "مراجعة بصرية"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "profileId": "elmekawy-bim",
+    "version": "1.0.0",
+    "displayName": "LOCAL QA",
+    "colors": {
+      "background": "#030D1B",
+      "surface": "#003060",
+      "foreground": "#F3F8FC",
+      "accent": "#68BBE3",
+      "muted": "#9BB4C9"
+    },
+    "fonts": {
+      "arabicAssetId": "font-cairo",
+      "latinAssetId": "font-inter"
+    },
+    "safeArea": {
+      "left": 70,
+      "right": 100,
+      "top": 100,
+      "bottom": 140
+    }
+  },
+  "outputProfile": {
+    "id": "landscape-1080p30-h264-v1",
+    "version": "1.0.0",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "aspectRatio": "16:9",
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 24
+  },
+  "targetDurationFrames": 900,
+  "scenes": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-1",
+      "durationFrames": 126,
+      "direction": "rtl",
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "image",
+          "assetId": "image-initial",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        }
+      ],
+      "type": "ui-demo",
+      "content": {
+        "headline": "تجربة واضحة",
+        "appName": "اسم التطبيق",
+        "caption": "شرح الخطوات",
+        "actions": [
+          "افتح",
+          "اختر",
+          "ابدأ"
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-2",
+      "durationFrames": 126,
+      "direction": "rtl",
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "image",
+          "assetId": "image-initial",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        }
+      ],
+      "type": "product-hero",
+      "content": {
+        "headline": "منتجك في المقدمة",
+        "tagline": "التفاصيل تصنع الفرق",
+        "badge": "جديد"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-3",
+      "durationFrames": 126,
+      "direction": "rtl",
+      "motion": {
+        "id": "pan",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [
+        {
+          "slot": "before",
+          "assetId": "image-initial",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        },
+        {
+          "slot": "after",
+          "assetId": "image-initial",
+          "assetSha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "fit": "cover",
+          "focalPoint": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "frame": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 1,
+            "height": 1
+          },
+          "transform": {
+            "scale": 1,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        }
+      ],
+      "type": "before-after",
+      "content": {
+        "headline": "شاهد الفرق",
+        "beforeLabel": "قبل",
+        "afterLabel": "بعد"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-4",
+      "durationFrames": 126,
+      "direction": "rtl",
+      "motion": {
+        "id": "step-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "data-explainer",
+      "content": {
+        "headline": "الصورة في الأرقام",
+        "unit": "%",
+        "points": [
+          {
+            "id": "point-1",
+            "label": "الأولى",
+            "value": 40
+          },
+          {
+            "id": "point-2",
+            "label": "الثانية",
+            "value": 70
+          },
+          {
+            "id": "point-3",
+            "label": "الثالثة",
+            "value": 90
+          }
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-5",
+      "durationFrames": 126,
+      "direction": "rtl",
+      "motion": {
+        "id": "word-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "kinetic-title",
+      "content": {
+        "headline": "فكرتك تبدأ هنا",
+        "subtitle": "خطوة واضحة نحو هدفك"
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-6",
+      "durationFrames": 125,
+      "direction": "rtl",
+      "motion": {
+        "id": "count-up",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "stat-proof",
+      "content": {
+        "label": "خطوات في المثال",
+        "value": 3,
+        "prefix": "",
+        "suffix": "",
+        "sourceNote": "رقم توضيحي قابل للتعديل، وليس نتيجة عميل."
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-7",
+      "durationFrames": 125,
+      "direction": "rtl",
+      "motion": {
+        "id": "step-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "crossfade",
+        "durationFrames": 15
+      },
+      "mediaBindings": [],
+      "type": "process-flow",
+      "content": {
+        "headline": "كل خطوة متصلة",
+        "steps": [
+          {
+            "id": "step-1",
+            "label": "الفكرة"
+          },
+          {
+            "id": "step-2",
+            "label": "التنفيذ"
+          },
+          {
+            "id": "step-3",
+            "label": "النتيجة"
+          }
+        ]
+      }
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "id": "scene-8",
+      "durationFrames": 125,
+      "direction": "rtl",
+      "motion": {
+        "id": "cta-reveal",
+        "version": "1.0.0",
+        "enterFrames": 24,
+        "staggerFrames": 6,
+        "exitFrames": 12,
+        "easing": "ease-out",
+        "reducedMotion": false
+      },
+      "transitionOut": {
+        "type": "cut",
+        "durationFrames": 0
+      },
+      "mediaBindings": [],
+      "type": "offer-cta",
+      "content": {
+        "headline": "ابدأ خطوتك القادمة",
+        "action": "تواصل معنا",
+        "contact": "example.com",
+        "offer": ""
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "kind": "font",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "kind": "font",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "approval": "approved",
+      "sourceNote": "خط محلي مرخّص OFL.",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "image-initial",
+      "kind": "image",
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/image-initial.png"
+      },
+      "approval": "approved",
+      "sourceNote": "صورة توضيحية من المكتبة المحلية؛ ليست نتيجة مشروع عميل.",
+      "license": {
+        "status": "unknown",
+        "note": "حقوق الاستخدام التجاري غير متحققة."
+      }
+    }
+  ],
+  "audio": {
+    "mode": "none"
+  },
+  "prompts": []
+}

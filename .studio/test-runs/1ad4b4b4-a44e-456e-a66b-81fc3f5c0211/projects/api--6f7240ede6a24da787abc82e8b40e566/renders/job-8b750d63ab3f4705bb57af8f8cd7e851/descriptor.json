@@ -1,0 +1,113 @@
+{
+  "projectRevision": 3,
+  "template": {
+    "id": "bim-motion-study",
+    "version": "1.1.0"
+  },
+  "compositionId": "ElmekawyBIMIntroV2",
+  "metadata": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360,
+    "aspectRatio": "9:16"
+  },
+  "inputProps": {
+    "media": {
+      "fonts/Cairo.ttf": {
+        "id": "font-cairo",
+        "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+      },
+      "fonts/Inter.ttf": {
+        "id": "font-inter",
+        "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+      },
+      "assets/logos/ME-Logo.png": {
+        "id": "logo",
+        "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe"
+      },
+      "assets/generated/structural-bim.png": {
+        "id": "structural",
+        "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+      },
+      "assets/v2/coordination-before.png": {
+        "id": "asset-50e8c7a8d302450cbbd18f11bf063ab5",
+        "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+      }
+    },
+    "assets": {
+      "font-cairo": true,
+      "font-inter": true,
+      "logo": true,
+      "structural": true,
+      "after": false,
+      "before": true
+    },
+    "edits": {
+      "global.brandName": "ELMEKAWY",
+      "global.brandSuffix": "BIM",
+      "global.studyLabel": "MOTION STUDY / 02",
+      "hook.sectionNumber": "01",
+      "hook.eyebrow": "BEYOND THE MODEL",
+      "hook.title1": "الموديل",
+      "hook.title2": "مش هو الـ",
+      "hook.title3": "BIM",
+      "hook.tagline": "THINK IN CONNECTIONS.",
+      "hook.note": "القيمة في الترابط، مش في الشكل بس.",
+      "network.sectionNumber": "02",
+      "network.eyebrow": "A CONNECTED SYSTEM",
+      "network.title1": "من موديل",
+      "network.title2": "لشبكة تنسيق",
+      "network.overlay": "MODEL → COORDINATION",
+      "network.nodes.1": "01",
+      "network.nodes.2": "02",
+      "network.nodes.3": "03",
+      "network.nodes.4": "04",
+      "network.center": "BIM",
+      "network.note": "تصوّر توضيحي · ربط التخصصات والمعلومات",
+      "network.fallback.caption": "STRUCTURAL / PLACEHOLDER",
+      "comparison.sectionNumber": "03",
+      "comparison.eyebrow": "MAKE THE CONFLICT VISIBLE",
+      "comparison.title1": "نشوف التعارض",
+      "comparison.title2": "ونراجع المسار",
+      "comparison.afterLabel": "AFTER / بعد",
+      "comparison.beforeLabel": "BEFORE / قبل",
+      "comparison.note": "مثال توضيحي فقط · ليس نتيجة مشروع أو تحقق هندسي",
+      "comparison.fallback.before": "SCHEMATIC PLACEHOLDER",
+      "comparison.fallback.after": "SCHEMATIC PLACEHOLDER",
+      "workflow.sectionNumber": "04",
+      "workflow.eyebrow": "ONE CONTINUOUS WORKFLOW",
+      "workflow.title1": "كل خطوة متصلة",
+      "workflow.steps.1.number": "01",
+      "workflow.steps.1.label": "MODEL",
+      "workflow.steps.1.arabic": "نمذجة",
+      "workflow.steps.1.arrow": "→",
+      "workflow.steps.2.number": "02",
+      "workflow.steps.2.label": "COORDINATE",
+      "workflow.steps.2.arabic": "تنسيق",
+      "workflow.steps.2.arrow": "→",
+      "workflow.steps.3.number": "03",
+      "workflow.steps.3.label": "CHECK",
+      "workflow.steps.3.arabic": "مراجعة",
+      "workflow.steps.3.arrow": "→",
+      "workflow.steps.4.number": "04",
+      "workflow.steps.4.label": "DELIVER",
+      "workflow.steps.4.arabic": "تسليم",
+      "workflow.steps.4.arrow": "→",
+      "workflow.note": "من الفكرة إلى التسليم.",
+      "cta.sectionNumber": "05",
+      "cta.eyebrow": "LET’S CONNECT",
+      "cta.brandName": "ELMEKAWY",
+      "cta.brandSuffix": "BIM",
+      "cta.title1": "نربط التفاصيل",
+      "cta.title2": "ونبني الصورة الكاملة",
+      "cta.contact": "خلّينا نتواصل",
+      "cta.website": "linkedin.com/in/mahmoud-elmekawy ↗",
+      "cta.fallback.mark": "ME"
+    },
+    "templateVersion": "1.1.0"
+  },
+  "warnings": [
+    "صور قبل / بعد غير مكتملة؛ سيُستخدم البديل التخطيطي الأصلي للجانبين."
+  ]
+}

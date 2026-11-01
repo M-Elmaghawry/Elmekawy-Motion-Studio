@@ -1,0 +1,353 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "api--7b2483130e074918a830b8df64b43785",
+  "revision": 4,
+  "createdAt": "2026-10-31T12:45:40.581Z",
+  "updatedAt": "2026-10-31T12:45:43.181Z",
+  "name": "اسم محفوظ على القرص",
+  "status": "draft",
+  "brief": {
+    "client": "Local",
+    "objective": "Actual local storage",
+    "description": "",
+    "category": "engineering-brand",
+    "audience": "",
+    "platforms": [
+      "instagram-reels"
+    ]
+  },
+  "template": {
+    "id": "bim-motion-study",
+    "version": "1.1.0"
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 360,
+    "aspectRatio": "9:16"
+  },
+  "locale": {
+    "language": "ar-EG",
+    "direction": "rtl"
+  },
+  "brand": {
+    "preset": {
+      "id": "elmekawy-bim",
+      "version": "1.0.0"
+    },
+    "displayName": "Local",
+    "colors": {
+      "navy": "#003060",
+      "blue": "#055C9D",
+      "cyan": "#0E86D4",
+      "light": "#68BBE3",
+      "ink": "#030D1B",
+      "white": "#F3F8FC",
+      "muted": "#9BB4C9"
+    },
+    "fonts": {
+      "arabic": {
+        "family": "Cairo",
+        "assetId": "font-cairo",
+        "weightMin": 100,
+        "weightMax": 900
+      },
+      "latin": {
+        "family": "Inter",
+        "assetId": "font-inter",
+        "weightMin": 100,
+        "weightMax": 900
+      }
+    },
+    "logoAssetId": "logo",
+    "safeArea": {
+      "left": 100,
+      "right": 180,
+      "top": 220,
+      "bottom": 360
+    }
+  },
+  "script": {
+    "text": "",
+    "notes": ""
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "bim-motion-study/hook",
+      "name": "الموديل مش هو الـ BIM",
+      "description": "",
+      "startFrame": 0,
+      "durationFrames": 60,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "global.brandName": "ELMEKAWY",
+        "global.brandSuffix": "BIM",
+        "global.studyLabel": "MOTION STUDY / 02",
+        "hook.sectionNumber": "01",
+        "hook.eyebrow": "BEYOND THE MODEL",
+        "hook.title1": "تصدير محفوظ",
+        "hook.title2": "مش هو الـ",
+        "hook.title3": "BIM",
+        "hook.tagline": "THINK IN CONNECTIONS.",
+        "hook.note": "القيمة في الترابط، مش في الشكل بس."
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "network",
+      "type": "bim-motion-study/network",
+      "name": "شبكة تنسيق مترابطة",
+      "description": "",
+      "startFrame": 60,
+      "durationFrames": 75,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "network.sectionNumber": "02",
+        "network.eyebrow": "A CONNECTED SYSTEM",
+        "network.title1": "من موديل",
+        "network.title2": "لشبكة تنسيق",
+        "network.overlay": "MODEL → COORDINATION",
+        "network.nodes.1": "01",
+        "network.nodes.2": "02",
+        "network.nodes.3": "03",
+        "network.nodes.4": "04",
+        "network.center": "BIM",
+        "network.note": "تصوّر توضيحي · ربط التخصصات والمعلومات",
+        "network.fallback.caption": "STRUCTURAL / PLACEHOLDER"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "comparison",
+      "type": "bim-motion-study/comparison",
+      "name": "قبل / بعد · مثال توضيحي",
+      "description": "",
+      "startFrame": 135,
+      "durationFrames": 90,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "comparison.sectionNumber": "03",
+        "comparison.eyebrow": "MAKE THE CONFLICT VISIBLE",
+        "comparison.title1": "نشوف التعارض",
+        "comparison.title2": "ونراجع المسار",
+        "comparison.afterLabel": "AFTER / بعد",
+        "comparison.beforeLabel": "BEFORE / قبل",
+        "comparison.note": "مثال توضيحي فقط · ليس نتيجة مشروع أو تحقق هندسي",
+        "comparison.fallback.before": "SCHEMATIC PLACEHOLDER",
+        "comparison.fallback.after": "SCHEMATIC PLACEHOLDER"
+      },
+      "assetBindings": {},
+      "promptIds": [
+        "prompt-before",
+        "prompt-after"
+      ]
+    },
+    {
+      "id": "workflow",
+      "type": "bim-motion-study/workflow",
+      "name": "من النمذجة إلى التسليم",
+      "description": "",
+      "startFrame": 225,
+      "durationFrames": 75,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "workflow.sectionNumber": "04",
+        "workflow.eyebrow": "ONE CONTINUOUS WORKFLOW",
+        "workflow.title1": "كل خطوة متصلة",
+        "workflow.steps.1.number": "01",
+        "workflow.steps.1.label": "MODEL",
+        "workflow.steps.1.arabic": "نمذجة",
+        "workflow.steps.1.arrow": "→",
+        "workflow.steps.2.number": "02",
+        "workflow.steps.2.label": "COORDINATE",
+        "workflow.steps.2.arabic": "تنسيق",
+        "workflow.steps.2.arrow": "→",
+        "workflow.steps.3.number": "03",
+        "workflow.steps.3.label": "CHECK",
+        "workflow.steps.3.arabic": "مراجعة",
+        "workflow.steps.3.arrow": "→",
+        "workflow.steps.4.number": "04",
+        "workflow.steps.4.label": "DELIVER",
+        "workflow.steps.4.arabic": "تسليم",
+        "workflow.steps.4.arrow": "→",
+        "workflow.note": "من الفكرة إلى التسليم."
+      },
+      "assetBindings": {},
+      "promptIds": []
+    },
+    {
+      "id": "cta",
+      "type": "bim-motion-study/cta",
+      "name": "Elmekawy BIM · تواصل",
+      "description": "",
+      "startFrame": 300,
+      "durationFrames": 60,
+      "outgoingExtensionFrames": 0,
+      "content": {
+        "cta.sectionNumber": "05",
+        "cta.eyebrow": "LET’S CONNECT",
+        "cta.brandName": "ELMEKAWY",
+        "cta.brandSuffix": "BIM",
+        "cta.title1": "نربط التفاصيل",
+        "cta.title2": "ونبني الصورة الكاملة",
+        "cta.contact": "خلّينا نتواصل",
+        "cta.website": "linkedin.com/in/mahmoud-elmekawy ↗",
+        "cta.fallback.mark": "ME"
+      },
+      "assetBindings": {},
+      "promptIds": []
+    }
+  ],
+  "assets": [
+    {
+      "id": "font-cairo",
+      "role": "font-cairo",
+      "mediaKey": "fonts/Cairo.ttf",
+      "kind": "font",
+      "displayName": "Cairo.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/cairo/1.0.0/Cairo.ttf"
+      },
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+      "byteSize": 599548,
+      "mimeType": "font/ttf",
+      "originalFilename": "Cairo.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "font-inter",
+      "role": "font-inter",
+      "mediaKey": "fonts/Inter.ttf",
+      "kind": "font",
+      "displayName": "Inter.ttf",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "fonts/inter/1.0.0/Inter.ttf"
+      },
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "byteSize": 876576,
+      "mimeType": "font/ttf",
+      "originalFilename": "Inter.ttf",
+      "license": {
+        "status": "documented",
+        "note": "Original OFL license retained beside the exact TTF bytes."
+      }
+    },
+    {
+      "id": "logo",
+      "role": "logo",
+      "mediaKey": "assets/logos/ME-Logo.png",
+      "kind": "logo",
+      "displayName": "ME-Logo.png",
+      "state": "ready",
+      "storage": {
+        "scope": "shared",
+        "path": "brands/elmekawy-bim/1.0.0/ME-Logo.png"
+      },
+      "sha256": "c143f9d66409365194ded00b18530250fb5be807d24fd18337167ffd0d64c1fe",
+      "byteSize": 25238,
+      "mimeType": "image/png",
+      "originalFilename": "ME-Logo.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "structural",
+      "role": "structural",
+      "mediaKey": "assets/generated/structural-bim.png",
+      "kind": "image",
+      "displayName": "structural-bim.png",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/structural.png"
+      },
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "originalFilename": "structural-bim.png",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "comparison-after",
+      "role": "after",
+      "kind": "image",
+      "mediaKey": "assets/v2/coordination-after.png",
+      "displayName": "coordination-after.png",
+      "state": "missing",
+      "reason": "Not present in the protected V2 project; original schematic fallback is preserved.",
+      "license": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "asset-ddb66867322f4b07a5a47eeb1f1be7f2",
+      "role": "before",
+      "kind": "image",
+      "mediaKey": "assets/v2/coordination-before.png",
+      "displayName": "wrong-name.html",
+      "originalFilename": "wrong-name.html",
+      "state": "ready",
+      "storage": {
+        "scope": "project",
+        "path": "assets/images/asset-ddb66867322f4b07a5a47eeb1f1be7f2.png"
+      },
+      "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+      "byteSize": 4155852,
+      "mimeType": "image/png",
+      "license": {
+        "status": "unknown"
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "id": "prompt-before",
+      "title": "Coordination before",
+      "text": "Create an original synthetic BIM coordination concept illustration, not a real\nengineering project. Orthographic isometric view of one simple structural bay,\nthree translucent concrete beams, one pale blue horizontal service route and one\nwarm amber service route visibly crossing at the center. Clean simplified CAD\ngeometry, premium dark navy background #003060 fading to #030D1B, cyan #0E86D4\nand light blue #68BBE3 accents, restrained illumination. Center the geometry in\nthe middle 70 percent, generous clear space at top and bottom for labels added\nlater. Landscape 6:5. No text. Keep the camera, framing and structure suitable\nfor a matched before and after concept pair.",
+      "negativeConstraints": "No text, logos, watermark, real project identifiers or engineering verification claims.",
+      "sceneIds": [
+        "comparison"
+      ],
+      "status": "ready-to-copy"
+    },
+    {
+      "id": "prompt-after",
+      "title": "Coordination after",
+      "text": "Using my supplied synthetic BEFORE coordination concept as a reference, preserve\nthe exact orthographic isometric camera, crop, structural bay, beams, materials,\nlighting and navy background. Change only the warm amber service route into a\ncyan illustrative offset route around the central intersection, with visibly\nseparated routes. This is conceptual visualization only, not engineering\nvalidation. Premium restrained dark tech illustration, simple clear geometry,\nsame empty top and bottom margins, landscape 6:5. No text or annotations.",
+      "negativeConstraints": "No text, logos, watermark, real project identifiers or engineering verification claims.",
+      "sceneIds": [
+        "comparison"
+      ],
+      "status": "ready-to-copy"
+    }
+  ],
+  "references": [],
+  "audio": {
+    "mode": "none"
+  },
+  "output": {
+    "container": "mp4",
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "crf": 18,
+    "presetId": "mp4-h264-v1",
+    "fileNameLabel": "video"
+  },
+  "provenance": {
+    "kind": "created"
+  }
+}

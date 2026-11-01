@@ -1,0 +1,31 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.17.0
+2 info using node@v24.19.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\zz-CODING\Elmekawy-Motion-Studio\.npmrc
+5 silly config load:file:C:\Users\User\.npmrc
+6 silly config load:file:C:\Users\User\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install fflate@0.8.2
+8 verbose argv "install" "fflate@0.8.2" "--workspace" "apps/server" "--save-exact" "--ignore-scripts" "--no-audit" "--no-fund" "--cache" ".studio/test-runs/npm-cache"
+9 verbose logfile logs-max:10 dir:D:\zz-CODING\Elmekawy-Motion-Studio\.studio\test-runs\npm-cache\_logs\2026-11-01T05_18_47_166Z-
+10 verbose logfile D:\zz-CODING\Elmekawy-Motion-Studio\.studio\test-runs\npm-cache\_logs\2026-11-01T05_18_47_166Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: packages/motion-engine
+14 silly idealTree buildDeps
+15 silly fetch manifest fflate@0.8.2
+16 silly packumentCache full:https://registry.npmjs.org/fflate cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/fflate 641ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/fflate set size:undefined disposed:false
+19 silly placeDep ROOT fflate@0.8.2 OK for: @elmekawy/server@0.1.0 want: 0.8.2
+20 silly reify moves {}
+21 http cache fflate@https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz 0ms (cache hit)
+22 silly tarball no local data for fflate@https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz. Extracting by manifest.
+23 http fetch GET 200 https://registry.npmjs.org/fflate/-/fflate-0.8.2.tgz 347ms (cache miss)
+24 silly ADD node_modules/fflate
+25 verbose cwd D:\zz-CODING\Elmekawy-Motion-Studio
+26 verbose os Windows_NT 10.0.26200
+27 verbose node v24.19.0
+28 verbose npm  v11.17.0
+29 verbose exit 0
+30 info ok

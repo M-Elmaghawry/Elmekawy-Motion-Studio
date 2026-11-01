@@ -1,0 +1,74 @@
+{
+  "createdAt": "2026-11-01T04:45:00.811Z",
+  "passed": true,
+  "checks": [
+    {
+      "name": "boundary-frames-and-repeat-seeks",
+      "passed": true,
+      "frames": [
+        0,
+        66,
+        116,
+        117,
+        131,
+        132,
+        183,
+        233,
+        234,
+        248,
+        249,
+        300,
+        350,
+        351,
+        365,
+        366,
+        417,
+        467,
+        468,
+        482,
+        483,
+        534,
+        599
+      ],
+      "hashes": {
+        "0": "ba6055805ccdb62f9f80a4473d50b6d9f662fb3310b9971594cbe7d445e0effa",
+        "66": "7dd6d4190257c621e5de1b1e9e7e9a6b8c6cc9b6bd1c5a3b8103fa39b25df8f8",
+        "116": "7dd6d4190257c621e5de1b1e9e7e9a6b8c6cc9b6bd1c5a3b8103fa39b25df8f8",
+        "117": "e95b09f5c13770cdaee9f821563c29e38cc1f3aff4c367a2d1301b1b75dcebf0",
+        "131": "e5ca66b4e8a090452c364d55961f5d785c03d1b2738e22693c04aacf698d5707",
+        "132": "f658b88ec2f24ac0981ba7a1de2babaad3da809e46d49fcaed9d807f289c618d",
+        "183": "5113260890c2008eeee7dd7dedcad4ec5e2c33ada170269e2677eb9de05ace92",
+        "233": "5113260890c2008eeee7dd7dedcad4ec5e2c33ada170269e2677eb9de05ace92",
+        "234": "97f8b306338d7817fcc3a40be6241ba2adbc5e96c6f972319f67c3106acbde0f",
+        "248": "47ddf224f0384292817a98ca1fc6bb9994c0a730a6b0e43ef05d33ed584c01d4",
+        "249": "e2a7d992d628d2bd1ac56f078bc4e3711e5fa8911bd191923b2a0f34adc51b24",
+        "300": "860882878d56b02798297c49cf9b56331926b54c00783de95e42c77e281b630a",
+        "350": "378e202e50978ae5d830f140cffb5cfc145ab20fa334e8c526b9c93eef9e40db",
+        "351": "046626fa0c1fcbfa3a62d0900367c6a8325d1ae2671fe87b7872257f28280ace",
+        "365": "27013731128037f527a2266671663b5fdc4ec6bce67193c8914e659237f232c0",
+        "366": "e5fac445fe571f17551a170483e7e623729599b1d68fb7a0f1d204f41f5b51f0",
+        "417": "140b8677759d4284ffb1fe609e41982bc9f71da7b0bc2085d3d2cc501b01126b",
+        "467": "140b8677759d4284ffb1fe609e41982bc9f71da7b0bc2085d3d2cc501b01126b",
+        "468": "14f7e3587674d7317dec5767b6bee516cea9c52fdd63bbb71abad6b6bf74520a",
+        "482": "f4aecd082a257a0cd975d05bbd72c901d3d0ba3a8956f492e7e7113a70cf4dca",
+        "483": "86949cdd422753f76f46ccdbbbd546548b84b8bfd2bfe756119d4bc210822ae0",
+        "534": "9c08d6c60dd2e1b4bc7b8a377fdd8cd704f0129f6a2c7c48b6c2ebe00cb75913",
+        "599": "0698d4267c3aa8d82ceef848fbf3927c5cdb4cd774bce38b9e6111361fcd3bdf"
+      }
+    },
+    {
+      "name": "image-transform-changes-pixels-and-isolates-other-scenes",
+      "passed": true,
+      "frame": 300,
+      "transformedHash": "76422b97572da1f6b46b25b3e4ecbd29e3f576f188e71ee352fae32be2e58b1d"
+    },
+    {
+      "name": "long-arabic-overflow-blocked-after-font-layout",
+      "passed": true
+    },
+    {
+      "name": "encoded-stream-metadata-and-full-decode",
+      "passed": true
+    }
+  ]
+}

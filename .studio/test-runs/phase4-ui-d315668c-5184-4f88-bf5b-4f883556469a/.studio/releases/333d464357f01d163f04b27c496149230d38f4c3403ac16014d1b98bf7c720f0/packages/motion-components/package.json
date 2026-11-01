@@ -1,0 +1,1 @@
+{"name":"@elmekawy/motion-components","version":"0.1.0","private":true,"type":"module","exports":{"./*":"./src/*"},"dependencies":{"@elmekawy/shared":"0.1.0"},"peerDependencies":{"react":"19.2.3","remotion":"4.0.539"}}

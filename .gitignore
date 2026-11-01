@@ -1,22 +1,2 @@
-/node_modules/
-/apps/*/node_modules/
-/apps/studio/dist/
-/packages/*/node_modules/
-/.studio/*
-!/.studio/jobs/
-!/.studio/releases/
-!/.studio/qa/
-!/.studio/legacy-output-import.json
-/projects/.staging/
-
-# Machine-local credentials and editor/OS files are never project deliverables.
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-Thumbs.db
-.DS_Store
-
-# Local flexible project data
-/flexible-projects/
+# Owner preference: include every project file in GitHub uploads.
+# scripts/sync-github.mjs also force-adds files covered by nested/global ignore rules.

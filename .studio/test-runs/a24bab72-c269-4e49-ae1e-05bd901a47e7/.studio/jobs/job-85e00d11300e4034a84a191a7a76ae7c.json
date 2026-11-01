@@ -1,0 +1,13 @@
+{
+  "id": "job-85e00d11300e4034a84a191a7a76ae7c",
+  "projectId": "api--2da3bf2d54674541bff4659aef0339c3",
+  "projectRevision": 4,
+  "projectName": "اسم محفوظ على القرص",
+  "state": "completed",
+  "progress": 1,
+  "createdAt": "2026-10-31T12:00:20.577Z",
+  "updatedAt": "2026-10-31T12:00:37.253Z",
+  "outputBytes": 2488464,
+  "outputSha256": "590150e6cd49bea57303770961110b9a5decce690aaf0e04043bc2f8855936f1",
+  "downloadUrl": "/api/renders/job-85e00d11300e4034a84a191a7a76ae7c/download"
+}

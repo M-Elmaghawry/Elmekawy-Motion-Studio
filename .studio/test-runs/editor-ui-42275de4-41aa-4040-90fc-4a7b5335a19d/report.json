@@ -1,0 +1,28 @@
+{
+  "createdAt": "2026-11-01T05:36:26.926Z",
+  "passed": false,
+  "checks": [
+    {
+      "name": "creates-20s-BIM-via-wizard",
+      "passed": true
+    },
+    {
+      "name": "live-image-controls-reset-reorder-retime-add-delete-save",
+      "passed": true
+    },
+    {
+      "name": "reload-and-reopen-preserves-transforms",
+      "passed": true
+    },
+    {
+      "name": "duplicates-saved-project-from-editor",
+      "passed": true
+    },
+    {
+      "name": "creates-25s-Khatwa-with-different-brand",
+      "passed": true
+    }
+  ],
+  "error": "Error: Evaluation failed: Error: Disabled button: [data-testid=flex-export]\n    at pptr://__puppeteer_evaluation_script__:3:35\n    at #evaluate (file:///D:/zz-CODING/Elmekawy-Motion-Studio/node_modules/@remotion/renderer/dist/esm/index.mjs:2380:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async click (file:///D:/zz-CODING/Elmekawy-Motion-Studio/scripts/verify-flexible-editor.ts:89:5)\n    at async file:///D:/zz-CODING/Elmekawy-Motion-Studio/scripts/verify-flexible-editor.ts:262:3",
+  "serverLog": "Elmekawy Motion Studio: http://127.0.0.1:62016\n"
+}

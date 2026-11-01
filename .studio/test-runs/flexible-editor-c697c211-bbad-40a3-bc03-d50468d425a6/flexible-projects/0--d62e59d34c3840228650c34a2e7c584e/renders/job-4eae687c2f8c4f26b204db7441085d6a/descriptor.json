@@ -1,0 +1,330 @@
+{
+  "compositionId": "FlexibleReel",
+  "projectRevision": 5,
+  "metadata": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationFrames": 600,
+    "aspectRatio": "9:16"
+  },
+  "inputProps": {
+    "project": {
+      "schemaVersion": "2.1.0",
+      "id": "0--d62e59d34c3840228650c34a2e7c584e",
+      "revision": 5,
+      "createdAt": "2026-11-01T05:34:12.562Z",
+      "updatedAt": "2026-11-01T05:34:13.861Z",
+      "name": "مشروع واجهة 0",
+      "template": {
+        "id": "flexible-reel",
+        "version": "1.1.0"
+      },
+      "brief": {
+        "client": "Elmekawy BIM",
+        "objective": "فيديو محلي من الواجهة"
+      },
+      "locale": {
+        "language": "ar-EG",
+        "direction": "rtl"
+      },
+      "brand": {
+        "profileId": "elmekawy-bim",
+        "version": "1.0.0",
+        "displayName": "ELMEKAWY BIM",
+        "colors": {
+          "background": "#030D1B",
+          "surface": "#003060",
+          "foreground": "#F3F8FC",
+          "accent": "#68BBE3",
+          "muted": "#9BB4C9"
+        },
+        "fonts": {
+          "arabicAssetId": "font-cairo",
+          "latinAssetId": "font-inter"
+        },
+        "safeArea": {
+          "left": 100,
+          "right": 180,
+          "top": 220,
+          "bottom": 360
+        }
+      },
+      "outputProfile": {
+        "id": "portrait-1080p30-h264-v1",
+        "version": "1.0.0",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "aspectRatio": "9:16",
+        "container": "mp4",
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "crf": 18
+      },
+      "targetDurationFrames": 600,
+      "scenes": [
+        {
+          "schemaVersion": "1.0.0",
+          "id": "scene-1",
+          "durationFrames": 132,
+          "direction": "rtl",
+          "motion": {
+            "id": "word-reveal",
+            "version": "1.0.0",
+            "enterFrames": 24,
+            "staggerFrames": 6,
+            "exitFrames": 12,
+            "easing": "ease-out",
+            "reducedMotion": false
+          },
+          "transitionOut": {
+            "type": "crossfade",
+            "durationFrames": 15
+          },
+          "mediaBindings": [],
+          "type": "kinetic-title",
+          "content": {
+            "headline": "نص محفوظ من المحرر",
+            "subtitle": "Arabic / English"
+          }
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "id": "scene-3",
+          "durationFrames": 132,
+          "direction": "rtl",
+          "motion": {
+            "id": "pan",
+            "version": "1.0.0",
+            "enterFrames": 24,
+            "staggerFrames": 6,
+            "exitFrames": 12,
+            "easing": "ease-out",
+            "reducedMotion": false
+          },
+          "transitionOut": {
+            "type": "crossfade",
+            "durationFrames": 15
+          },
+          "mediaBindings": [
+            {
+              "slot": "image",
+              "assetId": "image-6fdd6315a29a461395a842fc7552e276",
+              "assetSha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+              "fit": "contain",
+              "focalPoint": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "frame": {
+                "x": 0.5,
+                "y": 0.5,
+                "width": 0.75,
+                "height": 0.75
+              },
+              "transform": {
+                "scale": 1.25,
+                "offsetX": 0,
+                "offsetY": 0
+              }
+            }
+          ],
+          "type": "media-showcase",
+          "content": {
+            "headline": "شاهد التفاصيل",
+            "caption": "صورة توضيحية · راجع الأصل قبل الاعتماد"
+          }
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "id": "scene-2",
+          "durationFrames": 132,
+          "direction": "rtl",
+          "motion": {
+            "id": "count-up",
+            "version": "1.0.0",
+            "enterFrames": 24,
+            "staggerFrames": 6,
+            "exitFrames": 12,
+            "easing": "ease-out",
+            "reducedMotion": false
+          },
+          "transitionOut": {
+            "type": "crossfade",
+            "durationFrames": 15
+          },
+          "mediaBindings": [],
+          "type": "stat-proof",
+          "content": {
+            "label": "خطوات في المثال",
+            "value": 3,
+            "prefix": "",
+            "suffix": "",
+            "sourceNote": "رقم توضيحي قابل للتعديل، وليس نتيجة عميل."
+          }
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "id": "scene-4",
+          "durationFrames": 132,
+          "direction": "rtl",
+          "motion": {
+            "id": "step-reveal",
+            "version": "1.0.0",
+            "enterFrames": 24,
+            "staggerFrames": 6,
+            "exitFrames": 12,
+            "easing": "ease-out",
+            "reducedMotion": false
+          },
+          "transitionOut": {
+            "type": "crossfade",
+            "durationFrames": 15
+          },
+          "mediaBindings": [],
+          "type": "process-flow",
+          "content": {
+            "headline": "كل خطوة متصلة",
+            "steps": [
+              {
+                "id": "step-1",
+                "label": "الفكرة"
+              },
+              {
+                "id": "step-2",
+                "label": "التنفيذ"
+              },
+              {
+                "id": "step-3",
+                "label": "النتيجة"
+              }
+            ]
+          }
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "id": "scene-5",
+          "durationFrames": 132,
+          "direction": "rtl",
+          "motion": {
+            "id": "cta-reveal",
+            "version": "1.0.0",
+            "enterFrames": 24,
+            "staggerFrames": 6,
+            "exitFrames": 12,
+            "easing": "ease-out",
+            "reducedMotion": false
+          },
+          "transitionOut": {
+            "type": "cut",
+            "durationFrames": 0
+          },
+          "mediaBindings": [],
+          "type": "offer-cta",
+          "content": {
+            "headline": "ابدأ خطوتك القادمة",
+            "action": "تواصل معنا",
+            "contact": "example.com",
+            "offer": ""
+          }
+        }
+      ],
+      "assets": [
+        {
+          "id": "font-cairo",
+          "kind": "font",
+          "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964",
+          "byteSize": 599548,
+          "mimeType": "font/ttf",
+          "storage": {
+            "scope": "shared",
+            "path": "fonts/cairo/1.0.0/Cairo.ttf"
+          },
+          "approval": "approved",
+          "sourceNote": "خط محلي مرخّص OFL.",
+          "license": {
+            "status": "documented",
+            "note": "Original OFL license retained beside the exact TTF bytes."
+          }
+        },
+        {
+          "id": "font-inter",
+          "kind": "font",
+          "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+          "byteSize": 876576,
+          "mimeType": "font/ttf",
+          "storage": {
+            "scope": "shared",
+            "path": "fonts/inter/1.0.0/Inter.ttf"
+          },
+          "approval": "approved",
+          "sourceNote": "خط محلي مرخّص OFL.",
+          "license": {
+            "status": "documented",
+            "note": "Original OFL license retained beside the exact TTF bytes."
+          }
+        },
+        {
+          "id": "image-initial",
+          "kind": "image",
+          "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481",
+          "byteSize": 4155852,
+          "mimeType": "image/png",
+          "storage": {
+            "scope": "project",
+            "path": "assets/images/image-initial.png"
+          },
+          "approval": "pending",
+          "sourceNote": "صورة توضيحية من المكتبة المحلية؛ ليست نتيجة مشروع عميل.",
+          "license": {
+            "status": "unknown",
+            "note": "حقوق الاستخدام التجاري غير متحققة."
+          }
+        },
+        {
+          "id": "image-6fdd6315a29a461395a842fc7552e276",
+          "kind": "image",
+          "mimeType": "image/png",
+          "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a",
+          "byteSize": 4000537,
+          "storage": {
+            "scope": "project",
+            "path": "assets/images/image-6fdd6315a29a461395a842fc7552e276.png"
+          },
+          "approval": "approved",
+          "sourceNote": "صورة توضيحية محلية راجعتها يدويًا.",
+          "license": {
+            "status": "unknown",
+            "note": "راجع المصدر وحقوق الاستخدام."
+          }
+        }
+      ],
+      "audio": {
+        "mode": "none"
+      },
+      "prompts": []
+    },
+    "media": {
+      "font-cairo": {
+        "id": "font-cairo",
+        "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+      },
+      "font-inter": {
+        "id": "font-inter",
+        "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+      },
+      "image-initial": {
+        "id": "image-initial",
+        "sha256": "bfc90c60a017881d6ba9dea89fd0f704285f5b302c8a365652ddb5a039b40481"
+      },
+      "image-6fdd6315a29a461395a842fc7552e276": {
+        "id": "image-6fdd6315a29a461395a842fc7552e276",
+        "sha256": "0fb9a0d4614787a259b57644b920469b5424abafb072117829a50eca3ec7177a"
+      }
+    }
+  },
+  "warnings": [
+    "حقوق استخدام بعض الصور غير موثّقة؛ راجع المصدر قبل الاستخدام التجاري."
+  ]
+}

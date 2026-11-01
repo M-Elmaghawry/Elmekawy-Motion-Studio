@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-11-01T04:44:00.085Z",
+  "binaryBytes": 21504,
+  "sha256": "6d70a45311a1796a5565eb7a3e724a93a53cd03e05c2a4f7f5199a770c0f5b53",
+  "checks": [
+    {
+      "name": "EXE validates the configured runtime without opening a browser",
+      "passed": true
+    },
+    {
+      "name": "starts hidden server from another working directory, reuses it, and stops only its own process",
+      "passed": true
+    },
+    {
+      "name": "reuses an externally started Studio without shutting it down",
+      "passed": true
+    },
+    {
+      "name": "rejects a busy port without stopping the unrelated listener",
+      "passed": true
+    },
+    {
+      "name": "closing the launcher control pipe gracefully stops the private server host",
+      "passed": true
+    }
+  ],
+  "browserOpened": false,
+  "productionStoreChanged": false
+}

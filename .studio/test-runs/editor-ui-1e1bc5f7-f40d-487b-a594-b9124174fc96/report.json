@@ -1,0 +1,31 @@
+{
+  "createdAt": "2026-11-01T04:43:59.347Z",
+  "passed": true,
+  "checks": [
+    {
+      "name": "creates-20s-BIM-via-wizard",
+      "passed": true
+    },
+    {
+      "name": "live-image-controls-reset-reorder-retime-add-delete-save",
+      "passed": true
+    },
+    {
+      "name": "reload-and-reopen-preserves-transforms",
+      "passed": true
+    },
+    {
+      "name": "duplicates-saved-project-from-editor",
+      "passed": true
+    },
+    {
+      "name": "creates-25s-Khatwa-with-different-brand",
+      "passed": true
+    },
+    {
+      "name": "UI-export-uses-saved-transforms-and-fully-decodes-20s-MP4",
+      "passed": true
+    }
+  ],
+  "serverLog": "Elmekawy Motion Studio: http://127.0.0.1:59962\n"
+}

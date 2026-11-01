@@ -1,0 +1,25 @@
+{
+  "name": "elmekawy-motion-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "engines": {"node": ">=24.0.0"},
+  "scripts": {
+    "build": "tsc --noEmit && vite build --config apps/studio/vite.config.ts",
+    "start": "node apps/server/src/index.ts",
+    "dev": "node scripts/dev.mjs",
+    "test": "node --test tests/*.test.ts",
+    "verify:legacy": "node scripts/verify-legacy.mjs",
+    "seed": "node scripts/seed-projects.ts",
+    "launcher:build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-launcher.ps1",
+    "launcher:verify": "node scripts/verify-launcher.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3",
+    "vite": "7.3.2"
+  }
+}

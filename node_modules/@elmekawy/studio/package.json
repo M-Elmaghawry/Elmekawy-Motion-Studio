@@ -1,0 +1,1 @@
+{"name":"@elmekawy/studio","version":"0.1.0","private":true,"type":"module","dependencies":{"@elmekawy/shared":"0.1.0","@elmekawy/motion-engine":"0.1.0","@remotion/player":"4.0.539","remotion":"4.0.539","react":"19.2.3","react-dom":"19.2.3"}}
