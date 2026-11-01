@@ -175,3 +175,50 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.flexible .prompt-record,
+.flexible .audio-track,
+.flexible .scene-media-controls {
+  border: 1px solid var(--line);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 12px;
+  min-width: 0;
+}
+.flexible .panel,
+.recovery-panel {
+  margin-bottom: 20px;
+  scroll-margin-top: 20px;
+}
+.editor-tabs a {
+  padding: 10px 14px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  text-decoration: none;
+}
+.recovery-panel select {
+  font: inherit;
+  color: var(--text);
+  background: #09111e;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 10px;
+  max-width: 100%;
+}
+.legacy-images .image-controls {
+  margin-top: 12px;
+}
+.flexible audio {
+  max-width: 100%;
+}
+
+.studio .field select {
+  font: inherit;
+  color: var(--text);
+  background: #09111e;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 10px;
+  max-width: 100%;
+}

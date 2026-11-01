@@ -1,3 +1,4 @@
+import {exportProjectArchive,importProjectArchive,legacyHistory,restoreLegacy} from './project-archives.ts';
 import Fastify from 'fastify';
 import multipart from '@fastify/multipart';
 import fs from 'node:fs/promises';
@@ -6,9 +7,9 @@ import path from 'node:path';
 import {randomBytes,timingSafeEqual} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import type {FastifyReply,FastifyRequest} from 'fastify';
-import {templates,templateFor} from '@elmekawy/shared';
+import {templates,templateFor,upgradeTextEditing} from '@elmekawy/shared';
 import type {EditableProject} from '@elmekawy/shared';
-import {AppError,workspace,stateRoot,sharedRoot,initialize,listProjects,readProject,saveProject,resolveProject,applyEditable,duplicateProject,verifyAsset,safePath} from './storage.ts';
+import {AppError,workspace,stateRoot,sharedRoot,initialize,listProjects,readProject,saveProject,resolveProject,applyEditable,duplicateProject,verifyAsset,safePath,atomicJson,commitProject,projectFolder} from './storage.ts';
 import {createProject,loadCatalog} from './projects.ts';
 import {uploadImage} from './uploads.ts';
 import {initializeJobs,getJob,listJobs,enqueueRender,cancelRender,jobFolder,shutdownRenders} from './renders.ts';
@@ -20,7 +21,7 @@ const server=Fastify({logger:false,bodyLimit:1024*1024});
 await initialize();await loadCatalog();await initializeJobs();
 const lock=path.join(stateRoot,'server.lock');
 try{const handle=await fs.open(lock,'wx');await handle.writeFile(JSON.stringify({pid:process.pid,port}));await handle.close();}catch(error){if((error as NodeJS.ErrnoException).code!=='EEXIST')throw error;const previous=JSON.parse(await fs.readFile(lock,'utf8'));let running=true;try{process.kill(previous.pid,0);}catch{running=false;}if(running)throw new Error('A Studio process already owns this local port');await fs.unlink(lock);await fs.writeFile(lock,JSON.stringify({pid:process.pid,port}),{flag:'wx'});}
-await server.register(multipart,{limits:{fileSize:50*1024*1024,files:1,fields:0,parts:1}});
+await server.register(multipart,{limits:{fileSize:512*1024*1024,files:1,fields:0,parts:1}});
 server.addHook('onRequest',async request=>{
   if(!['127.0.0.1:'+port,'localhost:'+port].includes(request.headers.host??''))throw new AppError(400,'INVALID_HOST','اسم المضيف غير مسموح.');
   const requestOrigin=request.headers.origin;if(requestOrigin&&!trustedOrigins.has(requestOrigin))throw new AppError(403,'INVALID_ORIGIN','مصدر الطلب غير مسموح.');
@@ -35,11 +36,22 @@ function objectBody(request:FastifyRequest){if(!request.body||typeof request.bod
 const checkedKeys=(body:Record<string,unknown>,keys:string[])=>{if(Object.keys(body).some(key=>!keys.includes(key)))throw new AppError(400,'UNKNOWN_FIELD','الطلب يحتوي حقولًا غير مدعومة.');};
 server.get('/api/session',async()=>({token}));
 server.get('/api/health',async()=>({ok:true,mode:'local',remotion:'4.0.539'}));
+server.post('/api/project-archives/import',{bodyLimit:513*1024*1024},async(request,reply)=>{const part=await request.file();if(!part)throw new AppError(400,'MISSING_UPLOAD','اختر نسخة ZIP.');const result=await importProjectArchive(part);reply.code(201);return result;});
+server.get('/api/projects/:id/archive',async(request,reply)=>{const bytes=await exportProjectArchive(params(request).id,'legacy');reply.type('application/zip').header('Content-Disposition','attachment; filename="'+params(request).id+'.zip"');return reply.send(bytes);});
+server.get('/api/projects/:id/history',async(request)=>legacyHistory(params(request).id));
+server.post('/api/projects/:id/restore',async(request,reply)=>{const body=objectBody(request);checkedKeys(body,['revision']);const result=await restoreLegacy(params(request).id,revision(request),body.revision as number);reply.header('ETag',etag(result.revision));return result;});
 server.get('/api/templates',async()=>templates);
 server.get('/api/projects',async()=>listProjects());
 server.post('/api/projects',async(request,reply)=>{const body=objectBody(request);checkedKeys(body,['name','client','objective','templateId']);if(typeof body.name!=='string'||!body.name.trim()||body.name.length>120||typeof body.client!=='string'||body.client.length>120||typeof body.objective!=='string'||body.objective.length>10000||typeof body.templateId!=='string')throw new AppError(400,'INVALID_PROJECT_INPUT','راجع اسم المشروع والعلامة والهدف.');const template=templates.find(item=>item.id===body.templateId);if(!template)throw new AppError(400,'UNKNOWN_TEMPLATE','القالب المطلوب غير متوفر.');const project=await createProject(body.name,body.client,body.objective,template.id);reply.code(201).header('ETag',etag(project.revision)).header('Location','/api/projects/'+project.id);return project;});
 server.get('/api/projects/:id',async(request,reply)=>{const project=await readProject(params(request).id);reply.header('ETag',etag(project.revision));return project;});
 server.put('/api/projects/:id',async(request,reply)=>{const project=await saveProject(params(request).id,request.body as EditableProject,revision(request));reply.header('ETag',etag(project.revision));return project;});
+server.post('/api/projects/:id/image-editing-copy',async(request,reply)=>{
+  const current=await readProject(params(request).id),expected=revision(request);
+  const copy=await duplicateProject(current.id,current.name.slice(0,96)+' — تحرير الصور',expected);
+  const next=upgradeTextEditing(copy);next.template.version='1.2.0';next.imageLayouts={};next.revision=copy.revision+1;next.updatedAt=new Date().toISOString();
+  await atomicJson(await safePath(await projectFolder(copy.id),'history/revision-'+copy.revision+'.json'),copy);await commitProject(next);
+  reply.code(201).header('ETag',etag(next.revision));return next;
+});
 server.post('/api/projects/:id/duplicate',async(request,reply)=>{const body=objectBody(request);checkedKeys(body,['name']);if(typeof body.name!=='string'||!body.name.trim()||body.name.length>120)throw new AppError(400,'INVALID_NAME','اسم النسخة مطلوب.');const project=await duplicateProject(params(request).id,body.name.trim());reply.code(201).header('ETag',etag(project.revision));return project;});
 server.post('/api/projects/:id/resolve',async request=>{let project=await readProject(params(request).id);const body=objectBody(request);checkedKeys(body,['baseRevision','editableDraft']);if(body.baseRevision!==undefined&&body.baseRevision!==project.revision)throw new AppError(412,'STALE_REVISION','المشروع تغير منذ فتحه.');if(body.editableDraft)project=applyEditable(project,body.editableDraft as EditableProject);return resolveProject(project,origin);});
 server.post('/api/projects/:id/assets/:role',{bodyLimit:51*1024*1024},async(request,reply)=>{const expectedRevision=revision(request);const {id,role}=params(request);await readProject(id);if(!/^[a-z-]+$/.test(role))throw new AppError(400,'INVALID_SLOT','خانة وسائط غير صالحة.');const part=await request.file();if(!part)throw new AppError(400,'MISSING_UPLOAD','اختر ملف صورة.');const project=await uploadImage(id,role,expectedRevision,part);reply.header('ETag',etag(project.revision));return project;});

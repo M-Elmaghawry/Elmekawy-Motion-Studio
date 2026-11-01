@@ -37,10 +37,12 @@ export function ImageControls({
   binding,
   onChange,
   disabled,
+  resetFit = 'cover',
 }: {
   binding: MediaBinding;
   onChange: (value: MediaBinding) => void;
   disabled: boolean;
+  resetFit?: 'cover' | 'contain';
 }) {
   const [lock, setLock] = useState(true);
   const frame = (axis: 'x' | 'y', value: number) =>
@@ -156,7 +158,9 @@ export function ImageControls({
       <button
         data-testid="image-reset"
         type="button"
-        onClick={() => onChange(defaultBinding(binding.assetId, binding.assetSha256))}
+        onClick={() =>
+          onChange({ ...defaultBinding(binding.assetId, binding.assetSha256), fit: resetFit })
+        }
       >
         إعادة الحجم والموضع للوضع الافتراضي
       </button>

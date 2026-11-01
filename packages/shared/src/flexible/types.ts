@@ -22,6 +22,17 @@ export type ContentByType = {
   'offer-cta': { headline: string; action: string; contact: string; offer?: string };
 };
 export type ImplementedType = keyof ContentByType;
+export type ExtendedContentByType = ContentByType & {
+  'ui-demo': { headline: string; appName: string; caption: string; actions: string[] };
+  'product-hero': { headline: string; tagline: string; badge: string };
+  'before-after': { headline: string; beforeLabel: string; afterLabel: string };
+  'data-explainer': {
+    headline: string;
+    unit: string;
+    points: { id: string; label: string; value: number }[];
+  };
+};
+export type SupportedSceneType = keyof ExtendedContentByType;
 export type MotionPreset = {
   id: 'word-reveal' | 'count-up' | 'pan' | 'step-reveal' | 'cta-reveal';
   version: '1.0.0';
@@ -35,26 +46,27 @@ export type TransitionSpec =
   | { type: 'cut'; durationFrames: 0 }
   | { type: 'crossfade'; durationFrames: number };
 export type MediaBinding = {
-  slot: 'image';
+  slot: 'image' | 'before' | 'after';
   assetId: string;
   assetSha256: string;
   fit: 'cover' | 'contain';
   focalPoint: { x: number; y: number };
   frame: { x: number; y: number; width: number; height: number };
   transform: { scale: number; offsetX: number; offsetY: number };
+  trimStartFrame?: number;
 };
-export type SceneData<K extends ImplementedType = ImplementedType> = {
+export type SceneData<K extends SupportedSceneType = SupportedSceneType> = {
   schemaVersion: '1.0.0';
   id: string;
   type: K;
   durationFrames: number;
   direction: 'rtl' | 'ltr';
-  content: ContentByType[K];
+  content: ExtendedContentByType[K];
   motion: MotionPreset;
   transitionOut: TransitionSpec;
   mediaBindings: MediaBinding[];
 };
-export type FlexibleScene = { [K in ImplementedType]: SceneData<K> }[ImplementedType];
+export type FlexibleScene = { [K in SupportedSceneType]: SceneData<K> }[SupportedSceneType];
 export type OutputProfile = {
   id: string;
   version: string;
@@ -76,35 +88,87 @@ export type SceneRegistry = {
     mediaSlots: { name: 'image'; kinds: ['image']; required: boolean }[];
   };
 };
+export type ExtendedSceneRegistry = {
+  [K in SupportedSceneType]: {
+    type: K;
+    version: '1.0.0';
+    contentSchemaId: string;
+    motionPresetIds: MotionPreset['id'][];
+    mediaSlots: { name: MediaBinding['slot']; kinds: ('image' | 'video')[]; required: boolean }[];
+  };
+};
 export type TemplateManifest = {
   id: 'flexible-reel';
-  version: '1.0.0';
-  projectSchemaVersion: '2.0.0';
+  version: '1.0.0' | '1.1.0';
+  projectSchemaVersion: '2.0.0' | '2.1.0';
   sceneSchemaVersion: '1.0.0';
   compositionId: 'FlexibleReel';
-  supportedSceneTypes: ImplementedType[];
+  supportedSceneTypes: SupportedSceneType[];
   outputProfiles: OutputProfile[];
   limits: { minScenes: number; maxScenes: number; minSeconds: number; maxSeconds: number };
 };
 export type FlexibleAsset = {
   id: string;
-  kind: 'image' | 'font';
+  kind: 'image' | 'font' | 'video' | 'audio';
   sha256: string;
   byteSize: number;
-  mimeType: 'image/png' | 'image/jpeg' | 'image/webp' | 'font/ttf';
+  mimeType:
+    | 'image/png'
+    | 'image/jpeg'
+    | 'image/webp'
+    | 'font/ttf'
+    | 'video/mp4'
+    | 'audio/mpeg'
+    | 'audio/wav'
+    | 'audio/mp4';
   storage: { scope: 'shared' | 'project'; path: string };
   approval: 'pending' | 'approved';
   sourceNote: string;
   license: { status: 'unknown' | 'documented'; note: string };
+  metadata?: {
+    durationSeconds: number;
+    width: number;
+    height: number;
+    hasAudio: boolean;
+    codec: string;
+  };
+};
+export type AudioTrack = {
+  id: string;
+  assetId: string;
+  assetSha256: string;
+  role: 'voiceover' | 'music';
+  startFrame: number;
+  trimStartFrame: number;
+  durationFrames: number;
+  volume: number;
+  fadeInFrames: number;
+  fadeOutFrames: number;
+};
+export type PauseMarker = { id: string; startFrame: number; durationFrames: number; label: string };
+export type AudioTimeline = {
+  mode: 'timeline';
+  tracks: AudioTrack[];
+  beats: number[];
+  pauses: PauseMarker[];
+};
+export type PromptWorkspaceRecord = {
+  id: string;
+  sceneId: string;
+  text: string;
+  negativeConstraints: string;
+  source: string;
+  status: 'draft' | 'ready-to-copy' | 'uploaded' | 'approved';
+  assetId: string | null;
 };
 export type FlexibleProject = {
-  schemaVersion: '2.0.0';
+  schemaVersion: '2.0.0' | '2.1.0';
   id: string;
   revision: number;
   createdAt: string;
   updatedAt: string;
   name: string;
-  template: { id: 'flexible-reel'; version: '1.0.0' };
+  template: { id: 'flexible-reel'; version: '1.0.0' | '1.1.0' };
   brief: { client: string; objective: string };
   locale: { language: string; direction: 'rtl' | 'ltr' };
   brand: {
@@ -125,7 +189,8 @@ export type FlexibleProject = {
   targetDurationFrames: number;
   scenes: FlexibleScene[];
   assets: FlexibleAsset[];
-  audio: { mode: 'none' };
+  audio: { mode: 'none' } | AudioTimeline;
+  prompts?: PromptWorkspaceRecord[];
 };
 export type FlexibleRuntimeProps = {
   project: FlexibleProject;

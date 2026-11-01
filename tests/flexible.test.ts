@@ -8,7 +8,7 @@ import {
   parseProjectDocument,
   renderReadinessErrors,
   motionProgress,
-  reservedSceneTypes,
+  legacyReservedSceneTypes as reservedSceneTypes,
 } from '@elmekawy/shared/flexible';
 import type { TimelineInput, FlexibleProject } from '@elmekawy/shared/flexible';
 import { projectSchema } from '@elmekawy/shared';
@@ -38,7 +38,7 @@ test('schema dispatch still accepts a real legacy project and rejects unsupporte
   const [id] = (await fs.readdir(folder)).filter((name) => name.startsWith('elmekawy-bim-v1--'));
   const legacy = JSON.parse(await fs.readFile(new URL(id + '/project.json', folder), 'utf8'));
   assert.deepEqual(parseProjectDocument(legacy), legacy);
-  for (const schemaVersion of ['3.0.0', '2.1.0', null])
+  for (const schemaVersion of ['3.0.0', '2.2.0', null])
     assert.throws(
       () => parseProjectDocument({ ...fixture, schemaVersion }),
       /UNSUPPORTED_SCHEMA_VERSION/,

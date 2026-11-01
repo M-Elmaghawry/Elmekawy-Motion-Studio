@@ -1,5 +1,7 @@
 # Current state and gaps
 
+Latest delivery: 2026-11-01 Phase 4 and explicit legacy image editing are recorded in [PHASE_4_IMPLEMENTATION.md](PHASE_4_IMPLEMENTATION.md). This document's earlier phase-specific gaps and test results remain historical snapshots. Current code supports real video/audio, audio timelines, scene-linked manual prompts, all nine flexible scenes, three ratios, ZIP roundtrips and version restoration. Legacy V1/V2 image controls use a separate opt-in template 1.2.0 project copy. The historical inventory junction failure described below did not reproduce in the current checkout's fresh audit.
+
 Inspection date: 2026-10-31, Asia/Riyadh. This records local verification for Phase 0/1 of `ELMEKAWY_MOTION_STUDIO_NEXT_CODEX_PLAN.md`; older review documents describe earlier snapshots and are not fresh runtime evidence.
 
 ## Baseline and protection

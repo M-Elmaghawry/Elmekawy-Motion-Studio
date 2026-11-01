@@ -1,4 +1,9 @@
-import type { SceneRegistry, TemplateManifest, OutputProfile } from './types.ts';
+import type {
+  ExtendedSceneRegistry,
+  SupportedSceneType,
+  TemplateManifest,
+  OutputProfile,
+} from './types.ts';
 
 export const portraitProfile: OutputProfile = {
   id: 'portrait-1080p30-h264-v1',
@@ -12,7 +17,38 @@ export const portraitProfile: OutputProfile = {
   pixelFormat: 'yuv420p',
   crf: 18,
 };
-export const sceneRegistry: SceneRegistry = {
+export const sceneRegistry: ExtendedSceneRegistry = {
+  'ui-demo': {
+    type: 'ui-demo',
+    version: '1.0.0',
+    contentSchemaId: 'urn:elmekawy:ui-demo:1.0.0',
+    motionPresetIds: ['pan'],
+    mediaSlots: [{ name: 'image', kinds: ['image'], required: true }],
+  },
+  'product-hero': {
+    type: 'product-hero',
+    version: '1.0.0',
+    contentSchemaId: 'urn:elmekawy:product-hero:1.0.0',
+    motionPresetIds: ['pan'],
+    mediaSlots: [{ name: 'image', kinds: ['image'], required: true }],
+  },
+  'before-after': {
+    type: 'before-after',
+    version: '1.0.0',
+    contentSchemaId: 'urn:elmekawy:before-after:1.0.0',
+    motionPresetIds: ['pan'],
+    mediaSlots: [
+      { name: 'before', kinds: ['image'], required: true },
+      { name: 'after', kinds: ['image'], required: true },
+    ],
+  },
+  'data-explainer': {
+    type: 'data-explainer',
+    version: '1.0.0',
+    contentSchemaId: 'urn:elmekawy:data-explainer:1.0.0',
+    motionPresetIds: ['step-reveal'],
+    mediaSlots: [],
+  },
   'kinetic-title': {
     type: 'kinetic-title',
     version: '1.0.0',
@@ -32,7 +68,7 @@ export const sceneRegistry: SceneRegistry = {
     version: '1.0.0',
     contentSchemaId: 'urn:elmekawy:media-showcase:1.0.0',
     motionPresetIds: ['pan'],
-    mediaSlots: [{ name: 'image', kinds: ['image'], required: true }],
+    mediaSlots: [{ name: 'image', kinds: ['image', 'video'], required: true }],
   },
   'process-flow': {
     type: 'process-flow',
@@ -49,19 +85,36 @@ export const sceneRegistry: SceneRegistry = {
     mediaSlots: [],
   },
 };
+export const squareProfile: OutputProfile = {
+  ...portraitProfile,
+  id: 'square-1080p30-h264-v1',
+  width: 1080,
+  height: 1080,
+  aspectRatio: '1:1',
+};
+export const landscapeProfile: OutputProfile = {
+  ...portraitProfile,
+  id: 'landscape-1080p30-h264-v1',
+  width: 1920,
+  height: 1080,
+  aspectRatio: '16:9',
+};
+export const outputProfiles = [portraitProfile, squareProfile, landscapeProfile];
 export const flexibleManifest: TemplateManifest = {
   id: 'flexible-reel',
-  version: '1.0.0',
-  projectSchemaVersion: '2.0.0',
+  version: '1.1.0',
+  projectSchemaVersion: '2.1.0',
   sceneSchemaVersion: '1.0.0',
   compositionId: 'FlexibleReel',
-  supportedSceneTypes: Object.keys(sceneRegistry) as (keyof SceneRegistry)[],
-  outputProfiles: [portraitProfile],
+  supportedSceneTypes: Object.keys(sceneRegistry) as SupportedSceneType[],
+  outputProfiles,
   limits: { minScenes: 3, maxScenes: 8, minSeconds: 20, maxSeconds: 45 },
 };
-export const reservedSceneTypes = [
+export const legacyReservedSceneTypes = [
   'ui-demo',
   'product-hero',
   'before-after',
   'data-explainer',
 ] as const;
+
+export const reservedSceneTypes = [] as const;

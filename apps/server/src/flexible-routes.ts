@@ -1,3 +1,5 @@
+import { exportProjectArchive } from './project-archives.ts';
+import { uploadFlexibleMedia } from './flexible-media.ts';
 import type { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import { brandProfiles, sceneLabels, flexibleManifest } from '@elmekawy/shared/flexible';
 import { AppError } from './storage.ts';
@@ -14,6 +16,10 @@ import {
   uploadFlexibleImage,
   approveFlexibleImage,
   libraryImage,
+  upgradeFlexible,
+  flexibleHistory,
+  restoreFlexible,
+  findFlexibleMedia,
 } from './flexible-projects.ts';
 import { enqueueFlexibleRender, listJobs } from './renders.ts';
 
@@ -64,6 +70,50 @@ export async function registerFlexibleRoutes(
     const { asset, file } = await libraryImage(params(request).id, params(request).hash);
     return streamFile(request, reply, file, asset.mimeType!, true);
   });
+  server.post('/api/flexible/projects/:id/upgrade', async (request, reply) => {
+    const project = await upgradeFlexible(params(request).id, revision(request));
+    etag(reply, project);
+    return project;
+  });
+  server.get('/api/flexible/projects/:id/history', async (request) => {
+    await readFlexible(params(request).id);
+    return flexibleHistory(params(request).id);
+  });
+  server.post('/api/flexible/projects/:id/restore', async (request, reply) => {
+    const value = body(request, ['revision']);
+    const project = await restoreFlexible(
+      params(request).id,
+      revision(request),
+      value.revision as number,
+    );
+    etag(reply, project);
+    return project;
+  });
+  server.post(
+    '/api/flexible/projects/:id/media',
+    { bodyLimit: 251 * 1024 * 1024 },
+    async (request, reply) => {
+      const part = await request.file();
+      if (!part) throw new AppError(400, 'MISSING_UPLOAD', 'اختر ملفًا.');
+      const project = await uploadFlexibleMedia(
+        params(request).id,
+        revision(request),
+        part,
+        undefined,
+        0,
+        (request.query as { promptId?: string }).promptId,
+      );
+      etag(reply, project);
+      return project;
+    },
+  );
+  server.get('/api/flexible/projects/:id/archive', async (request, reply) => {
+    const bytes = await exportProjectArchive(params(request).id, 'flexible');
+    reply
+      .type('application/zip')
+      .header('Content-Disposition', 'attachment; filename="' + params(request).id + '.zip"');
+    return reply.send(bytes);
+  });
   server.get('/api/flexible/projects', async () => listFlexible());
   server.post('/api/flexible/projects', async (request, reply) => {
     const project = await createFlexible(request.body);
@@ -97,18 +147,25 @@ export async function registerFlexibleRoutes(
   });
   server.post(
     '/api/flexible/projects/:id/assets/:sceneId',
-    { bodyLimit: 51 * 1024 * 1024 },
+    { bodyLimit: 251 * 1024 * 1024 },
     async (request, reply) => {
       const expected = revision(request);
       await readFlexible(params(request).id);
       const part = await request.file();
       if (!part) throw new AppError(400, 'MISSING_UPLOAD', 'اختر صورة.');
-      const project = await uploadFlexibleImage(
-        params(request).id,
-        params(request).sceneId,
-        expected,
-        part,
-      );
+      const current = await readFlexible(params(request).id),
+        query = request.query as { slot?: string; promptId?: string };
+      const project =
+        current.schemaVersion === '2.0.0'
+          ? await uploadFlexibleImage(current.id, params(request).sceneId, expected, part)
+          : await uploadFlexibleMedia(
+              current.id,
+              expected,
+              part,
+              params(request).sceneId,
+              Number(query.slot ?? 0),
+              query.promptId,
+            );
       etag(reply, project);
       return project;
     },
@@ -142,7 +199,7 @@ export async function registerFlexibleRoutes(
     if (!/^[a-z][a-z0-9_-]{0,63}$/.test(assetId) || !/^[a-f0-9]{64}$/.test(hash))
       throw new AppError(400, 'INVALID_MEDIA', 'مرجع صورة غير صالح.');
     const project = await readFlexible(projectId),
-      asset = project.assets.find((asset) => asset.id === assetId && asset.sha256 === hash);
+      asset = await findFlexibleMedia(project, assetId, hash);
     if (!asset) throw new AppError(404, 'MEDIA_NOT_FOUND', 'الصورة غير موجودة.');
     return streamFile(
       request,

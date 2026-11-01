@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./flexible-reel/1.0.0": "./src/flexible-reel/1.0.0/Composition.tsx"
+    "./flexible-reel/1.0.0": "./src/flexible-reel/1.0.0/Composition.tsx",
+    "./flexible-reel/1.1.0": "./src/flexible-reel/1.1.0/Composition.tsx"
   },
   "dependencies": {
     "@elmekawy/shared": "0.1.0",

@@ -16,6 +16,7 @@ export async function uploadImage(projectId:string,role:string,revision:number,p
   const temp=await safePath(stateRoot,'staging/'+randomUUID()+'.upload');
   try{
     await pipeline(part.file,createWriteStream(temp,{flags:'wx'}));if(part.file.truncated)throw new AppError(413,'FILE_TOO_LARGE','أقصى حجم للصورة 50 ميجابايت.');
+    if((await fs.stat(temp)).size>50*1024*1024)throw new AppError(413,'FILE_TOO_LARGE','أقصى حجم للصورة 50 ميجابايت.');
     const bytes=await fs.readFile(temp);let mime:string,extension:string;
     if(bytes.length>=24&&bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))){mime='image/png';extension='.png';}
     else if(bytes.length>=4&&bytes[0]===255&&bytes[1]===216&&bytes[2]===255){mime='image/jpeg';extension='.jpg';}
@@ -31,7 +32,7 @@ export async function uploadImage(projectId:string,role:string,revision:number,p
       const previous=current.assets.find(asset=>asset.role===role&&asset.state!=='retired');if(previous?.state==='missing')current.assets=current.assets.filter(asset=>asset!==previous);else if(previous)previous.state='retired';
       const mediaKey=previous?.mediaKey??'';if(!mediaKey)throw new AppError(422,'INVALID_SLOT','لا يوجد ربط وسائط لهذه الخانة.');
       const asset:Asset={id:assetId,role,kind:['logo','portrait'].includes(role)?'logo':'image',mediaKey,displayName:part.filename.slice(0,250),originalFilename:part.filename.slice(0,250),state:'ready',storage:{scope:'project',path:relative},sha256,byteSize:bytes.length,mimeType:mime,license:{status:'unknown'}};
-      await atomicJson(await safePath(folder,'history/revision-'+current.revision+'.json'),await readProject(projectId));current.assets.push(asset);if(['logo','portrait'].includes(role))current.brand.logoAssetId=assetId;current.revision++;current.updatedAt=new Date().toISOString();await commitProject(current);return current;
+      await atomicJson(await safePath(folder,'history/revision-'+current.revision+'.json'),await readProject(projectId));current.assets.push(asset);if(previous&&current.imageLayouts)for(const layouts of Object.values(current.imageLayouts)){if(layouts[previous.id]){layouts[assetId]=layouts[previous.id];delete layouts[previous.id];}}if(['logo','portrait'].includes(role))current.brand.logoAssetId=assetId;current.revision++;current.updatedAt=new Date().toISOString();await commitProject(current);return current;
     });
   }finally{await fs.unlink(temp).catch(()=>{});}
 }

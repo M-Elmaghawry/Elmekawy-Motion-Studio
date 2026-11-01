@@ -1,3 +1,8 @@
+import { AudioTimeline } from './AudioTimeline';
+import { PromptWorkspace } from './PromptWorkspace';
+import { ProjectBackups } from '../ProjectBackups';
+import { AdditionalSceneFields } from './AdditionalSceneFields';
+import { SceneMediaControls } from './SceneMediaControls';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Player } from '@remotion/player';
 import type { PlayerRef } from '@remotion/player';
@@ -12,17 +17,19 @@ import {
   moveScene,
   newFlexibleScene,
   renderReadinessErrors,
+  projectWarnings,
+  outputProfiles,
+  safeAreaFor,
 } from '@elmekawy/shared/flexible';
 import type {
   FlexibleProject,
   FlexibleScene,
   FlexibleDescriptor,
-  ImplementedType,
-  MediaBinding,
+  SupportedSceneType as ImplementedType,
+  PromptWorkspaceRecord,
 } from '@elmekawy/shared/flexible';
 import type { RenderJob } from '@elmekawy/shared';
 import { api } from '../api';
-import { ImageControls } from './ImageControls';
 
 const stateLabels: Record<string, string> = {
   queued: 'في الانتظار',
@@ -63,8 +70,7 @@ export function FlexibleEditor({
     [jobs, setJobs] = useState<RenderJob[]>([]),
     [frame, setFrame] = useState(0),
     [safeArea, setSafeArea] = useState(false),
-    [layoutWarnings, setLayoutWarnings] = useState<string[]>([]),
-    [reviewNote, setReviewNote] = useState('');
+    [layoutWarnings, setLayoutWarnings] = useState<string[]>([]);
   const player = useRef<PlayerRef>(null),
     viewer = useRef<HTMLDivElement>(null),
     lastPreview = useRef<FlexibleProject | null>(null),
@@ -74,14 +80,27 @@ export function FlexibleEditor({
     draft &&
     JSON.stringify(flexibleEditableOf(saved)) !== JSON.stringify(flexibleEditableOf(draft))
   );
-  const parsed = useMemo(() => {
-    if (!draft) return null;
+  const validation = useMemo(() => {
+    if (!draft) return { project: null, message: '' };
     try {
-      return parseFlexibleProject(draft);
-    } catch {
-      return null;
+      return { project: parseFlexibleProject(draft), message: '' };
+    } catch (error) {
+      const issues = error instanceof Error ? error.message : '';
+      const message = issues.includes('AUDIO_OVERLAPS_SILENCE')
+        ? 'علامة الصمت تتداخل مع مسار مسموع. قصّر المسار أو غيّر توقيته.'
+        : issues.includes('INVALID_AUDIO_TIMING')
+          ? 'راجع بداية الصوت ومدته والقص والتدرج. يجب أن يبقى داخل الفيديو والملف الأصلي.'
+          : issues.includes('VIDEO_TOO_SHORT')
+            ? 'مدة ملف الفيديو أو نقطة القص لا تغطي مدة المشهد.'
+            : issues.includes('MOTION_EXCEEDS_SCENE')
+              ? 'حركة الدخول والتتابع والخروج أطول من مدة المشهد.'
+              : issues.includes('BEAT_OUT_OF_RANGE') || issues.includes('PAUSE_OUT_OF_RANGE')
+                ? 'علامة إيقاع أو وقفة تقع خارج مدة الفيديو.'
+                : 'راجع مدد المشاهد وقيم الحقول. المدة الإجمالية يجب أن تكون بين 20 و45 ثانية.';
+      return { project: null, message };
     }
   }, [draft]);
+  const parsed = validation.project;
   if (parsed) lastPreview.current = parsed;
   const preview = parsed ?? lastPreview.current;
   const inputProps = useMemo(
@@ -97,10 +116,6 @@ export function FlexibleEditor({
   }, [preview]);
   const scene = draft?.scenes.find((scene) => scene.id === selected) ?? draft?.scenes[0];
   const sceneIndex = draft && scene ? draft.scenes.findIndex((item) => item.id === scene.id) : 0;
-  const image =
-    scene?.type === 'media-showcase'
-      ? draft?.assets.find((asset) => asset.id === scene.mediaBindings[0].assetId)
-      : undefined;
   const fail = (value: unknown) => {
     setError(value instanceof Error ? value.message : String(value));
     setNotice('');
@@ -169,7 +184,6 @@ export function FlexibleEditor({
     document.addEventListener('elmekawy:layout-warning', update);
     return () => document.removeEventListener('elmekawy:layout-warning', update);
   }, []);
-  useEffect(() => setReviewNote(image?.sourceNote ?? ''), [image?.id]);
   const selectedEntry = timeline?.scenes.find((item) => item.id === selected);
   useEffect(() => {
     if (selectedEntry) {
@@ -200,7 +214,18 @@ export function FlexibleEditor({
       try {
         target = compileTimeline(next).durationFrames;
       } catch {}
-      return { ...project, scenes: next, targetDurationFrames: target };
+      return {
+        ...project,
+        scenes: next,
+        targetDurationFrames: target,
+        ...(project.prompts
+          ? {
+              prompts: project.prompts.filter((prompt) =>
+                next.some((scene) => scene.id === prompt.sceneId),
+              ),
+            }
+          : {}),
+      };
     });
   }
   function chooseScene(sceneId: string) {
@@ -290,49 +315,46 @@ export function FlexibleEditor({
       setBusy('');
     }
   }
-  async function upload(file: File) {
-    if (!saved || !scene) return;
-    setBusy('upload');
+  async function mutate(action: (current: FlexibleProject) => Promise<FlexibleProject>) {
+    if (!saved || !draft) return;
+    setBusy('media');
     setError('');
     try {
       const current = dirty ? await persist() : saved;
       if (!current) return;
-      const body = new FormData();
-      body.append('file', file);
-      const updated = await api<FlexibleProject>(base + '/assets/' + scene.id, {
-        method: 'POST',
-        headers: { 'If-Match': '"r' + current.revision + '"' },
-        body,
-      });
+      const updated = await action(current);
       await apply(updated);
       await onProjectsChanged();
-      setNotice('حُفظت الصورة الجديدة دون تغيير الملف السابق. راجعها واعتمدها قبل التصدير.');
+      setNotice('تم الحفظ.');
     } catch (value) {
       fail(value);
     } finally {
       setBusy('');
     }
   }
-  async function reviewImage() {
-    if (!saved || !image) return;
-    setBusy('review');
-    setError('');
-    try {
-      const current = dirty ? await persist() : saved;
-      if (!current) return;
-      const updated = await api<FlexibleProject>(base + '/review/' + image.id, {
+  async function uploadMedia(file: File, sceneId?: string, slot = 0, promptId?: string) {
+    await mutate(async (current) => {
+      const body = new FormData();
+      body.append('file', file);
+      const query = new URLSearchParams({ slot: String(slot), ...(promptId ? { promptId } : {}) });
+      return api<FlexibleProject>(
+        base + (sceneId ? '/assets/' + sceneId : '/media') + '?' + query,
+        { method: 'POST', headers: { 'If-Match': '"r' + current.revision + '"' }, body },
+      );
+    });
+  }
+  async function reviewAsset(assetId: string, sourceNote: string, approved: boolean) {
+    await mutate((current) =>
+      api<FlexibleProject>(base + '/review/' + assetId, {
         method: 'POST',
         headers: { 'If-Match': '"r' + current.revision + '"' },
-        body: JSON.stringify({ approved: image.approval !== 'approved', sourceNote: reviewNote }),
-      });
-      await apply(updated);
-      await onProjectsChanged();
-      setNotice('تم حفظ مراجعة الصورة.');
-    } catch (value) {
-      fail(value);
-    } finally {
-      setBusy('');
-    }
+        body: JSON.stringify({ sourceNote, approved }),
+      }),
+    );
+  }
+  function uploadPrompt(file: File, prompt: PromptWorkspaceRecord) {
+    const scene = draft?.scenes.find((scene) => scene.id === prompt.sceneId);
+    void uploadMedia(file, scene?.mediaBindings.length ? scene.id : undefined, 0, prompt.id);
   }
   function field(key: string, label: string, value: string, max = 200, multiline = false) {
     return (
@@ -374,7 +396,6 @@ export function FlexibleEditor({
     );
   const ready = renderReadinessErrors(draft).length === 0;
   const disabled = !!busy;
-  const binding = scene?.type === 'media-showcase' ? scene.mediaBindings[0] : null;
   return (
     <section className="flexible" data-testid="flexible-editor" data-project-id={id}>
       <div className="pagehead">
@@ -423,10 +444,19 @@ export function FlexibleEditor({
       )}
       {!parsed && (
         <p className="message error" role="alert">
-          راجع مدد المشاهد وقيم الحقول. يجب أن تكون المدة الإجمالية بين 20 و45 ثانية؛ المعاينة تعرض
-          آخر إعدادات صالحة.
+          {validation.message} المعاينة تعرض آخر إعدادات صالحة.
         </p>
       )}
+      <nav className="editor-tabs" aria-label="أدوات المشروع المرن">
+        <a href="#flex-scenes">المشاهد والصور</a>
+        {draft.schemaVersion === '2.1.0' && (
+          <>
+            <a href="#audio-timeline">الوسائط والصوت</a>
+            <a href="#prompt-workspace">البرومبتات</a>
+          </>
+        )}
+        <a href="#project-backups">النسخ والاسترجاع</a>
+      </nav>
       <div className="editor-grid">
         <div className="editor-fields">
           <details className="panel project-details">
@@ -541,8 +571,50 @@ export function FlexibleEditor({
               </div>
             </fieldset>
           </details>
-          <div className="panel scene-tools">
+          <div className="panel scene-tools" id="flex-scenes">
             <h2>المشاهد</h2>
+            {draft.schemaVersion === '2.0.0' ? (
+              <button
+                data-testid="upgrade-flexible-media"
+                disabled={disabled || !parsed}
+                onClick={() =>
+                  void mutate((current) =>
+                    api<FlexibleProject>(base + '/upgrade', {
+                      method: 'POST',
+                      headers: { 'If-Match': '"r' + current.revision + '"' },
+                      body: '{}',
+                    }),
+                  )
+                }
+              >
+                تفعيل أدوات الفيديو والصوت والمقاسات الجديدة
+              </button>
+            ) : (
+              <label className="field">
+                <span>مقاس الفيديو</span>
+                <select
+                  data-testid="editor-output-profile"
+                  disabled={disabled}
+                  value={draft.outputProfile.id}
+                  onChange={(event) => {
+                    const profile = outputProfiles.find(
+                      (profile) => profile.id === event.target.value,
+                    )!;
+                    change((project) => ({
+                      ...project,
+                      outputProfile: { ...profile, crf: project.outputProfile.crf },
+                      brand: { ...project.brand, safeArea: safeAreaFor(profile.aspectRatio) },
+                    }));
+                  }}
+                >
+                  {outputProfiles.map((profile) => (
+                    <option key={profile.id} value={profile.id}>
+                      {profile.aspectRatio} · {profile.width} × {profile.height}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
             <div className="actions">
               <select
                 aria-label="نوع المشهد الجديد"
@@ -551,11 +623,17 @@ export function FlexibleEditor({
                 value={newType}
                 onChange={(event) => setNewType(event.target.value as ImplementedType)}
               >
-                {Object.entries(sceneLabels).map(([id, label]) => (
-                  <option key={id} value={id}>
-                    {label}
-                  </option>
-                ))}
+                {Object.entries(sceneLabels)
+                  .filter(
+                    ([id]) =>
+                      draft.schemaVersion === '2.1.0' ||
+                      !['ui-demo', 'product-hero', 'before-after', 'data-explainer'].includes(id),
+                  )
+                  .map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
               </select>
               <button
                 data-testid="add-scene"
@@ -641,7 +719,23 @@ export function FlexibleEditor({
                   </button>
                 </div>
               </div>
+              {scene.mediaBindings.length > 0 && (
+                <SceneMediaControls
+                  key={scene.id}
+                  project={draft}
+                  scene={scene}
+                  media={descriptor.inputProps.media}
+                  disabled={disabled || !parsed}
+                  onChange={(value) => changeScene(() => value)}
+                  onUpload={(file, slot) => void uploadMedia(file, scene.id, slot)}
+                  onReview={(assetId, note, approved) => void reviewAsset(assetId, note, approved)}
+                />
+              )}
               <fieldset disabled={disabled}>
+                <AdditionalSceneFields
+                  scene={scene}
+                  onChange={(value) => changeScene(() => value)}
+                />
                 <div className="form-grid">
                   <label className="field">
                     <span>مدة المشهد بالإطارات</span>
@@ -871,91 +965,51 @@ export function FlexibleEditor({
                   </label>
                 </details>
               </fieldset>
-              {binding && image && (
-                <>
-                  <ImageControls
-                    key={scene.id}
-                    binding={binding}
-                    disabled={disabled}
-                    onChange={(value: MediaBinding) =>
-                      changeScene((item) => ({ ...item, mediaBindings: [value] }))
-                    }
-                  />
-                  <div className="asset">
-                    <img
-                      src={descriptor.inputProps.media[image.id]}
-                      alt="الصورة المستخدمة في المشهد"
-                    />
-                    <div className="asset-description">
-                      <strong>
-                        {image.approval === 'approved' ? 'صورة معتمدة' : 'بانتظار مراجعة الصورة'}
-                      </strong>
-                      <small>{(image.byteSize / 1024 / 1024).toFixed(2)} MB</small>
-                      <label className="upload-button">
-                        {dirty ? 'حفظ ورفع صورة بديلة' : 'رفع صورة بديلة'}
-                        <input
-                          data-testid="editor-image-file"
-                          type="file"
-                          accept="image/png,image/jpeg,image/webp"
-                          disabled={disabled || !parsed}
-                          onChange={(event) => {
-                            const file = event.target.files?.[0];
-                            if (file) void upload(file);
-                            event.target.value = '';
-                          }}
-                        />
-                      </label>
-                    </div>
-                  </div>
-                  <label className="field">
-                    <span>اختيار صورة محفوظة بالمشروع</span>
-                    <select
-                      disabled={disabled}
-                      value={binding.assetId}
-                      onChange={(event) => {
-                        const next = draft.assets.find((asset) => asset.id === event.target.value)!;
-                        changeScene((item) => ({
-                          ...item,
-                          mediaBindings: [
-                            { ...binding, assetId: next.id, assetSha256: next.sha256 },
-                          ],
-                        }));
-                      }}
-                    >
-                      {draft.assets
-                        .filter((asset) => asset.kind === 'image')
-                        .map((asset, index) => (
-                          <option key={asset.id} value={asset.id}>
-                            الصورة {index + 1} ·{' '}
-                            {asset.approval === 'approved' ? 'معتمدة' : 'بانتظار المراجعة'}
-                          </option>
-                        ))}
-                    </select>
-                  </label>
-                  <label className="field">
-                    <span>مصدر الصورة وملاحظات المراجعة</span>
-                    <textarea
-                      maxLength={1000}
-                      value={reviewNote}
-                      onChange={(event) => setReviewNote(event.target.value)}
-                    />
-                  </label>
-                  <button
-                    data-testid="approve-image"
-                    disabled={disabled || !parsed || !reviewNote.trim()}
-                    onClick={() => void reviewImage()}
-                  >
-                    {image.approval === 'approved'
-                      ? 'إلغاء اعتماد الصورة'
-                      : 'اعتماد الصورة بعد مراجعتها'}
-                  </button>
-                </>
-              )}
             </div>
           )}
+          {draft.schemaVersion === '2.1.0' && (
+            <>
+              <AudioTimeline
+                project={draft}
+                media={descriptor.inputProps.media}
+                disabled={disabled}
+                onChange={(project) => change(() => project)}
+                onUpload={(file) => void uploadMedia(file)}
+                onReview={(id, note, approved) => void reviewAsset(id, note, approved)}
+              />
+              <PromptWorkspace
+                project={draft}
+                disabled={disabled}
+                onChange={(project) => change(() => project)}
+                onUpload={uploadPrompt}
+                onReview={(id, note, approved) => void reviewAsset(id, note, approved)}
+                onNotice={setNotice}
+                onError={fail}
+              />
+            </>
+          )}
+          <ProjectBackups
+            project={saved}
+            base={base}
+            disabled={disabled || !parsed}
+            prepare={() => (dirty ? persist() : Promise.resolve(saved))}
+            onRestored={async (project) => {
+              await apply(project as FlexibleProject);
+              await onProjectsChanged();
+              setNotice('تمت استعادة الإصدار السابق كإصدار جديد.');
+            }}
+            onError={fail}
+          />
           <div className="panel render-panel">
             <h2>التصدير</h2>
-            <p className="inline-note">رأسي 1080 × 1920 · 30 FPS · MP4 / H.264 · بدون صوت</p>
+            <p className="inline-note">
+              {draft.outputProfile.width} × {draft.outputProfile.height} · {draft.outputProfile.fps}{' '}
+              FPS · MP4 / H.264 ·{' '}
+              {draft.audio.mode === 'timeline' &&
+              draft.audio.tracks.some((track) => track.volume > 0)
+                ? 'بصوت'
+                : 'بدون صوت'}
+            </p>
             <label className="field quality">
               <span>جودة CRF · الأقل أعلى جودة</span>
               <input
@@ -973,12 +1027,15 @@ export function FlexibleEditor({
               />
             </label>
             {!ready && <p className="inline-note">راجع الصور المستخدمة واعتمدها قبل التصدير.</p>}
-            {descriptor.warnings.map((message) => (
+            {[...new Set([...descriptor.warnings, ...projectWarnings(draft)])].map((message) => (
               <p className="inline-note" key={message}>
                 {message}
               </p>
             ))}
             <div className="jobs">
+              {!jobs.some((job) => job.state === 'completed') && (
+                <p className="inline-note">لا توجد نسخة فيديو مكتملة لهذا المشروع بعد.</p>
+              )}
               {jobs.map((job) => (
                 <article className="job" key={job.id}>
                   <div className="sectionhead">

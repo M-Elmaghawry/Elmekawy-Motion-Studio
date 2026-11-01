@@ -133,11 +133,19 @@ try {
       });
       expected.set(frame, createHash('sha256').update(still.buffer).digest('hex'));
     }
-    for (const version of ['1.0.0', '1.1.0']) {
+    for (const version of ['1.0.0', '1.1.0', '1.2.0']) {
       // Default 1.1.0 edits must not be applied to the frozen 1.0.0 text keys.
       const inputProps = {
         ...descriptor.inputProps,
         templateVersion: version,
+        ...(version === '1.2.0'
+          ? {
+              imageLayouts: {},
+              imageKeys: Object.fromEntries(
+                project.assets.map((asset) => [asset.id, asset.mediaKey]),
+              ),
+            }
+          : {}),
         ...(version === '1.0.0' ? { edits: {} } : {}),
       };
       const composition = (await getCompositions({ ...common, serveUrl, inputProps })).find(
@@ -165,6 +173,63 @@ try {
           current: hash,
         });
         assert.ok(match, item.id + '@' + version + ' frame ' + frame + ' differs');
+      }
+      if (version === '1.2.0') {
+        const asset = project.assets.find(
+          (asset) =>
+            asset.role ===
+            (item.template === 'bim-personal-intro' ? 'infrastructure' : 'structural'),
+        );
+        assert.ok(asset);
+        const scene = item.template === 'bim-personal-intro' ? 'infrastructure' : 'network';
+        const variant = {
+          ...inputProps,
+          imageLayouts: {
+            [scene]: {
+              [asset.id]: {
+                fit: 'contain',
+                focalPoint: { x: 0.5, y: 0.5 },
+                frame: { x: 0.4, y: 0.55, width: 0.75, height: 0.75 },
+                transform: { scale: 1.2, offsetX: 0.1, offsetY: 0 },
+              },
+            },
+          },
+        };
+        const changedFrame = item.template === 'bim-personal-intro' ? 132 : 134;
+        const changed = await renderStill({
+          ...common,
+          serveUrl,
+          composition: { ...composition, props: variant },
+          inputProps: variant,
+          frame: changedFrame,
+          imageFormat: 'png',
+          output: null,
+        });
+        assert.notEqual(
+          createHash('sha256').update(changed.buffer).digest('hex'),
+          expected.get(changedFrame),
+          'Image transform must change its scene pixels',
+        );
+        const unrelated = await renderStill({
+          ...common,
+          serveUrl,
+          composition: { ...composition, props: variant },
+          inputProps: variant,
+          frame: 45,
+          imageFormat: 'png',
+          output: null,
+        });
+        assert.equal(
+          createHash('sha256').update(unrelated.buffer).digest('hex'),
+          expected.get(45),
+          'Image transform must not change another scene',
+        );
+        checks.push({
+          kind: 'scene-local-image-transform',
+          composition: item.id,
+          version,
+          passed: true,
+        });
       }
       if (version !== '1.1.0') continue;
       const output = path.join(directory, item.id + '-30-frames.mp4');
@@ -216,7 +281,9 @@ try {
       });
     }
     console.log(
-      'PASS: ' + item.id + ' boundary pixels (both versions) and 30-frame H.264/audio smoke',
+      'PASS: ' +
+        item.id +
+        ' boundary pixels (all three versions) and scene-local image transforms and 30-frame H.264/audio smoke',
     );
   }
 } catch (error) {

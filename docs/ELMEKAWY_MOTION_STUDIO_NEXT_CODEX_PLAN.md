@@ -1,5 +1,7 @@
 # Codex Implementation Brief — Elmekawy Motion Studio Next Iteration
 
+> Implementation update, 2026-11-01: the remaining media/audio/prompt/recovery scope and all nine scene types are implemented in `flexible-reel@1.1.0` / schema `2.1.0`, with three aspect ratios. V1/V2 image controls are delivered through an explicit independent template-1.2.0 copy. Existing frozen versions remain preserved. See [PHASE_4_IMPLEMENTATION.md](PHASE_4_IMPLEMENTATION.md) for usage, actual verification and rollback. The instructions below retain the original phased brief and approval history.
+
 **Purpose:** Safe, incremental modernization informed by the updated GitHub audit and the complete 18-video Motion Lab reference set.  
 **Work on a NEW BRANCH**, not directly on `main`. Preserve both legacy projects and template versions.
 

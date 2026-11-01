@@ -1,133 +1,160 @@
 import Ajv from 'ajv';
-import { projectSchema, semanticErrors } from '../index.ts';
-import type { Project } from '../index.ts';
-import type { FlexibleProject, ImplementedType } from './types.ts';
-import { sceneRegistry, flexibleManifest, portraitProfile } from './manifest.ts';
-import { compileTimeline } from './timeline.ts';
-
+import * as v2 from './schema-v2.ts';
+import { sceneRegistry, outputProfiles } from './manifest.ts';
+import type { FlexibleProject, SupportedSceneType } from './types.ts';
+export { FlexibleValidationError, mediaBindingSchema } from './schema-v2.ts';
 const object = (properties: Record<string, unknown>, required = Object.keys(properties)) => ({
   type: 'object',
   additionalProperties: false,
   required,
   properties,
 });
-const text = (maxLength: number, minLength = 0) => ({ type: 'string', minLength, maxLength });
-const number = (minimum: number, maximum: number) => ({ type: 'number', minimum, maximum });
-const integer = (minimum: number, maximum: number) => ({ type: 'integer', minimum, maximum });
+const str = (maxLength: number, minLength = 0) => ({ type: 'string', maxLength, minLength });
+const num = (minimum: number, maximum: number) => ({ type: 'number', minimum, maximum });
+const int = (minimum: number, maximum = 5400) => ({ type: 'integer', minimum, maximum });
 const id = { type: 'string', pattern: '^[a-z][a-z0-9_-]{0,63}$' };
 const sha = { type: 'string', pattern: '^[a-f0-9]{64}$' };
-const direction = { enum: ['rtl', 'ltr'] };
-const color = { type: 'string', pattern: '^#[a-fA-F0-9]{6}$' };
-const stamp = { type: 'string', pattern: '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$' };
-const pathSchema = { type: 'string', maxLength: 250, pattern: '^[a-zA-Z0-9_./-]+\\.[a-zA-Z0-9]+$' };
-export const mediaBindingSchema = object({
-  slot: { const: 'image' },
-  assetId: id,
-  assetSha256: sha,
-  fit: { enum: ['cover', 'contain'] },
-  focalPoint: object({ x: number(0, 1), y: number(0, 1) }),
-  frame: object({
-    x: number(0, 1),
-    y: number(0, 1),
-    width: number(0.1, 1.5),
-    height: number(0.1, 1.5),
-  }),
-  transform: object({ scale: number(0.25, 3), offsetX: number(-1, 1), offsetY: number(-1, 1) }),
-});
+const props = (value: unknown) => (value as { properties: Record<string, unknown> }).properties;
+const old = v2.flexibleProjectSchema.properties;
 export const sceneContentSchemas = {
-  'kinetic-title': object({ headline: text(200, 1), subtitle: text(200) }, ['headline']),
-  'stat-proof': object({
-    label: text(200, 1),
-    value: { type: 'number' },
-    prefix: text(30),
-    suffix: text(30),
-    sourceNote: text(400, 1),
+  ...v2.sceneContentSchemas,
+  'ui-demo': object({
+    headline: str(200, 1),
+    appName: str(100, 1),
+    caption: str(400),
+    actions: { type: 'array', minItems: 1, maxItems: 5, items: str(100, 1) },
   }),
-  'media-showcase': object({ headline: text(200, 1), caption: text(400) }),
-  'process-flow': object({
-    headline: text(200, 1),
-    steps: { type: 'array', minItems: 1, maxItems: 8, items: object({ id, label: text(120, 1) }) },
+  'product-hero': object({ headline: str(200, 1), tagline: str(200), badge: str(100) }),
+  'before-after': object({
+    headline: str(200, 1),
+    beforeLabel: str(100, 1),
+    afterLabel: str(100, 1),
   }),
-  'offer-cta': object(
-    { headline: text(200, 1), action: text(120, 1), contact: text(200, 1), offer: text(200) },
-    ['headline', 'action', 'contact'],
-  ),
-} satisfies Record<ImplementedType, unknown>;
-const transition = {
-  oneOf: [
-    object({ type: { const: 'cut' }, durationFrames: { const: 0 } }),
-    object({ type: { const: 'crossfade' }, durationFrames: integer(2, 180) }),
-  ],
+  'data-explainer': object({
+    headline: str(200, 1),
+    unit: str(30),
+    points: {
+      type: 'array',
+      minItems: 1,
+      maxItems: 6,
+      items: object({ id, label: str(80, 1), value: num(0, 1e12) }),
+    },
+  }),
 };
+export const audioTimelineSchema = object({
+  mode: { const: 'timeline' },
+  tracks: {
+    type: 'array',
+    maxItems: 24,
+    items: object({
+      id,
+      assetId: id,
+      assetSha256: sha,
+      role: { enum: ['voiceover', 'music'] },
+      startFrame: int(0, 1349),
+      trimStartFrame: int(0),
+      durationFrames: int(1, 1350),
+      volume: num(0, 1),
+      fadeInFrames: int(0, 300),
+      fadeOutFrames: int(0, 300),
+    }),
+  },
+  beats: { type: 'array', maxItems: 500, uniqueItems: true, items: int(0, 1349) },
+  pauses: {
+    type: 'array',
+    maxItems: 100,
+    items: object({
+      id,
+      startFrame: int(0, 1349),
+      durationFrames: int(1, 1350),
+      label: str(120, 1),
+    }),
+  },
+});
+export const promptsSchema = {
+  type: 'array',
+  maxItems: 100,
+  items: object({
+    id,
+    sceneId: id,
+    text: str(20000),
+    negativeConstraints: str(5000),
+    source: str(1000),
+    status: { enum: ['draft', 'ready-to-copy', 'uploaded', 'approved'] },
+    assetId: { anyOf: [id, { type: 'null' }] },
+  }),
+};
+const binding = object(
+  {
+    ...v2.mediaBindingSchema.properties,
+    slot: { enum: ['image', 'before', 'after'] },
+    trimStartFrame: int(0),
+  },
+  [...v2.mediaBindingSchema.required],
+);
+const oldAsset = props((old.assets as { items: unknown }).items);
+const oldBrand = props(old.brand);
 export const flexibleProjectSchema = {
   $schema: 'http://json-schema.org/draft-07/schema#',
-  $id: 'urn:elmekawy:flexible-project:2.0.0',
+  $id: 'urn:elmekawy:flexible-project:2.1.0',
   ...object({
-    schemaVersion: { const: '2.0.0' },
-    id: { type: 'string', maxLength: 82, pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*--[a-f0-9]{32}$' },
-    revision: integer(1, Number.MAX_SAFE_INTEGER),
-    createdAt: stamp,
-    updatedAt: stamp,
-    name: text(120, 1),
-    template: object({ id: { const: 'flexible-reel' }, version: { const: '1.0.0' } }),
-    brief: object({ client: text(120), objective: text(10000) }),
-    locale: object({ language: text(32, 2), direction }),
+    ...old,
+    schemaVersion: { const: '2.1.0' },
+    template: object({ id: { const: 'flexible-reel' }, version: { const: '1.1.0' } }),
     brand: object({
-      profileId: id,
-      version: { const: '1.0.0' },
-      displayName: text(120, 1),
-      colors: object({
-        background: color,
-        surface: color,
-        foreground: color,
-        accent: color,
-        muted: color,
-      }),
-      fonts: object({ arabicAssetId: id, latinAssetId: id }),
+      ...oldBrand,
       safeArea: object({
-        left: integer(100, 400),
-        right: integer(180, 400),
-        top: integer(220, 600),
-        bottom: integer(360, 600),
+        left: int(0, 500),
+        right: int(0, 500),
+        top: int(0, 600),
+        bottom: int(0, 600),
       }),
     }),
-    outputProfile: object(
-      Object.fromEntries(
-        Object.entries(portraitProfile).map(([key, value]) => [
-          key,
-          key === 'crf' ? integer(0, 51) : { const: value },
-        ]),
+    outputProfile: {
+      oneOf: outputProfiles.map((profile) =>
+        object(
+          Object.fromEntries(
+            Object.entries(profile).map(([key, value]) => [
+              key,
+              key === 'crf' ? int(0, 51) : { const: value },
+            ]),
+          ),
+        ),
       ),
-    ),
-    targetDurationFrames: integer(600, 1350),
+    },
     scenes: {
       type: 'array',
       minItems: 3,
       maxItems: 8,
       items: {
-        oneOf: (Object.keys(sceneRegistry) as ImplementedType[]).map((type) =>
+        oneOf: (Object.keys(sceneRegistry) as SupportedSceneType[]).map((type) =>
           object({
             schemaVersion: { const: '1.0.0' },
             id,
             type: { const: type },
-            durationFrames: integer(1, 1530),
-            direction,
+            durationFrames: int(1, 1530),
+            direction: { enum: ['rtl', 'ltr'] },
             content: sceneContentSchemas[type],
             motion: object({
               id: { enum: sceneRegistry[type].motionPresetIds },
               version: { const: '1.0.0' },
-              enterFrames: integer(1, 180),
-              staggerFrames: integer(0, 60),
-              exitFrames: integer(0, 180),
+              enterFrames: int(1, 180),
+              staggerFrames: int(0, 60),
+              exitFrames: int(0, 180),
               easing: { enum: ['linear', 'ease-out'] },
               reducedMotion: { type: 'boolean' },
             }),
-            transitionOut: transition,
+            transitionOut: {
+              oneOf: [
+                object({ type: { const: 'cut' }, durationFrames: { const: 0 } }),
+                object({ type: { const: 'crossfade' }, durationFrames: int(2, 180) }),
+              ],
+            },
             mediaBindings: {
               type: 'array',
-              minItems: type === 'media-showcase' ? 1 : 0,
-              maxItems: type === 'media-showcase' ? 1 : 0,
-              items: mediaBindingSchema,
+              minItems: sceneRegistry[type].mediaSlots.length,
+              maxItems: sceneRegistry[type].mediaSlots.length,
+              items: binding,
             },
           }),
         ),
@@ -136,145 +163,195 @@ export const flexibleProjectSchema = {
     assets: {
       type: 'array',
       maxItems: 100,
-      items: object({
-        id,
-        kind: { enum: ['image', 'font'] },
-        sha256: sha,
-        byteSize: integer(1, 50 * 1024 * 1024),
-        mimeType: { enum: ['image/png', 'image/jpeg', 'image/webp', 'font/ttf'] },
-        storage: object({ scope: { enum: ['shared', 'project'] }, path: pathSchema }),
-        approval: { enum: ['pending', 'approved'] },
-        sourceNote: text(1000, 1),
-        license: object({ status: { enum: ['unknown', 'documented'] }, note: text(1000) }),
-      }),
+      items: object(
+        {
+          ...oldAsset,
+          kind: { enum: ['image', 'font', 'video', 'audio'] },
+          byteSize: int(1, 250 * 1024 ** 2),
+          mimeType: {
+            enum: [
+              'image/png',
+              'image/jpeg',
+              'image/webp',
+              'font/ttf',
+              'video/mp4',
+              'audio/mpeg',
+              'audio/mp4',
+              'audio/wav',
+            ],
+          },
+          metadata: object({
+            durationSeconds: num(0.01, 180),
+            width: int(0, 3840),
+            height: int(0, 3840),
+            hasAudio: { type: 'boolean' },
+            codec: str(40, 1),
+          }),
+        },
+        [...Object.keys(oldAsset)],
+      ),
     },
-    audio: object({ mode: { const: 'none' } }),
+    audio: { oneOf: [object({ mode: { const: 'none' } }), audioTimelineSchema] },
+    prompts: promptsSchema,
   }),
 };
-const ajv = new Ajv({
+const validate = new Ajv({
   allErrors: true,
   strict: true,
   coerceTypes: false,
   useDefaults: false,
   removeAdditional: false,
-});
-const validate = ajv.compile<FlexibleProject>(flexibleProjectSchema);
-const validateLegacy = ajv.compile<Project>(projectSchema);
-export class FlexibleValidationError extends Error {
-  issues: string[];
-  constructor(issues: string[]) {
-    super(issues.join('; '));
-    this.name = 'FlexibleValidationError';
-    this.issues = issues;
-  }
-}
+}).compile<FlexibleProject>(flexibleProjectSchema);
 export function flexibleSemanticErrors(project: FlexibleProject): string[] {
-  const issues: string[] = [];
-  try {
-    if (compileTimeline(project.scenes).durationFrames !== project.targetDurationFrames)
-      issues.push('DURATION_MISMATCH');
-  } catch (error) {
-    issues.push((error as Error).message);
-  }
+  if (project.schemaVersion === '2.0.0') return v2.flexibleSemanticErrors(project);
+  const issues = v2
+    .flexibleSemanticErrors(project)
+    .filter((issue) => !issue.startsWith('INVALID_MEDIA_BINDING:'));
   const assets = new Map(project.assets.map((asset) => [asset.id, asset]));
-  if (assets.size !== project.assets.length) issues.push('DUPLICATE_ASSET_ID');
+  const mime: Record<string, string[]> = {
+    image: ['image/png', 'image/jpeg', 'image/webp'],
+    font: ['font/ttf'],
+    video: ['video/mp4'],
+    audio: ['audio/wav', 'audio/mpeg', 'audio/mp4'],
+  };
   for (const asset of project.assets) {
-    const parts = asset.storage.path.split('/');
+    if (!mime[asset.kind]?.includes(asset.mimeType)) issues.push('ASSET_KIND_MISMATCH:' + asset.id);
     if (
-      parts.some(
-        (part) =>
-          !part ||
-          part === '.' ||
-          part === '..' ||
-          /[. ]$/.test(part) ||
-          /^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(part),
-      ) ||
-      (asset.storage.scope === 'project' && parts[0] !== 'assets')
+      ['video', 'audio'].includes(asset.kind) &&
+      (!asset.metadata || (asset.kind === 'audio' && !asset.metadata.hasAudio))
     )
-      issues.push('UNSAFE_ASSET_PATH:' + asset.id);
-    if ((asset.kind === 'font') !== (asset.mimeType === 'font/ttf'))
-      issues.push('ASSET_KIND_MISMATCH:' + asset.id);
+      issues.push('MISSING_MEDIA_METADATA:' + asset.id);
+    if (['image', 'font'].includes(asset.kind) && asset.byteSize > 50 * 1024 ** 2)
+      issues.push('ASSET_TOO_LARGE:' + asset.id);
   }
-  for (const key of ['arabicAssetId', 'latinAssetId'] as const)
-    if (assets.get(project.brand.fonts[key])?.kind !== 'font') issues.push('INVALID_FONT:' + key);
+  const safe = project.brand.safeArea,
+    output = project.outputProfile;
+  if (output.width - safe.left - safe.right < 400 || output.height - safe.top - safe.bottom < 400)
+    issues.push('SAFE_AREA_TOO_SMALL');
   for (const scene of project.scenes) {
-    for (const [key, value] of Object.entries(scene.content))
+    const slots = sceneRegistry[scene.type].mediaSlots;
+    for (const [index, binding] of scene.mediaBindings.entries()) {
+      const asset = assets.get(binding.assetId),
+        allowed = scene.type === 'media-showcase' ? ['image', 'video'] : ['image'];
       if (
-        typeof value === 'string' &&
-        !value.trim() &&
-        !['prefix', 'suffix', 'subtitle', 'caption', 'offer'].includes(key)
+        !asset ||
+        !allowed.includes(asset.kind) ||
+        asset.sha256 !== binding.assetSha256 ||
+        binding.slot !== slots[index]?.name
       )
-        issues.push('EMPTY_SCENE_TEXT:' + scene.id);
-    const count =
-      scene.type === 'kinetic-title'
-        ? scene.content.headline.trim().split(/\s+/u).length
-        : scene.type === 'process-flow'
-          ? scene.content.steps.length
-          : 1;
-    if (
-      scene.motion.enterFrames +
-        (count - 1) * scene.motion.staggerFrames +
-        scene.motion.exitFrames >
-      scene.durationFrames
-    )
-      issues.push('MOTION_EXCEEDS_SCENE:' + scene.id);
-    if (
-      scene.type === 'process-flow' &&
-      new Set(scene.content.steps.map((step) => step.id)).size !== scene.content.steps.length
-    )
-      issues.push('DUPLICATE_STEP_ID:' + scene.id);
-    if (scene.type === 'process-flow' && scene.content.steps.some((step) => !step.label.trim()))
-      issues.push('EMPTY_STEP_LABEL:' + scene.id);
-    for (const binding of scene.mediaBindings) {
-      const asset = assets.get(binding.assetId);
-      if (!asset || asset.kind !== 'image' || asset.sha256 !== binding.assetSha256)
         issues.push('INVALID_MEDIA_BINDING:' + scene.id);
+      if (
+        asset?.kind === 'video' &&
+        (binding.trimStartFrame ?? 0) + scene.durationFrames >
+          Math.floor((asset.metadata?.durationSeconds ?? 0) * output.fps) + 1
+      )
+        issues.push('VIDEO_TOO_SHORT:' + scene.id);
+      if (asset?.kind !== 'video' && binding.trimStartFrame)
+        issues.push('INVALID_MEDIA_TRIM:' + scene.id);
+    }
+    if (
+      scene.type === 'data-explainer' &&
+      new Set(scene.content.points.map((point) => point.id)).size !== scene.content.points.length
+    )
+      issues.push('DUPLICATE_POINT_ID:' + scene.id);
+  }
+  const prompts = project.prompts ?? [];
+  if (new Set(prompts.map((prompt) => prompt.id)).size !== prompts.length)
+    issues.push('DUPLICATE_PROMPT_ID');
+  for (const prompt of prompts) {
+    if (!project.scenes.some((scene) => scene.id === prompt.sceneId))
+      issues.push('INVALID_PROMPT_SCENE:' + prompt.id);
+    const asset = prompt.assetId ? assets.get(prompt.assetId) : undefined;
+    if (prompt.assetId && (!asset || !['image', 'video'].includes(asset.kind)))
+      issues.push('INVALID_PROMPT_ASSET:' + prompt.id);
+    if (['uploaded', 'approved'].includes(prompt.status) && !asset)
+      issues.push('PROMPT_REQUIRES_ASSET:' + prompt.id);
+    if (prompt.status === 'approved' && asset?.approval !== 'approved')
+      issues.push('PROMPT_ASSET_UNAPPROVED:' + prompt.id);
+  }
+  if (project.audio.mode === 'timeline') {
+    const { tracks, beats, pauses } = project.audio;
+    if (
+      new Set(tracks.map((track) => track.id)).size !== tracks.length ||
+      new Set(pauses.map((pause) => pause.id)).size !== pauses.length
+    )
+      issues.push('DUPLICATE_AUDIO_ID');
+    for (const track of tracks) {
+      const asset = assets.get(track.assetId);
+      if (
+        !asset ||
+        !['audio', 'video'].includes(asset.kind) ||
+        !asset.metadata?.hasAudio ||
+        asset.sha256 !== track.assetSha256
+      )
+        issues.push('INVALID_AUDIO_ASSET:' + track.id);
+      if (
+        track.startFrame + track.durationFrames > project.targetDurationFrames ||
+        track.trimStartFrame + track.durationFrames >
+          Math.floor((asset?.metadata?.durationSeconds ?? 0) * output.fps) + 1 ||
+        track.fadeInFrames + track.fadeOutFrames > track.durationFrames
+      )
+        issues.push('INVALID_AUDIO_TIMING:' + track.id);
+    }
+    for (const beat of beats)
+      if (beat >= project.targetDurationFrames) issues.push('BEAT_OUT_OF_RANGE');
+    for (const pause of pauses) {
+      if (pause.startFrame + pause.durationFrames > project.targetDurationFrames)
+        issues.push('PAUSE_OUT_OF_RANGE:' + pause.id);
+      if (
+        tracks.some(
+          (track) =>
+            track.volume > 0 &&
+            track.startFrame < pause.startFrame + pause.durationFrames &&
+            track.startFrame + track.durationFrames > pause.startFrame,
+        )
+      )
+        issues.push('AUDIO_OVERLAPS_SILENCE:' + pause.id);
     }
   }
-  if (!project.name.trim()) issues.push('EMPTY_NAME');
-  if (
-    [project.createdAt, project.updatedAt].some(
-      (stamp) => !Number.isFinite(Date.parse(stamp)) || new Date(stamp).toISOString() !== stamp,
-    ) ||
-    project.updatedAt < project.createdAt
-  )
-    issues.push('INVALID_TIMESTAMPS');
-  try {
-    new Intl.NumberFormat(project.locale.language);
-  } catch {
-    issues.push('INVALID_LOCALE');
-  }
-  return issues;
+  return [...new Set(issues)];
 }
 export function parseFlexibleProject(value: unknown): FlexibleProject {
+  if ((value as FlexibleProject)?.schemaVersion === '2.0.0') return v2.parseFlexibleProject(value);
   if (!validate(value))
-    throw new FlexibleValidationError(
+    throw new v2.FlexibleValidationError(
       (validate.errors ?? []).map((error) => error.instancePath + ':' + error.keyword),
     );
   const issues = flexibleSemanticErrors(value);
-  if (issues.length) throw new FlexibleValidationError(issues);
+  if (issues.length) throw new v2.FlexibleValidationError(issues);
   return structuredClone(value);
 }
 export function renderReadinessErrors(project: FlexibleProject): string[] {
-  const required = new Set([
-    project.brand.fonts.arabicAssetId,
-    project.brand.fonts.latinAssetId,
-    ...project.scenes.flatMap((scene) => scene.mediaBindings.map((binding) => binding.assetId)),
-  ]);
-  return [...required].flatMap((id) => {
-    const asset = project.assets.find((asset) => asset.id === id);
-    if (!asset) return ['MISSING_ASSET:' + id];
-    return asset.approval !== 'approved' ? ['UNAPPROVED_ASSET:' + id] : [];
-  });
+  const issues = v2.renderReadinessErrors(project);
+  if (project.audio.mode === 'timeline')
+    for (const track of project.audio.tracks)
+      if (project.assets.find((asset) => asset.id === track.assetId)?.approval !== 'approved')
+        issues.push('UNAPPROVED_ASSET:' + track.assetId);
+  return [...new Set(issues)];
 }
-export function parseProjectDocument(value: unknown): Project | FlexibleProject {
-  if (typeof value !== 'object' || value === null)
-    throw new FlexibleValidationError(['INVALID_DOCUMENT']);
-  const version = (value as { schemaVersion?: unknown }).schemaVersion;
-  if (version === flexibleManifest.projectSchemaVersion) return parseFlexibleProject(value);
-  if (version !== '1.0.0') throw new FlexibleValidationError(['UNSUPPORTED_SCHEMA_VERSION']);
-  if (!validateLegacy(value)) throw new FlexibleValidationError(['INVALID_LEGACY_PROJECT']);
-  const issues = semanticErrors(value);
-  if (issues.length) throw new FlexibleValidationError(issues);
-  return structuredClone(value);
+export function parseProjectDocument(value: unknown) {
+  if ((value as FlexibleProject)?.schemaVersion === '2.1.0') return parseFlexibleProject(value);
+  return v2.parseProjectDocument(value);
+}
+export function projectWarnings(project: FlexibleProject): string[] {
+  const warnings: string[] = [];
+  if (renderReadinessErrors(project).length)
+    warnings.push('وسائط مستخدمة تحتاج مراجعة واعتماد قبل التصدير.');
+  if (project.audio.mode === 'timeline') {
+    const covered = new Uint8Array(project.targetDurationFrames);
+    for (const track of project.audio.tracks)
+      if (track.volume > 0)
+        covered.fill(1, track.startFrame, track.startFrame + track.durationFrames);
+    for (const pause of project.audio.pauses)
+      covered.fill(1, pause.startFrame, pause.startFrame + pause.durationFrames);
+    let gap = 0;
+    for (const frame of covered) {
+      gap = frame ? 0 : gap + 1;
+      if (gap >= project.outputProfile.fps) {
+        warnings.push('يوجد صمت غير معلَّم لمدة ثانية أو أكثر. أضف صوتًا أو علامة صمت مقصودة.');
+        break;
+      }
+    }
+  }
+  return warnings;
 }

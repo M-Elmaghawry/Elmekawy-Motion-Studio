@@ -1,8 +1,18 @@
 import Ajv from 'ajv';
-import { flexibleProjectSchema, FlexibleValidationError } from './schema.ts';
+import {
+  flexibleProjectSchema,
+  FlexibleValidationError,
+  audioTimelineSchema,
+  promptsSchema,
+} from './schema.ts';
 import { compileTimeline } from './timeline.ts';
-import { sceneRegistry } from './manifest.ts';
-import type { FlexibleProject, FlexibleScene, ImplementedType, MediaBinding } from './types.ts';
+import { sceneRegistry, outputProfiles, portraitProfile } from './manifest.ts';
+import type {
+  FlexibleProject,
+  FlexibleScene,
+  SupportedSceneType as ImplementedType,
+  MediaBinding,
+} from './types.ts';
 
 export type BrandProfile = Pick<
   FlexibleProject['brand'],
@@ -47,6 +57,10 @@ export const brandProfiles: BrandProfile[] = [
   },
 ];
 export const sceneLabels: Record<ImplementedType, string> = {
+  'ui-demo': 'واجهة تطبيق وموبايل',
+  'product-hero': 'عرض منتج',
+  'before-after': 'قبل وبعد',
+  'data-explainer': 'شرح بيانات',
   'kinetic-title': 'عنوان متحرك',
   'stat-proof': 'رقم وإحصائية',
   'media-showcase': 'عرض صورة',
@@ -56,8 +70,15 @@ export const sceneLabels: Record<ImplementedType, string> = {
 export type EditableFlexible = Pick<
   FlexibleProject,
   'name' | 'brief' | 'scenes' | 'targetDurationFrames'
-> & { brand: Pick<FlexibleProject['brand'], 'profileId' | 'displayName' | 'colors'>; crf: number };
+> & {
+  brand: Pick<FlexibleProject['brand'], 'profileId' | 'displayName' | 'colors'>;
+  crf: number;
+  outputProfileId?: string;
+  audio?: FlexibleProject['audio'];
+  prompts?: FlexibleProject['prompts'];
+};
 export type FlexibleCreate = {
+  outputProfileId?: string;
   name: string;
   client: string;
   objective: string;
@@ -86,43 +107,75 @@ export type FlexibleDescriptor = {
 const properties = flexibleProjectSchema.properties;
 const propertiesOf = (value: unknown) =>
   (value as { properties: Record<string, unknown> }).properties;
-const strict = (props: Record<string, unknown>) => ({
+const strict = (props: Record<string, unknown>, required = Object.keys(props)) => ({
   type: 'object',
   additionalProperties: false,
-  required: Object.keys(props),
+  required,
   properties: props,
 });
 const brand = propertiesOf(properties.brand);
-export const editableFlexibleSchema = strict({
-  name: properties.name,
-  brief: properties.brief,
-  scenes: properties.scenes,
-  targetDurationFrames: properties.targetDurationFrames,
-  brand: strict({
-    profileId: brand.profileId,
+export const editableFlexibleSchema = strict(
+  {
+    name: properties.name,
+    brief: properties.brief,
+    scenes: properties.scenes,
+    targetDurationFrames: properties.targetDurationFrames,
+    brand: strict({
+      profileId: brand.profileId,
+      displayName: brand.displayName,
+      colors: brand.colors,
+    }),
+    crf: { type: 'integer', minimum: 0, maximum: 51 },
+    outputProfileId: { enum: outputProfiles.map((profile) => profile.id) },
+    audio: {
+      oneOf: [
+        {
+          type: 'object',
+          additionalProperties: false,
+          required: ['mode'],
+          properties: { mode: { const: 'none' } },
+        },
+        audioTimelineSchema,
+      ],
+    },
+    prompts: promptsSchema,
+  },
+  ['name', 'brief', 'scenes', 'targetDurationFrames', 'brand', 'crf'],
+);
+export const flexibleCreateSchema = strict(
+  {
+    name: properties.name,
+    client: { type: 'string', minLength: 1, maxLength: 120 },
+    objective: { type: 'string', minLength: 1, maxLength: 10000 },
+    brandProfileId: { enum: brandProfiles.map((profile) => profile.profileId) },
     displayName: brand.displayName,
     colors: brand.colors,
-  }),
-  crf: { type: 'integer', minimum: 0, maximum: 51 },
-});
-export const flexibleCreateSchema = strict({
-  name: properties.name,
-  client: { type: 'string', minLength: 1, maxLength: 120 },
-  objective: { type: 'string', minLength: 1, maxLength: 10000 },
-  brandProfileId: { enum: brandProfiles.map((profile) => profile.profileId) },
-  displayName: brand.displayName,
-  colors: brand.colors,
-  durationFrames: properties.targetDurationFrames,
-  sceneTypes: {
-    type: 'array',
-    minItems: 3,
-    maxItems: 8,
-    items: { enum: Object.keys(sceneRegistry) },
+    durationFrames: properties.targetDurationFrames,
+    sceneTypes: {
+      type: 'array',
+      minItems: 3,
+      maxItems: 8,
+      items: { enum: Object.keys(sceneRegistry) },
+    },
+    libraryImageId: { type: 'string', pattern: '^[a-z][a-z0-9_-]{0,63}$' },
+    approveImage: { type: 'boolean' },
+    crf: { type: 'integer', minimum: 0, maximum: 51 },
+    outputProfileId: { enum: outputProfiles.map((profile) => profile.id) },
   },
-  libraryImageId: { type: 'string', pattern: '^[a-z][a-z0-9_-]{0,63}$' },
-  approveImage: { type: 'boolean' },
-  crf: { type: 'integer', minimum: 0, maximum: 51 },
-});
+  [
+    'name',
+    'client',
+    'objective',
+    'brandProfileId',
+    'displayName',
+    'colors',
+    'durationFrames',
+    'sceneTypes',
+    'libraryImageId',
+    'approveImage',
+    'crf',
+  ],
+);
 const ajv = new Ajv({
   allErrors: true,
   strict: true,
@@ -147,6 +200,13 @@ export function assertFlexibleCreate(value: unknown): asserts value is FlexibleC
 }
 export const flexibleEditableOf = (project: FlexibleProject): EditableFlexible =>
   structuredClone({
+    ...(project.schemaVersion === '2.1.0'
+      ? {
+          outputProfileId: project.outputProfile.id,
+          audio: structuredClone(project.audio),
+          prompts: structuredClone(project.prompts ?? []),
+        }
+      : {}),
     name: project.name,
     brief: project.brief,
     brand: {
@@ -165,14 +225,36 @@ export function applyFlexibleEdit(
   assertFlexibleEdit(value);
   if (!brandProfiles.some((profile) => profile.profileId === value.brand.profileId))
     throw new FlexibleValidationError(['UNKNOWN_BRAND_PROFILE']);
+  if (
+    project.schemaVersion === '2.0.0' &&
+    (value.outputProfileId !== undefined ||
+      value.audio !== undefined ||
+      value.prompts !== undefined)
+  )
+    throw new FlexibleValidationError(['FEATURE_UPGRADE_REQUIRED']);
+  const profile = value.outputProfileId
+    ? outputProfiles.find((profile) => profile.id === value.outputProfileId)!
+    : project.outputProfile;
   return {
     ...structuredClone(project),
+    ...(project.schemaVersion === '2.1.0'
+      ? {
+          audio: structuredClone(value.audio ?? project.audio),
+          prompts: structuredClone(value.prompts ?? project.prompts ?? []),
+        }
+      : {}),
     name: value.name.trim(),
     brief: structuredClone(value.brief),
-    brand: { ...structuredClone(project.brand), ...structuredClone(value.brand) },
+    brand: {
+      ...structuredClone(project.brand),
+      ...structuredClone(value.brand),
+      ...(profile.id !== project.outputProfile.id
+        ? { safeArea: safeAreaFor(profile.aspectRatio) }
+        : {}),
+    },
     scenes: structuredClone(value.scenes),
     targetDurationFrames: value.targetDurationFrames,
-    outputProfile: { ...project.outputProfile, crf: value.crf },
+    outputProfile: { ...profile, crf: value.crf },
   };
 }
 export function defaultBinding(assetId: string, assetSha256: string): MediaBinding {
@@ -225,6 +307,52 @@ export function newFlexibleScene(
           prefix: '',
           suffix: '',
           sourceNote: 'رقم توضيحي قابل للتعديل، وليس نتيجة عميل.',
+        },
+      };
+    case 'ui-demo':
+      if (!image) throw Error('MISSING_IMAGE');
+      return {
+        ...base,
+        type,
+        content: {
+          headline: 'تجربة واضحة',
+          appName: 'اسم التطبيق',
+          caption: 'شرح الخطوات',
+          actions: ['افتح', 'اختر', 'ابدأ'],
+        },
+        mediaBindings: [defaultBinding(image.id, image.sha256)],
+      };
+    case 'product-hero':
+      if (!image) throw Error('MISSING_IMAGE');
+      return {
+        ...base,
+        type,
+        content: { headline: 'منتجك في المقدمة', tagline: 'التفاصيل تصنع الفرق', badge: 'جديد' },
+        mediaBindings: [defaultBinding(image.id, image.sha256)],
+      };
+    case 'before-after':
+      if (!image) throw Error('MISSING_IMAGE');
+      return {
+        ...base,
+        type,
+        content: { headline: 'شاهد الفرق', beforeLabel: 'قبل', afterLabel: 'بعد' },
+        mediaBindings: [
+          { ...defaultBinding(image.id, image.sha256), slot: 'before' },
+          { ...defaultBinding(image.id, image.sha256), slot: 'after' },
+        ],
+      };
+    case 'data-explainer':
+      return {
+        ...base,
+        type,
+        content: {
+          headline: 'الصورة في الأرقام',
+          unit: '%',
+          points: [
+            { id: 'point-1', label: 'الأولى', value: 40 },
+            { id: 'point-2', label: 'الثانية', value: 70 },
+            { id: 'point-3', label: 'الثالثة', value: 90 },
+          ],
         },
       };
     case 'media-showcase':
@@ -318,4 +446,20 @@ export function resizeImageFrame(
     next.frame.height = Number((binding.frame.height * factor).toFixed(5));
   } else next.frame[axis] = clamp(value);
   return next;
+}
+
+export function safeAreaFor(aspect: string) {
+  return aspect === '9:16'
+    ? { left: 100, right: 180, top: 220, bottom: 360 }
+    : { left: 70, right: 100, top: 100, bottom: 140 };
+}
+export function upgradeFlexibleDocument(project: FlexibleProject): FlexibleProject {
+  return project.schemaVersion === '2.1.0'
+    ? structuredClone(project)
+    : {
+        ...structuredClone(project),
+        schemaVersion: '2.1.0',
+        template: { id: 'flexible-reel', version: '1.1.0' },
+        prompts: [],
+      };
 }

@@ -1,0 +1,457 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "bim-personal-intro",
+  "version": "1.2.0",
+  "name": "BIM Personal Intro · V1",
+  "compositionId": "ElmekawyBIMIntro",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationFrames": 900,
+  "scenes": [
+    {
+      "id": "hook",
+      "name": "BIM مش مجرد موديل 3D",
+      "from": 0,
+      "duration": 120,
+      "fields": [
+        "hook.eyebrow",
+        "hook.arabicPrefix",
+        "hook.bim",
+        "hook.middleLine",
+        "hook.model",
+        "hook.threeD",
+        "hook.tagline"
+      ],
+      "textFields": [
+        {
+          "id": "hook.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "BEYOND THE MODEL / 01",
+          "group": "scene"
+        },
+        {
+          "id": "hook.arabicPrefix",
+          "label": "العنوان العربي — الجزء الأول",
+          "defaultValue": "الـ",
+          "group": "scene"
+        },
+        {
+          "id": "hook.bim",
+          "label": "مصطلح العنوان الأول",
+          "defaultValue": "BIM",
+          "group": "scene"
+        },
+        {
+          "id": "hook.middleLine",
+          "label": "العنوان العربي — السطر الثاني",
+          "defaultValue": "مش مجرد",
+          "group": "scene",
+          "legacySource": "مش مجرد"
+        },
+        {
+          "id": "hook.model",
+          "label": "العنوان العربي — الجزء الأخير",
+          "defaultValue": "موديل",
+          "group": "scene"
+        },
+        {
+          "id": "hook.threeD",
+          "label": "مصطلح العنوان الأخير",
+          "defaultValue": "3D",
+          "group": "scene"
+        },
+        {
+          "id": "hook.tagline",
+          "label": "الشعار النصي السفلي",
+          "defaultValue": "THINK SYSTEMS. BUILD BETTER.",
+          "group": "scene"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "name": "المنشآت والبنية التحتية",
+      "from": 120,
+      "duration": 150,
+      "fields": [
+        "infrastructure.eyebrow",
+        "infrastructure.title1",
+        "infrastructure.title2",
+        "infrastructure.title3",
+        "infrastructure.caption1",
+        "infrastructure.caption2",
+        "infrastructure.fallback.infrastructure.caption"
+      ],
+      "textFields": [
+        {
+          "id": "infrastructure.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "CONNECTED BY DESIGN / 02",
+          "group": "scene"
+        },
+        {
+          "id": "infrastructure.title1",
+          "label": "العنوان الرئيسي — السطر الأول",
+          "defaultValue": "STRUCTURAL &",
+          "group": "scene"
+        },
+        {
+          "id": "infrastructure.title2",
+          "label": "العنوان الرئيسي — السطر الثاني",
+          "defaultValue": "INFRASTRUCTURE",
+          "group": "scene"
+        },
+        {
+          "id": "infrastructure.title3",
+          "label": "العنوان الرئيسي — السطر الثالث",
+          "defaultValue": "BIM",
+          "group": "scene"
+        },
+        {
+          "id": "infrastructure.caption1",
+          "label": "التعليق السفلي — السطر الأول",
+          "defaultValue": "Structure. Infrastructure.",
+          "group": "scene"
+        },
+        {
+          "id": "infrastructure.caption2",
+          "label": "التعليق السفلي — السطر الثاني",
+          "defaultValue": "One coordinated vision.",
+          "group": "scene",
+          "legacySource": "One coordinated vision."
+        },
+        {
+          "id": "infrastructure.fallback.infrastructure.caption",
+          "label": "تسمية البديل عند غياب الصورة",
+          "defaultValue": "BIM / CONCEPT VISUAL",
+          "group": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "name": "خدمات BIM",
+      "from": 270,
+      "duration": 180,
+      "fields": [
+        "services.eyebrow",
+        "services.title1",
+        "services.title2",
+        "services.items.1.label",
+        "services.items.2.label",
+        "services.items.3.label",
+        "services.items.4.label",
+        "services.items.number.1",
+        "services.items.number.2",
+        "services.items.number.3",
+        "services.items.number.4",
+        "services.fallback.structural.caption",
+        "services.fallback.technology.caption"
+      ],
+      "textFields": [
+        {
+          "id": "services.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "FROM MODEL TO DELIVERY / 03",
+          "group": "scene"
+        },
+        {
+          "id": "services.title1",
+          "label": "العنوان الرئيسي — السطر الأول",
+          "defaultValue": "Precision.",
+          "group": "scene",
+          "legacySource": "Precision."
+        },
+        {
+          "id": "services.title2",
+          "label": "العنوان الرئيسي — السطر الثاني",
+          "defaultValue": "At every stage.",
+          "group": "scene",
+          "legacySource": "At every stage."
+        },
+        {
+          "id": "services.items.1.label",
+          "label": "الخدمة الأولى",
+          "defaultValue": "BIM Modeling",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.2.label",
+          "label": "الخدمة الثانية",
+          "defaultValue": "Coordination",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.3.label",
+          "label": "الخدمة الثالثة",
+          "defaultValue": "Quantity Takeoff",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.4.label",
+          "label": "الخدمة الرابعة",
+          "defaultValue": "Automation",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.number.1",
+          "label": "رقم الخدمة 1",
+          "defaultValue": "01",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.number.2",
+          "label": "رقم الخدمة 2",
+          "defaultValue": "02",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.number.3",
+          "label": "رقم الخدمة 3",
+          "defaultValue": "03",
+          "group": "scene"
+        },
+        {
+          "id": "services.items.number.4",
+          "label": "رقم الخدمة 4",
+          "defaultValue": "04",
+          "group": "scene"
+        },
+        {
+          "id": "services.fallback.structural.caption",
+          "label": "تسمية بديل الصورة الإنشائية",
+          "defaultValue": "BIM / CONCEPT VISUAL",
+          "group": "fallback"
+        },
+        {
+          "id": "services.fallback.technology.caption",
+          "label": "تسمية بديل الصورة التقنية",
+          "defaultValue": "BIM / CONCEPT VISUAL",
+          "group": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "name": "Revit & BIM Training",
+      "from": 450,
+      "duration": 180,
+      "fields": [
+        "training.eyebrow",
+        "training.title1",
+        "training.title2",
+        "training.credential1",
+        "training.credential2",
+        "training.framework",
+        "training.learning.1",
+        "training.learning.2",
+        "training.learning.3",
+        "training.caption1",
+        "training.caption2"
+      ],
+      "textFields": [
+        {
+          "id": "training.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "KNOWLEDGE INTO PRACTICE / 04",
+          "group": "scene"
+        },
+        {
+          "id": "training.title1",
+          "label": "العنوان الرئيسي — السطر الأول",
+          "defaultValue": "REVIT &",
+          "group": "scene"
+        },
+        {
+          "id": "training.title2",
+          "label": "العنوان الرئيسي — السطر الثاني",
+          "defaultValue": "BIM TRAINING",
+          "group": "scene"
+        },
+        {
+          "id": "training.credential1",
+          "label": "وصف الاعتماد — السطر الأول",
+          "defaultValue": "Autodesk Certified",
+          "group": "scene"
+        },
+        {
+          "id": "training.credential2",
+          "label": "وصف الاعتماد — السطر الثاني",
+          "defaultValue": "Instructor",
+          "group": "scene"
+        },
+        {
+          "id": "training.framework",
+          "label": "عنوان إطار التعلم",
+          "defaultValue": "THE LEARNING FRAMEWORK",
+          "group": "scene"
+        },
+        {
+          "id": "training.learning.1",
+          "label": "خطوة التعلم الأولى",
+          "defaultValue": "UNDERSTAND",
+          "group": "scene"
+        },
+        {
+          "id": "training.learning.2",
+          "label": "خطوة التعلم الثانية",
+          "defaultValue": "APPLY",
+          "group": "scene"
+        },
+        {
+          "id": "training.learning.3",
+          "label": "خطوة التعلم الثالثة",
+          "defaultValue": "DELIVER",
+          "group": "scene"
+        },
+        {
+          "id": "training.caption1",
+          "label": "التعليق السفلي — السطر الأول",
+          "defaultValue": "Build skills.",
+          "group": "scene",
+          "legacySource": "Build skills."
+        },
+        {
+          "id": "training.caption2",
+          "label": "التعليق السفلي — السطر الثاني",
+          "defaultValue": "Work with confidence.",
+          "group": "scene",
+          "legacySource": "Work with confidence."
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "name": "Mahmoud Elmekawy",
+      "from": 630,
+      "duration": 150,
+      "fields": [
+        "brand.eyebrow",
+        "brand.name1",
+        "brand.name2",
+        "brand.subtitle",
+        "brand.fallback.portrait.mark",
+        "brand.fallback.portrait.caption"
+      ],
+      "textFields": [
+        {
+          "id": "brand.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "ENGINEER. EDUCATOR. / 05",
+          "group": "scene"
+        },
+        {
+          "id": "brand.name1",
+          "label": "الاسم — السطر الأول",
+          "defaultValue": "Mahmoud",
+          "group": "scene",
+          "legacySource": "Mahmoud"
+        },
+        {
+          "id": "brand.name2",
+          "label": "الاسم — السطر الثاني",
+          "defaultValue": "Elmekawy.",
+          "group": "scene",
+          "legacySource": "Elmekawy."
+        },
+        {
+          "id": "brand.subtitle",
+          "label": "المسمى والخبرات",
+          "defaultValue": "Senior BIM Engineer | BIM Coordinator | Autodesk Certified Instructor",
+          "group": "scene"
+        },
+        {
+          "id": "brand.fallback.portrait.mark",
+          "label": "حروف البديل عند غياب الصورة",
+          "defaultValue": "ME",
+          "group": "fallback"
+        },
+        {
+          "id": "brand.fallback.portrait.caption",
+          "label": "تسمية البديل عند غياب الصورة",
+          "defaultValue": "ELMEKAWY / BIM",
+          "group": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "name": "Learn · Build · Coordinate",
+      "from": 780,
+      "duration": 120,
+      "fields": [
+        "cta.eyebrow",
+        "cta.word1",
+        "cta.word2",
+        "cta.word3",
+        "cta.name",
+        "cta.linkCaption",
+        "cta.website"
+      ],
+      "textFields": [
+        {
+          "id": "cta.eyebrow",
+          "label": "العنوان الصغير",
+          "defaultValue": "YOUR NEXT CHAPTER / 06",
+          "group": "scene"
+        },
+        {
+          "id": "cta.word1",
+          "label": "العبارة الرئيسية الأولى",
+          "defaultValue": "Learn",
+          "group": "scene",
+          "legacySource": "Learn"
+        },
+        {
+          "id": "cta.word2",
+          "label": "العبارة الرئيسية الثانية",
+          "defaultValue": "Build",
+          "group": "scene",
+          "legacySource": "Build"
+        },
+        {
+          "id": "cta.word3",
+          "label": "العبارة الرئيسية الثالثة",
+          "defaultValue": "Coordinate",
+          "group": "scene",
+          "legacySource": "Coordinate"
+        },
+        {
+          "id": "cta.name",
+          "label": "الاسم الكامل",
+          "defaultValue": "Mahmoud Elmekawy",
+          "group": "scene"
+        },
+        {
+          "id": "cta.linkCaption",
+          "label": "عنوان رابط التواصل",
+          "defaultValue": "EXPLORE THE PORTFOLIO ↗",
+          "group": "scene"
+        },
+        {
+          "id": "cta.website",
+          "label": "رابط التواصل",
+          "defaultValue": "https://www.linkedin.com/in/mahmoud-elmekawy/",
+          "group": "scene"
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "fixedTiming": true,
+    "aspectRatios": ["9:16"],
+    "fps": [30],
+    "resolutions": [
+      {
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "audio": "original-track"
+  },
+  "imageControls": {
+    "sceneLocal": true,
+    "identityDefaults": true
+  }
+}

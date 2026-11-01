@@ -16,6 +16,10 @@ import {
   newFlexibleScene,
   fitScenesToDuration,
   portraitProfile,
+  outputProfiles,
+  safeAreaFor,
+  projectWarnings,
+  upgradeFlexibleDocument,
   compileTimeline,
   renderReadinessErrors,
 } from '@elmekawy/shared/flexible';
@@ -212,13 +216,13 @@ export async function createFlexible(value: unknown) {
         : { type: 'crossfade' as const, durationFrames: 15 },
   }));
   const project: FlexibleProject = {
-    schemaVersion: '2.0.0',
+    schemaVersion: '2.1.0',
     id,
     revision: 1,
     createdAt: now,
     updatedAt: now,
     name: value.name.trim(),
-    template: { id: 'flexible-reel', version: '1.0.0' },
+    template: { id: 'flexible-reel', version: '1.1.0' },
     brief: { client: value.client.trim(), objective: value.objective.trim() },
     locale: { language: 'ar-EG', direction: 'rtl' },
     brand: {
@@ -227,13 +231,21 @@ export async function createFlexible(value: unknown) {
       displayName: value.displayName.trim(),
       colors: structuredClone(value.colors),
       fonts: { arabicAssetId: 'font-cairo', latinAssetId: 'font-inter' },
-      safeArea: { left: 100, right: 180, top: 220, bottom: 360 },
+      safeArea: safeAreaFor(
+        (outputProfiles.find((profile) => profile.id === value.outputProfileId) ?? portraitProfile)
+          .aspectRatio,
+      ),
     },
-    outputProfile: { ...portraitProfile, crf: value.crf },
+    outputProfile: {
+      ...(outputProfiles.find((profile) => profile.id === value.outputProfileId) ??
+        portraitProfile),
+      crf: value.crf,
+    },
     targetDurationFrames: value.durationFrames,
     scenes: fitScenesToDuration(scenes, value.durationFrames),
     assets: [...fonts, imageAsset],
     audio: { mode: 'none' },
+    prompts: [],
   };
   return stageFlexible(project, async (folder) => {
     const target = path.join(folder, imageAsset.storage.path);
@@ -317,7 +329,7 @@ export async function resolveFlexible(
 ): Promise<FlexibleDescriptor> {
   const valid = validateFlexible(project),
     media: Record<string, string> = {},
-    warnings: string[] = [];
+    warnings: string[] = projectWarnings(project);
   for (const asset of valid.assets) {
     await flexibleAssetPath(valid, asset);
     media[asset.id] = origin + '/media/flexible/' + valid.id + '/' + asset.id + '/' + asset.sha256;
@@ -359,11 +371,17 @@ export async function approveFlexibleImage(
     const current = await readFlexible(id);
     assertRevision(current, revision);
     const next = structuredClone(current),
-      asset = next.assets.find((asset) => asset.id === assetId && asset.kind === 'image');
+      asset = next.assets.find((asset) => asset.id === assetId && asset.kind !== 'font');
     if (!asset) throw new AppError(404, 'IMAGE_NOT_FOUND', 'الصورة غير موجودة.');
     await flexibleAssetPath(current, asset);
     asset.approval = approved ? 'approved' : 'pending';
     asset.sourceNote = note.trim();
+    if (next.prompts)
+      next.prompts = next.prompts.map((prompt) =>
+        prompt.assetId === assetId
+          ? { ...prompt, status: approved ? 'approved' : 'uploaded' }
+          : prompt,
+      );
     return commitFlexible(current, next);
   });
 }
@@ -377,6 +395,8 @@ export async function uploadFlexibleImage(
   try {
     await pipeline(part.file, createWriteStream(temp, { flags: 'wx' }));
     if (part.file.truncated)
+      throw new AppError(413, 'FILE_TOO_LARGE', 'أقصى حجم للصورة 50 ميجابايت.');
+    if ((await fs.stat(temp)).size > 50 * 1024 * 1024)
       throw new AppError(413, 'FILE_TOO_LARGE', 'أقصى حجم للصورة 50 ميجابايت.');
     const bytes = await fs.readFile(temp);
     let mime: FlexibleAsset['mimeType'], extension: string;
@@ -474,3 +494,81 @@ export async function uploadFlexibleImage(
   }
 }
 export { flexibleEditableOf };
+
+export async function upgradeFlexible(id: string, revision: number) {
+  return flexibleLock(id, async () => {
+    const current = await readFlexible(id);
+    assertRevision(current, revision);
+    if (current.schemaVersion === '2.1.0') return current;
+    return commitFlexible(current, upgradeFlexibleDocument(current));
+  });
+}
+export async function flexibleHistory(id: string) {
+  const folder = await flexibleFolder(id);
+  const history = [];
+  for (const entry of await fs.readdir(await safePath(folder, 'history'))) {
+    if (!/^revision-\d+\.json$/.test(entry)) continue;
+    const previous = validateFlexible(
+      JSON.parse(await fs.readFile(await safePath(folder, 'history/' + entry), 'utf8')),
+    );
+    if (previous.id !== id)
+      throw new AppError(422, 'INVALID_HISTORY', 'هوية الإصدار التاريخي غير مطابقة.');
+    history.push({
+      revision: previous.revision,
+      name: previous.name,
+      updatedAt: previous.updatedAt,
+    });
+  }
+  return history.sort((a, b) => b.revision - a.revision);
+}
+export async function restoreFlexible(id: string, revision: number, target: number) {
+  return flexibleLock(id, async () => {
+    const current = await readFlexible(id);
+    assertRevision(current, revision);
+    if (!Number.isSafeInteger(target) || target < 1 || target >= current.revision)
+      throw new AppError(400, 'INVALID_HISTORY', 'اختر إصدارًا سابقًا.');
+    const next = validateFlexible(
+      JSON.parse(
+        await fs.readFile(
+          await safePath(await flexibleFolder(id), 'history/revision-' + target + '.json'),
+          'utf8',
+        ),
+      ),
+    );
+    if (next.id !== id || next.revision !== target)
+      throw new AppError(422, 'INVALID_HISTORY', 'نسخة تاريخية غير متوافقة.');
+    // Keep all registered files available to previous queued renders and future recovery.
+    const assets = new Map(
+      [...current.assets, ...next.assets]
+        .filter(
+          (asset) =>
+            next.schemaVersion === '2.1.0' || asset.kind === 'image' || asset.kind === 'font',
+        )
+        .map((asset) => [asset.id, asset]),
+    );
+    next.assets = [...assets.values()];
+    for (const asset of next.assets) await flexibleAssetPath(current, asset);
+    return commitFlexible(current, next);
+  });
+}
+export { stageFlexible };
+export async function findFlexibleMedia(project: FlexibleProject, id: string, hash: string) {
+  let asset = project.assets.find((asset) => asset.id === id && asset.sha256 === hash);
+  if (!asset)
+    for (const item of await flexibleHistory(project.id)) {
+      const previous = validateFlexible(
+        JSON.parse(
+          await fs.readFile(
+            await safePath(
+              await flexibleFolder(project.id),
+              'history/revision-' + item.revision + '.json',
+            ),
+            'utf8',
+          ),
+        ),
+      );
+      asset = previous.assets.find((asset) => asset.id === id && asset.sha256 === hash);
+      if (asset) break;
+    }
+  return asset;
+}

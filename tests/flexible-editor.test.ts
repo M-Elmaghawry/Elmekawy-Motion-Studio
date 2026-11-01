@@ -292,7 +292,7 @@ test('real flexible queue freezes edited image transforms and serves a verified 
   const snapshot = JSON.parse(
     await fs.readFile(path.join(folder, 'project.snapshot.json'), 'utf8'),
   ) as FlexibleProject;
-  assert.equal(snapshot.schemaVersion, '2.0.0');
+  assert.equal(snapshot.schemaVersion, '2.1.0');
   assert.equal(snapshot.revision, frozen);
   assert.equal(
     snapshot.scenes.find((scene) => scene.type === 'media-showcase')!.mediaBindings[0].transform

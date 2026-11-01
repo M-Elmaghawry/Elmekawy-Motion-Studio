@@ -7,8 +7,8 @@ const folder=process.argv[2];
 if(!folder)throw new Error('Render job folder missing');
 const project=JSON.parse(await fs.readFile(path.join(folder,'project.snapshot.json'),'utf8'));
 const descriptor=JSON.parse(await fs.readFile(path.join(folder,'descriptor.runtime.json'),'utf8'));
-const flexible=project.schemaVersion==='2.0.0'?parseFlexibleProject(project):null;
-const renderInput=flexible?{id:flexible.id,revision:flexible.revision,template:flexible.template,video:{width:flexible.outputProfile.width,height:flexible.outputProfile.height,fps:flexible.outputProfile.fps,durationFrames:compileTimeline(flexible.scenes).durationFrames,aspectRatio:flexible.outputProfile.aspectRatio},output:{...flexible.outputProfile,presetId:flexible.outputProfile.id,fileNameLabel:'video'},assets:flexible.assets.map(asset=>({...asset,state:'ready'})),audio:flexible.audio}:project;
+const flexible=project.template?.id==='flexible-reel'?parseFlexibleProject(project):null;
+const renderInput=flexible?{id:flexible.id,revision:flexible.revision,template:flexible.template,video:{width:flexible.outputProfile.width,height:flexible.outputProfile.height,fps:flexible.outputProfile.fps,durationFrames:compileTimeline(flexible.scenes).durationFrames,aspectRatio:flexible.outputProfile.aspectRatio},output:{...flexible.outputProfile,presetId:flexible.outputProfile.id,fileNameLabel:'video'},assets:flexible.assets.map(asset=>({...asset,state:'ready'})),audio:{mode:flexible.audio.mode==='timeline'&&flexible.audio.tracks.some(track=>track.volume>0)?'track':'none'}}:project;
 let lastState='',lastTime=0;
 try{
   const result=await renderProjectVideo({root:workspace,stateRoot,folder,project:renderInput,descriptor,progress:(state,progress)=>{const now=Date.now();if(state!==lastState||now-lastTime>300||progress===1){lastState=state;lastTime=now;process.send?.({kind:'progress',state,progress});}}});

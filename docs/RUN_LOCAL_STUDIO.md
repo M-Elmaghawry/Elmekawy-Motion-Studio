@@ -1,5 +1,7 @@
 # Running the local Studio
 
+For the latest controls, rebuild and restart the application, then reload the browser. V1/V2 projects expose **حجم وموضع الصور** and an explicit button to create an independent template-1.2.0 copy. New flexible projects expose media/audio, manual prompts, three ratios and ZIP/version recovery. See [PHASE_4_IMPLEMENTATION.md](PHASE_4_IMPLEMENTATION.md); older implementation notes below describe the earlier milestones.
+
 The owner approved implementation after reviewing Phase 1 and finding that the design preview did not use the original compositions. The working application now replaces that prototype at **http://127.0.0.1:4311/**.
 
 Use Node 24 on Windows. From the repository root:

@@ -16,6 +16,7 @@ import {
 } from '@elmekawy/shared/flexible';
 import type { FlexibleAsset } from '@elmekawy/shared/flexible';
 import { browserPath, sourceFingerprint } from '@elmekawy/motion-engine/server';
+import { inspectMedia } from '../apps/server/src/flexible-media.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -155,15 +156,36 @@ try {
     void fs
       .stat(record.file)
       .then((stat) => {
-        response.writeHead(200, {
+        let start = 0,
+          end = stat.size - 1,
+          status = 200;
+        if (request.headers.range) {
+          const match = request.headers.range.match(/^bytes=(\d+)-(\d*)$/);
+          if (!match || Number(match[1]) >= stat.size) {
+            response.writeHead(416, { 'Content-Range': 'bytes */' + stat.size });
+            response.end();
+            return;
+          }
+          start = Number(match[1]);
+          end = match[2] ? Math.min(end, Number(match[2])) : end;
+          if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || end < start) {
+            response.writeHead(416);
+            response.end();
+            return;
+          }
+          status = 206;
+        }
+        response.writeHead(status, {
           'Content-Type': record.mime,
-          'Content-Length': stat.size,
+          'Content-Length': end - start + 1,
+          'Accept-Ranges': 'bytes',
+          ...(status === 206 ? { 'Content-Range': `bytes ${start}-${end}/${stat.size}` } : {}),
           'X-Content-Type-Options': 'nosniff',
           'Cache-Control': 'no-store',
         });
         if (request.method === 'HEAD') response.end();
         else
-          createReadStream(record.file)
+          createReadStream(record.file, { start, end })
             .on('error', () => response.destroy())
             .pipe(response);
       })
@@ -253,7 +275,7 @@ try {
   const mediaEntry = timeline.scenes.find(
     (entry) => project.scenes[entry.index].type === 'media-showcase',
   );
-  if (mediaEntry) {
+  if (mediaEntry && project.schemaVersion === '2.0.0') {
     const variant = structuredClone(project),
       frame = mediaEntry.startFrame + Math.floor(mediaEntry.durationFrames / 2);
     const binding = variant.scenes[mediaEntry.index].mediaBindings[0];
@@ -358,7 +380,7 @@ try {
     });
   }
   const titleIndex = project.scenes.findIndex((scene) => scene.type === 'kinetic-title');
-  if (titleIndex >= 0) {
+  if (titleIndex >= 0 && project.schemaVersion === '2.0.0') {
     const overflow = structuredClone(project),
       scene = overflow.scenes[titleIndex];
     if (scene.type === 'kinetic-title') scene.content.headline = 'و'.repeat(200);
@@ -383,7 +405,10 @@ try {
     );
     checks.push({ name: 'long-arabic-overflow-blocked-after-font-layout', passed: true });
   }
-  const output = path.join(directory, 'flexible-reel-20s.mp4');
+  const output = path.join(
+    directory,
+    'flexible-reel-' + timeline.durationFrames / project.outputProfile.fps + 's.mp4',
+  );
   console.log(
     'Boundary frames and repeat seeks passed; rendering ' + timeline.durationFrames + ' frames.',
   );
@@ -432,12 +457,12 @@ try {
   assert.equal(Number(video.duration), timeline.durationFrames / project.outputProfile.fps);
   assert.equal(
     probe.streams.some((stream) => stream.codec_type === 'audio'),
-    false,
+    project.audio.mode === 'timeline' && project.audio.tracks.some((track) => track.volume > 0),
   );
   await fs.writeFile(path.join(directory, 'probe.json'), JSON.stringify(probe, null, 2));
   await run(
     path.join(root, 'node_modules/@remotion/compositor-win32-x64-msvc/ffmpeg.exe'),
-    ['-v', 'error', '-i', output, '-c:v', 'rawvideo', '-f', 'null', '-'],
+    ['-v', 'error', '-i', output, '-c:v', 'rawvideo', '-c:a', 'pcm_s16le', '-f', 'null', '-'],
     { windowsHide: true, maxBuffer: 1024 ** 2 },
   );
   checks.push({ name: 'encoded-stream-metadata-and-full-decode', passed: true });
@@ -503,6 +528,13 @@ try {
 if (failure) throw failure;
 
 async function checkSignature(file: string, asset: FlexibleAsset) {
+  if (asset.kind === 'video' || asset.kind === 'audio') {
+    const info = await inspectMedia(file);
+    assert.equal(info.kind, asset.kind);
+    assert.equal(info.mimeType, asset.mimeType);
+    assert.deepEqual(info.metadata, asset.metadata);
+    return;
+  }
   const handle = await fs.open(file, 'r');
   const bytes = Buffer.alloc(16);
   try {

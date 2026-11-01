@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { brandProfiles, sceneLabels } from '@elmekawy/shared/flexible';
-import type { FlexibleProject, ImplementedType, FlexibleCreate } from '@elmekawy/shared/flexible';
+import {
+  brandProfiles,
+  sceneLabels,
+  outputProfiles,
+  portraitProfile,
+} from '@elmekawy/shared/flexible';
+import type {
+  FlexibleProject,
+  SupportedSceneType as ImplementedType,
+  FlexibleCreate,
+} from '@elmekawy/shared/flexible';
 import { api } from '../api';
 import type { FlexibleOptions } from './types';
 
@@ -31,6 +40,7 @@ export function NewProjectWizard({
     displayName: brandProfiles[0].displayName,
     colors: { ...brandProfiles[0].colors },
     durationFrames: 600,
+    outputProfileId: portraitProfile.id,
     sceneTypes: initialTypes,
     libraryImageId: '',
     approveImage: false,
@@ -99,7 +109,7 @@ export function NewProjectWizard({
         body: JSON.stringify({ ...form, approveImage: !file && form.approveImage }),
       });
       if (file) {
-        const scene = created.scenes.find((scene) => scene.type === 'media-showcase');
+        const scene = created.scenes.find((scene) => scene.mediaBindings.length > 0);
         if (scene) {
           const body = new FormData();
           body.append('file', file);
@@ -289,8 +299,20 @@ export function NewProjectWizard({
                     </label>
                     <label className="field">
                       <span>المقاس ونسبة العرض</span>
-                      <select aria-label="المقاس" value="portrait" onChange={() => {}}>
-                        <option value="portrait">رأسي 9:16 · 1080 × 1920 · 30 FPS</option>
+                      <select
+                        data-testid="wizard-output-profile"
+                        aria-label="المقاس"
+                        value={form.outputProfileId ?? portraitProfile.id}
+                        onChange={(event) =>
+                          setForm({ ...form, outputProfileId: event.target.value })
+                        }
+                      >
+                        {outputProfiles.map((profile) => (
+                          <option key={profile.id} value={profile.id}>
+                            {profile.aspectRatio} · {profile.width} × {profile.height} ·{' '}
+                            {profile.fps} FPS
+                          </option>
+                        ))}
                       </select>
                     </label>
                   </div>
@@ -446,7 +468,9 @@ export function NewProjectWizard({
                     <dd>{form.displayName}</dd>
                     <dt>الفيديو</dt>
                     <dd>
-                      {form.durationFrames / 30} ثانية · {form.sceneTypes.length} مشاهد · رأسي 9:16
+                      {form.durationFrames / 30} ثانية · {form.sceneTypes.length} مشاهد ·{' '}
+                      {outputProfiles.find((profile) => profile.id === form.outputProfileId)
+                        ?.aspectRatio ?? '9:16'}
                     </dd>
                     <dt>الإخراج</dt>
                     <dd>MP4 · H.264 · بدون صوت</dd>
